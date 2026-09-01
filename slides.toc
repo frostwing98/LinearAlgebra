@@ -1,6 +1,1 @@
 \beamer@sectionintoc {1}{Introduction}{2}{0}{1}
-\beamer@sectionintoc {2}{Introduction}{6}{0}{2}
-\beamer@subsectionintoc {3}{1}{Three Views of Linear Systems}{11}{0}{2}
-\beamer@subsectionintoc {3}{2}{Linear Combination}{19}{0}{2}
-\beamer@subsectionintoc {3}{3}{Existence of Solutions}{23}{0}{2}
-\beamer@subsectionintoc {3}{4}{Elimintation}{28}{0}{2}
