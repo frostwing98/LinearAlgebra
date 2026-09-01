@@ -1,0 +1,252 @@
+%\documentclass[pdf]{beamer}
+\documentclass[aspectratio=169]{beamer}
+% \documentclass[pdf,aspectratio=169]{beamer} % Template is not ready for 16:9
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{epsfig}
+\usepackage{epstopdf}
+\usepackage{xspace}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{shortcuts}
+% \usepackage{framed}
+\usepackage{multirow}
+\usepackage{colortbl}
+\usepackage{subcaption}
+\usepackage{minted}
+\usepackage{rotating}
+\usepackage[]{hyperref}
+ \hypersetup{
+    colorlinks = true,
+    linkcolor = red,
+    anchorcolor = blue,
+    citecolor = blue,
+    filecolor = blue,
+    urlcolor = blue
+}
+
+
+ \makeatletter
+\setbeamercolor{headline}{fg=black,bg=black}
+\setbeamercolor{section in head/foot}{bg=gray}
+
+\setbeamertemplate{headline}{%
+    \begin{beamercolorbox}[ht=2.25ex,dp=3.75ex]{section in head/foot}
+        \insertnavigation{\paperwidth}
+     \end{beamercolorbox}%
+}%
+\makeatother
+
+\usepackage[nomessages]{fp}% http://ctan.org/pkg/fp
+\newcommand{\maxnum}{100.00}
+\newlength{\maxlenA}
+\newcommand{\databar}[2][red!25]{%
+  \settowidth{\maxlenA}{\maxnum}%
+  \addtolength{\maxlenA}{\tabcolsep}%
+  \FPeval\result{round(#2/\maxnum:4)}%
+  \rlap{\color{red!25}\hspace*{-.5\tabcolsep}\rule[-.05\ht\strutbox]{\result\maxlenA}{.95\ht\strutbox}}%
+  \makebox[\dimexpr\maxlenA-\tabcolsep][r]{#2}%
+}
+
+\newcommand{\maxnumApp}{4000.00}
+\newlength{\maxlenB}
+\newcommand{\databarApp}[3][red!25]{%
+  \settowidth{\maxlenB}{\maxnumApp}%
+  \addtolength{\maxlenB}{\tabcolsep}%
+  \FPeval\result{round(#2/\maxnumApp:4)}%
+  \rlap{\color{red!25}\hspace*{-.5\tabcolsep}\rule[-.05\ht\strutbox]{\result\maxlenB}{.95\ht\strutbox}}%
+  \makebox[\dimexpr\maxlenB-\tabcolsep][r]{#3}%
+}
+
+\newcommand{\maxnumJW}{3000.00}
+\newlength{\maxlenC}
+\newcommand{\databarJW}[3][red!25]{%
+  \settowidth{\maxlenC}{\maxnumJW}%
+  \addtolength{\maxlenC}{\tabcolsep}%
+  \FPeval\result{round(#2/\maxnumJW:4)}%
+  \rlap{\color{red!25}\hspace*{-.5\tabcolsep}\rule[-.05\ht\strutbox]{\result\maxlenC}{.95\ht\strutbox}}%
+  \makebox[\dimexpr\maxlenC-\tabcolsep][r]{#3}%
+}
+
+\newcommand{\maxnumNC}{400.00}
+\newlength{\maxlenD}
+\newcommand{\databarNC}[3][red!25]{%
+  \settowidth{\maxlenD}{\maxnumNC}%
+  \addtolength{\maxlenD}{\tabcolsep}%
+  \FPeval\result{round(#2/\maxnumNC:4)}%
+  \rlap{\color{red!25}\hspace*{-.5\tabcolsep}\rule[-.05\ht\strutbox]{\result\maxlenD}{.95\ht\strutbox}}%
+  \makebox[\dimexpr\maxlenD-\tabcolsep][r]{#3}%
+}
+
+\newcommand{\maxnumHC}{400.00}
+\newlength{\maxlen}
+\newcommand{\databarHC}[3][red!25]{%
+  \settowidth{\maxlen}{\maxnumHC}%
+  \addtolength{\maxlen}{\tabcolsep}%
+  \FPeval\result{round(#2/\maxnumHC:4)}%
+  \rlap{\color{red!25}\hspace*{-.5\tabcolsep}\rule[-.05\ht\strutbox]{\result\maxlen}{.95\ht\strutbox}}%
+  \makebox[\dimexpr\maxlen-\tabcolsep][r]{#3}%
+}
+
+% \newcommand{\ttt}[1]{\texttt{\justify #1}}
+\newcommand{\ttt}[1]{\texttt{#1}}
+\newcommand{\hl}[1]{\textcolor{utdorange}{\textbf{#1}}}
+\newcommand{\bm}{BigMatrix}
+\usetheme{default}
+
+\setbeamertemplate{note page}[plain]
+%\useoutertheme{infolines}
+%\usepackage[all,knot]{xy}
+%\xyoption{arc}
+\usepackage{url}
+%\usepackage{multimedia}
+\usepackage{hyperref}
+\usepackage{colortbl}
+
+\usepackage[normalem]{ulem}
+
+\usepackage{epsfig}
+\usepackage{shortcuts}
+\usepackage{pgfplots}
+\usepackage{tikz}
+%\usepackage{amsfonts}
+\newcommand{\tickYes}{\checkmark}
+\usepackage{pifont}
+\newcommand{\tickNo}{\hspace{1pt}\ding{55}}
+\newcommand{\Yes}{\ding{52}}
+\newcommand{\No}{\ding{55}}
+\usepackage{wasysym}
+\newcommand{\yes}{\CIRCLE}
+\newcommand{\no}{\Circle}
+\usepackage{graphicx}
+\newcommand{\infi}{$\infty$}
+
+\usepackage{booktabs}
+
+% Standard packages
+%
+%\usepackage[english]{babel}
+%\usepackage[latin1]{inputenc}
+%\usepackage{times}
+%\usepackage[T1]{fontenc}
+%
+%\usepackage{animate}
+%\usepackage{ulem}
+
+%%%
+\usetikzlibrary{shapes,arrows}
+%\tikzstyle{block}=[draw opacity=0.7,line width=1.4cm]
+% Define block styles
+\tikzstyle{decision} = [diamond, draw, fill=blue!20, 
+    text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
+\tikzstyle{block} = [rectangle, draw, fill=blue!20, 
+    text width=3em, text centered, rounded corners, minimum height=2em]
+\tikzstyle{line} = [draw, -latex']
+\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm,
+    minimum height=2em]
+
+
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{\tiny \node[shape=circle,draw,inner sep=1pt] (char) {#1};}}
+
+
+% \newcommand{\ttt}[1]{\texttt{\justify #1}}
+ 
+ 
+ 
+\newcommand{\sysname}{{\sc FirmXRay}\xspace}
+\newcommand{\leakscope}{{\sc LeakScope}}
+\newcommand{\smartgen}{{\sc SmartGen}}
+\newcommand{\authscope}{{\sc AuthScope}}
+
+%%%%%%%%%%%%
+\ignore{
+\AtBeginSection[] {
+  \begin{frame}[plain]
+    \frametitle{Outline}
+    \tableofcontents[currentsection]
+  \end{frame}
+  \addtocounter{framenumber}{-1}
+}
+
+\AtBeginSubsection[] {
+  \begin{frame}[plain]
+   \frametitle{Outline}
+    \tableofcontents[currentsubsection]
+    \addtocounter{framenumber}{-1}
+  \end{frame}
+}
+}
+%%%%%%%%%%%
+ 
+%\subtitle{ACM Symposium on Cloud Computing}
+\setbeamertemplate
+ {footline}{\quad\hfill\insertframenumber/\inserttotalframenumber\strut\quad} 
+\bigskip
+\title{\bf{ {\LARGE Linear Algebra}}}
+
+%\author{\normalsize {\bf Yuqing Yang}, Yue Zhang, and Zhiqiang Lin}
+\medskip
+
+
+\author{ Yuqing Yang\\Assistant Professor\\School of Computer Science and Engineering
+\smallskip
+%ACM CCS 2022\\
+% {\large 08/10/2020}
+\medskip
+%\small{Joint work w/ Haohuang Wen, Yinqian Zhang, and Chaoshun Zuo}\\
+%\bigskip
+\medskip
+{\small 09/02/2026}
+}
+
+
+
+%\institute[shortinst]{%
+%%    The Ohio State University %
+    
+%}
+
+% \institute{\normalsize Department of Computer Science and Engineering \\ The Ohio State University}
+
+\date{}%\footnotesize{CCS 2022}}
+
+
+
+
+\mode<presentation>
+{
+    \usetheme{OSUCSE169}
+    \setbeamercovered{transparent = 28}
+}
+
+%\renewcommand{\inserttotalframenumber}{21}
+  \setbeamertemplate{footline}[frame number]
+
+
+% \setbeamertemplate
+% {footline}{\quad\hfill\insertframenumber/\inserttotalframenumber\str%ut\quad} 
+
+
+
+\begin{document}
+ 
+\setbeamercovered{invisible}
+
+{
+ 
+   %\titlepagebackground
+    \usebackgroundtemplate{\includegraphics[width=\paperwidth]{template-images/osuseclab169.pdf}}%
+   \thispagestyle{empty}
+    \frame[noframenumbering]{\titlepage  }
+
+}
+
+% \title{{\sc PT\_CFI}: Practical Backward-Edge Control Flow Integrity Using Intel Processor Trace}
+\input{Lecture1/slides.tex}
+
+% \begin{frame}{Frame Title}
+    
+% \end{frame}
+\end{document}

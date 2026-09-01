@@ -1,0 +1,396 @@
+\documentclass{osudissert96}
+
+% Language setting
+% Replace `english' with e.g. `spanish' to change the document language
+ \usepackage{multirow}
+ \usepackage{float}
+% Add the compsoc option for Computer Society conferences.
+%
+\usepackage{varioref}
+\usepackage{placeins}
+\usepackage{balance}
+% If IEEEtran.cls has not been installed into the LaTeX system files,
+% manually specify the path to it like:
+% \documentclass[conference]{../sty/IEEEtran}
+ \usepackage{booktabs}
+\pagestyle{plain}
+%\documentclass[sigconf]{acmart}  
+ \DeclareTextCommandDefault{\nobreakspace}{\leavevmode\nobreak\ }
+  
+\let\labelindent\relax
+\usepackage[graphicx]{realboxes}
+\usepackage{fontawesome}
+ \usepackage{makecell}
+ \usepackage{lipsum}
+\usepackage[htt]{hyphenat}
+ 
+\usepackage{pifont} 
+\usepackage{pgfplotstable} 
+\usepackage{paralist}
+\usepackage{amsmath}
+\usepackage{multirow}
+\usepackage{shortcuts}
+\usepackage{epsfig,endnotes}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{subcaption}
+\usepackage[ruled,vlined,linesnumbered]{algorithm2e}
+\usepackage{amsfonts}
+\usepackage{url}
+\usepackage{array}
+\usepackage{booktabs,adjustbox}
+\usepackage{etex}
+\usepackage{color}
+\usepackage{colortbl}
+\usepackage{pstricks}
+% \usetikzlibrary{calc,positioning,shapes.geometric,shapes.symbols,shadows,arrows}
+\usepackage{wasysym}
+\usepackage{shortcuts}
+\usepackage{enumitem}
+% \usepackage{amssymb,enumitem}
+\usepackage{paralist}
+
+\usepackage[justification=justified]{caption}
+\usepackage{pgfplots}
+\usetikzlibrary{arrows}
+\usetikzlibrary{patterns}
+%\usepackage{times}
+\usepackage{listings}
+\usepackage{multicol}
+\usepackage{lipsum}
+\usepackage{adjustbox}
+\usepackage[font=bf,skip=\baselineskip]{caption}
+\usepackage{tabularx}
+\usepackage{multirow}
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{listings}
+\usepackage{color}
+%\usepackage[numbers,sort&compress]{natbib}
+\usepackage{subcaption}
+% \usepackage{latexdiff}
+
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{rotating}
+\usepackage{wrapfig}
+\setitemize[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
+
+ \usepackage{tikz}
+\newcommand{\tikzmark}[1]{\tikz[overlay,remember picture,baseline=(#1.base)] \node (#1) {\vphantom{I}};}
+
+\newcommand{\colorMain}{green!10}%
+\newcommand{\colorSum}{yellow!20}%
+\newcommand{\colorPink}{pink!20}%
+\usepackage{eso-pic}
+ 
+ 
+ 
+\newcommand{\totalnum}{{\textcolor{black}{$506{,}308$}}\xspace}
+
+\newcommand{\totalanalyzedapps}{{{\black{17,506}}}\xspace}
+\newcommand{\usingchannelapps}{{{\black{1,234}}}\xspace}
+\newcommand{\vulnerableapps}{{{\black{1,234}}}\xspace}
+ 
+\usepackage{tikz}
+\newcommand*\mycircled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+\newcommand\st[1]{\textbf{Step \ding{#1}}}
+\newcommand{\TK}[1]{{\textcolor{blue}{#1}}}
+\newcommand{\hkk}[1]{{\textcolor{brown}{#1}}} %HKKim
+
+\newcommand{\sw}[1]{{\authnote{\textcolor{blue}{Swarup}}{\textcolor{red}{#1}}}}
+
+\newtheorem{Summary}{\textbf{Summary}}
+
+
+
+\def\UrlBreaks{\do\A\do\B\do\S\do\D\do\E\do\F\do\G\do\H\do\I\do\J
+\do\K\do\L\do\M\do\N\do\O\do\P\do\Q\do\R\do\S\do\T\do\U\do\V
+\do\W\do\X\do\Y\do\Z\do\[\do\\\do\]\do\^\do\_\do\`\do\a\do\b
+\do\c\do\d\do\e\do\f\do\g\do\h\do\i\do\j\do\k\do\l\do\m\do\n
+\do\o\do\p\do\q\do\r\do\s\do\t\do\u\do\v\do\w\do\x\do\y\do\z
+\do\.\do\@\do\\\do\/\do\!\do\_\do\|\do\;\do\>\do\]\do\)\do\,
+\do\?\do\'\do+\do\=\do\#}  
+\usepackage{hyperref}
+
+\hypersetup{
+    colorlinks = true,
+    linkcolor = blue,
+    anchorcolor = blue,
+    citecolor = blue,
+    filecolor = blue,
+    urlcolor = blue
+}
+
+
+\newif\ifdiffvar
+% \diffvartrue
+\diffvarfalse
+% \usepackage{anyfontsize}
+
+% \usepackage[T1]{fontenc}
+
+ 
+\usepackage{pmboxdraw}
+\usepackage{xcolor}
+\def\SFii{\textcolor{black}{\textSFii\textSFx}}
+\def\SFviii{\textcolor{red}{\textSFviii\textSFx}}
+\def\SFx{\textcolor{red}{\textSFx}}
+\def\SFxi{\textcolor{red}{\textSFxi}}
+
+ \newcommand{\tickYes}{\faCheckCircle}
+\newcommand{\tickNot}{\ding{55}}
+\DeclareTextFontCommand{\breakabletexttt}{\ttfamily\hyphenchar\font=45\relax}
+\usepackage{cleveref}
+ \newcommand{\wechat}{{\sc WeChat}\xspace}
+\newcommand{\tik}{{\sc TikTok}\xspace}
+\newcommand{\baidu}{{\sc Baidu}\xspace}
+\newcommand{\alipay}{{\sc Alipay}\xspace}
+ \newcommand{\tool}{{\sc Tools}\xspace}
+ \newcommand{\totalnumber}{{\sc $1{,}234{,}678$}\xspace}
+%\settopmatter{printacmref=true}
+ 
+\usepackage[all]{nowidow}
+\usepackage{arydshln}
+\usepackage{caption}
+
+\usepackage{minted}
+\usepackage{pdflscape}
+
+\usepackage[table]{xcolor}
+ \newcommand\bulletcirc{\includegraphics[width=0.03\columnwidth]{image/hcirc.pdf}}
+  \newcommand\hcirc{\includegraphics[width=0.03\columnwidth]{Image/hcirc.pdf}}
+%\settopmatter{printacmref=false} % Removes citation information below abstract
+%\renewcommand\footnotetextcopyrightpermission[1]{} % removes footnote with conference information in first column
+\newcommand{\AY}[1]{{\an{\color{blue}AY}{\color{violet}#1}}}
+\newcommand{\ZY}[1]{{\an{ZY}{#1}}}
+\usepackage[htt]{hyphenat}
+\usepackage{forest}
+\usetikzlibrary{tikzmark}
+
+
+\renewenvironment{itemize}{
+\begin{list}{$\bullet$}{
+\setlength{\labelwidth}{8pt}
+\setlength{\itemsep}{0pt}
+\setlength{\leftmargin}{\labelwidth}
+\addtolength{\leftmargin}{\labelsep}
+\setlength{\parindent}{0pt}
+\setlength{\listparindent}{\parindent}
+\setlength{\parsep}{2pt}
+\setlength{\topsep}{1pt}}}{\end{list}}
+
+ 
+ \setlength{\parskip}{1.5pt}
+
+\renewcommand{\paragraph}[1]{\vspace{0.05in}\noindent{\bf{#1}.}}
+
+% BibTeX from the BiBTeX Documentation
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\begin{document}
+\vspace{-2in}
+\title{The Cracked Matryoshka: \\On the Emerging Threats in Super App Ecosystem }
+\author{Yuqing Yang\\Department of Computer Science and Engineering\\The Ohio State University}
+\authordegrees{M.S., B.E.}  % Degrees thus far, not including this one.
+\unit{Computer Science and Engineering}
+
+\advisorname{Dr. Zhiqiang Lin}
+\member{Dr. Michael Bond}
+\member{Dr. Carter Yagemann}
+% \member{Dr. Ouliana Ziouzenkova}
+
+
+\maketitle
+\disscopyright
+
+\begin{abstract}
+  \input{abstract}
+\end{abstract}
+
+\dedication{Dedicated to myself, and the other twelve me}
+
+
+\include{ack}
+\include{vita}
+
+\tableofcontents
+\listoftables
+\listoffigures
+
+% \end{abstract}
+
+\chapter{Introduction}
+\section{Thesis Statement}
+The super app paradigm has emerged as a way to provide a variety of light-weight yet feature-rich services (which are called ``miniapp'') inside a single app for users to freely choose, while in the meantime significantly increasing the user's stickiness with a ``one app for all'' experience. Using a super app that is ``like a swiss army knife'', a user can conveniently book tickets, purchase products, pay for dinners, and even make appointments with doctors: all these operations are done by a single super app. By integrating these miniapps, the super apps not only extend the functionalities of their super apps, but also create additional channels for gaining revenues via cloud services and advertisement. For instance, \textsc{WeChat} (a super app with 1.2 billion users) has hosted more than 4 million miniapps, providing services to over 600 million Daily Active Users (DAU), and generating over 2.7 trillion RMB in transactions~\cite{wechatreport2023}. Nowadays, more than 20 mobile computing giants worldwide have transferred to super app vendors, including  \textsc{Kakao} in Korea~\cite{superapps2021mau}, \textsc{Rakuten} in Japan~\cite{superapps2021mau}, and \textsc{Zalo} in Vietnam~\cite{zalo2021mau}, providing services to massive amount of users. \looseness=-1
+
+
+Despite being an emerging paradigm to support versatile and modularized service integration, super apps still possess traits from traditional paradigms they evolved from. A typical mobile super app consists of a host app, which is essentially the mobile application installed on end users' devices such as \textsc{WeChat}, and various miniapps that are installed by users on-demand. These miniapps resemble the web apps as they are developed with Javascript, Markup Languages, and Style Sheets, but powered with a set of APIs from the super apps for miniapps to invoke modules in the mobile host apps, such as invoking the payment component of \textsc{WeChat} for online ordering. With these APIs, compared with web apps, miniapps have the ability to access various on-device resources and critical components through the super apps, providing users with native-like experiences.
+
+
+ 
+However, with the emergence of miniapps, super apps have evolved into comprehensive ``operating systems'' that handle a wide range of functions for third-party miniapps. These functions encompass local peripheral devices like Bluetooth, cloud-based resources such as cloud databases, as well as various privacy-sensitive user data unique to the super app, such as account details and phone numbers. Given that miniapps now have access to these resources managed by the super app, it is crucial to recognize the challenges and potential risks faced by the super app platform. 
+
+In response to this crucial need, this thesis presents the first systematic study on the super app and miniapp ecosystem, pinpointing the security risks, root causes, and shed light on the countermeasures that can be adopted to enhance the security landscape of this novel paradigm. In short, we make the following contributions:
+
+\begin{itemize}
+  \item \textbf{Comprehensive analysis of emerging super app platform} We have identified, analyzed, and tested the super app platforms, presenting the first effort in the community to the best of our knowledge to systematically uncover the security of super app platforms.
+  \item \textbf{Novel findings on super app and miniapp security} We have identified two vulnerabilities and three types of malware that impact the super apps and miniapps unique to the super app and miniapp paradigm. These findings have demonstrated the pitfalls that the super app developers need to avoid, as well as how attackers attempt to circumvent existing mechanisms to sabbotage the ecosystem.
+  \item \textbf{Real-world impact} We have made responsible disclosure to affected platforms and received acknowledgement from these vendors. Meanwhile, we have also released the research dataset to the community to facilitate future research to strengthen the security of this direction.
+\end{itemize}
+
+In short, this thesis centers around real-world needs and impact of owners, developers, and users of the super app ecosystem, and systematically identified prevalent risks of vulnerabilities and malware. These findings have influenced the mechanisms of cross-miniapp redirection, appsecret and token exchange protocols, and unvetted miniapp isolation. In addition, these research yields multiple malware datasets released to the community, which has been accessed by over 10 institutions across the world. In the rest of the thesis, we will discuss all these findings in detail. 
+
+\section{Why We Care?}
+Super apps have become an increasingly popular cross-platform solution for embedding third-party services inside mobile apps, but there has not been a systematic research to pinpoint the security issues and pitfalls so as to guide the future design of these platforms. However, such a security research is vital for the community due to the following reasons:
+
+\paragraph{Significant impact} The super app paradigm enables a centralized and integrated user experience, which profoundly reshapes user behavior and market dynamics. First of all, with giant vendors transforming to miniapp platform, the miniapp platforms have served a giant amount of users. For WeChat alone, it has attracted over a billion active users, hosting more than 4 million miniapps, serving 600 million daily active users, and facilitating transactions exceeding 2.7 trillion RMB~\cite{wechatreport2023}. As such, the security of super apps becomes critical in every users' daily lives, as various daily activities such as shopping, ordering, gaming, and ride hailing can all be done within one single super app. Therefore, it is paramount to secure these ecosystems of billions of users and millions of miniapps.
+
+\paragraph{Sensitive resources} The super app paradigm hosts a huge amount of sensitive data and services that may cause devastating effect once exploited. These resources include user account and personal information such as phone number and residential address, paid cloud services such as online OCR services, as well as the miniapps that the platforms host themselves which can be accessed by and interacted with other miniapps. Given the amount and sensitivity of these resources, attackers have deemed the super apps as a great target for data breach, intrusion, and exploitation, as reported constantly among developer communities of super apps. As such, it is crucial to analyze the security of super app platforms to thwart these malicious efforts from attackers.
+
+\paragraph{Fragmentation and regulation} Unfortunately, unlike other platforms such as web platforms and mobile platforms, the super apps are fragmented in nature. These super apps are transformed from various standalone applications serving specific business functionalities. For instance, WeChat~\cite{wechat}, Line~\cite{linedoc}, and Zalo~\cite{zalodoc} are Instant Messaging apps, AliPay~\cite{alipaydoc}, Paypay~\cite{paypaydoc} and Momo~\cite{momodoc} are payment apps, and Baidu~\cite{baidudoc}, Douyin~\cite{douyindoc}, and Kuaishou~\cite{kuaishoudoc} are apps providing multi-media information to users. These super apps have different cloud and mobile architectures already, and they all design proprietary execution engine, despite evolving from similar technology (e.g., V8 engine for executing JavaScript) and sharing similarities among API invocation protocols. Naturally, there exists discrepancies in implementation. Moreover, super apps provide developers convenient experiences to lower the complexity for developing miniapps, and it is for the super apps who ensure cross-platform compatibility. As such, discrepancies among underlying systems have caused several vulnerabilities~\cite{rootfree,wang2023one}. In respond to this, it is vital to perform a comprehensive and systematic study to regulate the implementation of security-related mechanism across super app platforms, so as to prevent attackers to perform cross-platform vulnerability exploitation.
+
+
+\section{Why So Hard?}
+Unfortunately, performing analysis and identifying security flaws among super app platforms has been an excessively challenging task. In particular, the research faces these following challenges:
+
+\paragraph{Complex paradigm} The super app paradigm is a complex paradigm involving not two, but three parties: the platform, the developers, and the users. Functional-wise, the super app ecosystem can be viewed as a hybrid operating system combining the web system and the mobile system, while serving as a standalone mobile app. Compared with traditional systems, super apps are centralized as it controls all the miniapp packages, user data (both in the mobile devices and stored in the cloud), as well as to-business web services. Meanwhile, restrictions are enforced both at front-end side and back-end side to prevent abuse from the third-parties. All these features have made the super app paradigm complex, and thus a clear understanding of the paradigm is essential and lays the foundation of super app security research.
+
+\paragraph{Implicit trust model} On top of being a complex tri-party ecosystem, the trust model between the three parties is implicit, and thus discrepancies often occur between the affected parties. For instance, super app platforms often claim that the leakage of master key in miniapps is purely the fault of miniapp developers as they should not leak these keys, but the documentation falls short in delivering the significance of such credential to developers. Meanwhile, there is a lack of mechanism to aid developers to detect vulnerabilities of such. However, as a proprietary platform with strict vetting on developer identity and miniapp packages, the leakage of master key demonstrates that the developers trust that the super apps can properly secure their credential, even if embedde at front-end, as miniapp packages are supposed to be secured. Unfortunately, with simple decryption and unpacking, the source of miniapp packages is easily obtained by attackers. All the security issue illustrated in this thesis involve mismatched assumption in the trust model between participating parties, and it is crucial to explicitly identify these subtle trust assumptions, in order to identify security pitfalls that have been overlooked.
+
+\paragraph{Availability of dataset} Being propreitary by default, the challenge that a security researcher faces is complex. First, what are the super apps? We have identified a large amount of applications claiming to be super apps as they offer various components to users, but only less than 30 are truly super app platforms according to our definition as to the date this dissertation is written. Second, how to get the miniapps? There is not an openly-accessible dataset similar to AndroZoo~\cite{androiddissect}, and we need to know what miniapps are in a platform, how to download the packages, and how to unpack them to source code that can be analyzed.
+
+\paragraph{Challenges in analyzing miniapps} Despite being similar to web apps written in JavaScript, existing tools to analyze traditional web apps face unique challenges to be adopted in the super app domain. First, the execution engines of super apps are all heavily customized and obfuscated. On top of that, miniapps heavily rely on APIs specifically provided by super apps to access in-app components, such as payment or user information acquisition. Consequently, V8-based dynamic analysis tools become unable to tackle miniapps. Second, super apps enforce strict detection on use of dynamic intrusion techniques such as Frida, and the account of tester may be immediately frozen due to suspicious activity. Third, miniapps are commonly web-packed to reduce the size, and obfuscation is often adopted to prevent reverse engineering, creating challenges for researchers to understand semantics of miniapp code.
+
+
+\section{How To Tackle?}
+As the pioneering research in this field, this dissertation tackles these challenges with these following principles and methodology:
+
+\paragraph{User-centric research} Given the amount and gravity of affected parties, this dissertation sets foot on the perspective of actual users and developers, identifying issues that cause real-world impact. To achieve this, we analyze the developer documentations, browse through super app community forums, and register as developers for the super app platforms. We develop, test, and identify security issues from the eyes of a real developer. On the other hand, we keep frequent interaction with super app platforms to understand their needs, and utilize these as insights to find more vulnerabilities and malware.
+
+\paragraph{Data-centric analysis} This dissertation follows a bottom-up research pattern. First, we spent over 3 years to collect the largest miniapp dataset in the community by far, comprising over 4.6 million miniapp packages covering three platforms: WeChat, Baidu, and Alipay. We spent a large amount of time decrypting, unpacking, and looking into details of the obfuscated source code of real miniapps to produce research insights and verify assumptions to ensure the validity of our results.
+
+\paragraph{Structured and systematic analysis} As the major purpose of this dissertation is to generate formalized knowledge of the security of super app platforms, this dissertation follows a structured methodology based on insights generated from real-world cases. For Chapter 2-4 in this dissertation, we systematically identify super app platforms, understand their evolution and architecture, and distill the communication model of a typical super app in ~\autoref{fig:paradigm} and \autoref{fig:cacmparadigm}. Then, we systematically summarize the trust model: for each edge in the communication model, we identify the trusted party and non-trusted party, and examine whether each edge contains mismatch of security assumptions, backed up by real-world cases. These analysis result in the vulnerability in Chapter 3 and Chapter 4. Meanwhile, we identify that vetting is a crucial mechanism of the super app security model, and we systematically raised three research questions: if acting as a malicious developer, what we can achieve before/against/after the vetting mechanism? The answer to this question produced the content in Chapter 5, 6, and 7. We believe that this methodology is highly reproducable even beyong the super app paradigm, and we hope that this dissertation sheds light on future security research.
+
+\paragraph{Responsible disclosure}: To ensure real-world impact, our research results have been released to affected super app platforms for responsible disclosure. We have worked with developers and super app platforms who have updated the mechanisms on miniapp isolation, data access, cloud communication verification, leakage detection, and we are working with the platform closely to identify malware, so as to secure the realm of super app ecosystems.
+
+\paragraph{Public awareness}: This dissertation serves not only as a first systematic step in super app security, but also, and more importantly, as an attempt to draw attention from the security community to this novel field. To further strengthen the security of super apps and miniapps, we would like to encourage more researchers in the community to share their valuable insights. As such, we have released multiple datasets of our findings on-demand to academic and industry institutions in \url{https://minimalware.github.io/}. To this date, the shared datasets have been accessed by over 10 institutions across the world.
+
+\section{Scope and Threat Model}
+\subsection{The General VS. Special Definition}
+
+There are two ways to define a super app. Although this dissertation utilizes the special definition of super apps, we list both definitions with the hope to provide insights of readers working in related areas.
+
+\paragraph{The general definition} The general definition on super app views all apps allowing third-party service integration to be a super app. Under this definition, web browsers supporting extensions (e.g., Chrome), Electron-based application with plugins (e.g., Visual Studio Code), and even ChatBox-enhanced apps (e.g., Slack) can be viewed as a super app. 
+
+\paragraph{The special definition} In this dissertation, however, we utilize  the special definition on super apps, which adopts three criteria to identify an application to be a super app:  1) The application hosts data of users and cloud services for developer. 2) The application allows third-party developers to embed services to provide self-contained services to users, tailoring to a specific need. 3) The integrated third-party services (miniapps) need to be embedded in the form of a code package.
+
+\subsection{Threat Model}
+While the threat model for attackers and victims may vary according to each Chapter, in this dissertation, the super apps themselves are not assumed to be malicious. For each specific security issue, potential victims include users, developers, and the super apps. Among these parties, users face threats like privacy breaches, data leaks, unauthorized access, and financial fraud. Developers may experience data leakage and intellectual property theft. Super apps can also be targeted with denial-of-service or supply chain attacks. Meanwhile, attackers can utilize malware or vulnerabilities to cheat for financial rewards from super app platforms, causing significant financial losses. To launch the attack, attackers can be users or developers. Malicious users exploit vulnerabilities to gain unauthorized access, steal data, or disrupt app functionality. Malicious developers create and distribute harmful miniapps, inject code into legitimate ones, or exploit super app vulnerabilities. 
+
+
+\section{Roadmap}
+As discussed in the methodology section, in the rest of this dissertation, we will summarize the research findings in super app security in the following structure.
+
+\begin{itemize}
+  \item Chapter 1 is this introduction. We introduce the topic, the importance of this research, the challenges, the methodology, the scope of the study, and the threat model.
+  \item Chapter 2 introduces the super app paradigm, and reviews the history and evolution of this paradigm. We identify three evolution roadmap based on which the super app paradigms evolve from. We further identify sensitive resources and security mechanisms enforced by super apps to safeguard these resources from malicious parties.
+  \item Chapter 3 introduces CMRF vulnerability, which allows a malicious miniapp to inject arbitrary payload to any published miniapps. This vulnerability is caused by missing identity check among miniapps, where a universal and mandatory access control mechanism is missing.
+  \item Chapter 4 introduces the AppSecret leakage, which leads to credential harvesting, impersonation, and service theft, inflicing financial losses to miniapp vendors and potential privacy issues. We proposed a light-weight yet effecient way to detect leakage of such credential.
+  \item Chapter 5 presents the evasive malware against the vetting mechanisms, who actively camouflage malicious activity during vetting, and utilize cloud-delivered information to transform into malware post-vetting. We utilized a double-check strategy to colelct evasive malware taken down by the platform and presented the first taxonomy of miniapp malware across the entire lifecycle.
+  \item Chapter 6 identifies a design flaw in isolation between unvetted and vetted miniapp, allowing miniapps to interact with vetted miniapps prior to the vetting procedure, which may break the security assumption of vetting, enabling malwaree to slip into the trusted world and thus being propagated rapidly through user social network.
+  \item Chapter 7 uncover malware attempting to imitate official report portal to evade post-vetting regulation mechanisms to extend the lifetime of the malware. We performed semantic-aware analysis on reconstructed data based on static analysis and identified over 3,000 malicious examples attempting to discard or confuse user report of suspicious malware.
+  \item Chapter 8 wraps up this dissertation, discussing the benefits, the security threats, and open problems in this domain that need to be addressed.
+  \item Chapter 9 discusses the generality of the research, responsible disclosure, and countermeasures that can be adopted to mitigate identified issues.
+  \item Chapter 10 lists the related work that may be of interest to the readers.
+  \item Chapter 11 concludes this dissertation.
+\end{itemize}
+
+
+% Super apps is getting more popularity.
+
+% The platform is complex yet feature rich
+
+% The security is still not well studied, but it does not meann the threats are not emerging.
+
+% Purpose is to demistify the platform, take the first systematic standing to understand. 
+
+% To do so, there are two ways to perform analysis: one is to pinpoint fundamental security issue and unify with a system to solve them for all, the other is to dissect the attack surfaces, distill the lessons learned, and provide specific solutions to mitigate the problem. Given that the platform is new, it calls for people to raise the fundamental problem. Second, the nature of super app is complex. Third, it is a very practical system. 
+% Because of all these, we follow the tradition of security topics, based on the bilateral relationship of vulnerability and malware. 
+% We engage in the trinity cat-and-mouse game between the three participants. 
+% We adopt a bottom-up approach. 
+% In the end, we form the first systematic analysis and study on the landscape of super app and miniapp research based on 5 years of research. We identified vulnerabilities caused by CMRF and AppSecret leakage, various evasive manner that allow malware to slip through the ecosystem prior to, against, and after vetting.
+
+
+\chapter{The Super App In A Nutshell}
+\input{cacm/Overall}
+
+
+
+% \part{When The Old Become Anew: Vulnerabilities in Miniapps}
+\chapter{The Vulnerable Cross-Miniapp Request (CMRF)}
+\input{cmrf/Overall}
+
+\chapter{The Vulnerable AppSecret Key (AppSecret)}
+\input{appsecret/Overall}
+
+% \part{When New Threats Become Ugly: Demystifying The MiniMalware}
+\chapter{The Malware with Two Faces (MiniMalware)}
+\input{minimalware/Overall}
+
+\chapter{The Malware in the Blindspot (MINT)}
+\input{mint/Overall}
+
+\chapter{The Malware with Fake Mask (MIRAGE)}
+\input{mirage/Overall}
+
+\chapter{Wrapping Up}
+\input{cacm/07_wrapup.tex}
+
+\chapter{Related Work}
+\input{related.tex}
+
+\chapter{Conclusion}
+
+
+This dissertation presents a systematic security analysis of the super app paradigm, which consists of a comprehensive survey on existing super app platforms, two vulnerabilities caused by design flaws in the super app platforms, and three types of malware that may be implemented by attackers to exploit the ecosystem. Additionally, this dissertation incorporates discussion on the good, the bad, and the ugly side of the ecosystem, and discussed the mitigation mechanisms that can be adopted to enhance the security of the super apps.
+
+For vulnerability analysis, we discussed the Cross Miniapp Request Forgery attack, which exploits the inter-miniapp communication channel, enabling attackers to send arbitrary payloads to exploit any published miniapp. We developed a static analysis framework to identify the missing identity check and usage of cross-miniapp message to detect the vulnerability. On the back-end, we analyzed the communication protocol and identified the crucial key called AppSecret key, and discovered that leakage of such key can compromise sensitive resources to attackers who harvest these credentials to inflict losses and impersonate authentic service providers. We pinpointed cloud APIs and performed a large-scale study on the leakage to demonstrate the prevalence of this vulnerability.
+
+For malware analysis, we spent years in analyzing official documentations, miniapp communities, and developer reports. We identified that evasive malware leave traces in their codes, and thus we leveraged static analysis to automatically collect miniapp exhibiting malicious behaviors among miniapps, presenting the first miniapp dataset made public to the community. Meanwhile, we uncover that the isolation mechanism of super apps contains flaws allowing miniapps to interact with the trusted world even if it is not vetted. Our survey on over 18 platforms have identified more than half of these platforms may allow attackers to launch attacks with a significantly low cost and risk. Further, we identified that miniapp malware may commonly implement pages imitating official report interface to confuse users, which actively discards user complaints about the miniapps providing suspicious of spamming services. These malware, by implementing this behavior, can significantly extend the lifecycle before being finally taken down by the platform.
+
+
+\begin{landscape}
+  \input{table/hugetable.tex}
+\end{landscape}
+
+With these findings, we systematically summarized the benefits and risks of the super app platform, and proposed countermeasures to mitigate the identified problems. We further summarize the 9 threats to wrap up the paper, and as shown in \autoref{tab:allproblems}, we identify three systems of security assumptions. These vulnerabilities exist because these assumptions are broken. The first is the assumption of adoption, which indicates that the super app platform adopts mature security solution from its predecessors, such as web browser or mobile platforms. However, due to the complexity of super apps, merely adopting existing security mechanisms may still not cover all aspects of the ecosystem, especially when building their own permission system~\cite{lu2020} and cross-platform compatibility~\cite{crossplatform2023}. The second is the assumption of isolation, that the capabilities of miniapps are restrained because they are isolated. However, there are still improper isolation between normal and privileged miniapps~\cite{hiddenAPI2023}, cloud sensitive data between miniapps~\cite{appsecretleak}, and between vetted and unvetted miniapps. The third is the assumption of vetting, where miniapps are protected if comprehensive vetting is performed. However, there are still loopholes in the ecosystem, such as in cross-miniapp interaction~\cite{cmrf}, domain verification~\cite{zhang2023trusteddomain}, reporting mechanism, and even malware vetting itself~\cite{minimalware}. The root cause to these issues can be in compatibility, implementation, trust model, or even vetting itself, with their impact spamming from command injection to data leakage.
+
+In summary, this dissertation covers a wide aspect of super app security, identified vulnerabilities at front-end and back-end communication, and malware covering its entire lifecycle. These issues are thus incorporated in this dissertation to raise the attention from our community as well as to provide insights for future research in the security of super app domain.
+
+
+% \section{Research Plan}
+% As introduced in \autoref{sec:threats}, the security of super apps span from two factors, both from the vulnerabilities in the super apps and from the malware that attempt to infiltrate the ecosystem and cause harm to the parties involved. The previous papers proposed here have covered both the vulnerabilities in front-end and back-end communication, involving inter-miniapp communication and the cloud-based AppSecret communication protocol, highlighting the need to further investigation of super app security. 
+
+% In response to the imminent threats super apps are facing, the next step of this research will focus on the malware side of the super apps. Despite that super apps generally adopt strict miniapp distribution policy and mandatory vetting, the vetting mechanism's effectiveness still remains unclear. To uncover the malware threats, three aspects of vettings need to be focused on for a comprehensive landscape of miniapp malware analysis:
+
+% \subsection{Pre-vetting vetting: side effects of unvetted miniapps} As super app is a complex ecosystem, and miniapp development can involve multiple participating parties, it is natural for developers to test the miniapps before releasing them to the ecosystem. However, as this debugging behavior happen before vetting, it is important to ensure the side effects of executed miniapps in testing environment do not affect the vetted and trusted environment. If the debugging environment is not properly isolated, malware developer may directly inflict losses to the super app ecosystem, even without submitting their malware.
+
+% \subsection{During vetting: evasive malware and taxonomy} As vetting is necessary for any miniapps to reach end users, it is natural for malware developers to circumvent vetting with various evasive techniques. Therefore, by performing a comprehensive identification of evasive malware detection and dissection, we can systematically identify and understand the motivation, behavior, and impacts of miniapp mawlare.
+
+% \subsection{Post-vetting: regulation evasion} Even for the miniapps that passed vetting, users are allowed to monitor the behavior of miniapps, and report abuse of the ecosystem to the platform if malicious activities are identified. Therefore, it is natural for the malware developers to circumvent this mechanism. To mitigate this post-vetting risk, it is vital to systematically identify the potential techniques that can be used for malware developers to prevent user report to the ecosystem, or the malware may keep existing in the ecosystem, leaving the platform completely unaware of the malware.
+
+
+% \section{Summary}
+% \bibliographystyle{alpha}
+% \bibliography{sample}
+\bibliographystyle{plain}
+\bibliography{bb}
+% \bibliographystyle{abbrv}
+% \bibliography{cacm}
+% \footnotesize{
+
+% }
+\end{document}

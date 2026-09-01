@@ -1,0 +1,14 @@
+# Fdb version 4
+["pdflatex"] 1788153336.67036 "c:/Github/LinearAlgebra/Lecture1/slides.tex" "slides.pdf" "slides" 1788153337.77579 2
+  "c:/Github/LinearAlgebra/Lecture1/slides.tex" 1788153332 1975 a8c7464cbde13e6fb7ff2076b04f202f ""
+  "c:/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def" 1716479807 29785 9f93ab201fe5dd053afcc6c1bcf7d266 ""
+  "c:/texlive/2024/texmf-dist/web2c/texmf.cnf" 1716476199 41983 7ec6bfd6bf34339a61f0f08f42298e60 ""
+  "c:/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1716483709 8225863 64499ed49f6d6a04199ba15ff5886a1b ""
+  "c:/texlive/2024/texmf.cnf" 1716483317 713 e69b156964470283e0530f5060668171 ""
+  "slides.aux" 1788153337 8 a94a2480d3289e625eea47cd1b285758 "pdflatex"
+  "slides.tex" 1788153332 1975 a8c7464cbde13e6fb7ff2076b04f202f ""
+  (generated)
+  "slides.aux"
+  "slides.log"
+  "slides.pdf"
+  (rewritten before read)
