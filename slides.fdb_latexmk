@@ -1,14 +1,14 @@
 # Fdb version 4
-["pdflatex"] 1788270976.57157 "c:/Github/LinearAlgebra/slides.tex" "slides.pdf" "slides" 1788270979.4969 0
+["pdflatex"] 1788274075.907 "c:/Github/LinearAlgebra/slides.tex" "slides.pdf" "slides" 1788274078.84764 0
   "Lecture1/office1.jpg" 1788269085 3382608 1167762a0030469706d2a0670b64c328 ""
   "Lecture1/office3.png" 1788269251 936086 c8c3c4bf8d26acf524aa26bd8942705b ""
   "Lecture1/research1.png" 1788269362 177327 2122302169291cda36c026029ab0b6d3 ""
   "Lecture1/research3.png" 1788269412 530184 8e9673efa1208cffa353e5648144590e ""
   "Lecture1/research4.png" 1788269760 331048 a2c00ed2b374d418081132892ccd9302 ""
   "Lecture1/research5.png" 1788269830 488809 6f6ce49bbd4a4a1e25be377078c1e1ba ""
-  "Lecture1/slides.tex" 1788270805 4611 e0292c09006dc73cc296705f13e9cc95 ""
+  "Lecture1/slides.tex" 1788274075 4639 0c27781720b756d5baa120e1104c2d26 ""
   "beamerthemeOSUCSE169.sty" 1788266822 11185 f1e1a0f27bdf7ba155be209b0eff8b95 ""
-  "c:/Github/LinearAlgebra/slides.tex" 1788270976 6678 44e2f86859ba2925952fc247723040f4 ""
+  "c:/Github/LinearAlgebra/slides.tex" 1788274048 6640 bb6b82e8afb66ff517c5793c44a70a43 ""
   "c:/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1712421974 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2024/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1712424405 1408 5937f58aa508ea2cea4901c07d10f5fe ""
   "c:/texlive/2024/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1712425182 1528 7e12f4c0fcf5a072cebdcfbfc610f54c ""
@@ -331,10 +331,10 @@
   "c:/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1712425400 8222494 264057d87e934a8d2a076025ba139e7f ""
   "c:/texlive/2024/texmf.cnf" 1712425209 713 e69b156964470283e0530f5060668171 ""
   "shortcuts.sty" 1788266822 573 efa139efa18a61413399dd969e6edb5a ""
-  "slides.aux" 1788270979 2331 71d0a560c23b5a9746edf4633d349ee3 "pdflatex"
-  "slides.nav" 1788270979 1508 c787d8d3f05aa29c965624b0dba826b9 "pdflatex"
-  "slides.out" 1788270979 152 b24be4433d00a281369fb04d2db9a7f4 "pdflatex"
-  "slides.tex" 1788270976 6678 44e2f86859ba2925952fc247723040f4 ""
+  "slides.aux" 1788274078 2331 71d0a560c23b5a9746edf4633d349ee3 "pdflatex"
+  "slides.nav" 1788274078 1508 c787d8d3f05aa29c965624b0dba826b9 "pdflatex"
+  "slides.out" 1788274078 152 b24be4433d00a281369fb04d2db9a7f4 "pdflatex"
+  "slides.tex" 1788274048 6640 bb6b82e8afb66ff517c5793c44a70a43 ""
   "template-images/osuseclab169.pdf" 1788270499 28537 db938294e441fa8fb30db14bafe6d772 ""
   (generated)
   "slides.aux"

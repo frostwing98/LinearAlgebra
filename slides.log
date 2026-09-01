@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.4.6)  1 SEP 2026 21:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.4.6)  1 SEP 2026 22:47
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -969,39 +969,39 @@ File: pgflibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ))
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 203.
+(hyperref)                removing `\\' on input line 202.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 203.
+(hyperref)                removing `\\' on input line 202.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 203.
+(hyperref)                removing `\\' on input line 202.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\new@ifnextchar' on input line 203.
+(hyperref)                removing `\new@ifnextchar' on input line 202.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\smallskipamount' on input line 203.
+(hyperref)                removing `\smallskipamount' on input line 202.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\new@ifnextchar' on input line 203.
+(hyperref)                removing `\new@ifnextchar' on input line 202.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\medskipamount' on input line 203.
+(hyperref)                removing `\medskipamount' on input line 202.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\new@ifnextchar' on input line 203.
+(hyperref)                removing `\new@ifnextchar' on input line 202.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\medskipamount' on input line 203.
+(hyperref)                removing `\medskipamount' on input line 202.
 
 (./beamerthemeOSUCSE169.sty (c:/texlive/2024/texmf-dist/tex/latex/beamer/beamerfontthemeprofessionalfonts.sty) (c:/texlive/2024/texmf-dist/tex/latex/beamer/beamerinnerthemerounded.sty))
 runsystem(for ^%i in (pygmentize.exe pygmentize.bat pygmentize.cmd) do set > slides.aex <nul: /p x=^%~$PATH:i>> slides.aex)...executed.
@@ -1015,24 +1015,24 @@ File: l3backend-pdftex.def 2024-03-14 L3 backend support: PDF output (pdfTeX)
 ) (./slides.aux)
 \openout1 = `slides.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 236.
-LaTeX Font Info:    ... okay on input line 236.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 236.
-LaTeX Font Info:    ... okay on input line 236.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 236.
-LaTeX Font Info:    ... okay on input line 236.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 236.
-LaTeX Font Info:    ... okay on input line 236.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 236.
-LaTeX Font Info:    ... okay on input line 236.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 236.
-LaTeX Font Info:    ... okay on input line 236.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 236.
-LaTeX Font Info:    ... okay on input line 236.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 236.
-LaTeX Font Info:    ... okay on input line 236.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 236.
-LaTeX Font Info:    ... okay on input line 236.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 235.
+LaTeX Font Info:    ... okay on input line 235.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 235.
+LaTeX Font Info:    ... okay on input line 235.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 235.
+LaTeX Font Info:    ... okay on input line 235.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 235.
+LaTeX Font Info:    ... okay on input line 235.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 235.
+LaTeX Font Info:    ... okay on input line 235.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 235.
+LaTeX Font Info:    ... okay on input line 235.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 235.
+LaTeX Font Info:    ... okay on input line 235.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 235.
+LaTeX Font Info:    ... okay on input line 235.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 235.
+LaTeX Font Info:    ... okay on input line 235.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1082,7 +1082,7 @@ LaTeX Font Info:    ... okay on input line 236.
 \makeMPintoPDFobject=\count424
 \everyMPtoPDFconversion=\toks65
 )
-Package hyperref Info: Link coloring ON on input line 236.
+Package hyperref Info: Link coloring ON on input line 235.
  (./slides.out) (./slides.out)
 \@outlinefile=\write7
 \openout7 = `slides.out'.
@@ -1110,26 +1110,26 @@ Package caption Info: End \AtBeginDocument code.
 
 
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable tick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into your preamble.
- on input line 236.
+ on input line 235.
 
 (./slides.nav)
 <template-images/osuseclab169.pdf, id=45, 963.6pt x 542.025pt>
 File: template-images/osuseclab169.pdf Graphic file (type pdf)
 <use template-images/osuseclab169.pdf>
-Package pdftex.def Info: template-images/osuseclab169.pdf  used on input line 245.
+Package pdftex.def Info: template-images/osuseclab169.pdf  used on input line 244.
 (pdftex.def)             Requested size: 455.24408pt x 256.07507pt.
  [1
 
 {c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./template-images/osuseclab169.pdf>] (./Lecture1/slides.tex
-LaTeX Font Info:    Trying to load font information for U+msa on input line 20.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 21.
  (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 20.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 21.
  (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+wasy on input line 20.
+LaTeX Font Info:    Trying to load font information for U+wasy on input line 21.
  (c:/texlive/2024/texmf-dist/tex/latex/wasysym/uwasy.fd
 File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 ) [2
@@ -1140,14 +1140,14 @@ File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 <Lecture1/research1.png, id=140, 1504.11937pt x 462.97969pt>
 File: Lecture1/research1.png Graphic file (type png)
 <use Lecture1/research1.png>
-Package pdftex.def Info: Lecture1/research1.png  used on input line 39.
+Package pdftex.def Info: Lecture1/research1.png  used on input line 40.
 (pdftex.def)             Requested size: 398.3386pt x 122.61131pt.
  [4
 
  <./Lecture1/research1.png>]
 File: Lecture1/research1.png Graphic file (type png)
 <use Lecture1/research1.png>
-Package pdftex.def Info: Lecture1/research1.png  used on input line 39.
+Package pdftex.def Info: Lecture1/research1.png  used on input line 40.
 (pdftex.def)             Requested size: 398.3386pt x 122.61131pt.
  [5
 
@@ -1155,14 +1155,14 @@ Package pdftex.def Info: Lecture1/research1.png  used on input line 39.
 <Lecture1/research3.png, id=188, 1423.56844pt x 789.70032pt>
 File: Lecture1/research3.png Graphic file (type png)
 <use Lecture1/research3.png>
-Package pdftex.def Info: Lecture1/research3.png  used on input line 57.
+Package pdftex.def Info: Lecture1/research3.png  used on input line 58.
 (pdftex.def)             Requested size: 278.83578pt x 154.67175pt.
  [6
 
  <./Lecture1/research3.png>]
 File: Lecture1/research3.png Graphic file (type png)
 <use Lecture1/research3.png>
-Package pdftex.def Info: Lecture1/research3.png  used on input line 57.
+Package pdftex.def Info: Lecture1/research3.png  used on input line 58.
 (pdftex.def)             Requested size: 278.83578pt x 154.67175pt.
  [7
 
@@ -1170,14 +1170,14 @@ Package pdftex.def Info: Lecture1/research3.png  used on input line 57.
 <Lecture1/research4.png, id=237, 1494.33281pt x 444.91219pt>
 File: Lecture1/research4.png Graphic file (type png)
 <use Lecture1/research4.png>
-Package pdftex.def Info: Lecture1/research4.png  used on input line 66.
+Package pdftex.def Info: Lecture1/research4.png  used on input line 67.
 (pdftex.def)             Requested size: 398.3386pt x 118.59361pt.
  [8
 
  <./Lecture1/research4.png>]
 File: Lecture1/research4.png Graphic file (type png)
 <use Lecture1/research4.png>
-Package pdftex.def Info: Lecture1/research4.png  used on input line 66.
+Package pdftex.def Info: Lecture1/research4.png  used on input line 67.
 (pdftex.def)             Requested size: 398.3386pt x 118.59361pt.
  [9
 
@@ -1185,7 +1185,7 @@ Package pdftex.def Info: Lecture1/research4.png  used on input line 66.
 <Lecture1/research5.png, id=284, 998.22937pt x 583.42969pt>
 File: Lecture1/research5.png Graphic file (type png)
 <use Lecture1/research5.png>
-Package pdftex.def Info: Lecture1/research5.png  used on input line 74.
+Package pdftex.def Info: Lecture1/research5.png  used on input line 75.
 (pdftex.def)             Requested size: 278.83578pt x 162.96748pt.
  [10
 
@@ -1193,78 +1193,78 @@ Package pdftex.def Info: Lecture1/research5.png  used on input line 74.
 <Lecture1/office1.jpg, id=314, 4015.0pt x 3011.25pt>
 File: Lecture1/office1.jpg Graphic file (type jpg)
 <use Lecture1/office1.jpg>
-Package pdftex.def Info: Lecture1/office1.jpg  used on input line 101.
+Package pdftex.def Info: Lecture1/office1.jpg  used on input line 102.
 (pdftex.def)             Requested size: 99.58464pt x 74.66536pt.
 <Lecture1/office3.png, id=315, 513.41812pt x 684.30656pt>
 File: Lecture1/office3.png Graphic file (type png)
 <use Lecture1/office3.png>
-Package pdftex.def Info: Lecture1/office3.png  used on input line 101.
+Package pdftex.def Info: Lecture1/office3.png  used on input line 102.
 (pdftex.def)             Requested size: 79.66649pt x 106.18127pt.
  [11
 
  <./Lecture1/office1.jpg> <./Lecture1/office3.png>]
 File: Lecture1/office1.jpg Graphic file (type jpg)
 <use Lecture1/office1.jpg>
-Package pdftex.def Info: Lecture1/office1.jpg  used on input line 101.
+Package pdftex.def Info: Lecture1/office1.jpg  used on input line 102.
 (pdftex.def)             Requested size: 99.58464pt x 74.66536pt.
 File: Lecture1/office3.png Graphic file (type png)
 <use Lecture1/office3.png>
-Package pdftex.def Info: Lecture1/office3.png  used on input line 101.
+Package pdftex.def Info: Lecture1/office3.png  used on input line 102.
 (pdftex.def)             Requested size: 79.66649pt x 106.18127pt.
  [12
 
 ]
 File: Lecture1/office1.jpg Graphic file (type jpg)
 <use Lecture1/office1.jpg>
-Package pdftex.def Info: Lecture1/office1.jpg  used on input line 101.
+Package pdftex.def Info: Lecture1/office1.jpg  used on input line 102.
 (pdftex.def)             Requested size: 99.58464pt x 74.66536pt.
 File: Lecture1/office3.png Graphic file (type png)
 <use Lecture1/office3.png>
-Package pdftex.def Info: Lecture1/office3.png  used on input line 101.
+Package pdftex.def Info: Lecture1/office3.png  used on input line 102.
 (pdftex.def)             Requested size: 79.66649pt x 106.18127pt.
  [13
 
 ]
 File: Lecture1/office1.jpg Graphic file (type jpg)
 <use Lecture1/office1.jpg>
-Package pdftex.def Info: Lecture1/office1.jpg  used on input line 101.
+Package pdftex.def Info: Lecture1/office1.jpg  used on input line 102.
 (pdftex.def)             Requested size: 99.58464pt x 74.66536pt.
 File: Lecture1/office3.png Graphic file (type png)
 <use Lecture1/office3.png>
-Package pdftex.def Info: Lecture1/office3.png  used on input line 101.
+Package pdftex.def Info: Lecture1/office3.png  used on input line 102.
 (pdftex.def)             Requested size: 79.66649pt x 106.18127pt.
  [14
 
 ]
 File: Lecture1/office1.jpg Graphic file (type jpg)
 <use Lecture1/office1.jpg>
-Package pdftex.def Info: Lecture1/office1.jpg  used on input line 101.
+Package pdftex.def Info: Lecture1/office1.jpg  used on input line 102.
 (pdftex.def)             Requested size: 99.58464pt x 74.66536pt.
 File: Lecture1/office3.png Graphic file (type png)
 <use Lecture1/office3.png>
-Package pdftex.def Info: Lecture1/office3.png  used on input line 101.
+Package pdftex.def Info: Lecture1/office3.png  used on input line 102.
 (pdftex.def)             Requested size: 79.66649pt x 106.18127pt.
  [15
 
 ]
 File: Lecture1/office1.jpg Graphic file (type jpg)
 <use Lecture1/office1.jpg>
-Package pdftex.def Info: Lecture1/office1.jpg  used on input line 101.
+Package pdftex.def Info: Lecture1/office1.jpg  used on input line 102.
 (pdftex.def)             Requested size: 99.58464pt x 74.66536pt.
 File: Lecture1/office3.png Graphic file (type png)
 <use Lecture1/office3.png>
-Package pdftex.def Info: Lecture1/office3.png  used on input line 101.
+Package pdftex.def Info: Lecture1/office3.png  used on input line 102.
 (pdftex.def)             Requested size: 79.66649pt x 106.18127pt.
  [16
 
 ]
 File: Lecture1/office1.jpg Graphic file (type jpg)
 <use Lecture1/office1.jpg>
-Package pdftex.def Info: Lecture1/office1.jpg  used on input line 101.
+Package pdftex.def Info: Lecture1/office1.jpg  used on input line 102.
 (pdftex.def)             Requested size: 99.58464pt x 74.66536pt.
 File: Lecture1/office3.png Graphic file (type png)
 <use Lecture1/office3.png>
-Package pdftex.def Info: Lecture1/office3.png  used on input line 101.
+Package pdftex.def Info: Lecture1/office3.png  used on input line 102.
 (pdftex.def)             Requested size: 79.66649pt x 106.18127pt.
  [17
 
@@ -1323,7 +1323,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  128i,20n,123p,743b,800s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on slides.pdf (31 pages, 5715899 bytes).
+Output written on slides.pdf (31 pages, 5715916 bytes).
 PDF statistics:
  764 PDF objects out of 1000 (max. 8388607)
  540 compressed objects within 6 object streams
