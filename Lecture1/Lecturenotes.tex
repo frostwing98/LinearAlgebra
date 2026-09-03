@@ -29,7 +29,7 @@
 This first lecture comprises three sessions.
 
 \begin{itemize}
-    \item Session 1: Introduction to the course, Linear Systems and three views of 
+    \item Session 1: Introduction to the course, Linear Systems and three pictures of systems 
     \item Session 2: Elimination and elementary row operations
     \item Session 3: Existence and Uniqueness of solutions, Row Echelon Forms, and Gauss-Jordan Elimination
 \end{itemize}
@@ -487,7 +487,30 @@ Recall that we mentioned "Talllll" and "Wiiiide" systems.
 
 The rank of a matrix $A$, denoted $\text{r}(A)$, is the  number of nonzero rows in reduced row echelon form. For m $\times$ n matrix, we have $\text{r}(A) \leq \min(m,n)$.
 
-Rank of a matrix is important to determine the existence and uniqueness of solution. Given an original augmented matrix $\bar{A}$:
+Rank of a matrix is important to determine the existence and uniqueness of solution. For example, given a linera system (I know, this is an inconsistent system):
+
+\[
+\begin{cases}
+x+3z=1,\\
+y+2z=0,\\
+0=1
+\end{cases}
+\]
+
+We have the Coefficient Matrix $A$ to be 
+\[
+\bar{A}=
+\left[
+\begin{array}{ccc}
+1 & 0 & 3 \\
+0 & 1 & 2 \\
+0 & 0 & 0 
+\end{array}
+\right]
+\]
+
+... and Augmented Matrix $\bar{A}$ to be
+ Given an original augmented matrix $\bar{A}$:
 
 \[
 \bar{A}=
@@ -500,16 +523,29 @@ Rank of a matrix is important to determine the existence and uniqueness of solut
 \right]
 \]
 
-First, of course, this is inconsistent, because we observe an ugly row at the bottom with all 0s on the left and a non-zero number on the right. If the non-zero number is 0, then it is consistent. Unfortunately, it is not.
+Refer to ppt slide no. 81, we know that this is an echelon form because 1) the number of leading 0 of nonzero rows strictly increases (see the downright diagonal shape of zeros to the bottom left?) and 2) all zero rows (if any) are at the bottom, which we do not have.
 
-Also, we find that $r(A) =3$ and $r(\bar{A})=2$. So $r(A) > r(\bar{A})$. 
+Refer to ppt slide no. 98, We also know that this is a reduced echelon form because 1) it is an echelon form, 2) the first nonzero entry for each nonzero row is 1, and 3) first nonzero entry in each row is the only nonzero entry in its column.
 
-If we say $r= r(\bar{A}) $ and $ n = r(A) $, as $\bar{A}$ is a reduced form, it is always $r \leq n$. 
+Also, unfortunately, this is inconsistent, because we observe an ugly row at the bottom with all 0s on the left and a non-zero number on the right. If the non-zero number is 0, then it is consistent. Unfortunately, it is not.
 
+
+We can also use rank to determine. 
+
+First, linear system is \textbf{consistent} only when it has no form of [ 0 \dots 0 b ], so it is not consistent. In another word, matrix is consistent only if \textbf{the rank of augmented matrix} $\bar{A}$ equals \textbf{the rank of coefficient matrix} $A$.
+
+Second, if a linear system is consistent, the amount of solution depends on \textbf{whether there is a free variable}. The number of free variable is determined by the difference between the rank of the coefficient matrix $A$ (rank is 2 because there is an all-0 row) and the augmented matrix $\bar{A}$ (rank is 3 because there is a 1 in the third row of augmented matrix).
+
+If we say $r= r(\bar{A}) $ and $ n = r(A) $, as $\bar{A}$ is a reduced form, it is always $r \leq n$, and there are $n - r$ free variables.
+
+When summed together:
 \begin{itemize}
     \item If $r = n$, this is the only case to tell A is consistent.
     \item If $r < n$: this depends. If consistent, then there are infinitely many solutions, with $n-r$ free variables
 \end{itemize}
+
+
+In this case, $r$ = 2 and $n$=3, so even it is consistent, there is one free variable and we have infinitely many solutions.
 
 Beautiful, isn't it?
 

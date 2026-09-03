@@ -1,0 +1,11 @@
+### Assignment for 1.1
+
+10			[Row operation]
+11 15		[Solve and verify] --- this two count as one when grading the assignment
+19			[Consistency]
+27 28 32 34	[Basic Concepts]
+
+Optional:
+3  			[Row picture]
+43 44		[Application]
+
