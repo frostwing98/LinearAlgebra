@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.5.23)  15 SEP 2026 13:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.4.6)  15 SEP 2026 23:25
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -6,23 +6,23 @@ entering extended mode
 **"c:/Github/LinearAlgebra/lecture 3/lecture3.tex"
 (c:/Github/LinearAlgebra/lecture 3/lecture3.tex
 LaTeX2e <2023-11-01> patch level 1
-L3 programming layer <2024-05-08>
+L3 programming layer <2024-03-14>
 (c:/texlive/2024/texmf-dist/tex/latex/beamer/beamer.cls
 Document Class: beamer 2024/01/06 v3.71 A class for typesetting presentations
 (c:/texlive/2024/texmf-dist/tex/latex/beamer/beamerbasemodes.sty (c:/texlive/2024/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count189
+\etb@tempcnta=\count188
 )
 \beamer@tempbox=\box51
-\beamer@tempcount=\count190
-\c@beamerpauses=\count191
+\beamer@tempcount=\count189
+\c@beamerpauses=\count190
  (c:/texlive/2024/texmf-dist/tex/latex/beamer/beamerbasedecode.sty
-\beamer@slideinframe=\count192
-\beamer@minimum=\count193
+\beamer@slideinframe=\count191
+\beamer@minimum=\count192
 \beamer@decode@box=\box52
 )
 \beamer@commentbox=\box53
-\beamer@modecount=\count194
+\beamer@modecount=\count193
 ) (c:/texlive/2024/texmf-dist/tex/generic/iftex/iftex.sty
 Package: iftex 2022/02/03 v1.0f TeX engine tests
 )
@@ -49,26 +49,26 @@ Package: iftex 2022/02/03 v1.0f TeX engine tests
 \beamer@sectionbox=\box57
 \beamer@logobox=\box58
 \beamer@linebox=\box59
-\beamer@sectioncount=\count195
-\beamer@subsubsectionmax=\count196
-\beamer@subsectionmax=\count197
-\beamer@sectionmax=\count198
-\beamer@totalheads=\count199
-\beamer@headcounter=\count266
-\beamer@partstartpage=\count267
-\beamer@sectionstartpage=\count268
-\beamer@subsectionstartpage=\count269
-\beamer@animationtempa=\count270
-\beamer@animationtempb=\count271
-\beamer@xpos=\count272
-\beamer@ypos=\count273
-\beamer@ypos@offset=\count274
-\beamer@showpartnumber=\count275
-\beamer@currentsubsection=\count276
-\beamer@coveringdepth=\count277
-\beamer@sectionadjust=\count278
-\beamer@toclastsection=\count279
-\beamer@tocsectionnumber=\count280
+\beamer@sectioncount=\count194
+\beamer@subsubsectionmax=\count195
+\beamer@subsectionmax=\count196
+\beamer@sectionmax=\count197
+\beamer@totalheads=\count198
+\beamer@headcounter=\count199
+\beamer@partstartpage=\count266
+\beamer@sectionstartpage=\count267
+\beamer@subsectionstartpage=\count268
+\beamer@animationtempa=\count269
+\beamer@animationtempb=\count270
+\beamer@xpos=\count271
+\beamer@ypos=\count272
+\beamer@ypos@offset=\count273
+\beamer@showpartnumber=\count274
+\beamer@currentsubsection=\count275
+\beamer@coveringdepth=\count276
+\beamer@sectionadjust=\count277
+\beamer@toclastsection=\count278
+\beamer@tocsectionnumber=\count279
  (c:/texlive/2024/texmf-dist/tex/latex/beamer/beamerbaseoptions.sty (c:/texlive/2024/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
 \KV@toks@=\toks17
@@ -80,9 +80,9 @@ Package: geometry 2020/01/02 v5.9 Page Geometry
  (c:/texlive/2024/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
-\Gm@cnth=\count281
-\Gm@cntv=\count282
-\c@Gm@tempcnt=\count283
+\Gm@cnth=\count280
+\Gm@cntv=\count281
+\c@Gm@tempcnt=\count282
 \Gm@bindingoffset=\dimen156
 \Gm@wd@mp=\dimen157
 \Gm@odd@mp=\dimen158
@@ -114,19 +114,19 @@ Package: pgfrcs 2023-01-15 v3.1.10 (3.1.10)
 \pgf@ya=\dimen171
 \pgf@yb=\dimen172
 \pgf@yc=\dimen173
-\c@pgf@counta=\count284
-\c@pgf@countb=\count285
-\c@pgf@countc=\count286
-\c@pgf@countd=\count287
+\c@pgf@counta=\count283
+\c@pgf@countb=\count284
+\c@pgf@countc=\count285
+\c@pgf@countd=\count286
 ) (c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
 \pgfmath@dimen=\dimen174
-\pgfmath@count=\count288
+\pgfmath@count=\count287
 \pgfmath@box=\box61
 \pgfmath@toks=\toks23
 \pgfmath@stack@operand=\toks24
 \pgfmath@stack@operation=\toks25
 ) (c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex) (c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex) (c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex) (c:/texlive/2024/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count289
+\c@pgfmathroundto@lastzeros=\count288
 ))) (c:/texlive/2024/texmf-dist/tex/latex/base/size11.clo
 File: size11.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
 ) (c:/texlive/2024/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty (c:/texlive/2024/texmf-dist/tex/latex/graphics/graphicx.sty
@@ -140,7 +140,7 @@ File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 107.
  (c:/texlive/2024/texmf-dist/tex/latex/graphics-def/pdftex.def
-File: pdftex.def 2024/04/13 v1.2c Graphics/color driver for pdftex
+File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen175
 \Gin@req@width=\dimen176
@@ -158,14 +158,14 @@ Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
 \pgf@yd=\dimen186
 \w@pgf@writea=\write3
 \r@pgf@reada=\read2
-\c@pgf@counta=\count290
-\c@pgf@countb=\count291
-\c@pgf@countc=\count292
-\c@pgf@countd=\count293
+\c@pgf@counta=\count289
+\c@pgf@countb=\count290
+\c@pgf@countc=\count291
+\c@pgf@countd=\count292
 \t@pgf@toka=\toks26
 \t@pgf@tokb=\toks27
 \t@pgf@tokc=\toks28
-\pgf@sys@id@count=\count294
+\pgf@sys@id@count=\count293
  (c:/texlive/2024/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
 )
@@ -176,8 +176,8 @@ File: pgfsys-pdftex.def 2023-01-15 v3.1.10 (3.1.10)
 File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
 ))) (c:/texlive/2024/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfsyssoftpath@smallbuffer@items=\count295
-\pgfsyssoftpath@bigbuffer@items=\count296
+\pgfsyssoftpath@smallbuffer@items=\count294
+\pgfsyssoftpath@bigbuffer@items=\count295
 ) (c:/texlive/2024/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )) (c:/texlive/2024/texmf-dist/tex/latex/xcolor/xcolor.sty
@@ -227,7 +227,7 @@ File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgfpic=\box62
 \pgf@hbox=\box63
 \pgf@layerbox@main=\box64
-\pgf@picture@serial@count=\count297
+\pgf@picture@serial@count=\count296
 ) (c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgflinewidth=\dimen261
@@ -248,8 +248,8 @@ File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@max=\dimen266
-\pgf@sys@shading@range@num=\count298
-\pgf@shadingcount=\count299
+\pgf@sys@shading@range@num=\count297
+\pgf@shadingcount=\count298
 ) (c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (c:/texlive/2024/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
@@ -265,8 +265,8 @@ File: pgfcorepatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
 File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ))) (c:/texlive/2024/texmf-dist/tex/latex/pgf/utilities/xxcolor.sty
 Package: xxcolor 2003/10/24 ver 0.1
-\XC@nummixins=\count300
-\XC@countmixins=\count301
+\XC@nummixins=\count299
+\XC@countmixins=\count300
 ) (c:/texlive/2024/texmf-dist/tex/latex/base/atbegshi-ltx.sty
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
@@ -301,11 +301,11 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
  (c:/texlive/2024/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 ))
-\c@section@level=\count302
+\c@section@level=\count301
 )
 \@linkdim=\dimen267
-\Hy@linkcounter=\count303
-\Hy@pagecounter=\count304
+\Hy@linkcounter=\count302
+\Hy@pagecounter=\count303
  (c:/texlive/2024/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2024-01-20 v7.01h Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
@@ -313,7 +313,7 @@ Now handling font encoding PD1 ...
 ) (c:/texlive/2024/texmf-dist/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-\Hy@SavedSpaceFactor=\count305
+\Hy@SavedSpaceFactor=\count304
  (c:/texlive/2024/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2024-01-20 v7.01h Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
@@ -329,7 +329,7 @@ Package hyperref Info: Plain pages OFF on input line 4194.
 Package hyperref Info: Backreferencing OFF on input line 4199.
 Package hyperref Info: Implicit mode OFF; no redefinition of LaTeX internals.
 Package hyperref Info: Bookmarks ON on input line 4446.
-\c@Hy@tempcnt=\count306
+\c@Hy@tempcnt=\count305
  (c:/texlive/2024/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip16
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
@@ -341,7 +341,7 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
  (c:/texlive/2024/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
 ))
-\Fld@menulength=\count307
+\Fld@menulength=\count306
 \Field@Width=\dimen269
 \Fld@charsize=\dimen270
 Package hyperref Info: Hyper figures OFF on input line 6063.
@@ -351,7 +351,7 @@ Package hyperref Info: backreferencing OFF on input line 6078.
 Package hyperref Info: Link coloring OFF on input line 6083.
 Package hyperref Info: Link coloring with OCG OFF on input line 6088.
 Package hyperref Info: PDF/A mode OFF on input line 6093.
-\Hy@abspage=\count308
+\Hy@abspage=\count307
 
 
 Package hyperref Message: Stopped early.
@@ -364,8 +364,8 @@ File: hpdftex.def 2024-01-20 v7.01h Hyperref driver for pdfTeX
 Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend package
 with kernel methods
 )
-\Fld@listcount=\count309
-\c@bookmark@seq@number=\count310
+\Fld@listcount=\count308
+\c@bookmark@seq@number=\count309
  (c:/texlive/2024/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
  (c:/texlive/2024/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
@@ -393,35 +393,35 @@ Package: scrlogo 2023/07/07 v3.41 KOMA-Script package (logo)
 ))))) (c:/texlive/2024/texmf-dist/tex/latex/beamer/beamerbasetranslator.sty (c:/texlive/2024/texmf-dist/tex/latex/translator/translator.sty
 Package: translator 2021-05-31 v1.12d Easy translation of strings in LaTeX
 )) (c:/texlive/2024/texmf-dist/tex/latex/beamer/beamerbasemisc.sty) (c:/texlive/2024/texmf-dist/tex/latex/beamer/beamerbasetwoscreens.sty) (c:/texlive/2024/texmf-dist/tex/latex/beamer/beamerbaseoverlay.sty
-\beamer@argscount=\count311
+\beamer@argscount=\count310
 \beamer@lastskipcover=\skip51
-\beamer@trivlistdepth=\count312
+\beamer@trivlistdepth=\count311
 ) (c:/texlive/2024/texmf-dist/tex/latex/beamer/beamerbasetitle.sty) (c:/texlive/2024/texmf-dist/tex/latex/beamer/beamerbasesection.sty
-\c@lecture=\count313
-\c@part=\count314
-\c@section=\count315
-\c@subsection=\count316
-\c@subsubsection=\count317
+\c@lecture=\count312
+\c@part=\count313
+\c@section=\count314
+\c@subsection=\count315
+\c@subsubsection=\count316
 ) (c:/texlive/2024/texmf-dist/tex/latex/beamer/beamerbaseframe.sty
 \beamer@framebox=\box66
 \beamer@frametitlebox=\box67
 \beamer@zoombox=\box68
-\beamer@zoomcount=\count318
-\beamer@zoomframecount=\count319
+\beamer@zoomcount=\count317
+\beamer@zoomframecount=\count318
 \beamer@frametextheight=\dimen271
-\c@subsectionslide=\count320
+\c@subsectionslide=\count319
 \beamer@frametopskip=\skip52
 \beamer@framebottomskip=\skip53
 \beamer@frametopskipautobreak=\skip54
 \beamer@framebottomskipautobreak=\skip55
 \beamer@envbody=\toks30
 \framewidth=\dimen272
-\c@framenumber=\count321
+\c@framenumber=\count320
 ) (c:/texlive/2024/texmf-dist/tex/latex/beamer/beamerbaseverbatim.sty
 \beamer@verbatimfileout=\write4
 ) (c:/texlive/2024/texmf-dist/tex/latex/beamer/beamerbaseframesize.sty
 \beamer@splitbox=\box69
-\beamer@autobreakcount=\count322
+\beamer@autobreakcount=\count321
 \beamer@autobreaklastheight=\dimen273
 \beamer@frametitletoks=\toks31
 \beamer@framesubtitletoks=\toks32
@@ -448,8 +448,8 @@ Package: enumerate 2023/07/04 v3.00 enumerate extensions (DPC)
 \@enLab=\toks34
 )
 \beamer@bibiconwidth=\skip56
-\c@figure=\count323
-\c@table=\count324
+\c@figure=\count322
+\c@table=\count323
 \abovecaptionskip=\skip57
 \belowcaptionskip=\skip58
 ) (c:/texlive/2024/texmf-dist/tex/latex/beamer/beamerbasenavigation.sty (c:/texlive/2024/texmf-dist/tex/latex/beamer/beamerbasenavigationsymbols.tex)
@@ -471,14 +471,14 @@ Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 ) (c:/texlive/2024/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
-\inf@bad=\count325
+\inf@bad=\count324
 LaTeX Info: Redefining \frac on input line 234.
-\uproot@=\count326
-\leftroot@=\count327
+\uproot@=\count325
+\leftroot@=\count326
 LaTeX Info: Redefining \overline on input line 399.
 LaTeX Info: Redefining \colon on input line 410.
-\classnum@=\count328
-\DOTSCASE@=\count329
+\classnum@=\count327
+\DOTSCASE@=\count328
 LaTeX Info: Redefining \ldots on input line 496.
 LaTeX Info: Redefining \dots on input line 499.
 LaTeX Info: Redefining \cdots on input line 620.
@@ -491,20 +491,20 @@ LaTeX Info: Redefining \Bigg on input line 725.
 \big@size=\dimen285
 LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
-\macc@depth=\count330
+\macc@depth=\count329
 LaTeX Info: Redefining \bmod on input line 905.
 LaTeX Info: Redefining \pmod on input line 910.
 LaTeX Info: Redefining \smash on input line 940.
 LaTeX Info: Redefining \relbar on input line 970.
 LaTeX Info: Redefining \Relbar on input line 971.
-\c@MaxMatrixCols=\count331
+\c@MaxMatrixCols=\count330
 \dotsspace@=\muskip17
-\c@parentequation=\count332
-\dspbrk@lvl=\count333
+\c@parentequation=\count331
+\dspbrk@lvl=\count332
 \tag@help=\toks36
-\row@=\count334
-\column@=\count335
-\maxfields@=\count336
+\row@=\count333
+\column@=\count334
+\maxfields@=\count335
 \andhelp@=\toks37
 \eqnshift@=\dimen286
 \alignsep@=\dimen287
@@ -530,7 +530,7 @@ Package: amsthm 2020/05/29 v2.20.6
 \thm@headsep=\skip64
 \dth@everypar=\toks45
 )
-\c@theorem=\count337
+\c@theorem=\count336
 ) (c:/texlive/2024/texmf-dist/tex/latex/beamer/beamerbasethemes.sty)) (c:/texlive/2024/texmf-dist/tex/latex/beamer/beamerthemedefault.sty (c:/texlive/2024/texmf-dist/tex/latex/beamer/beamerfontthemedefault.sty) (c:/texlive/2024/texmf-dist/tex/latex/beamer/beamercolorthemedefault.sty) (c:/texlive/2024/texmf-dist/tex/latex/beamer/beamerinnerthemedefault.sty
 \beamer@dima=\dimen292
 \beamer@dimb=\dimen293
@@ -559,7 +559,7 @@ Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
 Package: tikz 2023-01-15 v3.1.10 (3.1.10)
  (c:/texlive/2024/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@plot@mark@count=\count338
+\pgf@plot@mark@count=\count337
 \pgfplotmarksize=\dimen298
 )
 \tikz@lastx=\dimen299
@@ -574,17 +574,17 @@ File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \tikz@figbox@bg=\box78
 \tikz@tempbox=\box79
 \tikz@tempbox@bg=\box80
-\tikztreelevel=\count339
-\tikznumberofchildren=\count340
-\tikznumberofcurrentchild=\count341
-\tikz@fig@count=\count342
+\tikztreelevel=\count338
+\tikznumberofchildren=\count339
+\tikznumberofcurrentchild=\count340
+\tikz@fig@count=\count341
  (c:/texlive/2024/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfmatrixcurrentrow=\count343
-\pgfmatrixcurrentcolumn=\count344
-\pgf@matrix@numberofcolumns=\count345
+\pgfmatrixcurrentrow=\count342
+\pgfmatrixcurrentcolumn=\count343
+\pgf@matrix@numberofcolumns=\count344
 )
-\tikz@expandcount=\count346
+\tikz@expandcount=\count345
  (c:/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ))) (c:/texlive/2024/texmf-dist/tex/latex/colortbl/colortbl.sty
@@ -601,7 +601,7 @@ Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
 )
 \everycr=\toks49
 \minrowclearance=\skip67
-\rownum=\count347
+\rownum=\count346
 ) (c:/texlive/2024/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \heavyrulewidth=\dimen309
@@ -614,17 +614,17 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \cmidrulesep=\dimen316
 \cmidrulekern=\dimen317
 \defaultaddspace=\dimen318
-\@cmidla=\count348
-\@cmidlb=\count349
+\@cmidla=\count347
+\@cmidlb=\count348
 \@aboverulesep=\dimen319
 \@belowrulesep=\dimen320
-\@thisruleclass=\count350
-\@lastruleclass=\count351
+\@thisruleclass=\count349
+\@lastruleclass=\count350
 \@thisrulewidth=\dimen321
 ) (c:/texlive/2024/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
 \multirow@colwidth=\skip68
-\multirow@cntb=\count352
+\multirow@cntb=\count351
 \multirow@dima=\skip69
 \bigstrutjot=\dimen322
 ) (c:/texlive/2024/texmf-dist/tex/latex/psnfss/pifont.sty
@@ -637,10 +637,10 @@ LaTeX Font Info:    Trying to load font information for U+psy on input line 64.
  (c:/texlive/2024/texmf-dist/tex/latex/psnfss/upsy.fd
 File: upsy.fd 2001/06/04 font definitions for U/psy.
 )) (c:/texlive/2024/texmf-dist/tex/latex/ctex/ctex.sty (c:/texlive/2024/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2024-05-08 L3 programming layer (loader) 
+Package: expl3 2024-03-14 L3 programming layer (loader) 
  (c:/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
-File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count353
+File: l3backend-pdftex.def 2024-03-14 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count352
 \l__pdf_internal_box=\box83
 ))
 Package: ctex 2022/07/14 v2.5.10 Chinese adapter in LaTeX (CTEX)
@@ -654,11 +654,11 @@ Package: fix-cm 2020/11/24 v1.1t fixes to LaTeX
 File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding TS1 on input line 47.
 ))
-\l__ctex_tmp_int=\count354
+\l__ctex_tmp_int=\count353
 \l__ctex_tmp_box=\box84
 \l__ctex_tmp_dim=\dimen323
-\g__ctex_section_depth_int=\count355
-\g__ctex_font_size_int=\count356
+\g__ctex_section_depth_int=\count354
+\g__ctex_font_size_int=\count355
  (c:/texlive/2024/texmf-dist/tex/latex/ctex/config/ctexopts.cfg
 File: ctexopts.cfg 2022/07/14 v2.5.10 Option configuration file (CTEX)
 ) (c:/texlive/2024/texmf-dist/tex/latex/ctex/engine/ctex-engine-pdftex.def
@@ -747,11 +747,11 @@ Now handling font encoding C62 ...
 Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
 )) (c:/texlive/2024/texmf-dist/tex/latex/cjkpunct/CJKpunct.sty
 Package: CJKpunct 2016/05/14 4.8.4
-\CJKpunct@cnta=\count357
-\CJKpunct@cntb=\count358
-\CJKpunct@cntc=\count359
-\CJKpunct@cntd=\count360
-\CJKpunct@cnte=\count361
+\CJKpunct@cnta=\count356
+\CJKpunct@cntb=\count357
+\CJKpunct@cntc=\count358
+\CJKpunct@cntd=\count359
+\CJKpunct@cnte=\count360
    defining Unicode char U+2018 (decimal 8216)
    defining Unicode char U+2019 (decimal 8217)
    defining Unicode char U+201C (decimal 8220)
@@ -776,8 +776,8 @@ Package hyperref Info: Option `unicode' set `true' on input line 512.
 \l__ctex_ziju_dim=\dimen325
  (c:/texlive/2024/texmf-dist/tex/latex/zhnumber/zhnumber.sty
 Package: zhnumber 2022/07/14 v3.0 Typesetting numbers with Chinese glyphs
-\l__zhnum_scale_int=\count362
-\l__zhnum_tmp_int=\count363
+\l__zhnum_scale_int=\count361
+\l__zhnum_tmp_int=\count362
  (c:/texlive/2024/texmf-dist/tex/latex/zhnumber/zhnumber-utf8.cfg
 File: zhnumber-utf8.cfg 2022/07/14 v3.0 Chinese numerals with UTF8 encoding
 )) (c:/texlive/2024/texmf-dist/tex/latex/ctex/scheme/ctex-scheme-chinese.def
@@ -934,16 +934,16 @@ LaTeX Font Info:    ... okay on input line 54.
 
 (c:/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count364
+\scratchcounter=\count363
 \scratchdimen=\dimen330
 \scratchbox=\box86
-\nofMPsegments=\count365
-\nofMParguments=\count366
+\nofMPsegments=\count364
+\nofMParguments=\count365
 \everyMPshowfont=\toks52
-\MPscratchCnt=\count367
+\MPscratchCnt=\count366
 \MPscratchDim=\dimen331
-\MPnumerator=\count368
-\makeMPintoPDFobject=\count369
+\MPnumerator=\count367
+\makeMPintoPDFobject=\count368
 \everyMPtoPDFconversion=\toks53
 ) (c:/texlive/2024/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -986,34 +986,157 @@ File: ctex-zhmap-windows.tex 2022/07/14 v2.5.10 Windows font map loader for pdfT
 
 ] [3
 
-] [4
+]
+<expansion1.png, id=471, 826.58812pt x 691.08188pt>
+File: expansion1.png Graphic file (type png)
+<use expansion1.png>
+Package pdftex.def Info: expansion1.png  used on input line 28.
+(pdftex.def)             Requested size: 199.1693pt x 166.51683pt.
+<expansion2.png, id=473, 867.99281pt x 702.37407pt>
+File: expansion2.png Graphic file (type png)
+<use expansion2.png>
+Package pdftex.def Info: expansion2.png  used on input line 28.
+(pdftex.def)             Requested size: 199.1693pt x 161.16753pt.
+ [4
 
-] [5
-
-] [6
-
-] [7
+ <./expansion1.png> <./expansion2.png>]
+File: expansion1.png Graphic file (type png)
+<use expansion1.png>
+Package pdftex.def Info: expansion1.png  used on input line 28.
+(pdftex.def)             Requested size: 199.1693pt x 166.51683pt.
+File: expansion2.png Graphic file (type png)
+<use expansion2.png>
+Package pdftex.def Info: expansion2.png  used on input line 28.
+(pdftex.def)             Requested size: 199.1693pt x 161.16753pt.
+ [5
 
 ]
+File: expansion1.png Graphic file (type png)
+<use expansion1.png>
+Package pdftex.def Info: expansion1.png  used on input line 28.
+(pdftex.def)             Requested size: 199.1693pt x 166.51683pt.
+File: expansion2.png Graphic file (type png)
+<use expansion2.png>
+Package pdftex.def Info: expansion2.png  used on input line 28.
+(pdftex.def)             Requested size: 199.1693pt x 161.16753pt.
+ [6
 
-LaTeX Font Warning: Font shape `OT1/cmss/m/it' in size <10.95> not available
-(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 151.
+]
+<contraction3.png, id=732, 842.39719pt x 704.6325pt>
+File: contraction3.png Graphic file (type png)
+<use contraction3.png>
+Package pdftex.def Info: contraction3.png  used on input line 45.
+(pdftex.def)             Requested size: 199.1693pt x 166.58858pt.
+<contraction4.png, id=733, 827.34094pt x 709.90219pt>
+File: contraction4.png Graphic file (type png)
+<use contraction4.png>
+Package pdftex.def Info: contraction4.png  used on input line 45.
+(pdftex.def)             Requested size: 199.1693pt x 170.89995pt.
+ [7
 
-[8
+ <./contraction3.png> <./contraction4.png>]
+File: contraction3.png Graphic file (type png)
+<use contraction3.png>
+Package pdftex.def Info: contraction3.png  used on input line 45.
+(pdftex.def)             Requested size: 199.1693pt x 166.58858pt.
+File: contraction4.png Graphic file (type png)
+<use contraction4.png>
+Package pdftex.def Info: contraction4.png  used on input line 45.
+(pdftex.def)             Requested size: 199.1693pt x 170.89995pt.
+ [8
 
-] [9
+]
+File: contraction3.png Graphic file (type png)
+<use contraction3.png>
+Package pdftex.def Info: contraction3.png  used on input line 45.
+(pdftex.def)             Requested size: 199.1693pt x 166.58858pt.
+File: contraction4.png Graphic file (type png)
+<use contraction4.png>
+Package pdftex.def Info: contraction4.png  used on input line 45.
+(pdftex.def)             Requested size: 199.1693pt x 170.89995pt.
+ [9
 
-] [10
+]
+<sheer1.png, id=994, 752.8125pt x 703.12688pt>
+File: sheer1.png Graphic file (type png)
+<use sheer1.png>
+Package pdftex.def Info: sheer1.png  used on input line 63.
+(pdftex.def)             Requested size: 199.1693pt x 186.02733pt.
+<sheer2.png, id=995, 774.64406pt x 699.36281pt>
+File: sheer2.png Graphic file (type png)
+<use sheer2.png>
+Package pdftex.def Info: sheer2.png  used on input line 63.
+(pdftex.def)             Requested size: 199.1693pt x 179.81314pt.
 
-] [11
+Overfull \vbox (0.96991pt too high) detected at line 63
+ []
 
-] [12
+[10
 
-] [13
+ <./sheer1.png> <./sheer2.png>]
+File: sheer1.png Graphic file (type png)
+<use sheer1.png>
+Package pdftex.def Info: sheer1.png  used on input line 63.
+(pdftex.def)             Requested size: 199.1693pt x 186.02733pt.
+File: sheer2.png Graphic file (type png)
+<use sheer2.png>
+Package pdftex.def Info: sheer2.png  used on input line 63.
+(pdftex.def)             Requested size: 199.1693pt x 179.81314pt.
 
-] [14
+Overfull \vbox (0.96991pt too high) detected at line 63
+ []
 
-] [15
+[11
+
+]
+File: sheer1.png Graphic file (type png)
+<use sheer1.png>
+Package pdftex.def Info: sheer1.png  used on input line 63.
+(pdftex.def)             Requested size: 199.1693pt x 186.02733pt.
+File: sheer2.png Graphic file (type png)
+<use sheer2.png>
+Package pdftex.def Info: sheer2.png  used on input line 63.
+(pdftex.def)             Requested size: 199.1693pt x 179.81314pt.
+
+Overfull \vbox (0.96991pt too high) detected at line 63
+ []
+
+[12
+
+]
+<projection1.png, id=1255, 865.73438pt x 705.38531pt>
+File: projection1.png Graphic file (type png)
+<use projection1.png>
+Package pdftex.def Info: projection1.png  used on input line 81.
+(pdftex.def)             Requested size: 199.1693pt x 162.27826pt.
+<projection2.png, id=1256, 899.61093pt x 694.09312pt>
+File: projection2.png Graphic file (type png)
+<use projection2.png>
+Package pdftex.def Info: projection2.png  used on input line 81.
+(pdftex.def)             Requested size: 199.1693pt x 153.66473pt.
+ [13
+
+ <./projection1.png> <./projection2.png>]
+File: projection1.png Graphic file (type png)
+<use projection1.png>
+Package pdftex.def Info: projection1.png  used on input line 81.
+(pdftex.def)             Requested size: 199.1693pt x 162.27826pt.
+File: projection2.png Graphic file (type png)
+<use projection2.png>
+Package pdftex.def Info: projection2.png  used on input line 81.
+(pdftex.def)             Requested size: 199.1693pt x 153.66473pt.
+ [14
+
+]
+File: projection1.png Graphic file (type png)
+<use projection1.png>
+Package pdftex.def Info: projection1.png  used on input line 81.
+(pdftex.def)             Requested size: 199.1693pt x 162.27826pt.
+File: projection2.png Graphic file (type png)
+<use projection2.png>
+Package pdftex.def Info: projection2.png  used on input line 81.
+(pdftex.def)             Requested size: 199.1693pt x 153.66473pt.
+ [15
 
 ] [16
 
@@ -1023,11 +1146,7 @@ LaTeX Font Warning: Font shape `OT1/cmss/m/it' in size <10.95> not available
 
 ] [19
 
-]
-Overfull \vbox (3.10272pt too high) detected at line 362
- []
-
-[20
+] [20
 
 ] [21
 
@@ -1037,28 +1156,13 @@ Overfull \vbox (3.10272pt too high) detected at line 362
 
 ] [24
 
-]
-
-LaTeX Warning: The counter will not be printed.
-             The label is: c. on input line 463.
-
-
-LaTeX Warning: The counter will not be printed.
-             The label is: d. on input line 463.
-
-[25
+] [25
 
 ] [26
 
 ] [27
 
-]
-LaTeX Font Info:    Trying to load font information for C70+zhhei on input line 528.
- (c:/texlive/2024/texmf-dist/tex/latex/zhmetrics/c70zhhei.fd
-File: c70zhhei.fd 2009/09/23 4.8.2
-)
-Package CJKpunct Info: use punctuation spaces for family 'zhhei' with punctstyle (quanjiao) on input line 528.
- [28
+] [28
 
 ] [29
 
@@ -1074,88 +1178,36 @@ Package CJKpunct Info: use punctuation spaces for family 'zhhei' with punctstyle
 
 ] [35
 
-]
-
-LaTeX Font Warning: Font shape `OT1/cmss/m/it' in size <17.28> not available
-(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 680.
-
-[36
+] [36
 
 ] [37
 
 ] [38
 
-] [39
+]
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/it' in size <10.95> not available
+(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 229.
+
+[39
 
 ] [40
 
 ] [41
 
-]
-<table1.png, id=5097, 737.00343pt x 271.3889pt>
-File: table1.png Graphic file (type png)
-<use table1.png>
-Package pdftex.def Info: table1.png  used on input line 786.
-(pdftex.def)             Requested size: 318.67209pt x 117.3451pt.
- [42
+] [42
 
- <./table1.png>]
-<table2.png, id=5220, 596.60391pt x 370.00734pt>
-File: table2.png Graphic file (type png)
-<use table2.png>
-Package pdftex.def Info: table2.png  used on input line 795.
-(pdftex.def)             Requested size: 227.67488pt x 141.20271pt.
- [43
+] [43
 
- <./table2.png>]
-<table3.png, id=5344, 590.95781pt x 391.08609pt>
-File: table3.png Graphic file (type png)
-<use table3.png>
-Package pdftex.def Info: table3.png  used on input line 804.
-(pdftex.def)             Requested size: 344.03621pt x 227.67488pt.
+] [44
 
-Overfull \vbox (40.61746pt too high) detected at line 804
- []
+] [45
 
-[44
+] [46
 
- <./table3.png>]
-<table4.png, id=5466, 492.71577pt x 397.8614pt>
-File: table4.png Graphic file (type png)
-<use table4.png>
-Package pdftex.def Info: table4.png  used on input line 813.
-(pdftex.def)             Requested size: 281.94856pt x 227.67488pt.
+] [47
 
-
-Class beamer Warning: Frame text is shrunk by a factor of 20.30334 percent instead of 10 percent on input line 813.
-
-[45
-
- <./table4.png>]
-<table5.png, id=5589, 466.74374pt x 378.28828pt>
-File: table5.png Graphic file (type png)
-<use table5.png>
-Package pdftex.def Info: table5.png  used on input line 822.
-(pdftex.def)             Requested size: 280.91016pt x 227.67488pt.
-
-
-Class beamer Warning: Frame text is shrunk by a factor of 20.30334 percent instead of 10 percent on input line 822.
-
-[46
-
- <./table5.png>]
-<table6.png, id=5712, 485.18765pt x 363.23203pt>
-File: table6.png Graphic file (type png)
-<use table6.png>
-Package pdftex.def Info: table6.png  used on input line 832.
-(pdftex.def)             Requested size: 304.12253pt x 227.67488pt.
-
-Overfull \vbox (40.61746pt too high) detected at line 832
- []
-
-[47
-
- <./table6.png>] [48
+] [48
 
 ] [49
 
@@ -1168,6 +1220,282 @@ Overfull \vbox (40.61746pt too high) detected at line 832
 ] [53
 
 ] [54
+
+] [55
+
+] [56
+
+] [57
+
+] [58
+
+] [59
+
+] [60
+
+] [61
+
+] [62
+
+] [63
+
+] [64
+
+] [65
+
+] [66
+
+] [67
+
+] [68
+
+] [69
+
+]
+Overfull \vbox (3.10272pt too high) detected at line 448
+ []
+
+[70
+
+]
+Overfull \vbox (3.10272pt too high) detected at line 448
+ []
+
+[71
+
+]
+Overfull \vbox (3.10272pt too high) detected at line 448
+ []
+
+[72
+
+]
+Overfull \vbox (3.10272pt too high) detected at line 448
+ []
+
+[73
+
+] [74
+
+] [75
+
+] [76
+
+] [77
+
+] [78
+
+] [79
+
+] [80
+
+]
+
+LaTeX Warning: The counter will not be printed.
+             The label is: c. on input line 552.
+
+
+LaTeX Warning: The counter will not be printed.
+             The label is: d. on input line 552.
+
+[81
+
+]
+
+LaTeX Warning: The counter will not be printed.
+             The label is: c. on input line 552.
+
+
+LaTeX Warning: The counter will not be printed.
+             The label is: d. on input line 552.
+
+[82
+
+]
+
+LaTeX Warning: The counter will not be printed.
+             The label is: c. on input line 552.
+
+
+LaTeX Warning: The counter will not be printed.
+             The label is: d. on input line 552.
+
+[83
+
+]
+
+LaTeX Warning: The counter will not be printed.
+             The label is: c. on input line 552.
+
+
+LaTeX Warning: The counter will not be printed.
+             The label is: d. on input line 552.
+
+[84
+
+]
+
+LaTeX Warning: The counter will not be printed.
+             The label is: c. on input line 552.
+
+
+LaTeX Warning: The counter will not be printed.
+             The label is: d. on input line 552.
+
+[85
+
+] [86
+
+] [87
+
+] [88
+
+] [89
+
+] [90
+
+] [91
+
+] [92
+
+] [93
+
+] [94
+
+] [95
+
+]
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/it' in size <17.28> not available
+(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 769.
+
+[96
+
+] [97
+
+] [98
+
+] [99
+
+] [100
+
+] [101
+
+]
+<table1.png, id=9505, 737.00343pt x 271.3889pt>
+File: table1.png Graphic file (type png)
+<use table1.png>
+Package pdftex.def Info: table1.png  used on input line 875.
+(pdftex.def)             Requested size: 318.67209pt x 117.3451pt.
+ [102
+
+ <./table1.png>]
+<table2.png, id=9631, 596.60391pt x 370.00734pt>
+File: table2.png Graphic file (type png)
+<use table2.png>
+Package pdftex.def Info: table2.png  used on input line 884.
+(pdftex.def)             Requested size: 293.68579pt x 182.1406pt.
+ [103
+
+ <./table2.png>]
+<table3.png, id=9759, 590.95781pt x 391.08609pt>
+File: table3.png Graphic file (type png)
+<use table3.png>
+Package pdftex.def Info: table3.png  used on input line 893.
+(pdftex.def)             Requested size: 275.22537pt x 182.1406pt.
+ [104
+
+ <./table3.png>]
+File: contraction3.png Graphic file (type png)
+<use contraction3.png>
+Package pdftex.def Info: contraction3.png  used on input line 931.
+(pdftex.def)             Requested size: 199.1693pt x 166.58858pt.
+File: contraction4.png Graphic file (type png)
+<use contraction4.png>
+Package pdftex.def Info: contraction4.png  used on input line 931.
+(pdftex.def)             Requested size: 199.1693pt x 170.89995pt.
+ [105
+
+]
+File: expansion1.png Graphic file (type png)
+<use expansion1.png>
+Package pdftex.def Info: expansion1.png  used on input line 931.
+(pdftex.def)             Requested size: 199.1693pt x 166.51683pt.
+File: expansion2.png Graphic file (type png)
+<use expansion2.png>
+Package pdftex.def Info: expansion2.png  used on input line 931.
+(pdftex.def)             Requested size: 199.1693pt x 161.16753pt.
+ [106
+
+]
+<table4.png, id=10076, 492.71577pt x 397.8614pt>
+File: table4.png Graphic file (type png)
+<use table4.png>
+Package pdftex.def Info: table4.png  used on input line 938.
+(pdftex.def)             Requested size: 281.94856pt x 227.67488pt.
+
+
+Class beamer Warning: Frame text is shrunk by a factor of 20.30334 percent instead of 10 percent on input line 938.
+
+[107
+
+ <./table4.png>]
+File: sheer1.png Graphic file (type png)
+<use sheer1.png>
+Package pdftex.def Info: sheer1.png  used on input line 957.
+(pdftex.def)             Requested size: 199.1693pt x 186.02733pt.
+File: sheer2.png Graphic file (type png)
+<use sheer2.png>
+Package pdftex.def Info: sheer2.png  used on input line 957.
+(pdftex.def)             Requested size: 199.1693pt x 179.81314pt.
+
+Overfull \vbox (0.96991pt too high) detected at line 957
+ []
+
+[108
+
+]
+<table5.png, id=10327, 466.74374pt x 378.28828pt>
+File: table5.png Graphic file (type png)
+<use table5.png>
+Package pdftex.def Info: table5.png  used on input line 965.
+(pdftex.def)             Requested size: 280.91016pt x 227.67488pt.
+
+
+Class beamer Warning: Frame text is shrunk by a factor of 20.30334 percent instead of 10 percent on input line 965.
+
+[109
+
+ <./table5.png>]
+File: projection1.png Graphic file (type png)
+<use projection1.png>
+Package pdftex.def Info: projection1.png  used on input line 982.
+(pdftex.def)             Requested size: 199.1693pt x 162.27826pt.
+File: projection2.png Graphic file (type png)
+<use projection2.png>
+Package pdftex.def Info: projection2.png  used on input line 982.
+(pdftex.def)             Requested size: 199.1693pt x 153.66473pt.
+ [110
+
+]
+<table6.png, id=10580, 485.18765pt x 363.23203pt>
+File: table6.png Graphic file (type png)
+<use table6.png>
+Package pdftex.def Info: table6.png  used on input line 991.
+(pdftex.def)             Requested size: 243.29654pt x 182.1406pt.
+ [111
+
+ <./table6.png>] [112
+
+] [113
+
+] [114
+
+] [115
+
+] [116
+
+] [117
 
 ])
 \tf@nav=\write6
@@ -1188,18 +1516,18 @@ Package rerunfilecheck Info: File `lecture3.out' has not changed.
 (rerunfilecheck)             Checksum: 1A76BC7B9EB6831DE94930A9FA27F761;971.
  ) 
 Here is how much of TeX's memory you used:
- 30224 strings out of 473992
- 602039 string characters out of 5745048
- 1972907 words of memory out of 5000000
- 51869 multiletter control sequences out of 15000+600000
- 589241 words of font info for 148 fonts, out of 8000000 for 9000
+ 30033 strings out of 474103
+ 595773 string characters out of 5747482
+ 1974496 words of memory out of 5000000
+ 51512 multiletter control sequences out of 15000+600000
+ 580061 words of font info for 114 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,20n,123p,734b,983s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/Windows/Fonts/simhei.ttf><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi17.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on lecture3.pdf (54 pages, 1251306 bytes).
+<c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi17.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on lecture3.pdf (117 pages, 8914613 bytes).
 PDF statistics:
- 6881 PDF objects out of 7423 (max. 8388607)
- 3524 compressed objects within 36 object streams
- 114 named destinations out of 1000 (max. 500000)
- 261 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11556 PDF objects out of 12825 (max. 8388607)
+ 7611 compressed objects within 77 object streams
+ 240 named destinations out of 1000 (max. 500000)
+ 181 words of extra memory for PDF output out of 10000 (max. 10000000)
 

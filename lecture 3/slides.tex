@@ -2,6 +2,83 @@
 % No reference PDF pages or rasterized slide images are embedded.
 \renewcommand{\sourcepage}[1]{}
 
+\begin{frame}{In this episode...}
+  \begin{itemize}
+    \item Linear Independence\pause
+    \item Linear Transformation\pause
+    \item Existence and One to One Mapping
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{In this episode...}
+  \begin{columns}\pause
+    \begin{column}{.5\linewidth}
+      \begin{figure}
+        \centering
+        \includegraphics[width=\linewidth]{expansion1.png}\pause
+      \end{figure}
+    \end{column}
+    \begin{column}{.5\linewidth}
+      \begin{figure}
+        \centering
+        \includegraphics[width=\linewidth]{expansion2.png}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{In this episode...}
+  \begin{columns}\pause
+    \begin{column}{.5\linewidth}
+      \begin{figure}
+        \centering
+        \includegraphics[width=\linewidth]{contraction3.png}\pause
+      \end{figure}
+    \end{column}
+    \begin{column}{.5\linewidth}
+      \begin{figure}
+        \centering
+        \includegraphics[width=\linewidth]{contraction4.png}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}{In this episode...}
+  \begin{columns}\pause
+    \begin{column}{.5\linewidth}
+      \begin{figure}
+        \centering
+        \includegraphics[width=\linewidth]{sheer1.png}\pause
+      \end{figure}
+    \end{column}
+    \begin{column}{.5\linewidth}
+      \begin{figure}
+        \centering
+        \includegraphics[width=\linewidth]{sheer2.png}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}{In this episode...}
+  \begin{columns}\pause
+    \begin{column}{.5\linewidth}
+      \begin{figure}
+        \centering
+        \includegraphics[width=\linewidth]{projection1.png}\pause
+      \end{figure}
+    \end{column}
+    \begin{column}{.5\linewidth}
+      \begin{figure}
+        \centering
+        \includegraphics[width=\linewidth]{projection2.png}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
 % Reference page 1
 \section[Independence]{Linear Independence}
 \begin{frame}{Linear Independence}
@@ -17,7 +94,7 @@
 The homogeneous equations in Section 1.5 can be studied from a different
 perspective by writing them as vector equations. In this way, the focus
 shifts from the unknown solutions of $A\vect{x}=\vect{0}$ to the vectors
-that appear in the vector equations.
+that appear in the vector equations.\pause
 
 \medskip
 For instance, consider
@@ -26,7 +103,7 @@ x_1\begin{bmatrix}1\\2\\3\end{bmatrix}
 +x_2\begin{bmatrix}4\\5\\6\end{bmatrix}
 +x_3\begin{bmatrix}2\\1\\0\end{bmatrix}
 =\begin{bmatrix}0\\0\\0\end{bmatrix}. \tag{1}
-\]
+\]\pause
 This equation has the trivial solution $x_1=x_2=x_3=0$. The main issue is
 whether the trivial solution is the only solution.
 \sourcepage{62}
@@ -45,7 +122,7 @@ there exist weights $c_1,\ldots,c_p$, not all zero, such that
 \[
 c_1\vect v_1+c_2\vect v_2+\cdots+c_p\vect v_p=\vect 0. \tag{2}
 \]
-\end{block}
+\end{block}\pause
 Equation (2) is called a \textcolor{lectureblue}{linear dependence relation}
 among the vectors when the weights are not all zero.
 \sourcepage{63}
@@ -58,11 +135,11 @@ Let
 \vect v_1=\begin{bmatrix}1\\2\\3\end{bmatrix},\qquad
 \vect v_2=\begin{bmatrix}4\\5\\6\end{bmatrix},\qquad
 \vect v_3=\begin{bmatrix}2\\1\\0\end{bmatrix}.
-\]
+\]\pause
 \begin{enumerate}[a.]
-\item Determine whether $\{\vect v_1,\vect v_2,\vect v_3\}$ is linearly independent.
+\item Determine whether $\{\vect v_1,\vect v_2,\vect v_3\}$ is linearly independent.\pause
 \item If possible, find a linear dependence relation among the three vectors.
-\end{enumerate}
+\end{enumerate}\pause
 \begin{block}{Solution idea}
 We must determine if there is a nontrivial solution of the equation on the previous slide.
 \end{block}
@@ -71,15 +148,15 @@ We must determine if there is a nontrivial solution of the equation on the previ
 
 % Reference page 5
 \begin{frame}{Example 1: Row Reduction}
-Row operations on the associated augmented matrix show that
+Row operations on the associated augmented matrix show that\pause
 \[
 \left[\begin{array}{ccc|c}1&4&2&0\\2&5&1&0\\3&6&0&0\end{array}\right]
 \sim
 \left[\begin{array}{ccc|c}1&4&2&0\\0&-3&-3&0\\0&0&0&0\end{array}\right].
 \]
-\begin{itemize}
-\item $x_1$ and $x_2$ are basic variables, and $x_3$ is free.
-\item Each nonzero value of $x_3$ determines a nontrivial solution of (1).
+\begin{itemize}\pause
+\item $x_1$ and $x_2$ are basic variables, and $x_3$ is free.\pause
+\item Each nonzero value of $x_3$ determines a nontrivial solution of (1).\pause
 \item Hence $\vect v_1,\vect v_2,\vect v_3$ are linearly dependent.
 \end{itemize}
 \sourcepage{65}
@@ -87,7 +164,7 @@ Row operations on the associated augmented matrix show that
 
 % Reference page 6
 \begin{frame}{Example 1: A Dependence Relation}
-To find a linear dependence relation among $\mathbf{v_1}, \mathbf{v_2}, \mathbf{v_3}$, completely row reducing the augmented matrix gives
+To find a linear dependence relation among $\mathbf{v_1}, \mathbf{v_2}, \mathbf{v_3}$, completely row reducing the augmented matrix gives\pause
 \[
 \left[\begin{array}{ccc|c}1&0&-2&0\\0&1&1&0\\0&0&0&0\end{array}\right],
 \qquad
@@ -97,10 +174,10 @@ x_2+x_3&=0.\\
 0=0.
 \end{aligned}
 \]
-
+\pause
 \begin{itemize}
-  \item Thus $x_1=2x_3$, $x_2=-x_3$, and $x_3$ is free. 
-  \item Choose, for example, $x_3=5$. 
+  \item Thus $x_1=2x_3$, $x_2=-x_3$, and $x_3$ is free. \pause
+  \item Choose, for example, $x_3=5$. \pause
   \item Then $x_1=10$ and $x_2=-5$.
 \end{itemize}
 \sourcepage{66}
@@ -109,13 +186,13 @@ x_2+x_3&=0.\\
 % Reference page 7
 \begin{frame}{Example 1: Conclusion}
 \begin{itemize}
-  \item Substituting the values into the vector equation gives
+  \item Substituting the values into the vector equation gives\pause
 \end{itemize}
 
 % \[
 $$10\vect v_1-5\vect v_2+5\vect v_3=\vect 0.$$
 % \]
-
+\pause
 \begin{itemize}
   \item This is one of infinitely many possible linear dependence relations among
 $\vect v_1,\vect v_2,$ and $\vect v_3$.
@@ -127,13 +204,14 @@ $\vect v_1,\vect v_2,$ and $\vect v_3$.
 % Reference page 8
 \begin{frame}{Columns of a Matrix}
 Suppose we begin with a matrix $A=[\,\vect a_1\ \cdots\ \vect a_n\,]$
-instead of a set of vectors. \\
+instead of a set of vectors. \\\pause
 
 Then the matrix equation
 \[
 A\vect x=\vect 0
 \quad
 \]
+\pause
 
 can be written as
 
@@ -141,9 +219,9 @@ can be written as
 x_1\vect a_1+x_2\vect a_2+\cdots+x_n\vect a_n=\vect 0.
 \]
 
-\begin{itemize}
+\begin{itemize}\pause
 \item {\color{lectureblue}{\textit{Each linear dependence relation among the columns of $A$ corresponds
-to a nontrivial solution of}}} $A\vect x=\vect 0$.
+to a nontrivial solution of}}} $A\vect x=\vect 0$.\pause
 \item The columns of $A$ are linearly independent if and only if
 $A\vect x=\vect 0$ has {\color{lectureblue}{\textit{only} the trivial solution}}.
 \end{itemize}
@@ -154,9 +232,9 @@ $A\vect x=\vect 0$ has {\color{lectureblue}{\textit{only} the trivial solution}}
 \begin{frame}{Sets of One Vector}
 \begin{itemize}
 \item A set containing only one vector, say $\vect v$, {\color{red}{is linearly independent
-if and only if $\vect v$ is not the zero vector $\vect 0$}}.
+if and only if $\vect v$ is not the zero vector $\vect 0$}}.\pause
 \item This is because the vector equation $x_1\vect v=\vect 0$ has only the trivial solution when
-$\vect v\ne\vect 0$.
+$\vect v\ne\vect 0$.\pause
 \item The zero vector is linearly dependent because $x_1\vect 0=\vect 0$ has many nontrivial solutions.
 \end{itemize}
 \sourcepage{69}
@@ -166,7 +244,7 @@ $\vect v\ne\vect 0$.
 \begin{frame}{Sets of Two Vectors}
 \begin{itemize}
 \item  A set $\{\vect v_1,\vect v_2\}$is linearly independent if and only if neither vector is a
-multiple of the other.
+multiple of the other.\pause
 \item The set is linearly dependent if at least one
 vector is a scalar multiple of the other.
 \end{itemize}
@@ -191,15 +269,16 @@ of the preceding vectors $\vect v_1,\ldots,\vect v_{j-1}$.
 \begin{frame}{Using Theorem 7}
 \begin{itemize}
 \item Theorem 7 \textit{does not} say that \textit{every} vector in a linearly dependent set is
-a linear combination of the preceding vectors.
+a linear combination of the preceding vectors.\pause
 \item A vector in a linearly dependent set may fail to be a linear combination
-of the other vectors.
+of the other vectors.\pause
 \end{itemize}
 \textbf{Example 4.} Let
 \[
 \vect u=\begin{bmatrix}3\\1\\0\end{bmatrix},\qquad
 \vect v=\begin{bmatrix}1\\6\\0\end{bmatrix}.
 \]
+\pause
 Describe $\Span\{\vect u,\vect v\}$, and explain why $\vect w$ is in this span
 if and only if $\{\vect u,\vect v,\vect w\}$ is linearly dependent.
 \sourcepage{75}
@@ -210,10 +289,10 @@ if and only if $\{\vect u,\vect v,\vect w\}$ is linearly dependent.
 \begin{itemize}
 \item \textbf{Solution}: $\vect u$ and $\vect v$ are linearly independent because neither is a
 multiple of the other; consequently, they span a plane in \pause $\R^3$.
-\item $\Span\{\vect u,\vect v\}$ is the $x_1x_2$-plane, where $x_3=0$.
+\item $\Span\{\vect u,\vect v\}$ is the $x_1x_2$-plane, where $x_3=0$.\pause
 \item If $\vect w$ is a linear combination of $\vect u$ and $\vect v$, then
 $\{\vect u,\vect v,\vect w\}$ is linearly dependent by Theorem 7.
-\item Conversely, if $\{\vect u,\vect v,\vect w\}$ is dependent
+\item Conversely, if $\{\vect u,\vect v,\vect w\}$ is dependent\pause
 \item By Theorem 7, some vector in $\{\vect u,\vect v,\vect w\}$ is a linear combination of the preceding vectors. Since
 $\vect u\ne0$ and $\vect u,\vect v$ are independent, that vector must be $\vect w$.
 \end{itemize}
@@ -235,7 +314,9 @@ $\vect u\ne0$ and $\vect u,\vect v$ are independent, that vector must be $\vect 
   \draw[->,thick,lectureblue] (0,0)--(.8,-.55) node[below]{$\vect w$};
 \end{tikzpicture}
 
+
 \scriptsize Linearly dependent: $\vect w\in\Span\{\vect u,\vect v\}$.
+\pause
 \column{.49\textwidth}
 \centering
 \begin{tikzpicture}[scale=.72,>=Stealth]
@@ -250,9 +331,11 @@ $\vect u\ne0$ and $\vect u,\vect v$ are independent, that vector must be $\vect 
 
 \scriptsize Linearly independent: $\vect w\notin\Span\{\vect u,\vect v\}$.
 \end{columns}
+
+\pause
 \smallskip
 \begin{itemize}
-  \item The example 4 generalizes to any set $\{\vect u,\vect v,\vect w\}$ in $\mathbb{R}^3$ with $\vect u$ and $\vect v$ linearly independent.
+  \item The example 4 generalizes to any set $\{\vect u,\vect v,\vect w\}$ in $\mathbb{R}^3$ with $\vect u$ and $\vect v$ linearly independent.\pause
   \item The set $\{\vect u,\vect v,\vect w\}$ will be linearly dependent if and only if $\vect w$ is in the plane spanned by $\vect u,\vect v$.
 
 \end{itemize}
@@ -265,7 +348,8 @@ $\vect u\ne0$ and $\vect u,\vect v$ are independent, that vector must be $\vect 
 \begin{beamercolorbox}[sep=1ex,wd=\linewidth]{block body}
 If a set $S=\{\vect v_1,\ldots,\vect v_p\}$ in $\R^n$ contains the zero
 vector, then the set is linearly dependent.
-\end{beamercolorbox}
+\end{beamercolorbox}\pause
+
 \medskip
 \textbf{Proof.} Renumber the vectors so that $\vect v_1=\vect0$. Then
 \[
@@ -323,9 +407,9 @@ $\mathbb{R}^n \rightarrow \mathbb{R}^m$
 % Reference page 18
 \begin{frame}{Matrix Transformations}
 \begin{itemize}
-  \item For each $\vect x\in\R^n$, $T(\vect x)$ is computed as $A\vect x$, where $A$ is an $m\times n$ matrix. 
-  \item For simplicity, we {\color{lectureblue}{denote such a \textit{matrix transformation} by}}  $x \mapsto Ax$
-  \item Observe that the domain of $T$ is $\mathbb{R}^m$ when $A$ has $n$ columns and the codomain of $T$ is $\mathbb{R}^m$ when each column of $A$ has $m$ entries.
+  \item For each $\vect x\in\R^n$, $T(\vect x)$ is computed as $A\vect x$, where $A$ is an $m\times n$ matrix. \pause
+  \item For simplicity, we {\color{lectureblue}{denote such a \textit{matrix transformation} by}}  $x \mapsto Ax$\pause
+  \item Observe that the domain of $T$ is $\mathbb{R}^m$ when $A$ has $n$ columns and the codomain of $T$ is $\mathbb{R}^m$ when each column of $A$ has $m$ entries.\pause
   \item {\color{red}{The range of $T$ is the set of all linear combinations of the columns of $A$}}, because each image $T(\vect{x})$ is of the form $A\vect{x}$.
 \end{itemize}
 \sourcepage{81}
@@ -333,7 +417,7 @@ $\mathbb{R}^n \rightarrow \mathbb{R}^m$
 
 % Reference page 19
 \begin{frame}{Transforming Vectors by Matrix Multiplication}
-  For instance, the equations
+  For instance, the equations\pause
 \small
 \[
 \underbrace{\begin{bmatrix}4&-3&1&3\\2&0&5&1\end{bmatrix}}_{A}
@@ -343,9 +427,11 @@ $\mathbb{R}^n \rightarrow \mathbb{R}^m$
 A\underbrace{\begin{bmatrix}4\\-1\\3\\-3\end{bmatrix}}_{\vect u}
 =\underbrace{\begin{bmatrix}0\\0\end{bmatrix}}_{\vect0}.
 \]
+
+\pause
 \centering
 
-say that multiplication by $A$ transforms $\vect{x}$ into $\vect{b}$ and transforms $\vect{u}$ into the zero vector. See Figure below.
+say that multiplication by $A$ transforms $\vect{x}$ into $\vect{b}$ and transforms $\vect{u}$ into the zero vector. See Figure below.\pause
 
 \begin{tikzpicture}[>=Stealth,scale=.8]
 \fill[blue!45] (-3,-1.4)--(-1.4,-1)--(-1.4,1.3)--(-3,1.7)--cycle;
@@ -393,7 +479,7 @@ T(\vect x)=\begin{bmatrix}1&-3\\3&5\\-1&7\end{bmatrix}
 % Reference page 22
 \begin{frame}{Matrix Transformations: Solution}
 \textbf{Solution:}
-
+\pause
 \begin{enumerate}[a.]
 \item Compute
 \[
@@ -402,6 +488,7 @@ T(\vect u)=A\vect u=
 \begin{bmatrix}2\\-1\end{bmatrix}
 =\begin{bmatrix}5\\1\\-9\end{bmatrix}.
 \]
+\pause
 \item Solve $T(\vect x)=\vect b$ for $\vect{x}$. That is, solve $Ax=b$, or
 \[
 \begin{bmatrix}1&-3\\3&5\\-1&7\end{bmatrix}
@@ -428,6 +515,8 @@ Row reduce the augmented matrix:
 $}
 \end{center}
 \par\hfill(2)\par\smallskip
+
+\pause
 Hence $x_1=1.5$, $x_2=-.5$, and
 \[
 \vect x=\begin{bmatrix}1.5\\-.5\end{bmatrix}.
@@ -440,17 +529,17 @@ The image of this $\vect x$ under $T$ is the given vector $\vect b$.
 \begin{frame}{Matrix Transformations: Uniqueness and Range}
 \begin{enumerate}[c.]
 
-\item Any $\vect x$ whose image under $T$ is $\vect b$ must satisfy equation (1).
+\item Any $\vect x$ whose image under $T$ is $\vect b$ must satisfy equation (1).\pause
 \begin{itemize}
-\item From (2), it is clear that equation (1) has a unique solution.
-\item So there is exactly one $\vect x$ whose image is $\vect b$.
+\item From (2), it is clear that equation (1) has a unique solution.\pause
+\item So there is exactly one $\vect x$ whose image is $\vect b$.\pause
 \end{itemize}
 \end{enumerate}
 
 \medskip
 \begin{enumerate}[d.]
 \item The vector $\vect c$ is in the range of $T$ if $\mathbf{c}$ is the image of some $\vect{x}$ in $\mathbb{R}^2$, that is, if
-$\vect c=T(\vect x)$ for some $\vect x\in\R^2$. 
+$\vect c=T(\vect x)$ for some $\vect x\in\R^2$. \pause
 
 
 This is another way of asking if the system
@@ -500,7 +589,7 @@ For $T:\R^n\to\R^m$:
 \end{frame}
 
 % Reference page 27
-\begin{frame}{Shear Transformation（剪切變換）}
+\begin{frame}{Shear Transformation}
 \textbf{Example 3} Let $A=\begin{bmatrix}1&3\\0&1\end{bmatrix}$. The transformation
 $T:\R^2\to\R^2$ defined by $T(\vect x)=A\vect x$ is called a \textbf{shear transformation}.
 
@@ -607,8 +696,8 @@ Repeated application of (4) gives
 T(c_1\vect v_1+\cdots+c_p\vect v_p)
 =c_1T(\vect v_1)+\cdots+c_pT(\vect v_p). \tag{5}
 \]
-In engineering and physics, (5) is called the \emph{superposition principle}
-（疊加原理）.
+In engineering and physics, (5) is called the \emph{superposition principle}.
+% （疊加原理）.
 \sourcepage{95}
 \end{frame}
 
@@ -629,7 +718,7 @@ $r>1$: vectors keep their direction and stretch away from the origin.
 \end{block}
 \end{columns}
 \begin{center}
-（收缩變換與拉伸變換）  
+% （收缩變換與拉伸變換）  
 \end{center}
 \sourcepage{96}
 \end{frame}
@@ -789,7 +878,7 @@ Tables 1--4 illustrate common geometric linear transformations of the plane.
 \begin{frame}{Reflections: Table 1 Continued}
   \begin{figure}
   \centering
-  \includegraphics[width=\textheight]{table2.png}
+  \includegraphics[height=.8\textheight]{table2.png}
 \end{figure}
 \sourcepage{105}
 \end{frame}
@@ -798,12 +887,48 @@ Tables 1--4 illustrate common geometric linear transformations of the plane.
 \begin{frame}{Reflections: Table 1 Continued}
  \begin{figure}
   \centering
-  \includegraphics[height=\textheight]{table3.png}
+  \includegraphics[height=.8\textheight]{table3.png}
 \end{figure}
   \sourcepage{106}
 \end{frame}
 
 % Reference page 44
+
+
+\begin{frame}{Table 2: Contractions and Expansions}
+  \only<1>{
+    \begin{columns}
+        \begin{column}{.5\linewidth}
+          \begin{figure}
+            \centering
+            \includegraphics[width=\linewidth]{contraction3.png}
+          \end{figure}
+        \end{column}
+        \begin{column}{.5\linewidth}
+          \begin{figure}
+            \centering
+            \includegraphics[width=\linewidth]{contraction4.png}
+          \end{figure}
+        \end{column}
+      \end{columns}
+  }
+  \only<2>{
+     \begin{columns}
+    \begin{column}{.5\linewidth}
+      \begin{figure}
+        \centering
+        \includegraphics[width=\linewidth]{expansion1.png}
+      \end{figure}
+    \end{column}
+    \begin{column}{.5\linewidth}
+      \begin{figure}
+        \centering
+        \includegraphics[width=\linewidth]{expansion2.png}
+      \end{figure}
+    \end{column}
+  \end{columns}
+  }
+\end{frame}
 \begin{frame}[shrink=10]{Table 2: Contractions and Expansions}
  \begin{figure}
   \centering
@@ -812,6 +937,24 @@ Tables 1--4 illustrate common geometric linear transformations of the plane.
 \sourcepage{107}
 \end{frame}
 
+
+
+\begin{frame}{Table 3: Shears}
+  \begin{columns}
+    \begin{column}{.5\linewidth}
+      \begin{figure}
+        \centering
+        \includegraphics[width=\linewidth]{sheer1.png}
+      \end{figure}
+    \end{column}
+    \begin{column}{.5\linewidth}
+      \begin{figure}
+        \centering
+        \includegraphics[width=\linewidth]{sheer2.png}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
 % Reference page 45
 \begin{frame}[shrink=10]{Table 3: Shears}
  \begin{figure}
@@ -821,11 +964,27 @@ Tables 1--4 illustrate common geometric linear transformations of the plane.
 \sourcepage{108}
 \end{frame}
 
+\begin{frame}{Table 4: Projections}
+  \begin{columns}
+    \begin{column}{.5\linewidth}
+      \begin{figure}
+        \centering
+        \includegraphics[width=\linewidth]{projection1.png}
+      \end{figure}
+    \end{column}
+    \begin{column}{.5\linewidth}
+      \begin{figure}
+        \centering
+        \includegraphics[width=\linewidth]{projection2.png}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
 % Reference page 46
 \begin{frame}{Table 4: Projections}
    \begin{figure}
   \centering
-  \includegraphics[height=\textheight]{table6.png}
+  \includegraphics[height=.8\textheight]{table6.png}
 \end{figure}
   
   \sourcepage{109}
@@ -942,17 +1101,17 @@ The \textbf{kernel} is $\{\vect x\in V:T(\vect x)=\vect0\}$; the
 \end{frame}
 
 % Reference page 52
-\begin{frame}{Glossary}
-\renewcommand{\arraystretch}{1.15}
-\begin{tabular}{r>{\bfseries}l>{\bfseries}l}
-1.&Square matrix&方阵\\
-2.&(Row) Column Vector&(行)列向量\\
-3.&Parallelogram rule&平行四边形法则\\
-4.&Scalar multiplication&数乘\\
-5.&Linear combination&线性组合\\
-6.&Parametric vector form&参数向量形式\\
-7.&(Non)Homogeneous&(非)齐次的\\
-8.&(Non)Trivial solution&(非)平凡解\\
-\end{tabular}
-\sourcepage{115}
-\end{frame}
+% \begin{frame}{Glossary}
+% \renewcommand{\arraystretch}{1.15}
+% \begin{tabular}{r>{\bfseries}l>{\bfseries}l}
+% 1.&Square matrix&方阵\\
+% 2.&(Row) Column Vector&(行)列向量\\
+% 3.&Parallelogram rule&平行四边形法则\\
+% 4.&Scalar multiplication&数乘\\
+% 5.&Linear combination&线性组合\\
+% 6.&Parametric vector form&参数向量形式\\
+% 7.&(Non)Homogeneous&(非)齐次的\\
+% 8.&(Non)Trivial solution&(非)平凡解\\
+% \end{tabular}
+% \sourcepage{115}
+% \end{frame}

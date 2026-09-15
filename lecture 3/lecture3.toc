@@ -1,5 +1,5 @@
-\beamer@sectionintoc {1}{Linear Independence}{1}{0}{1}
-\beamer@sectionintoc {2}{Linear Transformations}{17}{0}{2}
-\beamer@sectionintoc {3}{The Matrix of a Linear Transformation}{38}{0}{3}
-\beamer@sectionintoc {4}{Geometric Linear Transformations}{42}{0}{4}
-\beamer@sectionintoc {5}{Existence and Uniqueness Questions}{48}{0}{5}
+\beamer@sectionintoc {1}{Linear Independence}{16}{0}{1}
+\beamer@sectionintoc {2}{Linear Transformations}{64}{0}{2}
+\beamer@sectionintoc {3}{The Matrix of a Linear Transformation}{98}{0}{3}
+\beamer@sectionintoc {4}{Geometric Linear Transformations}{102}{0}{4}
+\beamer@sectionintoc {5}{Existence and Uniqueness Questions}{112}{0}{5}
