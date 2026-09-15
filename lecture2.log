@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.5.23)  3 SEP 2026 20:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.5.23)  9 SEP 2026 10:51
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Github/LinearAlgebra/slides.tex
-(c:/Github/LinearAlgebra/slides.tex
+**c:/Github/LinearAlgebra/lecture2.tex
+(c:/Github/LinearAlgebra/lecture2.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-05-08>
 (c:/texlive/2024/texmf-dist/tex/latex/beamer/beamer.cls
@@ -779,7 +779,7 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@every@listing=\toks54
 \c@listing=\count394
 )
-runsystem(if not exist _minted-slides mkdir _minted-slides)...executed.
+runsystem(if not exist _minted-lecture2 mkdir _minted-lecture2)...executed.
 
  (c:/texlive/2024/texmf-dist/tex/latex/graphics/rotating.sty
 Package: rotating 2016/08/11 v2.16d rotated objects in LaTeX
@@ -1004,16 +1004,16 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\medskipamount' on input line 202.
 
 (./beamerthemeOSUCSE169.sty (c:/texlive/2024/texmf-dist/tex/latex/beamer/beamerfontthemeprofessionalfonts.sty) (c:/texlive/2024/texmf-dist/tex/latex/beamer/beamerinnerthemerounded.sty))
-runsystem(for ^%i in (pygmentize.exe pygmentize.bat pygmentize.cmd) do set > slides.aex <nul: /p x=^%~$PATH:i>> slides.aex)...executed.
+runsystem(for ^%i in (pygmentize.exe pygmentize.bat pygmentize.cmd) do set > lecture2.aex <nul: /p x=^%~$PATH:i>> lecture2.aex)...executed.
 
-runsystem(del slides.aex)...executed.
+runsystem(del lecture2.aex)...executed.
 
  (c:/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count419
 \l__pdf_internal_box=\box119
-) (./slides.aux)
-\openout1 = `slides.aux'.
+) (./lecture2.aux (./Lecture2/2-1.aux) (./Lecture2/2-2.aux) (./Lecture2/2-3.aux))
+\openout1 = `lecture2.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 235.
 LaTeX Font Info:    ... okay on input line 235.
@@ -1083,9 +1083,9 @@ LaTeX Font Info:    ... okay on input line 235.
 \everyMPtoPDFconversion=\toks65
 )
 Package hyperref Info: Link coloring ON on input line 235.
- (./slides.out) (./slides.out)
+ (./lecture2.out) (./lecture2.out)
 \@outlinefile=\write7
-\openout7 = `slides.out'.
+\openout7 = `lecture2.out'.
 
  (c:/texlive/2024/texmf-dist/tex/latex/translator/translator-basic-dictionary-English.dict
 Dictionary: translator-basic-dictionary, Language: English 
@@ -1112,161 +1112,61 @@ Package caption Info: End \AtBeginDocument code.
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable tick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into your preamble.
  on input line 235.
 
-(./slides.nav)
-<template-images/osuseclab169.pdf, id=75, 963.6pt x 542.025pt>
+(./lecture2.nav)
+<template-images/osuseclab169.pdf, id=167, 963.6pt x 542.025pt>
 File: template-images/osuseclab169.pdf Graphic file (type pdf)
 <use template-images/osuseclab169.pdf>
 Package pdftex.def Info: template-images/osuseclab169.pdf  used on input line 244.
 (pdftex.def)             Requested size: 455.24408pt x 256.07507pt.
  [1
 
-{c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./template-images/osuseclab169.pdf>] (./Lecture1/slides.tex
-LaTeX Font Info:    Trying to load font information for U+msa on input line 21.
+{c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./template-images/osuseclab169.pdf>] (./Lecture2/slides.tex
+LaTeX Font Info:    Trying to load font information for U+msa on input line 26.
  (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 21.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 26.
  (c:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+wasy on input line 21.
+LaTeX Font Info:    Trying to load font information for U+wasy on input line 26.
  (c:/texlive/2024/texmf-dist/tex/latex/wasysym/uwasy.fd
 File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 ) [2
 
-] [3
-
 ]
-<Lecture1/research1.png, id=247, 1504.11937pt x 462.97969pt>
-File: Lecture1/research1.png Graphic file (type png)
-<use Lecture1/research1.png>
-Package pdftex.def Info: Lecture1/research1.png  used on input line 40.
-(pdftex.def)             Requested size: 398.3386pt x 122.61131pt.
- [4
+\openout2 = `Lecture2/2-1.aux'.
 
- <./Lecture1/research1.png>]
-File: Lecture1/research1.png Graphic file (type png)
-<use Lecture1/research1.png>
-Package pdftex.def Info: Lecture1/research1.png  used on input line 40.
-(pdftex.def)             Requested size: 398.3386pt x 122.61131pt.
- [5
+ (./Lecture2/2-1.tex [3
 
-]
-<Lecture1/research3.png, id=335, 1423.56844pt x 789.70032pt>
-File: Lecture1/research3.png Graphic file (type png)
-<use Lecture1/research3.png>
-Package pdftex.def Info: Lecture1/research3.png  used on input line 58.
-(pdftex.def)             Requested size: 278.83578pt x 154.67175pt.
- [6
 
- <./Lecture1/research3.png>]
-File: Lecture1/research3.png Graphic file (type png)
-<use Lecture1/research3.png>
-Package pdftex.def Info: Lecture1/research3.png  used on input line 58.
-(pdftex.def)             Requested size: 278.83578pt x 154.67175pt.
- [7
+] [4
 
-]
-<Lecture1/research4.png, id=422, 1494.33281pt x 444.91219pt>
-File: Lecture1/research4.png Graphic file (type png)
-<use Lecture1/research4.png>
-Package pdftex.def Info: Lecture1/research4.png  used on input line 67.
-(pdftex.def)             Requested size: 398.3386pt x 118.59361pt.
- [8
+] [5
 
- <./Lecture1/research4.png>]
-File: Lecture1/research4.png Graphic file (type png)
-<use Lecture1/research4.png>
-Package pdftex.def Info: Lecture1/research4.png  used on input line 67.
-(pdftex.def)             Requested size: 398.3386pt x 118.59361pt.
- [9
+] [6
 
-]
-<Lecture1/research5.png, id=509, 998.22937pt x 583.42969pt>
-File: Lecture1/research5.png Graphic file (type png)
-<use Lecture1/research5.png>
-Package pdftex.def Info: Lecture1/research5.png  used on input line 75.
-(pdftex.def)             Requested size: 278.83578pt x 162.96748pt.
- [10
+] [7
 
- <./Lecture1/research5.png>]
-<Lecture1/office1.jpg, id=565, 4015.0pt x 3011.25pt>
-File: Lecture1/office1.jpg Graphic file (type jpg)
-<use Lecture1/office1.jpg>
-Package pdftex.def Info: Lecture1/office1.jpg  used on input line 102.
-(pdftex.def)             Requested size: 99.58464pt x 74.66536pt.
-<Lecture1/office3.png, id=566, 513.41812pt x 684.30656pt>
-File: Lecture1/office3.png Graphic file (type png)
-<use Lecture1/office3.png>
-Package pdftex.def Info: Lecture1/office3.png  used on input line 102.
-(pdftex.def)             Requested size: 79.66649pt x 106.18127pt.
- [11
+] [8
 
- <./Lecture1/office1.jpg> <./Lecture1/office3.png>]
-File: Lecture1/office1.jpg Graphic file (type jpg)
-<use Lecture1/office1.jpg>
-Package pdftex.def Info: Lecture1/office1.jpg  used on input line 102.
-(pdftex.def)             Requested size: 99.58464pt x 74.66536pt.
-File: Lecture1/office3.png Graphic file (type png)
-<use Lecture1/office3.png>
-Package pdftex.def Info: Lecture1/office3.png  used on input line 102.
-(pdftex.def)             Requested size: 79.66649pt x 106.18127pt.
- [12
+] [9
 
-]
-File: Lecture1/office1.jpg Graphic file (type jpg)
-<use Lecture1/office1.jpg>
-Package pdftex.def Info: Lecture1/office1.jpg  used on input line 102.
-(pdftex.def)             Requested size: 99.58464pt x 74.66536pt.
-File: Lecture1/office3.png Graphic file (type png)
-<use Lecture1/office3.png>
-Package pdftex.def Info: Lecture1/office3.png  used on input line 102.
-(pdftex.def)             Requested size: 79.66649pt x 106.18127pt.
- [13
+] [10
 
-]
-File: Lecture1/office1.jpg Graphic file (type jpg)
-<use Lecture1/office1.jpg>
-Package pdftex.def Info: Lecture1/office1.jpg  used on input line 102.
-(pdftex.def)             Requested size: 99.58464pt x 74.66536pt.
-File: Lecture1/office3.png Graphic file (type png)
-<use Lecture1/office3.png>
-Package pdftex.def Info: Lecture1/office3.png  used on input line 102.
-(pdftex.def)             Requested size: 79.66649pt x 106.18127pt.
- [14
+] [11
 
-]
-File: Lecture1/office1.jpg Graphic file (type jpg)
-<use Lecture1/office1.jpg>
-Package pdftex.def Info: Lecture1/office1.jpg  used on input line 102.
-(pdftex.def)             Requested size: 99.58464pt x 74.66536pt.
-File: Lecture1/office3.png Graphic file (type png)
-<use Lecture1/office3.png>
-Package pdftex.def Info: Lecture1/office3.png  used on input line 102.
-(pdftex.def)             Requested size: 79.66649pt x 106.18127pt.
- [15
+] [12
 
-]
-File: Lecture1/office1.jpg Graphic file (type jpg)
-<use Lecture1/office1.jpg>
-Package pdftex.def Info: Lecture1/office1.jpg  used on input line 102.
-(pdftex.def)             Requested size: 99.58464pt x 74.66536pt.
-File: Lecture1/office3.png Graphic file (type png)
-<use Lecture1/office3.png>
-Package pdftex.def Info: Lecture1/office3.png  used on input line 102.
-(pdftex.def)             Requested size: 79.66649pt x 106.18127pt.
- [16
+] [13
 
-]
-File: Lecture1/office1.jpg Graphic file (type jpg)
-<use Lecture1/office1.jpg>
-Package pdftex.def Info: Lecture1/office1.jpg  used on input line 102.
-(pdftex.def)             Requested size: 99.58464pt x 74.66536pt.
-File: Lecture1/office3.png Graphic file (type png)
-<use Lecture1/office3.png>
-Package pdftex.def Info: Lecture1/office3.png  used on input line 102.
-(pdftex.def)             Requested size: 79.66649pt x 106.18127pt.
- [17
+] [14
+
+] [15
+
+] [16
+
+] [17
 
 ] [18
 
@@ -1280,11 +1180,23 @@ Package pdftex.def Info: Lecture1/office3.png  used on input line 102.
 
 ] [23
 
-] [24
+]
+<Lecture2/linearcomb.png, id=3427, 179.16937pt x 121.20282pt>
+File: Lecture2/linearcomb.png Graphic file (type png)
+<use Lecture2/linearcomb.png>
+Package pdftex.def Info: Lecture2/linearcomb.png  used on input line 471.
+(pdftex.def)             Requested size: 119.50279pt x 80.84113pt.
+ [24
 
-] [25
+ <./Lecture2/linearcomb.png>]
+<Lecture2/linearcomb2.png, id=3577, 211.91672pt x 174.2761pt>
+File: Lecture2/linearcomb2.png Graphic file (type png)
+<use Lecture2/linearcomb2.png>
+Package pdftex.def Info: Lecture2/linearcomb2.png  used on input line 489.
+(pdftex.def)             Requested size: 119.50279pt x 98.27736pt.
+ [25
 
-] [26
+ <./Lecture2/linearcomb2.png>] [26
 
 ] [27
 
@@ -1300,9 +1212,15 @@ Package pdftex.def Info: Lecture1/office3.png  used on input line 102.
 
 ] [33
 
-] [34
+]
+<Lecture2/snippet1.png, id=4622, 81.30376pt x 28.23047pt>
+File: Lecture2/snippet1.png Graphic file (type png)
+<use Lecture2/snippet1.png>
+Package pdftex.def Info: Lecture2/snippet1.png  used on input line 600.
+(pdftex.def)             Requested size: 99.58464pt x 34.58066pt.
+ [34
 
-] [35
+ <./Lecture2/snippet1.png>] [35
 
 ] [36
 
@@ -1316,41 +1234,171 @@ Package pdftex.def Info: Lecture1/office3.png  used on input line 102.
 
 ] [41
 
-] [42
+]
+<Lecture2/span3.png, id=5660, 109.91063pt x 146.42203pt>
+File: Lecture2/span3.png Graphic file (type png)
+<use Lecture2/span3.png>
+Package pdftex.def Info: Lecture2/span3.png  used on input line 716.
+(pdftex.def)             Requested size: 119.50279pt x 159.20584pt.
 
-] [43
+Overfull \vbox (1.4776pt too high) detected at line 716
+ []
+
+[42
+
+ <./Lecture2/span3.png>]
+LaTeX Font Info:    Trying to load font information for OMS+cmss on input line 735.
+LaTeX Font Info:    No file OMScmss.fd. on input line 735.
+
+
+LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
+(Font)              using `OMS/cmsy/m/n' instead
+(Font)              for symbol `textbraceleft' on input line 735.
+
+<Lecture2/fig11.png, id=5809, 147.55125pt x 110.28703pt>
+File: Lecture2/fig11.png Graphic file (type png)
+<use Lecture2/fig11.png>
+Package pdftex.def Info: Lecture2/fig11.png  used on input line 735.
+(pdftex.def)             Requested size: 159.333pt x 119.09642pt.
+[43
+
+ <./Lecture2/fig11.png>] [44
 
 ])
+\openout2 = `Lecture2/2-2.aux'.
+
+ (./Lecture2/2-2.tex [45
+
+
+
+
+] [46
+
+] [47
+
+] [48
+
+] [49
+
+] [50
+
+] [51
+
+] [52
+
+] [53
+
+] [54
+
+] [55
+
+] [56
+
+] [57
+
+] [58
+
+] [59
+
+] [60
+
+] [61
+
+] [62
+
+] [63
+
+] [64
+
+])
+\openout2 = `Lecture2/2-3.aux'.
+
+ (./Lecture2/2-3.tex [65
+
+
+
+
+] [66
+
+] [67
+
+] [68
+
+] [69
+
+] [70
+
+] [71
+
+] [72
+
+] [73
+
+] [74
+
+] [75
+
+] [76
+
+] [77
+
+] [78
+
+] [79
+
+] [80
+
+] [81
+
+] [82
+
+] [83
+
+] [84
+
+] [85
+
+] [86
+
+] [87
+
+] [88
+
+]))
 \tf@nav=\write8
-\openout8 = `slides.nav'.
+\openout8 = `lecture2.nav'.
 
 \tf@toc=\write9
-\openout9 = `slides.toc'.
+\openout9 = `lecture2.toc'.
 
 \tf@snm=\write10
-\openout10 = `slides.snm'.
+\openout10 = `lecture2.snm'.
 
- (./slides.aux)
+ (./lecture2.aux (./Lecture2/2-1.aux) (./Lecture2/2-2.aux) (./Lecture2/2-3.aux))
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-05-08>
  ***********
-Package rerunfilecheck Info: File `slides.out' has not changed.
-(rerunfilecheck)             Checksum: 82E82E9466928807338CA5EAF12894B8;344.
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+Package rerunfilecheck Info: File `lecture2.out' has not changed.
+(rerunfilecheck)             Checksum: 0FE142E595077CDF72F1E135F6F31EC0;381.
  ) 
 Here is how much of TeX's memory you used:
- 44477 strings out of 473992
- 1031767 string characters out of 5745048
- 1947907 words of memory out of 5000000
- 66022 multiletter control sequences out of 15000+600000
- 569532 words of font info for 81 fonts, out of 8000000 for 9000
+ 44965 strings out of 473992
+ 1040483 string characters out of 5745048
+ 1979907 words of memory out of 5000000
+ 66389 multiletter control sequences out of 15000+600000
+ 580288 words of font info for 121 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,20n,123p,743b,803s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on slides.pdf (43 pages, 5746930 bytes).
+ 128i,20n,123p,745b,1054s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on lecture2.pdf (88 pages, 729588 bytes).
 PDF statistics:
- 2003 PDF objects out of 2073 (max. 8388607)
- 1291 compressed objects within 13 object streams
- 90 named destinations out of 1000 (max. 500000)
- 102 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11925 PDF objects out of 12825 (max. 8388607)
+ 6668 compressed objects within 67 object streams
+ 180 named destinations out of 1000 (max. 500000)
+ 115 words of extra memory for PDF output out of 10000 (max. 10000000)
 

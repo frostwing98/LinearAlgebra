@@ -1,0 +1,3 @@
+\beamer@sectionintoc {1}{Vector Equations}{3}{0}{1}
+\beamer@sectionintoc {2}{The Matrix Equation}{45}{0}{2}
+\beamer@sectionintoc {3}{Solution Sets}{65}{0}{3}

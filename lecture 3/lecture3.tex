@@ -1,0 +1,56 @@
+% Lecture 3 wrapper. Its main-file/content-file structure follows Lecture 1.
+% Compile from the LinearAlgebra repository root with:
+%   pdflatex -interaction=nonstopmode -halt-on-error "lecture 3/lecture3.tex"
+\pdfminorversion=7
+\documentclass[aspectratio=169]{beamer}
+
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb}
+\usepackage{xspace}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{pifont}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[UTF8,heading=false]{ctex}
+\else
+  \usepackage{fontspec}
+  \usepackage{xeCJK}
+  \setCJKmainfont{Microsoft YaHei}
+\fi
+\usetikzlibrary{arrows.meta,calc,positioning,patterns,shapes.geometric}
+
+\makeatletter
+\def\input@path{{../}{lecture 3/}}
+\makeatother
+
+\setbeamercolor{headline}{fg=black,bg=black}
+\setbeamercolor{section in head/foot}{bg=gray}
+\setbeamertemplate{headline}{%
+  \begin{beamercolorbox}[ht=2.25ex,dp=3.75ex]{section in head/foot}
+    \insertnavigation{\paperwidth}
+  \end{beamercolorbox}}
+
+\mode<presentation>{
+  \usetheme{OSUCSE169}
+  \setbeamercovered{transparent=28}
+}
+\setbeamertemplate{footline}[frame number]
+\setbeamertemplate{navigation symbols}{}
+\setbeamercovered{invisible}
+
+\definecolor{lecturegreen}{RGB}{48,105,21}
+\definecolor{lectureblue}{RGB}{0,90,190}
+\definecolor{theorembg}{RGB}{235,234,255}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Span}{\operatorname{Span}}
+\newcommand{\vect}[1]{\mathbf{#1}}
+\newcommand{\sourcepage}[1]{\par\noindent\hfill{\scriptsize\color{lecturegreen}Slide 2 - #1}\par}
+
+\begin{document}
+\IfFileExists{./lecture 3/slides.tex}{\input{./lecture 3/slides.tex}}{\input{./slides.tex}}
+\end{document}

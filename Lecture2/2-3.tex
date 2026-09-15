@@ -1,0 +1,278 @@
+
+% ===== Slide 47 =====
+\section{Solution Sets}
+\begin{frame}{Solution Sets of Linear Systems}
+  \centering
+  \Large 1.5 Solution Sets of Linear Systems
+\end{frame}
+
+% ===== Slide 48 =====
+\begin{frame}{Topics}
+  \begin{itemize}
+    \item Parametric Vector Form
+    \item Solution Sets of Homogeneous Linear Systems
+    \item Solution Sets of Nonhomogeneous Systems
+  \end{itemize}
+\end{frame}
+
+% ===== Slide 49 =====
+\begin{frame}{Parametric Vector Form}
+  A parametric description
+  \[
+    \begin{cases}
+      x_1=13x_3-5x_4,\\
+      x_2=8x_3-3x_4,\\
+      x_3\text{ is free},\\
+      x_4\text{ is free}
+    \end{cases}
+  \]
+  becomes, on setting $x_3=c_1$ and $x_4=c_2$,
+  \[
+    \begin{bmatrix}x_1\\x_2\\x_3\\x_4\end{bmatrix}
+    =c_1\underbrace{\begin{bmatrix}13\\8\\1\\0\end{bmatrix}}_{\mathbf{u}}
+     +c_2\underbrace{\begin{bmatrix}-5\\-3\\0\\1\end{bmatrix}}_{\mathbf{v}}.
+  \]
+\end{frame}
+
+% ===== Slide 50 =====
+\begin{frame}{Two Descriptions of a Solution Set}
+  \begin{block}{Parametric description}
+    A parametric description defines the coordinates of a curve, surface, or system using independent variables called parameters rather than a direct relationship between coordinates
+  \end{block}
+  \begin{block}{Parametric vector description}
+    An explicit description of the plane as the set spanned by
+    $\mathbf{u}$ and $\mathbf{v}$.
+  \end{block}
+\end{frame}
+
+% ===== Slide 51 =====
+\begin{frame}{Solution Sets of Homogeneous Linear Systems}
+  % Chinese subtitle in source: 齐次系统
+  A \alert{homogeneous system} has the form
+  \[
+    A\mathbf{x}=\mathbf{0},
+  \]
+  where $A$ is $m\times n$ and $\mathbf{0}$ is the zero vector in
+  $\mathbb{R}^m$.
+
+  \medskip
+  Example:
+  \[
+    \begin{cases}
+      x_1+10x_2=0,\\
+      2x_1+20x_2=0,
+    \end{cases}
+    \qquad
+    \begin{bmatrix}1&10\\2&20\end{bmatrix}
+    \begin{bmatrix}x_1\\x_2\end{bmatrix}
+    =\begin{bmatrix}0\\0\end{bmatrix}.
+  \]
+\end{frame}
+
+% ===== Slide 52 =====
+\begin{frame}{Trivial and Nontrivial Solutions}
+  The homogeneous system $A\mathbf{x}=\mathbf{0}$ always has the
+  \alert{trivial solution} (Trivial: simple, obvious, expected answer).
+  \[
+    \mathbf{x}=\mathbf{0}.
+  \]
+
+  Here \textbf{x} and \textbf{0} are both vectors. Basically, it is setting all vairables to 0. It always works!
+
+  Nonzero vector solutions are called \alert{nontrivial solutions}.
+
+  \medskip
+  For the previous example,
+  \[
+    \left[\begin{array}{cc|c}1&10&0\\2&20&0\end{array}\right]
+    \sim
+    \left[\begin{array}{cc|c}1&10&0\\0&0&0\end{array}\right].
+  \]
+  The system is consistent and has a free variable, so it has infinitely
+  many solutions, including nontrivial ones.
+\end{frame}
+
+% ===== Slide 53 =====
+\begin{frame}{When Do Nontrivial Solutions Exist?}
+  A homogeneous equation $A\mathbf{x}=\mathbf{0}$ has nontrivial solutions
+  if and only if the system has \alert{at least one free variable}.
+
+  \medskip
+  Determine whether the following system has nontrivial solutions, and then
+  describe its solution set:
+  \[
+    \begin{cases}
+      2x_1+4x_2-6x_3=0,\\
+      4x_1+8x_2-10x_3=0.
+    \end{cases}
+  \]
+  There are three variables but at most two pivots, so at least one variable
+  is free; hence nontrivial solutions exist.
+\end{frame}
+
+\begin{frame}{When Do Nontrivial Solutions Exist?}
+  Why we need to have free variables for nontrivial solution to exist?
+\end{frame}
+
+% ===== Slide 54 =====
+\begin{frame}{Row Reduction of the Homogeneous System}
+  \[
+    \left[\begin{array}{ccc|c}2&4&-6&0\\4&8&-10&0\end{array}\right]
+    \sim
+    \left[\begin{array}{ccc|c}1&2&-3&0\\4&8&-10&0\end{array}\right]
+    \sim
+    \left[\begin{array}{ccc|c}1&2&-3&0\\0&0&2&0\end{array}\right]
+    \sim
+    \left[\begin{array}{ccc|c}1&2&0&0\\0&0&1&0\end{array}\right].
+  \]
+  Therefore
+  \[
+    x_1=-2x_2,\qquad x_2\text{ is free},\qquad x_3=0.
+  \]
+\end{frame}
+
+% ===== Slide 55 =====
+\begin{frame}{Parametric Vector Description}
+  Since $x_1=-2x_2$, $x_2$ is free, and $x_3=0$,
+  \[
+    \mathbf{x}
+    =\begin{bmatrix}x_1\\x_2\\x_3\end{bmatrix}
+    =\begin{bmatrix}-2x_2\\x_2\\0\end{bmatrix}
+    =x_2\underbrace{\begin{bmatrix}-2\\1\\0\end{bmatrix}}_{\mathbf{v}}
+    = x_2 \mathbf{v}.
+  \]
+  Thus the solution set is
+  \[
+    \operatorname{Span}\left\{\begin{bmatrix}-2\\1\\0\end{bmatrix}\right\}.
+  \]
+\end{frame}
+
+% ===== Slide 56 =====
+\begin{frame}{Solution Sets of Nonhomogeneous Linear Systems}
+  Describe the solution set of
+  \[
+    \begin{cases}
+      2x_1+4x_2-6x_3=0,\\
+      4x_1+8x_2-10x_3=4.
+    \end{cases}
+  \]
+
+  Nonhomogeneous because (0,4) is not all zero (0,0).
+
+  Row reduction gives
+  \[
+    \left[\begin{array}{ccc|c}2&4&-6&0\\4&8&-10&4\end{array}\right]
+    \sim
+    \left[\begin{array}{ccc|c}1&2&0&6\\0&0&1&2\end{array}\right].
+  \]
+  Hence
+  \[
+    \mathbf{x}
+    = \begin{bmatrix}6-2x_2\\x2\\2\end{bmatrix}
+    =\underbrace{\begin{bmatrix}6\\0\\2\end{bmatrix}}_{\mathbf{p}}
+     +x_2\underbrace{\begin{bmatrix}-2\\1\\0\end{bmatrix}}_{\mathbf{v}}
+    = \mathbf{p}+2\mathbf{v}
+  \]
+\end{frame}
+
+% ===== Slide 57 =====
+\begin{frame}{Recap of the Previous Two Examples}
+  The solution set of $A\mathbf{x}=\mathbf{0}$ is
+  \[
+    \mathbf{x}=x_2\begin{bmatrix}-2\\1\\0\end{bmatrix}=x_2\mathbf{v}.
+  \]
+  The solution set of $A\mathbf{x}=\mathbf{b}$ is
+  \[
+    \mathbf{x}
+    =\begin{bmatrix}6\\0\\2\end{bmatrix}
+     +x_2\begin{bmatrix}-2\\1\\0\end{bmatrix}
+    =\mathbf{p}+x_2\mathbf{v}.
+  \]
+\end{frame}
+
+% ===== Slide 58 =====
+\begin{frame}{Theorem 6}
+  Suppose $A\mathbf{x}=\mathbf{b}$ is consistent (exists solution) for some given $\mathbf{b}$ and let $\mathbf{p}$ be
+  one particular solution. Then its solution set is the set of all vectors
+  of the form
+  \[
+    \mathbf{w}=\mathbf{p}+\mathbf{v}_h,
+  \]
+  where $\mathbf{v}_h$ is any solution of the homogeneous equation
+  $A\mathbf{x}=\mathbf{0}$.
+
+  \medskip
+  \alert{Warning:} This theorem applies only when
+  $A\mathbf{x}=\mathbf{b}$ has at least one solution. If the $A\mathbf{x}=\mathbf{b}$ is 
+  inconsistent, its solution set is empty.
+
+  {\color{red}{\textbf{CHECK IF SOLUTION EXISTS FIRST!}}}
+
+  % Corrected from the source slide: the relevant condition is that a
+  % particular solution exists; it need not be described as "nonzero" in general.
+\end{frame}
+
+% ===== Slide 59 =====
+\begin{frame}{Example: A Homogeneous Plane}
+  Describe the solution set of $2x_1-4x_2-4x_3=0$ and compare it with
+  the solution set of $2x_1-4x_2-4x_3=6$.
+\pause
+
+  Solution: for the first homogeneous equation,
+  \[
+    \begin{bmatrix}2&-4&-4&0\end{bmatrix}
+    \sim\begin{bmatrix}1&-2&-2&0\end{bmatrix}.
+  \]
+  Therefore
+  \[
+    \mathbf{x}
+    =\begin{bmatrix}2x_2+2x_3\\x_2\\x_3\end{bmatrix}
+    =x_2\underbrace{\begin{bmatrix}2\\1\\0\end{bmatrix}}_{\mathbf{u}}
+     +x_3\underbrace{\begin{bmatrix}2\\0\\1\end{bmatrix}}_{\mathbf{v}}.
+  \]
+\end{frame}
+
+% ===== Slide 60 =====
+\begin{frame}{Example: A Parallel Nonhomogeneous Plane}
+  For the second nonhomogeneous equation $2x_1-4x_2-4x_3=6$,
+  \[
+    \begin{bmatrix}2&-4&-4&6\end{bmatrix}
+    \sim\begin{bmatrix}1&-2&-2&3\end{bmatrix}.
+  \]
+  Thus
+  \[
+    \mathbf{x}
+    =\begin{bmatrix}3+2x_2+2x_3\\x_2\\x_3\end{bmatrix}
+    =\underbrace{\begin{bmatrix}3\\0\\0\end{bmatrix}}_{\mathbf{p}}
+     +x_2\underbrace{\begin{bmatrix}2\\1\\0\end{bmatrix}}_{\mathbf{u}}
+     +x_3\underbrace{\begin{bmatrix}2\\0\\1\end{bmatrix}}_{\mathbf{v}}.
+  \]
+\end{frame}
+
+% ===== Slide 61 =====
+\begin{frame}{Exercise: True or False?}
+  \small
+  \begin{enumerate}
+    \item If $A\mathbf{x}=\mathbf{0}$ has only the trivial solution, then
+          $A\mathbf{x}=\mathbf{b}$ has a unique solution.\pause \alert{False} \\Has 0 or 1 solution
+    \item If $A\mathbf{x}=\mathbf{0}$ has a nontrivial solution, then
+          $A\mathbf{x}=\mathbf{b}$ has infinitely many solutions.\pause \alert{False}\\ Has 0 or infinitely many
+    \item If $A\mathbf{x}=\mathbf{b}$ has infinitely many solutions, then
+          $A\mathbf{x}=\mathbf{0}$ has a nontrivial solution.\pause \alert{True} \\Only trivial 
+  \end{enumerate}
+\end{frame}
+
+
+\begin{frame}{Exercise: True or False?}
+  \small
+  \begin{enumerate}[start=4]
+    \item If $A\mathbf{x}=\mathbf{b}$ has a unique solution, then
+          $A\mathbf{x}=\mathbf{0}$ has a nontrivial solution.\pause \alert{False} \\ Only nontrivial
+    \item Any $n\times n$ system of linear equations has at most $n$
+          solutions.\pause \alert{False} \\ May be 0, 1, or infinitely many
+    \item The system $A\mathbf{x}=\mathbf{0}$ has the trivial solution if
+          and only if there is no free variable. \pause\alert{False}\\ Completely reversed. If and only if there is at least one free variable
+  \end{enumerate}
+\end{frame}
+
+    

@@ -1,0 +1,312 @@
+
+% ===== Slide 32 =====
+\section{The Matrix Equation}
+\begin{frame}{The Matrix Equation}
+  \centering
+  \Large 1.4 The Matrix Equation Ax=b
+
+  \bigskip
+  \Huge $A\mathbf{x}=\mathbf{b}$
+\end{frame}
+
+% ===== Slide 33 =====
+\begin{frame}{Two Ways to Denote an $m\times n$ Matrix}
+  In terms of the entries of $A$:
+  \[
+    A=\begin{bmatrix}
+      a_{11}&\cdots&a_{1j}&\cdots&a_{1n}\\
+      \vdots&&\vdots&&\vdots\\
+      a_{i1}&\cdots&a_{ij}&\cdots&a_{in}\\
+      \vdots&&\vdots&&\vdots\\
+      a_{m1}&\cdots&a_{mj}&\cdots&a_{mn}
+    \end{bmatrix}.
+  \]
+  In terms of its columns:
+  \[
+    A=\begin{bmatrix}\mathbf{a}_1&\mathbf{a}_2&\cdots&\mathbf{a}_n\end{bmatrix},
+    \qquad \mathbf{a}_i\in\mathbb{R}^m\quad(i=1,\ldots,n).
+  \]
+
+  
+\end{frame}
+
+\begin{frame}{Two Ways to Denote a matrix}
+   
+ In terms of its columns:
+  \[
+    A=\begin{bmatrix}\mathbf{a}_1&\mathbf{a}_2&\cdots&\mathbf{a}_n\end{bmatrix},
+    \qquad \mathbf{a}_i\in\mathbb{R}^m\quad(i=1,\ldots,n).
+  \]
+
+   For example:
+
+   \[
+     \mathbf{a}_1 = \begin{bmatrix}
+       a_{11}\\\vdots\\a_{i1}\\\vdots\\a_{m1} 
+     \end{bmatrix}.
+  \]
+
+\end{frame}
+
+% ===== Slide 34 =====
+\begin{frame}{Definition of the Matrix--Vector Product}
+  If $A$ is an $m\times n$ matrix with columns
+  $\mathbf{a}_1,\ldots,\mathbf{a}_n$, and
+  $\mathbf{x}\in\mathbb{R}^n$, then
+  \[
+    A\mathbf{x}
+    =\begin{bmatrix}\mathbf{a}_1&\mathbf{a}_2&\cdots&\mathbf{a}_n\end{bmatrix}
+     \begin{bmatrix}x_1\\x_2\\\vdots\\x_n\end{bmatrix}
+    =x_1\mathbf{a}_1+x_2\mathbf{a}_2+\cdots+x_n\mathbf{a}_n.
+  \]
+  Thus $A\mathbf{x}$ is the \textbf{linear combination} of the columns of $A$ using
+  the corresponding entries of $\mathbf{x}$ as weights.
+
+  \medskip
+  $A\mathbf{x}$ is defined only when the number of columns of $A$ equals
+  the number of entries of $\mathbf{x}$. ("Length" of $A$ = "Height" of x)
+  
+  Moreover,
+  $\mathbf{a}_i\in\mathbb{R}^m$ and $A\mathbf{x}\in\mathbb{R}^m$.
+\end{frame}
+
+% ===== Slide 35 =====
+\begin{frame}{Example: Computing $A\mathbf{x}$ by Columns}
+  \[
+    \underbrace{\begin{bmatrix}1&-4\\3&2\\0&5\end{bmatrix}}_{A}
+    \underbrace{\begin{bmatrix}7\\-6\end{bmatrix}}_{\mathbf{x}}
+    =7\begin{bmatrix}1\\3\\0\end{bmatrix}
+      -6\begin{bmatrix}-4\\2\\5\end{bmatrix}
+    =\begin{bmatrix}7\\21\\0\end{bmatrix}
+      +\begin{bmatrix}24\\-12\\-30\end{bmatrix}
+    =\underbrace{\begin{bmatrix}31\\9\\-30\end{bmatrix}}_{\mathbf{b}}.
+  \]
+
+  Here, $\mathbf{A}$
+\end{frame}
+
+% ===== Slide 36 =====
+\begin{frame}{Example: Write a Linear Combination as $A\mathbf{x}$}
+  For $\mathbf{v}_1,\mathbf{v}_2,\mathbf{v}_3\in\mathbb{R}^m$, write the linear combination 
+  $3\mathbf{v}_1-5\mathbf{v}_2+7\mathbf{v}_3$ as a matrix times a vector.\pause
+
+  \medskip
+  Answer: place $\mathbf{v}_1,\mathbf{v}_2,\mathbf{v}_3$ into the columns of $A$
+  and the weights $3,-5,7$ into $\mathbf{x}$:\pause
+  \[
+    3\mathbf{v}_1-5\mathbf{v}_2+7\mathbf{v}_3
+    =\pause\begin{bmatrix}\mathbf{v}_1&\mathbf{v}_2&\mathbf{v}_3\end{bmatrix}
+      \begin{bmatrix}3\\-5\\7\end{bmatrix}
+    =A\mathbf{x}.
+  \]
+\end{frame}
+
+% ===== Slide 37 =====
+\begin{frame}{Three Forms of the Same Linear System}
+  \[
+    \begin{cases}
+      2x_1+3x_2+4x_3=9,\\
+      -3x_1+x_2=-2.
+    \end{cases}
+  \]
+  Vector equation:
+  \[
+    x_1\begin{bmatrix}2\\-3\end{bmatrix}
+    +x_2\begin{bmatrix}3\\1\end{bmatrix}
+    +x_3\begin{bmatrix}4\\0\end{bmatrix}
+    =\begin{bmatrix}9\\-2\end{bmatrix}.
+  \]
+  Matrix equation:
+  \[
+    \begin{bmatrix}2&3&4\\-3&1&0\end{bmatrix}
+    \begin{bmatrix}x_1\\x_2\\x_3\end{bmatrix}
+    =\begin{bmatrix}9\\-2\end{bmatrix},
+    \qquad A\mathbf{x}=\mathbf{b}.
+  \]
+\end{frame}
+
+% ===== Slide 38 =====
+\begin{frame}{Three Equivalent Views of a Linear System}
+  A linear system may be viewed
+  \begin{enumerate}
+    \item as a system of linear equations;
+    \item as a vector equation
+      \[
+        x_1\mathbf{a}_1+x_2\mathbf{a}_2+\cdots+x_n\mathbf{a}_n=\mathbf{b};
+      \]
+    \item as a matrix equation $A\mathbf{x}=\mathbf{b}$.
+  \end{enumerate}
+\end{frame}
+
+% ===== Slide 39 =====
+\begin{frame}{Theorem 3}
+  If $A$ is an $m\times n$ matrix with columns
+  $\mathbf{a}_1,\ldots,\mathbf{a}_n$ and $\mathbf{b}\in\mathbb{R}^m$, then
+  the matrix equation
+  \[
+    A\mathbf{x}=\mathbf{b}
+  \]
+  has the same solution set as the vector equation
+  \[
+    x_1\mathbf{a}_1+x_2\mathbf{a}_2+\cdots+x_n\mathbf{a}_n=\mathbf{b},
+  \]
+  which has the same solution set as the linear system with augmented matrix
+  \[
+    \begin{bmatrix}\mathbf{a}_1&\mathbf{a}_2&\cdots&\mathbf{a}_n&\mathbf{b}\end{bmatrix}.
+  \]
+  Consequently, $A\mathbf{x}=\mathbf{b}$ has a solution if and only if
+  $\mathbf{b}$ is a linear combination of the columns of $A$.
+\end{frame}
+
+% ===== Slide 40 =====
+\begin{frame}{Theorem 4 and Example}
+  For an $m\times n$ matrix $A$, the following are logically equivalent:
+  \begin{enumerate}
+    \item For every $\mathbf{b}\in\mathbb{R}^m$, the equation
+          $A\mathbf{x}=\mathbf{b}$ has a solution.
+    \item Every $\mathbf{b}\in\mathbb{R}^m$ is a linear combination of the
+          columns of $A$.
+  \end{enumerate}
+  
+\end{frame}
+
+\begin{frame}{How to determine an equation is consistent for all vectors}
+  EXAMPLE: Let
+  \[
+    A=\begin{bmatrix}1&4&5\\-3&-11&-14\\2&8&10\end{bmatrix},\qquad
+    \mathbf{b}=\begin{bmatrix}b_1\\b_2\\b_3\end{bmatrix},
+  \]
+
+  Is the equation $A\mathbf{x}=\mathbf{b}$ consistent for all $\mathbf{b}$?
+
+  Answer: augmented matrix corresponding to $A\mathbf{x}=\mathbf{b}$:
+  
+  \[
+    \left[\begin{array}{cccc}1&4&5&b_1\\-3&-11&-14&b_2\\2&8&10&b_3\end{array}\right]
+    \sim
+    \left[\begin{array}{cccc}
+      1&4&5&b_1\\
+      0&1&1&3b_1+b_2\\
+      0&0&0&-2b_1+b_3
+    \end{array}\right].
+  \]
+
+  (Can you find a value of $b_1$ and $b_3$ that makes $-2b_1+b_3$ non zero?)
+
+  Hence $A\mathbf{x}=\mathbf{b}$ is \alert{not} consistent for every $\mathbf{b}$.
+\end{frame}
+% ===== Slide 41 =====
+\begin{frame}{Exercise: Consistency for Every $\mathbf{b}$?}
+  Compute $A\mathbf{x}$ where 
+  \[
+    A=\begin{bmatrix}1&2\\3&4\\5&6\end{bmatrix},\qquad
+    \mathbf{b}=\begin{bmatrix}b_1\\b_2\\b_3\end{bmatrix}.
+  \]
+  Is $A\mathbf{x}=\mathbf{b}$ consistent for every possible $\mathbf{b}$?
+  \[
+    \left[\begin{array}{cc|c}1&2&b_1\\3&4&b_2\\5&6&b_3\end{array}\right]
+    \sim
+    \left[\begin{array}{cc|c}
+      1&0&-2b_1+b_2\\
+      0&1&\dfrac{3b_1-b_2}{2}\\
+      0&0&b_1-2b_2+b_3
+    \end{array}\right].
+  \]
+  The equation is not consistent for every $\mathbf{b}$ because some choices
+  make $b_1-2b_2+b_3\ne0$.
+\end{frame}
+
+% ===== Slide 42 =====
+\begin{frame}{Properties of the Matrix--Vector Product $A\mathbf{x}$}
+  \begin{block}{Theorem 5}
+    If $A$ is an $m\times n$ matrix,
+    $\mathbf{u},\mathbf{v}\in\mathbb{R}^n$, and $c$ is a scalar, then
+    \begin{enumerate}
+      \item $A(\mathbf{u}+\mathbf{v})=A\mathbf{u}+A\mathbf{v}$;
+      \item $A(c\mathbf{u})=cA\mathbf{u}$.
+    \end{enumerate}
+  \end{block}
+\end{frame}
+
+% ===== Slide 43 =====
+\begin{frame}{Computation of $A\mathbf{x}$}
+  Let
+  \[
+    A=\begin{pmatrix}2&3&4\\-1&5&-3\\6&-2&8\end{pmatrix},\qquad
+    \mathbf{x}=\begin{pmatrix}x_1\\x_2\\x_3\end{pmatrix}.
+  \]
+  From the definition,
+  \begin{align*}
+    A\mathbf{x}
+      &=x_1\begin{pmatrix}2\\-1\\6\end{pmatrix}
+       +x_2\begin{pmatrix}3\\5\\-2\end{pmatrix}
+       +x_3\begin{pmatrix}4\\-3\\8\end{pmatrix}\\
+      &=\begin{pmatrix}
+          2x_1+3x_2+4x_3\\
+          -x_1+5x_2-3x_3\\
+          6x_1-2x_2+8x_3
+        \end{pmatrix}.
+  \end{align*}
+\end{frame}
+
+% ===== Slide 44 =====
+\begin{frame}{Computing $A\mathbf{x}$ Row by Row}
+  \[
+    \begin{pmatrix}2&3&4\\-1&5&-3\\6&-2&8\end{pmatrix}
+    \begin{pmatrix}x_1\\x_2\\x_3\end{pmatrix}
+    =\begin{pmatrix}
+       \alert{2x_1+3x_2+4x_3}\\
+       -x_1+5x_2-3x_3\\
+       6x_1-2x_2+8x_3
+     \end{pmatrix}.
+  \]
+  Each output entry is the dot product of one row of $A$ with $\mathbf{x}$:
+  \[
+    \begin{aligned}
+      (2,3,4)\mathbf{x}&=2x_1+3x_2+4x_3,\\
+      (-1,5,-3)\mathbf{x}&=-x_1+5x_2-3x_3,\\
+      (6,-2,8)\mathbf{x}&=6x_1-2x_2+8x_3.
+    \end{aligned}
+  \]
+\end{frame}
+
+% ===== Slide 45 =====
+\begin{frame}{Row--Vector Rule for Computing $A\mathbf{x}$}
+  If $A\mathbf{x}$ is defined, then its $i$th entry is the sum of the products
+  of corresponding entries from row $i$ of $A$ and from $\mathbf{x}$.
+  \begin{align*}
+    \begin{bmatrix}1&2&-1\\0&-5&3\end{bmatrix}
+      \begin{bmatrix}4\\3\\7\end{bmatrix}
+      &=\begin{bmatrix}3\\6\end{bmatrix},\\
+    \begin{bmatrix}2&-3\\8&0\\-5&2\end{bmatrix}
+      \begin{bmatrix}4\\7\end{bmatrix}
+      &=\begin{bmatrix}-13\\32\\-6\end{bmatrix},\\
+    \begin{bmatrix}1&0&0\\0&1&0\\0&0&1\end{bmatrix}
+      \begin{bmatrix}r\\s\\t\end{bmatrix}
+      &=\begin{bmatrix}r\\s\\t\end{bmatrix}.
+  \end{align*}
+\end{frame}
+
+% ===== Slide 46 =====
+\begin{frame}{Identity Matrix}
+  % Chinese subtitle in source: 单位矩阵（单位阵）
+  The $n\times n$ identity matrix is
+  \[
+    I=I_n=
+    \begin{pmatrix}
+      1&0&\cdots&0\\
+      0&1&\cdots&0\\
+      \vdots&\vdots&\ddots&\vdots\\
+      0&0&\cdots&1
+    \end{pmatrix}.
+  \]
+  Its diagonal entries are $1$ and all other entries are $0$. For example,
+  \[
+    I_3\begin{bmatrix}r\\s\\t\end{bmatrix}
+    =\begin{bmatrix}r\\s\\t\end{bmatrix}.
+  \]
+  In general,
+  \[
+    I_n\mathbf{x}=\mathbf{x}\qquad\text{for every }\mathbf{x}\in\mathbb{R}^n.
+  \]
+\end{frame}
