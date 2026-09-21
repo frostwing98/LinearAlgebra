@@ -1,0 +1,24 @@
+# PDF output
+*.pdf
+!template-iages/osuseclab169.pdf
+
+# PPT and PPTX output
+*.ppt
+*.pptx
+
+# Core LaTeX auxiliary files
+*.aux
+*.log
+*.toc
+*.out
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+
+
+# Editor backups and temporary files
+*~
+*.bak
+*.sav

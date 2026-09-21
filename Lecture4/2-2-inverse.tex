@@ -1,0 +1,596 @@
+% Native reconstruction of source slides 46--74.
+\section[Inverse matrices]{The Inverse of a Square Matrix}
+
+% Slide 46
+\sectioncard{2.2}{The Inverse of a Square Matrix}
+
+% Slide 47
+\begin{frame}{From Division to Matrix Inverses}
+\begin{itemize}
+  \item Matrix multiplication is not commutative: $AB\ne BA$ in general.
+  \item We do not define matrix division directly.
+\end{itemize}
+\medskip
+
+For numbers, $6/2=3$ can be written $6\cdot2^{-1}=3$, and the reciprocal $2^{-1}$ satisfies
+\[
+2\cdot2^{-1}=1=2^{-1}\cdot2.
+\]
+This suggests replacing division by multiplication with an inverse.
+\begin{alertblock}{Question}
+Can a square matrix have a two-sided reciprocal?
+\end{alertblock}
+\end{frame}
+
+% Slide 48
+\begin{frame}{Invertible Matrices}
+\begin{block}{Definition}
+An $n\times n$ matrix $A$ is \textbf{nonsingular}, or \textbf{invertible}, if there is a matrix $B$ such that
+\[
+AB=I_n=BA.
+\]
+The matrix $B$ is the \textbf{inverse} of $A$.
+\end{block}
+\medskip
+For example, check that
+\[
+\begin{bmatrix}1&2&3\\0&1&4\\0&0&1\end{bmatrix}^{-1}
+=
+\begin{bmatrix}1&-2&5\\0&1&-4\\0&0&1\end{bmatrix}.
+\]
+\end{frame}
+
+% Slide 49
+\begin{frame}{Existence and Uniqueness of the Inverse}
+Two questions arise for every square matrix:
+\begin{enumerate}
+  \item Does an inverse exist?
+  \item If it exists, is it unique?
+\end{enumerate}
+\begin{block}{Fact}
+If $A$ is invertible, then its inverse is unique.
+\end{block}
+\textbf{Proof.} If $B$ and $C$ are both inverses of $A$, then
+\[
+B=BI=B(AC)=(BA)C=IC=C.
+\]
+We denote the unique inverse by $A^{-1}$, so
+\[
+AA^{-1}=A^{-1}A=I_n.
+\]
+\end{frame}
+
+% Slide 50
+\begin{frame}{Properties of Inverse Matrices}
+\theorembox{Theorem 6}{Suppose $A$ and $B$ are invertible. Then}
+\begin{enumerate}[a.]
+  \item $A^{-1}$ is invertible and $(A^{-1})^{-1}=A$.
+  \item $AB$ is invertible and $(AB)^{-1}=B^{-1}A^{-1}$.
+  \item $A^T$ is invertible and $(A^T)^{-1}=(A^{-1})^T$.
+\end{enumerate}
+\medskip
+\textbf{Proof of (b), one direction:}
+\[
+(AB)(B^{-1}A^{-1})
+=A(BB^{-1})A^{-1}
+=AIA^{-1}=I.
+\]
+Similarly, $(B^{-1}A^{-1})(AB)=I$.
+\end{frame}
+
+% Slide 51
+\begin{frame}{Order Matters for Inverses}
+For three or more invertible matrices,
+\[
+(ABC)^{-1}=C^{-1}B^{-1}A^{-1}.
+\]
+The order reverses.
+\medskip
+
+For the transpose property,
+\[
+A^T(A^{-1})^T=(A^{-1}A)^T=I,
+\]
+and
+\[
+(A^{-1})^TA^T=(AA^{-1})^T=I.
+\]
+Therefore
+\[
+(A^T)^{-1}=(A^{-1})^T.
+\]
+\end{frame}
+
+% Slide 52
+\begin{frame}{Cancellation with an Invertible Matrix}
+For arbitrary matrices, the following implications can fail:
+\[
+\begin{array}{ll}
+AB=0\centernot\implies A=0\text{ or }B=0,
+&
+A\ne0,\ B\ne0\centernot\implies AB\ne0,\\[1ex]
+A^2=A\centernot\implies A=I\text{ or }A=0,
+&
+AB=AC,\ A\ne0\centernot\implies B=C.
+\end{array}
+\]
+If $A$ is invertible, left cancellation becomes valid:
+\[
+\begin{array}{ll}
+AB=0\implies B=0,
+&
+B\ne0\implies AB\ne0,\\[1ex]
+A^2=A\implies A=I,
+&
+AB=AC\implies B=C.
+\end{array}
+\]
+\end{frame}
+
+% Slide 53
+\begin{frame}[shrink=7]{Finding an Inverse from Unknown Entries}
+Find the inverse of
+\[
+A=\begin{bmatrix}2&1\\-1&0\end{bmatrix}.
+\]
+Let $B=\begin{bmatrix}x_1&x_2\\x_3&x_4\end{bmatrix}$ and solve $AB=I$:
+\[
+\begin{bmatrix}2&1\\-1&0\end{bmatrix}
+\begin{bmatrix}x_1&x_2\\x_3&x_4\end{bmatrix}
+=\begin{bmatrix}1&0\\0&1\end{bmatrix}.
+\]
+Thus
+\[
+2x_1+x_3=1,\quad 2x_2+x_4=0,\quad -x_1=0,\quad -x_2=1,
+\]
+so
+\[
+B=\begin{bmatrix}0&-1\\1&2\end{bmatrix}.
+\]
+Both $AB=I$ and $BA=I$, hence $B=A^{-1}$.
+\end{frame}
+
+% Slide 54
+\begin{frame}{A Nonzero Matrix May Be Singular}
+Consider
+\[
+A=\begin{bmatrix}1&0\\0&0\end{bmatrix}.
+\]
+If $B=\begin{bmatrix}x_1&x_2\\x_3&x_4\end{bmatrix}$, then
+\[
+AB=\begin{bmatrix}x_1&x_2\\0&0\end{bmatrix}
+\ne
+\begin{bmatrix}1&0\\0&1\end{bmatrix}
+\]
+for every $B$. Thus $A$ is not invertible.
+\begin{block}{Terminology}
+An $n\times n$ matrix with no inverse is called \textbf{singular}（奇异的）.
+\end{block}
+Unlike numbers, nonzero matrices can be noninvertible.
+\end{frame}
+
+% Slide 55
+\begin{frame}{Row Equivalence and Invertibility}
+\theorembox{Recall: uniqueness of reduced echelon form}{Every matrix is row equivalent to one and only one reduced echelon matrix.}
+\medskip
+
+\theorembox{Theorem 7}{An $n\times n$ matrix $A$ is invertible if and only if $A$ is row equivalent to $I_n$. Any sequence of elementary row operations that reduces $A$ to $I_n$ transforms $I_n$ into $A^{-1}$.}
+\end{frame}
+
+% Slide 56
+\begin{frame}{The Row-Reduction Algorithm for $A^{-1}$}
+\begin{block}{Algorithm}
+Place $A$ and $I_n$ side by side. Row reduce the augmented matrix:
+\[
+[\,A\mid I_n\,]\longrightarrow[\,I_n\mid A^{-1}\,].
+\]
+If the left half cannot be reduced to $I_n$, then $A$ is not invertible.
+\end{block}
+\medskip
+\begin{exampleblock}{Example}
+Find $A^{-1}$ for
+\[
+A=\begin{bmatrix}5&3\\1&1\end{bmatrix}.
+\]
+\end{exampleblock}
+\end{frame}
+
+% Slide 57
+\begin{frame}{Row-Reduction Example}
+\small
+\[
+\left[\begin{array}{cc|cc}5&3&1&0\\1&1&0&1\end{array}\right]
+\sim
+\left[\begin{array}{cc|cc}1&1&0&1\\0&-2&1&-5\end{array}\right]
+\sim
+\left[\begin{array}{cc|cc}1&1&0&1\\0&1&-\frac12&\frac52\end{array}\right]
+\]
+\[
+\sim
+\left[\begin{array}{cc|cc}
+1&0&\frac12&-\frac32\\
+0&1&-\frac12&\frac52
+\end{array}\right].
+\]
+Therefore
+\[
+A^{-1}=
+\begin{bmatrix}
+\frac12&-\frac32\\[.3ex]
+-\frac12&\frac52
+\end{bmatrix}.
+\]
+\end{frame}
+
+% Slide 58
+\begin{frame}[shrink=7]{A $3\times3$ Inverse}
+Find the inverse of
+\[
+A=\begin{bmatrix}1&2&3\\4&5&8\\3&4&6\end{bmatrix}.
+\]
+Row reduction gives
+\[
+\left[\begin{array}{ccc|ccc}
+1&2&3&1&0&0\\
+4&5&8&0&1&0\\
+3&4&6&0&0&1
+\end{array}\right]
+\sim
+\left[\begin{array}{ccc|ccc}
+1&0&0&-2&0&1\\
+0&1&0&0&-3&4\\
+0&0&1&1&2&-3
+\end{array}\right].
+\]
+Hence
+\[
+A^{-1}=\begin{bmatrix}-2&0&1\\0&-3&4\\1&2&-3\end{bmatrix}.
+\]
+\end{frame}
+
+% Slide 59
+\begin{frame}{Detecting a Singular Matrix}
+Consider
+\[
+A=\begin{bmatrix}1&0&0\\0&1&2\\0&1&2\end{bmatrix}.
+\]
+Row reduction produces a zero row:
+\[
+\begin{bmatrix}1&0&0\\0&1&2\\0&1&2\end{bmatrix}
+\sim
+\begin{bmatrix}1&0&0\\0&1&2\\0&0&0\end{bmatrix}.
+\]
+Therefore $A$ cannot be row equivalent to $I_3$ and is not invertible.
+\begin{block}{Remark}
+A square matrix is singular if and only if its echelon form has a row of zeros.
+\end{block}
+\end{frame}
+
+% Slide 60
+\begin{frame}{Rank and Invertibility}
+For an $n\times n$ matrix $A$,
+\[
+\boxed{A\text{ is invertible}\iff \rank(A)=n.}
+\]
+Equivalently,
+\[
+\boxed{A\text{ is singular}\iff \rank(A)<n.}
+\]
+An invertible square matrix has a pivot in every row and every column.
+\end{frame}
+
+% Slide 61
+\subsection{Matrix Equations}
+\begin{frame}{Matrix Equations}
+The linear system
+\[
+\begin{cases}
+a_{11}x_1+a_{12}x_2+\cdots+a_{1n}x_n=b_1,\\
+a_{21}x_1+a_{22}x_2+\cdots+a_{2n}x_n=b_2,\\
+\hfill\vdots\\
+a_{n1}x_1+a_{n2}x_2+\cdots+a_{nn}x_n=b_n
+\end{cases}
+\]
+has the matrix form
+\[
+A\vect x=\vect b,\qquad
+A=(a_{ij}),\quad
+\vect x=\begin{bmatrix}x_1\\\vdots\\x_n\end{bmatrix},\quad
+\vect b=\begin{bmatrix}b_1\\\vdots\\b_n\end{bmatrix}.
+\]
+\end{frame}
+
+% Slide 62
+\begin{frame}{Solving $A\vect x=\vect b$ with an Inverse}
+Suppose $A$ is invertible. Multiplying on the left by $A^{-1}$ gives
+\[
+A^{-1}A\vect x=A^{-1}\vect b
+\quad\Longrightarrow\quad
+\vect x=A^{-1}\vect b.
+\]
+If $\vect w$ is another solution, then
+\[
+A\vect w=\vect b
+\quad\Longrightarrow\quad
+\vect w=A^{-1}\vect b.
+\]
+Thus any solution must equal $A^{-1}\vect b$, proving uniqueness.
+\end{frame}
+
+% Slide 63
+\begin{frame}{Unique Solutions from Invertibility}
+\theorembox{Theorem 5}{If $A$ is an invertible $n\times n$ matrix, then for every $\vect b\in\R^n$, the equation $A\vect x=\vect b$ has the unique solution
+\[
+\vect x=A^{-1}\vect b.
+\]}
+\medskip
+\begin{block}{Special case}
+If $A$ is invertible, the homogeneous equation
+\[
+A\vect x=\vect0
+\]
+has only the trivial solution $\vect x=\vect0$.
+\end{block}
+\end{frame}
+
+% Slide 64
+\begin{frame}[shrink=7]{Solution Types of Linear Systems}
+For a general $m\times n$ matrix $A$, the system $A\vect x=\vect b$ may have
+\[
+\text{no solution},\qquad \text{one solution},\qquad\text{or infinitely many solutions}.
+\]
+If $A$ is square and invertible, every $A\vect x=\vect b$ has exactly one solution:
+\[
+\vect x=A^{-1}\vect b.
+\]
+\medskip
+
+The homogeneous system $A\vect x=\vect0$ always has at least the trivial solution. It has either
+\[
+\text{only }\vect x=\vect0
+\qquad\text{or}\qquad
+\text{infinitely many solutions}.
+\]
+If $A$ is invertible, only the trivial solution occurs.
+\end{frame}
+
+% Slide 65
+\begin{frame}{Solving a $2\times2$ System with $A^{-1}$}
+Solve
+\[
+-7x_1+3x_2=2,\qquad 5x_1-2x_2=1.
+\]
+Here
+\[
+A=\begin{bmatrix}-7&3\\5&-2\end{bmatrix},
+\qquad
+A^{-1}=\begin{bmatrix}2&3\\5&7\end{bmatrix},
+\qquad
+\vect b=\begin{bmatrix}2\\1\end{bmatrix}.
+\]
+Therefore
+\[
+\vect x=A^{-1}\vect b
+=\begin{bmatrix}2&3\\5&7\end{bmatrix}
+\begin{bmatrix}2\\1\end{bmatrix}
+=\begin{bmatrix}7\\17\end{bmatrix}.
+\]
+\end{frame}
+
+% Slide 66
+\begin{frame}{Example: The Inverse-Matrix Algorithm}
+Solve
+\[
+\begin{cases}
+x_1+2x_2-x_3=-5,\\
+2x_1-x_2+x_3=6,\\
+x_1-x_2-3x_3=-3.
+\end{cases}
+\]
+We will write the system as $A\vect x=\vect b$ and compute
+\[
+\vect x=A^{-1}\vect b.
+\]
+\end{frame}
+
+% Slide 67
+\begin{frame}{Example: Matrix Form}
+For the preceding system,
+\[
+A=\begin{bmatrix}
+1&2&-1\\
+2&-1&1\\
+1&-1&-3
+\end{bmatrix},\qquad
+\vect x=\begin{bmatrix}x_1\\x_2\\x_3\end{bmatrix},\qquad
+\vect b=\begin{bmatrix}-5\\6\\-3\end{bmatrix}.
+\]
+The inverse is
+\[
+A^{-1}=\frac1{19}
+\begin{bmatrix}
+4&7&1\\
+7&-2&-3\\
+-1&3&-5
+\end{bmatrix}.
+\]
+\end{frame}
+
+% Slide 68
+\begin{frame}{Example: Solution}
+\[
+\vect x=A^{-1}\vect b
+=\frac1{19}
+\begin{bmatrix}
+4&7&1\\
+7&-2&-3\\
+-1&3&-5
+\end{bmatrix}
+\begin{bmatrix}-5\\6\\-3\end{bmatrix}
+\]
+\[
+=\frac1{19}\begin{bmatrix}19\\-38\\38\end{bmatrix}
+=\begin{bmatrix}1\\-2\\2\end{bmatrix}.
+\]
+Thus
+\[
+x_1=1,\qquad x_2=-2,\qquad x_3=2.
+\]
+\end{frame}
+
+% Slide 69
+\begin{frame}{General Matrix Equations $AX=B$}
+Suppose $A$ is $n\times n$ and $X,B$ are $n\times s$. If $A$ is invertible,
+\[
+A^{-1}AX=A^{-1}B
+\quad\Longrightarrow\quad
+\boxed{X=A^{-1}B}.
+\]
+\begin{block}{Conditions for the inverse-matrix algorithm}
+\begin{enumerate}
+  \item The coefficient matrix $A$ is square.
+  \item The coefficient matrix $A$ is invertible.
+\end{enumerate}
+\end{block}
+\end{frame}
+
+% Slide 70
+\begin{frame}[shrink=10]{Three Common Matrix Equations}
+\begin{columns}[T]
+\column{.32\textwidth}
+\centering
+\[
+AX=B
+\]
+\[
+X=A^{-1}B
+\]
+\column{.32\textwidth}
+\centering
+\[
+XA=B
+\]
+\[
+X=BA^{-1}
+\]
+\column{.34\textwidth}
+\centering
+\[
+AXB=C
+\]
+\[
+X=A^{-1}CB^{-1}
+\]
+\end{columns}
+\medskip
+For example, solve $AX=B$ with
+\[
+A=\begin{bmatrix}0&-1&1\\1&0&0\\1&0&2\end{bmatrix},
+\qquad
+B=\begin{bmatrix}0&-1\\2&-5\\0&1\end{bmatrix}.
+\]
+Since
+\[
+A^{-1}=\begin{bmatrix}0&1&0\\-1&-\frac12&\frac12\\0&-\frac12&\frac12\end{bmatrix},
+\]
+\[
+X=A^{-1}B=\begin{bmatrix}2&-5\\-1&4\\-1&3\end{bmatrix}.
+\]
+\end{frame}
+
+% Slide 71
+\begin{frame}[shrink=9]{Exercises: Matrix Equations I}
+\textbf{1.} Solve $XA=B$ for
+\[
+A=\begin{bmatrix}1&0&-2\\2&4&-1\\0&1&1\end{bmatrix},
+\qquad
+B=\begin{bmatrix}1&0&2\\2&4&3\end{bmatrix}.
+\]
+Since
+\[
+A^{-1}=\begin{bmatrix}5&-2&8\\-2&1&-3\\2&-1&4\end{bmatrix},
+\quad
+X=BA^{-1}=\begin{bmatrix}9&-4&16\\8&-3&16\end{bmatrix}.
+\]
+\textbf{2.} Solve
+\[
+\begin{bmatrix}1&4\\0&1\end{bmatrix}
+X
+\begin{bmatrix}1&0\\3&1\end{bmatrix}
+=\begin{bmatrix}-1&1\\1&0\end{bmatrix}.
+\]
+Multiplying by the two inverses gives
+\[
+X=\begin{bmatrix}-8&1\\1&0\end{bmatrix}.
+\]
+\end{frame}
+
+% Slide 72
+\begin{frame}[shrink=10]{Exercises: Matrix Equations II}
+\textbf{3.} Solve $AX=A+2X$ for
+\[
+A=\begin{bmatrix}4&0&0\\0&1&0\\0&0&1\end{bmatrix}.
+\]
+Rearranging gives
+\[
+(A-2I)X=A,\qquad X=(A-2I)^{-1}A.
+\]
+\medskip
+
+\textbf{4.} Solve $A^2-XA-I=0$, where
+\[
+A=\begin{bmatrix}1&0&3\\2&1&1\\-1&0&1\end{bmatrix},
+\qquad
+A^{-1}=\begin{bmatrix}.25&0&-.75\\-.75&1&1.25\\.25&0&.25\end{bmatrix}.
+\]
+Then
+\[
+X=(A^2-I)A^{-1}=A-A^{-1}
+=\begin{bmatrix}.75&0&3.75\\2.75&0&-.25\\-1.25&0&.75\end{bmatrix}.
+\]
+\end{frame}
+
+% Slide 73
+\begin{frame}{Exercise: Isolating an Unknown Matrix}
+Suppose $A,B,C$ are invertible $n\times n$ matrices and
+\[
+A=B(D-I_n)C.
+\]
+Multiplying on the left by $B^{-1}$ and on the right by $C^{-1}$ gives
+\[
+B^{-1}AC^{-1}=D-I_n.
+\]
+Therefore
+\[
+\boxed{D=B^{-1}AC^{-1}+I_n}.
+\]
+The order of the factors must be preserved.
+\end{frame}
+
+% Slide 74
+\begin{frame}[shrink=9]{Exercise: A Matrix Equation with a Transpose}
+Let
+\[
+ABA^T=2BA^T+I,\qquad
+A=\begin{bmatrix}1&0&0\\0&1&2\\0&0&1\end{bmatrix}.
+\]
+Since $2BA^T=2IBA^T$,
+\[
+(A-2I)BA^T=I.
+\]
+Hence
+\[
+B=(A-2I)^{-1}(A^T)^{-1}
+=\bigl[A^T(A-2I)\bigr]^{-1}
+=(A^TA-2A^T)^{-1}.
+\]
+Now
+\[
+A^TA-2A^T=
+\begin{bmatrix}-1&0&0\\0&-1&2\\0&-2&3\end{bmatrix},
+\]
+so
+\[
+\boxed{B=\begin{bmatrix}-1&0&0\\0&3&-2\\0&2&-1\end{bmatrix}}.
+\]
+\end{frame}
