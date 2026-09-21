@@ -1,0 +1,670 @@
+% Native reconstruction of source slides 3--45.
+\section[Matrix operations]{Matrix Operations}
+
+% Slide 3
+\sectioncard{2.1}{Matrix Operations}
+
+% Slide 4
+\begin{frame}{Matrix Terminology}
+\begin{block}{Definition}
+A \textbf{matrix} is an ordered rectangular array of elements.
+\end{block}
+\[
+A=\begin{bmatrix}
+a_{11}&a_{12}&\cdots&a_{1n}\\
+a_{21}&a_{22}&\cdots&a_{2n}\\
+\vdots&\vdots&\ddots&\vdots\\
+a_{m1}&a_{m2}&\cdots&a_{mn}
+\end{bmatrix}.
+\]
+\begin{itemize}
+  \item $A$ has $m$ rows and $n$ columns, so its size is $m\times n$.
+  \item The scalar in row $i$, column $j$ is $a_{ij}$, the $(i,j)$-entry.
+  \item We write $A=A_{m\times n}=(a_{ij})_{m\times n}=(a_{ij})$.
+\end{itemize}
+\end{frame}
+
+% Slide 5
+\begin{frame}{Matrix Sizes: Examples}
+\centering
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{c@{\qquad}c}
+$\begin{bmatrix}1&0&3&5\\-9&6&4&3\end{bmatrix}$ & $2\times4$\\[3ex]
+$\begin{bmatrix}2&3&5&9\end{bmatrix}$ & $1\times4$\\[3ex]
+$\begin{bmatrix}1\\2\\4\end{bmatrix}$ & $3\times1$\\[3ex]
+$\begin{bmatrix}4\end{bmatrix}$ & $1\times1$
+\end{tabular}
+\end{frame}
+
+% Slide 6
+\begin{frame}{Two Ways to Describe a Matrix}
+For an $m\times n$ matrix $A$, we may work with its entries:
+\[
+A=\begin{bmatrix}
+a_{11}&\cdots&a_{1j}&\cdots&a_{1n}\\
+\vdots&&\vdots&&\vdots\\
+a_{i1}&\cdots&a_{ij}&\cdots&a_{in}\\
+\vdots&&\vdots&&\vdots\\
+a_{m1}&\cdots&a_{mj}&\cdots&a_{mn}
+\end{bmatrix},
+\]
+or with its columns:
+\[
+A=[\,\vect a_1\ \vect a_2\ \cdots\ \vect a_n\,].
+\]
+\end{frame}
+
+% Slide 7
+\begin{frame}{Some Special Matrices}
+\begin{itemize}
+  \item A \textbf{square matrix of order $n$} has size $n\times n$.
+  \[
+  \begin{bmatrix}13&6&2\\2&2&2\\2&2&2\end{bmatrix}
+  \]
+  \item A \textbf{row matrix} (row vector) of order $n$ has the form
+  \[A=(a_1,a_2,\ldots,a_n).\]
+  \item A \textbf{column matrix} (column vector) of order $n$ has the form
+  \[B=\begin{bmatrix}a_1&a_2&\cdots&a_n\end{bmatrix}^{T}.\]
+\end{itemize}
+\end{frame}
+
+% Slide 8
+\begin{frame}{Diagonal Matrices}
+A \textbf{diagonal matrix} is a square matrix whose nondiagonal entries are zero:
+\[
+A=\operatorname{diag}(\lambda_1,\lambda_2,\ldots,\lambda_n)
+=\begin{bmatrix}
+\lambda_1&0&\cdots&0\\
+0&\lambda_2&\cdots&0\\
+\vdots&\vdots&\ddots&\vdots\\
+0&0&\cdots&\lambda_n
+\end{bmatrix}.
+\]
+The diagonal entries need not all be zero, and some may be zero.
+\end{frame}
+
+% Slide 9
+\begin{frame}{Identity Matrices}
+The \textbf{identity matrix} of order $n$ is the diagonal matrix
+\[
+I=I_n=\operatorname{diag}(1,1,\ldots,1)
+=\begin{bmatrix}
+1&0&\cdots&0\\
+0&1&\cdots&0\\
+\vdots&\vdots&\ddots&\vdots\\
+0&0&\cdots&1
+\end{bmatrix}.
+\]
+All main diagonal entries are $1$.
+\end{frame}
+
+% Slide 10
+\begin{frame}{Zero Matrices}
+An $m\times n$ matrix whose entries are all zero is a \textbf{zero matrix}, written $0_{m\times n}$ or simply $0$.
+\[
+\begin{bmatrix}
+0&0&0&0\\
+0&0&0&0\\
+0&0&0&0\\
+0&0&0&0
+\end{bmatrix}
+\ne
+\begin{bmatrix}0&0&0&0\end{bmatrix}.
+\]
+The size of a zero matrix is usually clear from context.
+\end{frame}
+
+% Slide 11
+\begin{frame}{Special Matrices: Recap}
+For $A=(a_{ij})_{m\times n}$:
+\begin{description}
+  \item[Square matrix] $m=n$.
+  \item[Row or column matrix] One dimension equals $1$.
+  \item[Identity matrix] $a_{ii}=1$ and $a_{ij}=0$ for $i\ne j$.
+  \item[Diagonal matrix] $a_{ij}=0$ for $i\ne j$.
+  \item[Zero matrix] Every entry is zero.
+\end{description}
+\end{frame}
+
+% Slide 12
+\begin{frame}{Matrix Operations}
+\begin{itemize}
+  \item \textcolor{lecturemagenta}{Addition（矩阵的加法）}
+  \item \textcolor{lecturemagenta}{Scalar multiplication（数与矩阵相乘）}
+  \item \textcolor{lecturemagenta}{Matrix multiplication（矩阵与矩阵相乘）}
+  \item \textcolor{lecturemagenta}{Transpose of a matrix（矩阵的转置）}
+  \item \textcolor{lecturemagenta}{Inverse of a matrix（矩阵的逆）}
+\end{itemize}
+\end{frame}
+
+% Slide 13
+\begin{frame}{Sums and Scalar Multiples}
+\begin{itemize}
+  \item \textcolor{lecturemagenta}{Addition（矩阵的加法）}
+  \item \textcolor{lecturemagenta}{Scalar multiplication（数与矩阵相乘）}
+\end{itemize}
+\vfill
+The arithmetic for vectors described earlier has a natural extension to matrices.
+\end{frame}
+
+% Slide 14
+\begin{frame}{Recall: Vector Arithmetic}
+Let $\vect u,\vect v\in\R^n$.
+\begin{itemize}
+  \item $\vect u=\vect v$ if and only if their corresponding entries are equal.
+  \item $\vect u+\vect v$ is obtained by adding corresponding entries.
+  \item $c\vect u$ is obtained by multiplying every entry of $\vect u$ by the scalar $c$.
+\end{itemize}
+\end{frame}
+
+% Slide 15
+\begin{frame}{Same-Size and Equal Matrices}
+Two matrices have the \textbf{same size} when they have the same number of rows and the same number of columns. For example,
+\[
+\begin{bmatrix}1&2\\5&6\\3&7\end{bmatrix}
+\quad\text{and}\quad
+\begin{bmatrix}14&3\\8&4\\3&9\end{bmatrix}
+\]
+both have size $3\times2$.
+\medskip
+
+Two matrices are \textbf{equal} when they have the same size and all corresponding entries are equal.
+\end{frame}
+
+% Slide 16
+\begin{frame}{Matrix Addition}
+If $A=(a_{ij})_{m\times n}$ and $B=(b_{ij})_{m\times n}$ have the same size, then
+\[
+A+B=(a_{ij}+b_{ij})_{m\times n}
+=\begin{bmatrix}
+a_{11}+b_{11}&\cdots&a_{1n}+b_{1n}\\
+a_{21}+b_{21}&\cdots&a_{2n}+b_{2n}\\
+\vdots&\ddots&\vdots\\
+a_{m1}+b_{m1}&\cdots&a_{mn}+b_{mn}
+\end{bmatrix}.
+\]
+\alert{The sum $A+B$ is defined only when $A$ and $B$ have the same size.}
+\end{frame}
+
+% Slide 17
+\begin{frame}{Matrix Addition: Example}
+\small
+\begin{align*}
+&\begin{bmatrix}12&3&-5\\1&-9&0\\3&6&8\end{bmatrix}
++\begin{bmatrix}1&8&9\\6&5&4\\3&2&1\end{bmatrix}\\[1ex]
+&=\begin{bmatrix}12+1&3+8&-5+9\\1+6&-9+5&0+4\\3+3&6+2&8+1\end{bmatrix}
+=\begin{bmatrix}13&11&4\\7&-4&4\\6&8&9\end{bmatrix}.
+\end{align*}
+\end{frame}
+
+% Slide 18
+\begin{frame}{Scalar Multiplication}
+If $\lambda$ is a scalar and $A=(a_{ij})$, then
+\[
+\lambda A=(\lambda a_{ij})
+=\begin{bmatrix}
+\lambda a_{11}&\lambda a_{12}&\cdots&\lambda a_{1n}\\
+\lambda a_{21}&\lambda a_{22}&\cdots&\lambda a_{2n}\\
+\vdots&\vdots&\ddots&\vdots\\
+\lambda a_{m1}&\lambda a_{m2}&\cdots&\lambda a_{mn}
+\end{bmatrix}.
+\]
+Equivalently, if $A=[\,\vect a_1\ \cdots\ \vect a_n\,]$, then
+\[
+\lambda A=[\,\lambda\vect a_1\ \cdots\ \lambda\vect a_n\,].
+\]
+\end{frame}
+
+% Slide 19
+\begin{frame}{Negation and Subtraction}
+We define $-A=(-1)A$, so every entry changes sign. We then write
+\[
+A-B=A+(-1)B.
+\]
+\begin{exampleblock}{Questions}
+\begin{enumerate}
+  \item For what matrix $B$ does $A+B=A$?
+  \item What is $A-A$?
+  \item Is $A-A=B-B$ always true for matrices $A$ and $B$?
+\end{enumerate}
+\end{exampleblock}
+\end{frame}
+
+% Slide 20
+\begin{frame}{Properties of Sums and Scalar Multiples}
+\theorembox{Theorem 1}{Let $A,B,C$ be matrices of the same size, and let $r,s$ be scalars. Then}
+\begin{columns}[T]
+\column{.48\textwidth}
+\begin{align*}
+A+B&=B+A,\\
+(A+B)+C&=A+(B+C),\\
+A+0&=A.
+\end{align*}
+\column{.48\textwidth}
+\begin{align*}
+r(A+B)&=rA+rB,\\
+(r+s)A&=rA+sA,\\
+r(sA)&=(rs)A.
+\end{align*}
+\end{columns}
+\end{frame}
+
+% Slide 21
+\begin{frame}{Sums and Scalar Multiples: Example}
+Let
+\[
+A=\begin{bmatrix}2&4&-5\\0&7&-2\end{bmatrix},\qquad
+B=\begin{bmatrix}1&-3&3\\0&2&-4\end{bmatrix}.
+\]
+Then
+\[
+A+B=\begin{bmatrix}3&1&-2\\0&9&-6\end{bmatrix},
+\qquad
+2(A+B)=\begin{bmatrix}6&2&-4\\0&18&-12\end{bmatrix}.
+\]
+\end{frame}
+
+% Slide 22
+\begin{frame}{Matrix--Vector Multiplication}
+If $A=[\,\vect a_1\ \vect a_2\ \cdots\ \vect a_n\,]$ is $m\times n$ and $\vect x\in\R^n$, then
+\[
+A\vect x=
+[\,\vect a_1\ \vect a_2\ \cdots\ \vect a_n\,]
+\begin{bmatrix}x_1\\x_2\\\vdots\\x_n\end{bmatrix}
+=x_1\vect a_1+x_2\vect a_2+\cdots+x_n\vect a_n.
+\]
+Thus $A\vect x$ is a linear combination of the columns of $A$, with entries of $\vect x$ as weights.
+\end{frame}
+
+% Slide 23
+\begin{frame}[shrink=4]{Matrix--Vector Multiplication: Example}
+Compute $A\vect x$, where
+\[
+A=\begin{bmatrix}2&3&4\\-1&5&-3\\6&-2&8\end{bmatrix},\qquad
+\vect x=\begin{bmatrix}x_1\\x_2\\x_3\end{bmatrix}.
+\]
+Then
+\begin{align*}
+A\vect x
+&=x_1\begin{bmatrix}2\\-1\\6\end{bmatrix}
++x_2\begin{bmatrix}3\\5\\-2\end{bmatrix}
++x_3\begin{bmatrix}4\\-3\\8\end{bmatrix}\\
+&=\begin{bmatrix}
+2x_1+3x_2+4x_3\\
+-x_1+5x_2-3x_3\\
+6x_1-2x_2+8x_3
+\end{bmatrix}.
+\end{align*}
+\end{frame}
+
+% Slide 24
+\begin{frame}{Row-by-Row View of $A\vect x$}
+Each entry of $A\vect x$ is a row-vector product:
+\[
+\begin{array}{c}
+\begin{bmatrix}2&3&4\end{bmatrix}\vect x=2x_1+3x_2+4x_3,\\[2ex]
+\begin{bmatrix}-1&5&-3\end{bmatrix}\vect x=-x_1+5x_2-3x_3,\\[2ex]
+\begin{bmatrix}6&-2&8\end{bmatrix}\vect x=6x_1-2x_2+8x_3.
+\end{array}
+\]
+\end{frame}
+
+% Slide 25
+\begin{frame}{Matrix Multiplication}
+Let
+\[
+A=(a_{ij})_{m\times r},\qquad B=(b_{ij})_{r\times n}.
+\]
+The product $AB$ is the $m\times n$ matrix whose $(i,j)$-entry is
+\[
+(AB)_{ij}=a_{i1}b_{1j}+a_{i2}b_{2j}+\cdots+a_{ir}b_{rj}
+=\sum_{k=1}^{r}a_{ik}b_{kj}.
+\]
+\end{frame}
+
+% Slide 26
+\begin{frame}{The Row--Column Rule}
+\centering
+\begin{tikzpicture}[>=Stealth]
+\node (a) {$A_{m\times r}$};
+\node[right=3.2cm of a] (b) {$B_{r\times n}$};
+\node[right=3.2cm of b] (c) {$(AB)_{m\times n}$};
+\draw[->,thick] (a)--(b);
+\draw[->,thick] (b)--(c);
+\node[below=1.1cm of b,draw,rounded corners,inner sep=8pt] {$\displaystyle (AB)_{ij}=\underbrace{\text{row }i\text{ of }A}_{1\times r}\,\underbrace{\text{column }j\text{ of }B}_{r\times1}$};
+\end{tikzpicture}
+\vfill
+\[
+(AB)_{ij}=a_{i1}b_{1j}+a_{i2}b_{2j}+\cdots+a_{ir}b_{rj}.
+\]
+\end{frame}
+
+% Slide 27
+\begin{frame}[shrink=8]{Matrix Multiplication: Examples}
+\[
+\begin{bmatrix}-2&4\\1&-2\end{bmatrix}
+\begin{bmatrix}2&4\\-3&-6\end{bmatrix}
+=\begin{bmatrix}-16&-32\\8&16\end{bmatrix}.
+\]
+\medskip
+If
+\[
+A=\begin{bmatrix}1&0&-1&2\\-1&1&3&0\\0&5&-1&4\end{bmatrix},\quad
+B=\begin{bmatrix}0&3&4\\1&2&1\\3&1&-1\\-1&2&1\end{bmatrix},
+\]
+then
+\[
+AB=\begin{bmatrix}-5&6&7\\10&2&-6\\-2&17&10\end{bmatrix}.
+\]
+Here $A$ is $3\times4$, $B$ is $4\times3$, and $AB$ is $3\times3$.
+\end{frame}
+
+% Slide 28
+\begin{frame}{When Is a Product Defined?}
+The product $AB$ exists if and only if the number of columns of $A$ equals the number of rows of $B$.
+\[
+\underbrace{A_{m\times r}}_{\text{$r$ columns}}
+\underbrace{B_{r\times n}}_{\text{$r$ rows}}
+=C_{m\times n}.
+\]
+For example, a $3\times3$ matrix cannot multiply a $2\times3$ matrix on its right.
+\medskip
+
+A $1\times1$ matrix is usually written as a scalar:
+\[
+\begin{bmatrix}1&2&3\end{bmatrix}
+\begin{bmatrix}3\\2\\1\end{bmatrix}
+=1\cdot3+2\cdot2+3\cdot1=10.
+\]
+\end{frame}
+
+% Slide 29
+\begin{frame}{Properties of Matrix Multiplication}
+\theorembox{Theorem 2}{Let $A$ be $m\times n$ and let $B,C$ have sizes for which the indicated operations are defined. Then}
+\begin{align*}
+A(BC)&=(AB)C &&\text{associative law},\\
+A(B+C)&=AB+AC &&\text{left-distributive law},\\
+(B+C)A&=BA+CA &&\text{right-distributive law},\\
+r(AB)&=(rA)B=A(rB),\\
+I_mA&=A=AI_n.
+\end{align*}
+\end{frame}
+
+% Slide 30
+\begin{frame}{A Product May Exist in Only One Order}
+Matrix multiplication shares some properties with real-number multiplication, but not all.
+\medskip
+
+Let
+\[
+A=\begin{bmatrix}1&5\\-2&0\end{bmatrix},\qquad
+B=\begin{bmatrix}1&0&-6\\-2&1&-1\end{bmatrix}.
+\]
+Then
+\[
+AB=\begin{bmatrix}-9&5&-11\\-2&0&12\end{bmatrix},
+\]
+while $BA$ is not defined because the inner dimensions do not match.
+\end{frame}
+
+% Slide 31
+\begin{frame}{Matrix Multiplication Is Not Commutative}
+For
+\[
+A=\begin{bmatrix}-1&2&3\\0&3&-2\end{bmatrix},\qquad
+B=\begin{bmatrix}2&1\\0&2\\-1&0\end{bmatrix},
+\]
+both products exist, but
+\[
+AB=\begin{bmatrix}-5&3\\2&6\end{bmatrix},\qquad
+BA=\begin{bmatrix}-2&7&4\\0&6&-4\\1&-2&-3\end{bmatrix}.
+\]
+Thus $AB\ne BA$ in general.
+\end{frame}
+
+% Slide 32
+\begin{frame}{Zero Products}
+Let
+\[
+A=\begin{bmatrix}1&1\\0&0\end{bmatrix},\qquad
+B=\begin{bmatrix}1&0\\-1&0\end{bmatrix}.
+\]
+Then
+\[
+AB=\begin{bmatrix}0&0\\0&0\end{bmatrix},\qquad
+BA=\begin{bmatrix}1&1\\-1&-1\end{bmatrix}.
+\]
+Therefore
+\[
+AB=0\centernot\implies A=0\text{ or }B=0,
+\qquad
+A\ne0,\ B\ne0\centernot\implies AB\ne0.
+\]
+\end{frame}
+
+% Slide 33
+\begin{frame}{Exercise: Row and Column Products}
+Let
+\[
+\vect a=\begin{bmatrix}1&-1&2\end{bmatrix},\qquad
+\vect b=\begin{bmatrix}2\\3\\0\end{bmatrix}.
+\]
+Then
+\[
+\vect a\vect b=1\cdot2+(-1)\cdot3+2\cdot0=-1,
+\]
+whereas
+\[
+\vect b\vect a=
+\begin{bmatrix}
+2&-2&4\\3&-3&6\\0&0&0
+\end{bmatrix}.
+\]
+Again, matrix multiplication is not commutative.
+\end{frame}
+
+% Slide 34
+\begin{frame}{Powers of a Matrix}
+For a square matrix $A$ and a natural number $k$,
+\[
+A^k=\underbrace{AA\cdots A}_{k\text{ factors}}.
+\]
+For natural numbers $k$ and $\ell$,
+\[
+(A^k)^\ell=A^{k\ell},\qquad
+A^{k+\ell}=A^kA^\ell.
+\]
+In general,
+\[
+(AB)^k\ne A^kB^k,
+\]
+because the factors cannot be rearranged unless $AB=BA$.
+\end{frame}
+
+% Slide 35
+\begin{frame}[shrink=4]{The Identity Matrix}
+When $k=0$, $A^0$ is interpreted as the identity matrix. The $n\times n$ identity matrix is
+\[
+I=(\delta_{ij}),\qquad
+\delta_{ij}=\begin{cases}1,&i=j,\\0,&i\ne j.\end{cases}
+\]
+For example,
+\[
+I_3=\begin{bmatrix}1&0&0\\0&1&0\\0&0&1\end{bmatrix}.
+\]
+If $A=\begin{bmatrix}3&4&1\\2&6&3\\0&1&8\end{bmatrix}$, then $I_3A=A=AI_3$.
+\begin{block}{Property}
+An identity matrix behaves like the number $1$ in multiplication.
+\end{block}
+\end{frame}
+
+% Slide 36
+\begin{frame}[shrink=6]{Exercises: True or False?}
+\begin{enumerate}
+  \item $A^2=A$ implies $A=I$ or $A=0$. \alert{False.}
+  \[
+  A=\begin{bmatrix}1&-1&1\\1&-1&1\\1&-1&1\end{bmatrix}
+  \quad\text{satisfies}\quad A^2=A,
+  \]
+  yet $A\ne I$ and $A\ne0$.
+  \item $AC=BC$ and $C\ne0$ imply $A=B$. \alert{False in general.}
+  \item $A^2-B^2=(A+B)(A-B)$. \alert{False in general,} because
+  $(A+B)(A-B)=A^2-AB+BA-B^2$.
+\end{enumerate}
+\end{frame}
+
+% Slide 37
+\begin{frame}{Main Diagonal Entries}
+For $A=(a_{ij})_{m\times n}$, the diagonal entries are
+\[
+a_{11},a_{22},a_{33},\ldots,
+\]
+and they form the \textbf{main diagonal} of $A$.
+\begin{center}
+\[
+\begin{bmatrix}
+\color{red}a_{11}&a_{12}&\cdots&a_{1n}\\
+a_{21}&\color{red}a_{22}&\cdots&a_{2n}\\
+\vdots&\vdots&\color{red}\ddots&\vdots\\
+a_{m1}&a_{m2}&\cdots&\color{red}a_{mn}
+\end{bmatrix}
+\]
+\end{center}
+\end{frame}
+
+% Slide 38
+\begin{frame}{Transpose of a Matrix}
+The transpose of an $m\times n$ matrix $A$, denoted by $A^T$, is the $n\times m$ matrix whose columns are the corresponding rows of $A$.
+\[
+A=\begin{bmatrix}a_{11}&a_{12}&\cdots&a_{1n}\\a_{21}&a_{22}&\cdots&a_{2n}\\\vdots&\vdots&\ddots&\vdots\\a_{m1}&a_{m2}&\cdots&a_{mn}\end{bmatrix},
+\quad
+A^T=\begin{bmatrix}a_{11}&a_{21}&\cdots&a_{m1}\\a_{12}&a_{22}&\cdots&a_{m2}\\\vdots&\vdots&\ddots&\vdots\\a_{1n}&a_{2n}&\cdots&a_{mn}\end{bmatrix}.
+\]
+For example,
+\[
+\begin{bmatrix}1&3\\2&5\\7&4\end{bmatrix}^{T}
+=\begin{bmatrix}1&2&7\\3&5&4\end{bmatrix}.
+\]
+\end{frame}
+
+% Slide 39
+\begin{frame}[shrink=5]{Properties of the Transpose}
+If $A=(a_{ij})$ and $A^T=(b_{ij})$, then $b_{ij}=a_{ji}$. Equivalently, rows become columns in the same order.
+\medskip
+
+\theorembox{Theorem 3}{For matrices of appropriate sizes and any scalar $r$:}
+\begin{align*}
+(A^T)^T&=A,\\
+(A+B)^T&=A^T+B^T,\\
+(rA)^T&=rA^T,\\
+(AB)^T&=B^TA^T.
+\end{align*}
+The order reverses when a product is transposed.
+\end{frame}
+
+% Slide 40
+\begin{frame}{Computing a Transpose of a Product: Way 1}
+Let
+\[
+A=\begin{bmatrix}2&0&-1\\1&3&2\end{bmatrix},\qquad
+B=\begin{bmatrix}1&7&-1\\4&2&3\\2&0&1\end{bmatrix}.
+\]
+First multiply:
+\[
+AB=\begin{bmatrix}0&14&-3\\17&13&10\end{bmatrix}.
+\]
+Then transpose:
+\[
+(AB)^T=\begin{bmatrix}0&17\\14&13\\-3&10\end{bmatrix}.
+\]
+\end{frame}
+
+% Slide 41
+\begin{frame}{Computing a Transpose of a Product: Way 2}
+Use $(AB)^T=B^TA^T$ directly:
+\[
+(AB)^T=
+\begin{bmatrix}1&4&2\\7&2&0\\-1&3&1\end{bmatrix}
+\begin{bmatrix}2&1\\0&3\\-1&2\end{bmatrix}
+=\begin{bmatrix}0&17\\14&13\\-3&10\end{bmatrix}.
+\]
+The same identity gives
+\[
+(A^2)^T=(A^T)^2,\qquad (A^m)^T=(A^T)^m.
+\]
+\end{frame}
+
+% Slide 42
+\begin{frame}[shrink=9]{Exercise: Transpose and Products}
+Let
+\[
+A=\begin{bmatrix}-1&2&1\\0&-1&2\end{bmatrix},\quad
+B=\begin{bmatrix}1&0&3\\2&1&-1\end{bmatrix},\quad
+C=\begin{bmatrix}-1&1&2\\3&-2&1\\0&0&4\end{bmatrix}.
+\]
+Compute $(A+2B)C$ and $(2A-B)C^T$.
+\[
+(A+2B)C=
+\begin{bmatrix}1&2&7\\4&1&0\end{bmatrix}C
+=\begin{bmatrix}5&-3&32\\-1&2&9\end{bmatrix},
+\]
+\[
+(2A-B)C^T=
+\begin{bmatrix}-3&4&-1\\-2&-3&5\end{bmatrix}C^T
+=\begin{bmatrix}5&-18&-4\\9&5&20\end{bmatrix}.
+\]
+\end{frame}
+
+% Slide 43
+\begin{frame}{Symmetric and Skew-Symmetric Matrices}
+\begin{block}{Symmetric matrix}
+A matrix $A$ is symmetric if $A^T=A$. Equivalently, $A$ is square and $a_{ji}=a_{ij}$.
+\end{block}
+\[
+\begin{bmatrix}2&6&1\\6&8&0\\1&0&6\end{bmatrix}
+\quad\text{is symmetric.}
+\]
+\begin{block}{Skew-symmetric matrix}
+A matrix $A$ is skew-symmetric if $A^T=-A$.
+\end{block}
+\end{frame}
+
+% Slide 44
+\begin{frame}{Examples of Symmetry}
+\[
+A=\begin{bmatrix}1&2&1\\2&0&-1\\1&-1&2\end{bmatrix}
+\quad\text{is symmetric,}
+\]
+\[
+B=\begin{bmatrix}0&2&1\\-2&0&-1\\-1&1&0\end{bmatrix}
+\quad\text{is skew-symmetric.}
+\]
+Indeed, $A^T=A$ and $B^T=-B$.
+\medskip
+
+For every skew-symmetric matrix,
+\[
+a_{ii}=0,\qquad a_{ji}=-a_{ij}\quad(i\ne j).
+\]
+\end{frame}
+
+% Slide 45
+\begin{frame}[shrink=7]{Exercises: Symmetric Matrices}
+\begin{enumerate}
+  \item If $A$ and $B$ are symmetric, show that $A+B$ is symmetric.
+  \item Show that $AA^T$ and $A^TA$ are symmetric:
+  \[
+  (AA^T)^T=(A^T)^TA^T=AA^T,
+  \qquad
+  (A^TA)^T=A^T(A^T)^T=A^TA.
+  \]
+  \item If $A,B$ are symmetric and $k$ is a scalar, determine which matrices are always symmetric:
+  \[
+  \text{(A) }kAB,\qquad
+  \text{(B) }AB^T,\qquad
+  \text{(C) }A+kB^T,\qquad
+  \text{(D) }kA-B^T.
+  \]
+\end{enumerate}
+The answers are (C) and (D).
+\end{frame}

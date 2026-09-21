@@ -133,12 +133,10 @@
 \headcommand {\beamer@framepages {116}{116}}
 \headcommand {\slideentry {5}{0}{6}{117/117}{}{0}}
 \headcommand {\beamer@framepages {117}{117}}
-\headcommand {\slideentry {5}{0}{7}{118/120}{}{0}}
-\headcommand {\beamer@framepages {118}{120}}
-\headcommand {\slideentry {5}{0}{8}{121/121}{}{0}}
-\headcommand {\beamer@framepages {121}{121}}
-\headcommand {\beamer@partpages {1}{121}}
-\headcommand {\beamer@subsectionpages {112}{121}}
-\headcommand {\beamer@sectionpages {112}{121}}
-\headcommand {\beamer@documentpages {121}}
-\headcommand {\gdef \inserttotalframenumber {62}}
+\headcommand {\slideentry {5}{0}{7}{118/118}{}{0}}
+\headcommand {\beamer@framepages {118}{118}}
+\headcommand {\beamer@partpages {1}{118}}
+\headcommand {\beamer@subsectionpages {112}{118}}
+\headcommand {\beamer@sectionpages {112}{118}}
+\headcommand {\beamer@documentpages {118}}
+\headcommand {\gdef \inserttotalframenumber {61}}
