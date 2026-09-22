@@ -64,87 +64,34 @@ A=[\,\vect a_1\ \vect a_2\ \cdots\ \vect a_n\,].
   \item A \textbf{row matrix} (row vector) of order $n$ has the form
   \[A=(a_1,a_2,\ldots,a_n).\]
   \item A \textbf{column matrix} (column vector) of order $n$ has the form
-  \[B=\begin{bmatrix}a_1&a_2&\cdots&a_n\end{bmatrix}^{T}.\]
+  \[B=\begin{bmatrix}a_1\\a_2\\\cdots\\a_n\end{bmatrix}.\]
 \end{itemize}
-\end{frame}
-
-% Slide 8
-\begin{frame}{Diagonal Matrices}
-A \textbf{diagonal matrix} is a square matrix whose nondiagonal entries are zero:
-\[
-A=\operatorname{diag}(\lambda_1,\lambda_2,\ldots,\lambda_n)
-=\begin{bmatrix}
-\lambda_1&0&\cdots&0\\
-0&\lambda_2&\cdots&0\\
-\vdots&\vdots&\ddots&\vdots\\
-0&0&\cdots&\lambda_n
-\end{bmatrix}.
-\]
-The diagonal entries need not all be zero, and some may be zero.
-\end{frame}
-
-% Slide 9
-\begin{frame}{Identity Matrices}
-The \textbf{identity matrix} of order $n$ is the diagonal matrix
-\[
-I=I_n=\operatorname{diag}(1,1,\ldots,1)
-=\begin{bmatrix}
-1&0&\cdots&0\\
-0&1&\cdots&0\\
-\vdots&\vdots&\ddots&\vdots\\
-0&0&\cdots&1
-\end{bmatrix}.
-\]
-All main diagonal entries are $1$.
-\end{frame}
-
-% Slide 10
-\begin{frame}{Zero Matrices}
-An $m\times n$ matrix whose entries are all zero is a \textbf{zero matrix}, written $0_{m\times n}$ or simply $0$.
-\[
-\begin{bmatrix}
-0&0&0&0\\
-0&0&0&0\\
-0&0&0&0\\
-0&0&0&0
-\end{bmatrix}
-\ne
-\begin{bmatrix}0&0&0&0\end{bmatrix}.
-\]
-The size of a zero matrix is usually clear from context.
-\end{frame}
-
-% Slide 11
-\begin{frame}{Special Matrices: Recap}
-For $A=(a_{ij})_{m\times n}$:
-\begin{description}
-  \item[Square matrix] $m=n$.
-  \item[Row or column matrix] One dimension equals $1$.
-  \item[Identity matrix] $a_{ii}=1$ and $a_{ij}=0$ for $i\ne j$.
-  \item[Diagonal matrix] $a_{ij}=0$ for $i\ne j$.
-  \item[Zero matrix] Every entry is zero.
-\end{description}
 \end{frame}
 
 % Slide 12
 \begin{frame}{Matrix Operations}
+  Today, we are going to formally introduce the matrix operations:
 \begin{itemize}
-  \item \textcolor{lecturemagenta}{Addition（矩阵的加法）}
-  \item \textcolor{lecturemagenta}{Scalar multiplication（数与矩阵相乘）}
-  \item \textcolor{lecturemagenta}{Matrix multiplication（矩阵与矩阵相乘）}
-  \item \textcolor{lecturemagenta}{Transpose of a matrix（矩阵的转置）}
-  \item \textcolor{lecturemagenta}{Inverse of a matrix（矩阵的逆）}
+  \item \textcolor{lecturemagenta}{"+": Addition}
+  \item \textcolor{lecturemagenta}{"c": Scalar multiplication}
+  \item \textcolor{lecturemagenta}{"*": Matrix multiplication}
+  \item \textcolor{lecturemagenta}{"T": Transpose of a matrix}
+  \item \textcolor{lecturemagenta}{"$^{-1}$" or "/": Inverse of a matrix}
 \end{itemize}
 \end{frame}
 
 % Slide 13
 \begin{frame}{Sums and Scalar Multiples}
+
+What does linear system preserve?\pause
 \begin{itemize}
-  \item \textcolor{lecturemagenta}{Addition（矩阵的加法）}
-  \item \textcolor{lecturemagenta}{Scalar multiplication（数与矩阵相乘）}
-\end{itemize}
+  \item \textcolor{lecturemagenta}{Addition}
+  \item \textcolor{lecturemagenta}{Scalar multiplication}
+\end{itemize}\pause
 \vfill
-The arithmetic for vectors described earlier has a natural extension to matrices.
+Vectors satisfy this rule. If we write vectors into a matrix, matrix satisfies the rule too.
+
+
 \end{frame}
 
 % Slide 14
@@ -159,6 +106,8 @@ Let $\vect u,\vect v\in\R^n$.
 
 % Slide 15
 \begin{frame}{Same-Size and Equal Matrices}
+Now, for matrices:
+
 Two matrices have the \textbf{same size} when they have the same number of rows and the same number of columns. For example,
 \[
 \begin{bmatrix}1&2\\5&6\\3&7\end{bmatrix}
@@ -168,10 +117,35 @@ Two matrices have the \textbf{same size} when they have the same number of rows 
 both have size $3\times2$.
 \medskip
 
-Two matrices are \textbf{equal} when they have the same size and all corresponding entries are equal.
+Two matrices are \textbf{equal} when they have \textbf{1)} the same size and \textbf{2)} all corresponding entries are equal.
 \end{frame}
 
 % Slide 16
+
+% Slide 10
+\begin{frame}{Matrix Addition: Zero Matrices}
+What we need to define first, if we want to define an addition?\pause
+
+The "0"!\pause
+
+An $m\times n$ matrix whose entries are all zero is a \textbf{zero matrix}, written $0_{m\times n}$ or simply $0$.
+\[
+\begin{bmatrix}
+0&0&0&0\\
+0&0&0&0\\
+0&0&0&0\\
+0&0&0&0
+\end{bmatrix}
+\ne
+\begin{bmatrix}0&0&0&0\end{bmatrix}.
+\]
+
+It adds any matrix equals the matrix itself. $0+A=A$.\pause
+
+The size of a zero matrix is usually clear from context. You know the size if you know the size of A, don't you?
+\end{frame}
+
+
 \begin{frame}{Matrix Addition}
 If $A=(a_{ij})_{m\times n}$ and $B=(b_{ij})_{m\times n}$ have the same size, then
 \[
@@ -217,17 +191,106 @@ Equivalently, if $A=[\,\vect a_1\ \cdots\ \vect a_n\,]$, then
 
 % Slide 19
 \begin{frame}{Negation and Subtraction}
-We define $-A=(-1)A$, so every entry changes sign. We then write
+We have learned $O$. What operation makes $O$?\pause
+
+$a+0=0$
+
+$a-a=0$ \pause
+
+For a matrix, we do not need to invent 'minus".
+
+When performing \textbf{scalar multiplications}, negation means multiply by -1.
+
+We define $-A=(-1)A$, so every entry multiplies by -1. We then write
 \[
 A-B=A+(-1)B.
 \]
 \begin{exampleblock}{Questions}
 \begin{enumerate}
   \item For what matrix $B$ does $A+B=A$?
-  \item What is $A-A$?
+  \item What is $A-A$? \pause $O$
   \item Is $A-A=B-B$ always true for matrices $A$ and $B$?
 \end{enumerate}
 \end{exampleblock}
+\end{frame}
+
+
+% Slide 21
+\begin{frame}{Sums and Scalar Multiples: Example}
+Let
+\[
+A=\begin{bmatrix}2&4&-5\\0&7&-2\end{bmatrix},\qquad
+B=\begin{bmatrix}1&-3&3\\0&2&-4\end{bmatrix}.
+\]
+Then
+\[
+A+B=\begin{bmatrix}3&1&-2\\0&9&-6\end{bmatrix},
+\qquad
+2(A+B)=\begin{bmatrix}6&2&-4\\0&18&-12\end{bmatrix}.
+\]
+\end{frame}
+
+
+
+% Slide 8
+\begin{frame}{Scalar multiplication and Diagonal Matrix}
+A \textbf{diagonal matrix} is a square matrix whose nondiagonal entries are zero:
+\[
+A=\operatorname{diag}(\lambda_1,\lambda_2,\ldots,\lambda_n)
+=\begin{bmatrix}
+\lambda_1&0&\cdots&0\\
+0&\lambda_2&\cdots&0\\
+\vdots&\vdots&\ddots&\vdots\\
+0&0&\cdots&\lambda_n
+\end{bmatrix}.
+\]
+\pause
+The diagonal entries need not all be zero, and some may be zero. We love this form of matrix. \pause
+
+If diagonal entries are 1, it is an identity matrix $I$.
+\end{frame}
+
+
+\begin{frame}{Scalar multiplication and Diagonal Matrix}
+We love this type of matrix because we can multiply a matrix by row or by column.\pause
+\[
+A=\operatorname{diag}(\lambda_1,\lambda_2,\ldots,\lambda_n)
+=\begin{bmatrix}
+\lambda_1&0&\cdots&0\\
+0&\lambda_2&\cdots&0\\
+\vdots&\vdots&\ddots&\vdots\\
+0&0&\cdots&\lambda_n
+\end{bmatrix}.
+\]
+\pause
+
+\begin{itemize}
+  \item If A is diagonal,\pause
+  \item Multiplication at left: $AB$ scales $\lambda_i$ for each ith row.\pause
+  \item Multiplication at right: $BA$ scales $\lambda_i$ for each ith column.
+\end{itemize}
+
+A scalar scales everything equally.
+
+A diagonal matrix lets us scale different directions differently.
+\end{frame}
+\begin{frame}{Essence of Matrix}
+  A table of numbers $\rightarrow$ operation or transformation.
+\end{frame}
+
+\begin{frame}{Scalar Multiplication and Diagonal Matrix}
+  Diagonal Matrix bridges \textbf{scalar} multiplication with \textbf{matrix} multiplication!\pause
+
+  For a $2 \times 2$ matrix $A$:
+
+  \[
+cA
+=\begin{bmatrix}
+c&0\\
+0&c
+\end{bmatrix}A=(cI)A.
+\]
+  
 \end{frame}
 
 % Slide 20
@@ -249,20 +312,27 @@ r(sA)&=(rs)A.
 \end{columns}
 \end{frame}
 
-% Slide 21
-\begin{frame}{Sums and Scalar Multiples: Example}
-Let
+
+% Slide 9
+\begin{frame}{Matrix Multiplication}
+
+What do we need to define first, if we want to define an multiplication?\pause
+
+The "1", or identity matrix!\pause
+
+The \textbf{identity matrix} of order $n$ is the diagonal matrix
 \[
-A=\begin{bmatrix}2&4&-5\\0&7&-2\end{bmatrix},\qquad
-B=\begin{bmatrix}1&-3&3\\0&2&-4\end{bmatrix}.
+I=I_n=\operatorname{diag}(1,1,\ldots,1)
+=\begin{bmatrix}
+1&0&\cdots&0\\
+0&1&\cdots&0\\
+\vdots&\vdots&\ddots&\vdots\\
+0&0&\cdots&1
+\end{bmatrix}.
 \]
-Then
-\[
-A+B=\begin{bmatrix}3&1&-2\\0&9&-6\end{bmatrix},
-\qquad
-2(A+B)=\begin{bmatrix}6&2&-4\\0&18&-12\end{bmatrix}.
-\]
+All main diagonal entries are $1$.
 \end{frame}
+
 
 % Slide 22
 \begin{frame}{Matrix--Vector Multiplication}
@@ -378,17 +448,8 @@ A $1\times1$ matrix is usually written as a scalar:
 \]
 \end{frame}
 
-% Slide 29
-\begin{frame}{Properties of Matrix Multiplication}
-\theorembox{Theorem 2}{Let $A$ be $m\times n$ and let $B,C$ have sizes for which the indicated operations are defined. Then}
-\begin{align*}
-A(BC)&=(AB)C &&\text{associative law},\\
-A(B+C)&=AB+AC &&\text{left-distributive law},\\
-(B+C)A&=BA+CA &&\text{right-distributive law},\\
-r(AB)&=(rA)B=A(rB),\\
-I_mA&=A=AI_n.
-\end{align*}
-\end{frame}
+
+
 
 % Slide 30
 \begin{frame}{A Product May Exist in Only One Order}
@@ -407,8 +468,31 @@ AB=\begin{bmatrix}-9&5&-11\\-2&0&12\end{bmatrix},
 while $BA$ is not defined because the inner dimensions do not match.
 \end{frame}
 
+\begin{frame}{Multiplication May Not Be Swappable!!}
+  \begin{itemize}
+    \item We all know $a \times b = b \times a$.
+    \item But this is special. \pause
+    \item Think about \[\mathbf{v}=
+    \begin{bmatrix}1\\2\end{bmatrix}
+    \]
+    \item Scale x twice, then swap x and y.
+    \item Swap x and y, then scale x twice. Are they the same?
+  \end{itemize}
+  
+\end{frame}
+
+
+\begin{frame}{Multiplication May Not Be Swappable!!}
+  \pause
+  \[\mathbf{D}=\begin{bmatrix}2&0\\0&1\end{bmatrix}, \mathbf{S}=\begin{bmatrix}0&1\\1&0\end{bmatrix}\]\pause
+
+  \[\mathbf{SD}=\begin{bmatrix}0&1\\2&0\end{bmatrix}, \mathbf{DS}=\begin{bmatrix}0&2\\1&0\end{bmatrix}\]\pause
+
+  \[\mathbf{SD} \neq \mathbf{DS}\]
+\end{frame}
+
 % Slide 31
-\begin{frame}{Matrix Multiplication Is Not Commutative}
+\begin{frame}{Matrix Multiplication Not Commutative}
 For
 \[
 A=\begin{bmatrix}-1&2&3\\0&3&-2\end{bmatrix},\qquad
@@ -440,6 +524,63 @@ AB=0\centernot\implies A=0\text{ or }B=0,
 \qquad
 A\ne0,\ B\ne0\centernot\implies AB\ne0.
 \]
+\end{frame}
+
+
+\begin{frame}{Matrix Multiplication is Applying Operations}
+
+\begin{block}{Key idea}
+A matrix acts on a vector.  
+In a product of matrices, the matrix \textbf{closest to the vector acts first}.
+\end{block}
+
+\[
+AB\mathbf{x} = A(B\mathbf{x})
+\]
+
+\[
+\mathbf{x}
+\;\xrightarrow{\;B\;}\;
+B\mathbf{x}
+\;\xrightarrow{\;A\;}\;
+A(B\mathbf{x}) = AB\mathbf{x}
+\]
+
+\vspace{0.5em}
+
+\[
+BA\mathbf{x} = B(A\mathbf{x})
+\]
+
+\[
+\mathbf{x}
+\;\xrightarrow{\;A\;}\;
+A\mathbf{x}
+\;\xrightarrow{\;B\;}\;
+B(A\mathbf{x}) = BA\mathbf{x}
+\]
+\end{frame}
+\begin{frame}{Matrix Multiplication is Applying Operations}
+
+\begin{alertblock}{Takeaway}
+When applying transformation to a vectors to the right, the \textbf{rightmost} matrix acts first.  
+So \(AB\mathbf{x}\) and \(BA\mathbf{x}\) usually mean applying operations in a different order, and therefore in general
+\[
+AB \ne BA.
+\]
+\end{alertblock}
+
+\end{frame}
+% Slide 29
+\begin{frame}{Properties of Matrix Multiplication}
+\theorembox{Theorem 2}{Let $A$ be $m\times n$ and let $B,C$ have sizes for which the indicated operations are defined. Then}
+\begin{align*}
+A(BC)&=(AB)C &&\text{associative law},\\
+A(B+C)&=AB+AC &&\text{left-distributive law},\\
+(B+C)A&=BA+CA &&\text{right-distributive law},\\
+r(AB)&=(rA)B=A(rB),\\
+I_mA&=A=AI_n.
+\end{align*}
 \end{frame}
 
 % Slide 33
@@ -513,8 +654,25 @@ An identity matrix behaves like the number $1$ in multiplication.
 \end{enumerate}
 \end{frame}
 
+\begin{frame}{Transpose}
+\begin{columns}
+  \begin{column}{.3\linewidth}
+    \[
+\begin{bmatrix}a&b&c\\d&e&f\end{bmatrix}
+\xrightarrow{\text{transpose}}
+\begin{bmatrix}a&d\\b&e\\c&f\end{bmatrix}
+\]
+  \end{column}\pause
+  \begin{column}{.7\linewidth}
+  \begin{figure}
+    \includegraphics[width=.4\linewidth]{penguin.png}
+    \includegraphics[width=.4\linewidth]{penguintranspose.png}
+  \end{figure}  
+  \end{column}
+\end{columns}
+\end{frame}
 % Slide 37
-\begin{frame}{Main Diagonal Entries}
+\begin{frame}{Transpose: Main Diagonal Entries}
 For $A=(a_{ij})_{m\times n}$, the diagonal entries are
 \[
 a_{11},a_{22},a_{33},\ldots,
@@ -665,6 +823,20 @@ a_{ii}=0,\qquad a_{ji}=-a_{ij}\quad(i\ne j).
   \text{(C) }A+kB^T,\qquad
   \text{(D) }kA-B^T.
   \]
-\end{enumerate}
+\end{enumerate}\pause
 The answers are (C) and (D).
 \end{frame}
+
+
+% Slide 11
+\begin{frame}{Special Matrices: Recap}
+For $A=(a_{ij})_{m\times n}$:
+\begin{description}
+  \item[Square matrix] $m=n$.
+  \item[Row or column matrix] One dimension equals $1$.
+  \item[Identity matrix] $a_{ii}=1$ and $a_{ij}=0$ for $i\ne j$.
+  \item[Diagonal matrix] $a_{ij}=0$ for $i\ne j$.
+  \item[Zero matrix] Every entry is zero.
+\end{description}
+\end{frame}
+
