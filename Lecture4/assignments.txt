@@ -1,0 +1,7 @@
+Chap 2.1
+9 12 35
+
+Chap 2.2
+3 16 24 29
+
+Why 1/7: easier to round up
