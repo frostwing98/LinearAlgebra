@@ -3,7 +3,7 @@
 \sectioncard{2.3}{Characterizations of Invertible Matrices}
 
 \begin{frame}{Review Case: Is $A$ Invertible?}
-Textbook Example 1 asks whether
+Is this invertible?
 \[
 A=\begin{bmatrix}
 1&0&2\\
@@ -11,14 +11,14 @@ A=\begin{bmatrix}
 5&1&9
 \end{bmatrix}
 \]
-is invertible.
+
 \pause
 \begin{alertblock}{Review question}
 What facts could establish invertibility without explicitly calculating $A^{-1}$?
 \end{alertblock}
 \end{frame}
 
-\begin{frame}[shrink=11]{The Invertible Matrix Theorem}
+\begin{frame}{The Invertible Matrix Theorem}
 \theorembox{Theorem 8}{Let $A$ be a square $n\times n$ matrix. The following statements are equivalent.}
 \vspace{-.4ex}
 \begin{columns}[T]
@@ -50,7 +50,7 @@ What facts could establish invertibility without explicitly calculating $A^{-1}$
 \textbf{For a fixed square matrix, these statements are either all true or all false.}
 \end{frame}
 
-\begin{frame}{Textbook Example 1: Echelon Form}
+\begin{frame}{Example 1: Echelon Form}
 \small
 \[
 \begin{bmatrix}
@@ -106,7 +106,7 @@ The echelon form has three pivot positions. By statement (c) of the Invertible M
 T^{-1}(\vect x)=A^{-1}\vect x.
 \]}
 \pause
-\begin{block}{Textbook Example 2}
+\begin{block}{Example 2}
 If $T:\R^n\to\R^n$ is one-to-one, the columns of $A$ are linearly independent. The Invertible Matrix Theorem then shows that $T$ is also onto and invertible.
 \end{block}
 \end{frame}
@@ -149,30 +149,48 @@ B=A^{-1},\qquad A=B^{-1}.
 % Because every statement connects back to the same circle, proving any one of them proves all twelve.
 % \end{frame}
 
-\begin{frame}[shrink=4]{Singular Matrices and Numerical Caution}
-\begin{columns}[T]
-\column{.47\textwidth}
-\textbf{Textbook Practice Problem 1}
-\[
+\begin{frame}{Practice}
+
+\begin{alertblock}{Practice 1}
+  Determine if this is invertible:
+  \[
 A=\begin{bmatrix}
 2&3&4\\2&3&4\\2&3&4
 \end{bmatrix}.
 \]
-The columns are linearly dependent, so $A$ is singular. Equivalently, $A$ has fewer than three pivots and is not row equivalent to $I_3$.
-
-\medskip
-The theorem applies only to square matrices.
-\column{.49\textwidth}
-\textbf{Nearly singular matrices}
-
-An invertible matrix can become singular after a very small change in its entries. Roundoff may then make a singular matrix appear invertible, or an invertible matrix appear singular.
-
-\medskip
-The condition number measures this sensitivity:
+\end{alertblock}\pause
+The columns are linearly dependent, so $A$ is singular. Equivalently, $A$ has fewer than three pivots and is not row equivalent to $I_3$.\pause
 \begin{itemize}
-  \item $\operatorname{cond}(I)=1$;
-  \item a singular matrix has infinite condition number;
-  \item a large condition number warns of possible numerical error.
+  \item The columns of A are obviously linearly dependent\pause
+  \item $A$ cannot be invertible
 \end{itemize}
-\end{columns}
+\end{frame}
+
+\begin{frame}{Practice 2}
+\begin{alertblock}{Practice 2}
+  Suppose that for a certain $n \times n$ matrix $A$, statement (g) of the Invertible Matrix
+Theorem is not true. What can you say about consistency of the form $Ax = b$?
+\end{alertblock}
+\begin{block}{Statement (g)}
+  
+$Ax = b$ has a solution for every $b \in \mathbb{R}^n$.\pause
+
+\end{block}
+
+\begin{block}{Answer}
+  If statement (g) is not true, then the equation $Ax = b$ is inconsistent for at least one $b \in \mathbb{R}^n$.
+
+\end{block}
+\end{frame}
+
+\begin{frame}{Practice 3}
+  \begin{alertblock}{Practice 3}
+    Suppose that A and B are $n \times n$ matrices and the equation $ABx = 0$ has a nontrivial
+solution. What can you say about the invertability of matrix $AB$?
+  \end{alertblock}\pause
+\begin{block}{Answer}
+  Apply the Invertible Matrix Theorem to the matrix AB in place of A. Then statement
+(d) becomes: $ABx = 0$ has only the trivial solution. This is not true. So AB is not
+invertible.
+\end{block}
 \end{frame}
