@@ -1,0 +1,178 @@
+% Textbook Section 2.3, pp. 145--150.
+\section[Invertibility]{Characterizations of Invertible Matrices}
+\sectioncard{2.3}{Characterizations of Invertible Matrices}
+
+\begin{frame}{Review Case: Is $A$ Invertible?}
+Textbook Example 1 asks whether
+\[
+A=\begin{bmatrix}
+1&0&2\\
+3&1&2\\
+5&1&9
+\end{bmatrix}
+\]
+is invertible.
+\pause
+\begin{alertblock}{Review question}
+What facts could establish invertibility without explicitly calculating $A^{-1}$?
+\end{alertblock}
+\end{frame}
+
+\begin{frame}[shrink=11]{The Invertible Matrix Theorem}
+\theorembox{Theorem 8}{Let $A$ be a square $n\times n$ matrix. The following statements are equivalent.}
+\vspace{-.4ex}
+\begin{columns}[T]
+\column{.49\textwidth}
+\begin{enumerate}[a.]
+  \item $A$ is invertible.
+  \item $A$ is row equivalent to $I_n$.
+  \item $A$ has $n$ pivot positions.
+  \item $A\vect x=\vect0$ has only the trivial solution.
+  \item The columns of $A$ are linearly independent.
+  \item $\vect x\mapsto A\vect x$ is one-to-one.
+\end{enumerate}
+\column{.49\textwidth}
+\begin{enumerate}[a.]
+  \setcounter{enumi}{6}
+  \item $A\vect x=\vect b$ has a solution for every $\vect b\in\R^n$.
+  \item The columns of $A$ span $\R^n$.
+  \item $\vect x\mapsto A\vect x$ maps $\R^n$ onto $\R^n$.
+  \item Some $C$ satisfies $CA=I$.
+  \item Some $D$ satisfies $AD=I$.
+  \item $A^T$ is invertible.
+\end{enumerate}
+\end{columns}
+\pause
+
+\vspace{0.1in}
+
+\centering
+\textbf{For a fixed square matrix, these statements are either all true or all false.}
+\end{frame}
+
+\begin{frame}{Textbook Example 1: Echelon Form}
+\small
+\[
+\begin{bmatrix}
+1&0&2\\3&1&2\\5&1&9
+\end{bmatrix}
+\xrightarrow[ R_3\leftarrow R_3-5R_1]{R_2\leftarrow R_2-3R_1}
+\begin{bmatrix}
+1&0&2\\0&1&-4\\0&1&-1
+\end{bmatrix}
+\]
+\pause
+\[
+\xrightarrow{R_3\leftarrow R_3-R_2}
+\begin{bmatrix}
+1&0&2\\0&1&-4\\0&0&3
+\end{bmatrix}.
+\]
+\pause
+The echelon form has three pivot positions. By statement (c) of the Invertible Matrix Theorem, $A$ is invertible.
+\end{frame}
+
+\begin{frame}[shrink=6]{What Else Does the Echelon Form Tell Us?}
+  \begin{center}
+    \[
+\begin{bmatrix}
+1&0&2\\0&1&-4\\0&0&3
+\end{bmatrix}.
+\]
+  \end{center}
+\begin{columns}[T]
+\column{.48\textwidth}
+\textbf{Equations and columns}
+\begin{itemize}
+  \item Does $A\vect x=\vect0$ have a nontrivial solution? \pause No.
+  \item Are the columns linearly independent? \pause Yes.
+  \item Do the columns span $\R^3$? \pause Yes.
+  \item Does $A\vect x=\vect b$ have a unique solution for every $\vect b$? \pause Yes.
+\end{itemize}
+\column{.48\textwidth}
+\textbf{Transformations and inverses}
+\begin{itemize}
+  \item Is $\vect x\mapsto A\vect x$ one-to-one? \pause Yes.
+  \item Is it onto $\R^3$? \pause Yes.
+  \item Do left and right inverses exist? \pause Yes, and both equal $A^{-1}$.
+  \item Is the inverse transformation linear? \pause Yes: $S(\vect x)=A^{-1}\vect x$.
+\end{itemize}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Invertible Linear Transformations}
+\theorembox{Theorem 9}{Let $T:\R^n\to\R^n$ have standard matrix $A$. Then $T$ is invertible if and only if $A$ is invertible. In that case,
+\[
+T^{-1}(\vect x)=A^{-1}\vect x.
+\]}
+\pause
+\begin{block}{Textbook Example 2}
+If $T:\R^n\to\R^n$ is one-to-one, the columns of $A$ are linearly independent. The Invertible Matrix Theorem then shows that $T$ is also onto and invertible.
+\end{block}
+\end{frame}
+
+\begin{frame}{Transpose and One-Sided Inverses}
+The Invertible Matrix Theorem includes
+\[
+A\text{ is invertible}\quad\Longleftrightarrow\quad A^T\text{ is invertible}.
+\]
+\pause
+It also converts a one-sided inverse into a two-sided inverse. If square matrices satisfy
+\[
+AB=I,
+\]
+then $A$ and $B$ are both invertible, with
+\[
+B=A^{-1},\qquad A=B^{-1}.
+\]
+\end{frame}
+
+% \begin{frame}[shrink=8]{Why the Statements Are Equivalent}
+% The proof begins with a circle of implications:
+% \[
+% \boxed{(a)}\Rightarrow\boxed{(j)}\Rightarrow\boxed{(d)}
+% \Rightarrow\boxed{(c)}\Rightarrow\boxed{(b)}\Rightarrow\boxed{(a)}.
+% \]
+% \pause
+% The remaining statements attach to this circle through familiar equivalences:
+% \[
+% \boxed{(g)}\Longleftrightarrow\boxed{(h)}\Longleftrightarrow\boxed{(i)},
+% \qquad
+% \boxed{(d)}\Longleftrightarrow\boxed{(e)}\Longleftrightarrow\boxed{(f)}.
+% \]
+% \[
+% \boxed{(a)}\Longleftrightarrow\boxed{(l)},
+% \qquad
+% \boxed{(a)}\Rightarrow\boxed{(k)}\Rightarrow\boxed{(g)}\Rightarrow\boxed{(a)}.
+% \]
+% \pause
+% Because every statement connects back to the same circle, proving any one of them proves all twelve.
+% \end{frame}
+
+\begin{frame}[shrink=4]{Singular Matrices and Numerical Caution}
+\begin{columns}[T]
+\column{.47\textwidth}
+\textbf{Textbook Practice Problem 1}
+\[
+A=\begin{bmatrix}
+2&3&4\\2&3&4\\2&3&4
+\end{bmatrix}.
+\]
+The columns are linearly dependent, so $A$ is singular. Equivalently, $A$ has fewer than three pivots and is not row equivalent to $I_3$.
+
+\medskip
+The theorem applies only to square matrices.
+\column{.49\textwidth}
+\textbf{Nearly singular matrices}
+
+An invertible matrix can become singular after a very small change in its entries. Roundoff may then make a singular matrix appear invertible, or an invertible matrix appear singular.
+
+\medskip
+The condition number measures this sensitivity:
+\begin{itemize}
+  \item $\operatorname{cond}(I)=1$;
+  \item a singular matrix has infinite condition number;
+  \item a large condition number warns of possible numerical error.
+\end{itemize}
+\end{columns}
+\end{frame}

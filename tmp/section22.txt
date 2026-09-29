@@ -1,0 +1,2255 @@
+  134     CHAPTER 2        Matrix Algebra
+
+
+        will produce the following matrices (without keying in each                 to the right pattern by calculating xT M x. If xT M x D 0,
+        entry of the matrix).                                                       then x is the pattern identiﬁed by M . If xT M x ¤ 0, try a
+        a. A 5  6 matrix of zeros                                                  different nonzero vector of zeros and ones. You may want
+                                                                                    to be systematic in the way that you choose each x in order to
+        b. A 3  5 matrix of ones
+                                                                                    avoid testing the same vector twice. You are using “guess and
+        c. The 6  6 identity matrix                                                check” to determine which pattern of 2  2 colored squares
+        d. A 5  5 diagonal matrix, with diagonal entries 3, 5, 7, 2, 4             the matrix M detects.
+  A useful way to test new ideas in matrix algebra, or to make                                            2                       3
+                                                                                                             1     0      1    0
+  conjectures, is to make calculations with matrices selected at                                          6 0      1      0    07
+  random. Checking a property for a few matrices does not prove                                    M D6   4 1
+                                                                                                                                  7
+                                                                                                                   0      1    05
+  that the property holds in general, but it makes the property more
+                                                                                                             0     0      0    1
+  believable. Also, if the property is actually false, you may discover
+  this when you make a few calculations.                                T 50. Repeat Exercise 49 with the matrix
+T 44. Write the command(s) that will create a 6  4 matrix with                                 2                                                    3
+        random entries. In what range of numbers do the entries lie?                                1      0     0                                 1
+                                                                                                6 0        1     0                                 17
+        Tell how to create a 3  3 matrix with random integer entries                     M D6                                                       7
+                                                                                                4 0        0     1                                 05
+        between 9 and 9. [Hint: If x is a random number such that
+        0 < x < 1; then 9:5 < 19.x :5/ < 9:5:                                                      1      1     0                                 2
+
+T 45. Construct a random 4  4 matrix A and test whether .A C I /
+                                                                                                                                 
+                                                                                                                       0        1
+                      2                                              T 51. Use the matrix A D                                       to switch the ﬁrst and second
+        .A I / D A          I: The best way to do this is to compute                                                   1        0
+        .A C I /.A I / .A2 I / and verify that this difference is
+        the zero matrix. Do this for three random matrices. Then test               rows of the matrix M containing dates of accidents at the
+        .A C B/.A B/ D A2 B 2 the same way for three pairs of                       Montreal Trudeau Airport.
+        random 4  4 matrices. Report your conclusions.
+                                                                                    Montreal:
+T 46. Use at least three pairs of random 4  4 matrices A and B                             "                                                                         #
+                                                                                                  2       3    16          24     25     26    6      7    19    26
+        to test the equalities .A C B/T D AT C B T and .AB/T D                        M D
+        AT B T : (See Exercise 45.) Report your conclusions. [Note:                               1       1     1           1      1      1    2      2     2     2
+        Most matrix programs use A0 for AT :
+                                                                                 This data in matrix M has been scrubbed in matrix AM and
+T 47. Let 2                                 3
+             0        1      0    0    0                                         can be fed into the same machine as the other data from
+           60         0      1    0    07                                        Example 10.
+           6                             7                                                                         
+        S D6
+           60         0      0    1    077                                                              1   0     0
+           40         0      0    0    15                                  T 52. Use the matrix B D                   to remove the last row
+                                                                                                        0   1     0
+             0        0      0    0    0                                         from the matrix N containing dates of accidents at the New
+        Compute S k for k D 2; : : : ; 6:                                        York JFK Airport.
+T 48. Describe in words what happens when you compute A5 ,
+                                                                                    New York:
+        A10 ; A20 ; and A30 for                                                           2                                                                           3
+                             2                         3                                    1                  1            1            1      2          2       2
+                                1=6     1=2         1=3                                  6                                                                            7
+                                                                                      N D4 1                   12           21          22      3          20     21 5
+                          A D 4 1=2     1=4         1=4 5
+                                1=3     1=4        5=12                                    2020               2020         2020        2020    2020       2020   2020
+
+T 49. The matrix M can detect a particular 2  2 colored pattern                     The data in matrix N has been scrubbed in matrix BN and
+        like in Example 9. Create a nonzero 4  1 vector x by choos-                can be fed into the same machine as the other data from
+        ing each entry to be a zero or one. Test to see if x corresponds            Example 10.
+
+
+
+
+                                                Solutions to Practice Problems
+                                                                          
+                                                            1 3 5            4                                                    
+                                                1. Ax D                 D        . So .Ax/T D   4                                 2 . Also,
+                                                            2 4 3            2
+                                                                                                                  
+                                                                       T T
+                                                                                                    1        2                         
+                                                                      xA D 5              3                            D          4      2 :
+                                                                                                      3        4
+                                                                             2.2 The Inverse of a Matrix         135
+
+
+                    The quantities .Ax/T and xTAT are equal, by Theorem 3(d). Next,
+                                                                          
+                                                 5               25 15
+                                        xxT D        5 3 D
+                                                 3                 15      9
+                                                         
+                                                       5
+                                         xTx D 5 3            D Œ 25 C 9  D 34
+                                                         3
+
+                   A 1  1 matrix such as xTx is usually written without the brackets. Finally, ATxT is
+                   not deﬁned, because xT does not have two rows to match the two columns of AT .
+                2. The fastest way to compute A2 x is to compute A.Ax/. The product Ax requires
+                   16 multiplications, 4 for each entry, and A.Ax/ requires 16 more. In contrast, the
+                   product A2 requires 64 multiplications, 4 for each of the 16 entries in A2 . After that,
+                   A2 x takes 16 more multiplications, for a total of 80.
+                3. First observe that by the deﬁnition of matrix multiplication,
+                                AB D ŒAb1         Ab2         Abn  D ŒAb1      A b1        Ab1 ;
+                    so the columns of AB are identical. Next, recall that rowi .AB/ D rowi .A/  B:
+                    Since all the rows of A are identical, all the rows of AB are identical. Putting this
+                    information about the rows and columns together, it follows that all the entries in
+                    AB are the same.
+
+
+
+2.2 The Inverse of a Matrix
+                Matrix algebra provides tools for manipulating matrix equations and creating various
+                useful formulas in ways similar to doing ordinary algebra with real numbers. This section
+                investigates the matrix analogue of the reciprocal, or multiplicative inverse, of a nonzero
+                number.
+                     Recall that the multiplicative inverse of a number such as 5 is 1/5 or 5 1 . This inverse
+                satisﬁes the equations
+                                              5 1 .5/ D 1 and 5.5 1 / D 1
+                The matrix generalization requires both equations and avoids the slanted-line notation
+                (for division) because matrix multiplication is not commutative. Furthermore, a full
+                generalization is possible only if the matrices involved are square.1
+                     An n  n matrix A is said to be invertible if there is an n  n matrix C such that
+
+                                                   CA D I       and     AC D I
+
+                where I D In ; the n  n identity matrix. In this case, C is an inverse of A. In fact, C
+                is uniquely determined by A, because if B were another inverse of A, then B D BI D
+                B.AC / D .BA/C D IC D C: This unique inverse is denoted by A 1 , so that
+
+
+                                                 A 1A D I        and    AA 1 D I
+
+                A matrix that is not invertible is sometimes called a singular matrix, and an invertible
+                matrix is called a nonsingular matrix.
+
+                1
+                 One could say that an m  n matrix A is invertible if there exist n  m matrices C and D such that
+                CA D In and AD D Im : However, these equations imply that A is square and C D D: Thus, A is invertible
+                as deﬁned above. See Exercises 31–33 in Section 2.1.
+136   CHAPTER 2   Matrix Algebra
+
+                                                                                                   
+                                                                       2           5              7 5
+                               EXAMPLE 1 If A D                                        and C D          , then
+                                                                       3           7              3 2
+                                                                                                      
+                                                                       2           5      7 5       1 0
+                                                      AC D                                       D             and
+                                                                       3           7      3 2       0 1
+                                                                                                      
+                                                                       7           5      2 5       1 0
+                                                       CA D                                      D
+                                                                       3           2      3 7       0 1
+                               Thus C D A 1 .
+
+                                    Here is a simple formula for the inverse of a 2  2 matrix, along with a test to tell if
+                               the inverse exists.
+
+                                                        
+             THEOREM 4                            a    b
+                                    Let A D               . If ad              bc ¤ 0, then A is invertible and
+                                                  c    d
+                                                                                                                        
+                                                                               1            1               d        b
+                                                                       A           D
+                                                                                       ad       bc          c        a
+
+                                    If ad    bc D 0, then A is not invertible.
+
+
+                                     The simple proof of Theorem 4 is outlined in Exercises 35 and 36. The quantity
+                               ad     bc is called the determinant of A, and we write
+
+                                                                                   det A D ad               bc
+
+                               Theorem 4 says that a 2  2 matrix A is invertible if and only if det A ¤ 0.
+                                                                                                             
+                                                                                                    3       4
+                               EXAMPLE 2 Find the inverse of A D                                                .
+                                                                                                    5       6
+                               SOLUTION Since det A D 3.6/                        4.5/ D 2 ¤ 0, A is invertible, and
+                                                                                                                  
+                                                      1        6       4            6=. 2/ 4=. 2/              3     2
+                                            A 1D                               D                       D
+                                                       2       5       3            5=. 2/  3=. 2/          5=2 3=2
+                                    Invertible matrices are indispensable in linear algebra—mainly for algebraic calcu-
+                               lations and formula derivations, as in the next theorem. There are also occasions when
+                               an inverse matrix provides insight into a mathematical model of a real-life situation, as
+                               in Example 3.
+
+
+             THEOREM 5              If A is an invertible n  n matrix, then for each b in Rn , the equation Ax D b has
+                                    the unique solution x D A 1 b.
+
+
+                               PROOF Take any b in Rn . A solution exists because if A 1 b is substituted for x,
+                               then Ax D A.A 1 b/ D .AA 1 /b D I b D b. So A 1 b is a solution. To prove that the
+                               solution is unique, show that if u is any solution, then u; in fact, must be A 1 b. Indeed,
+                               if Au D b, we can multiply both sides by A 1 and obtain
+                                                      A 1 Au D A 1 b;                  I u D A 1 b;                 and      u D A 1b
+                                                              2.2 The Inverse of a Matrix   137
+
+
+EXAMPLE 3 A horizontal elastic beam is supported at each end and is subjected to
+forces at points 1, 2, and 3, as shown in Figure 1. Let f in R3 list the forces at these
+points, and let y in R3 list the amounts of deﬂection (that is, movement) of the beam at
+the three points. Using Hooke’s law from physics, it can be shown that
+                                              y D Df
+where D is a ﬂexibility matrix. Its inverse is called the stiffness matrix. Describe the
+physical signiﬁcance of the columns of D and D 1 .
+
+                              #1              #2                #3
+                                                               
+                                 y1            y2               y3
+                                                                
+                                               
+                                   f1             f2              f3
+
+
+              FIGURE 1 Deﬂection of an elastic beam.
+
+
+SOLUTION Write I3 D Œ e1 e2 e3  and observe that
+
+                            D D DI3 D Œ D e1 D e2 D e3 
+Interpret the vector e1 D .1; 0; 0/ as a unit force applied downward at point 1 on the
+beam (with zero force at the other two points). Then D e1 ; the ﬁrst column of D; lists the
+beam deﬂections due to a unit force at point 1. Similar descriptions apply to the second
+and third columns of D:
+     To study the stiffness matrix D 1 , observe that the equation f D D 1 y computes a
+force vector f when a deﬂection vector y is given. Write
+                     D 1 D D 1 I3 D Œ D 1 e1 D 1 e2 D 1 e3 
+Now interpret e1 as a deﬂection vector. Then D 1 e1 lists the forces that create the
+deﬂection. That is, the ﬁrst column of D 1 lists the forces that must be applied at the
+three points to produce a unit deﬂection at point 1 and zero deﬂections at the other points.
+Similarly, columns 2 and 3 of D 1 list the forces required to produce unit deﬂections at
+points 2 and 3, respectively. In each column, one or two of the forces must be negative
+(point upward) to produce a unit deﬂection at the desired point and zero deﬂections at
+the other two points. If the ﬂexibility is measured, for example, in inches of deﬂection
+per pound of load, then the stiffness matrix entries are given in pounds of load per inch
+of deﬂection.
+    The formula in Theorem 5 is seldom used to solve an equation Ax D b numerically
+because row reduction of Œ A b  is nearly always faster. (Row reduction is usually
+more accurate, too, when computations involve rounding off numbers.) One possible
+exception is the 2  2 case. In this case, mental computations to solve Ax D b are
+sometimes easier using the formula for A 1 , as in the next example.
+
+EXAMPLE 4 Use the inverse of the matrix A in Example 2 to solve the system
+                                        3x1 C 4x2 D 3
+                                        5x1 C 6x2 D 7
+SOLUTION This system is equivalent to Ax D b, so
+                                                                 
+                                              3         2      3    5
+                      x D A 1b D                                 D
+                                            5=2        3=2     7    3
+138   CHAPTER 2   Matrix Algebra
+
+
+                                     The next theorem provides three useful facts about invertible matrices.
+
+
+             THEOREM 6             a. If A is an invertible matrix, then A 1 is invertible and
+
+                                                                        .A 1 / 1 D A
+
+                                   b. If A and B are n  n invertible matrices, then so is AB , and the inverse of AB
+                                      is the product of the inverses of A and B in the reverse order. That is,
+
+                                                                     .AB/ 1 D B 1 A 1
+
+                                   c. If A is an invertible matrix, then so is AT , and the inverse of AT is the transpose
+                                      of A 1 . That is,
+                                                                       .AT / 1 D .A 1 /T
+
+
+                               PROOF To verify statement (a), ﬁnd a matrix C such that
+
+                                                             A 1C D I       and    CA 1 D I
+
+                               In fact, these equations are satisﬁed with A in place of C . Hence A 1 is invertible, and
+                               A is its inverse. Next, to prove statement (b), compute:
+
+                                               .AB/.B 1 A 1 / D A.BB 1 /A 1 D AIA 1 D AA 1 D I
+
+                               A similar calculation shows that .B 1 A 1 /.AB/ D I . For statement (c), use The-
+                               orem 3(d), read from right to left, .A 1 /T AT D .AA 1 /T D I T D I . Similarly,
+                               AT .A 1 /T D I T D I . Hence AT is invertible, and its inverse is .A 1 /T .
+                               Remark: Part (b) illustrates the important role that deﬁnitions play in proofs. The theorem
+                               claims that B 1 A 1 is the inverse of AB . The proof establishes this by showing that
+                               B 1 A 1 satisﬁes the deﬁnition of what it means to be the inverse of AB . Now, the
+                               inverse of AB is a matrix that when multiplied on the left (or right) by AB , the product
+                               is the identity matrix I . So the proof consists of showing that B 1 A 1 has this property.
+
+                                     The following generalization of Theorem 6(b) is needed later.
+
+
+                                   The product of n  n invertible matrices is invertible, and the inverse is the product
+                                   of their inverses in the reverse order.
+
+
+                                    There is an important connection between invertible matrices and row operations
+                               that leads to a method for computing inverses. As we shall see, an invertible matrix A is
+                               row equivalent to an identity matrix, and we can ﬁnd A 1 by watching the row reduction
+                               of A to I.
+
+
+                               Elementary Matrices
+                               An elementary matrix is one that is obtained by performing a single elementary row op-
+                               eration on an identity matrix. The next example illustrates the three kinds of elementary
+                               matrices.
+                                                             2.2 The Inverse of a Matrix          139
+
+
+EXAMPLE 5 Let
+            2                       3          2               3           2                 3
+            1            0        0               0 1        0              1       0      0
+     E1 D 4 0            1        0 5;    E2 D 4 1 0         0 5;    E3 D 4 0       1      0 5;
+            4            0        1               0 0        1              0       0      5
+                                              2                3
+                                                a   b        c
+                                          A D 4d    e       f 5
+                                                g   h        i
+Compute E1 A, E2 A, and E3 A, and describe how these products can be obtained by
+elementary row operations on A.
+SOLUTION Verify that
+                 2                                     3               2                   3
+                         a                b        c            d               e       f
+        E1 A D 4         d                e        5 ; E2 A D 4 a
+                                                   f                            b        c 5;
+                     g       4a     h 4b      i 4c              g               h        i
+                                           2             3
+                                              a   b    c
+                                    E3 A D 4 d     e   f 5:
+                                             5g  5h 5i
+Addition of 4 times row 1 of A to row 3 produces E1 A. (This is a row replacement
+operation.) An interchange of rows 1 and 2 of A produces E2 A, and multiplication of
+row 3 of A by 5 produces E3 A.
+     Left-multiplication (that is, multiplication on the left) by E1 in Example 5 has the
+same effect on any 3  n matrix. It adds 4 times row 1 to row 3. In particular, since
+E1  I D E1 , we see that E1 itself is produced by this same row operation on the identity.
+Thus Example 5 illustrates the following general fact about elementary matrices. See
+Exercises 37 and 38.
+
+
+  If an elementary row operation is performed on an m  n matrix A, the resulting
+  matrix can be written as EA, where the m  m matrix E is created by performing
+  the same row operation on Im .
+
+
+     Since row operations are reversible, as shown in Section 1.1, elementary matrices
+are invertible, for if E is produced by a row operation on I, then there is another row op-
+eration of the same type that changes E back into I. Hence there is an elementary matrix
+F such that FE D I. Since E and F correspond to reverse operations, EF D I, too.
+
+
+  Each elementary matrix E is invertible. The inverse of E is the elementary matrix
+  of the same type that transforms E back into I.
+
+                                                   2                  3
+                                     1                       0      0
+EXAMPLE 6 Find the inverse of E1 D 4 0                       1      0 5.
+                                     4                       0      1
+SOLUTION To transform E1 into I, add C4 times row 1 to row 3. The elementary
+matrix that does this is                      2                 3
+                                                  1     0     0
+                                         E1 1 D 4 0     1     05
+                                                 C4     0     1
+140   CHAPTER 2   Matrix Algebra
+
+
+                                   The following theorem provides the best way to “visualize” an invertible matrix,
+                               and the theorem leads immediately to a method for ﬁnding the inverse of a matrix.
+
+
+             THEOREM 7             An n  n matrix A is invertible if and only if A is row equivalent to In , and in
+                                   this case, any sequence of elementary row operations that reduces A to In also
+                                   transforms In into A 1 .
+
+
+
+                               Remark: The comment on the proof of Theorem 11 in Chapter 1 noted that “P if and
+                               only if Q” is equivalent to two statements: (1) “If P then Q” and (2) “If Q then P .”
+                               The second statement is called the converse of the ﬁrst and explains the use of the word
+                               conversely in the second paragraph of this proof.
+
+                               PROOF Suppose that A is invertible. Then, since the equation Ax D b has a solution
+                               for each b (Theorem 5), A has a pivot position in every row (Theorem 4 in Section 1.4).
+                               Because A is square, the n pivot positions must be on the diagonal, which implies that
+                               the reduced echelon form of A is In . That is, A  In .
+                                    Now suppose, conversely, that A  In . Then, since each step of the row reduction
+                               of A corresponds to left-multiplication by an elementary matrix, there exist elementary
+                               matrices E1 ; : : : ; Ep such that
+
+                                               A  E1 A  E2 .E1 A/      Ep .Ep 1    E1 A/ D In
+
+                               That is,
+                                                                     Ep    E1 A D In                                (1)
+                               Since the product Ep    E1 of invertible matrices is invertible, (1) leads to
+
+                                                    .Ep    E1 / 1 .Ep    E1 /A D .Ep    E1 / 1 In
+                                                                                 A D .Ep    E1 / 1
+
+                               Thus A is invertible, as it is the inverse of an invertible matrix (Theorem 6). Also,
+                                                                                     1
+                                                        A 1 D Œ .Ep    E1 / 1        D Ep    E1
+
+                               Then A 1 D Ep    E1 In , which says that A 1 results from applying E1 ; : : : ; Ep suc-
+                               cessively to In . This is the same sequence in (1) that reduced A to In .
+
+
+                               An Algorithm for Finding A –1
+                               If we place A and I side by side to form an augmented matrix Œ A I , then row
+                               operations on this matrix produce identical operations on A and on I. By Theorem 7,
+                               either there are row operations that transform A to In and In to A 1 or else A is not
+                               invertible.
+
+
+                                   ALGORITHM FOR FINDING A–1
+                                   Row reduce the augmented matrix Œ A I . If A is row equivalent to I, then
+                                   Œ A I  is row equivalent to Œ I A 1 . Otherwise, A does not have an inverse.
+                                                           2.2 The Inverse of a Matrix            141
+
+                                                            2                 3
+                                               0                    1       2
+EXAMPLE 7 Find the inverse of the matrix A D 4 1                    0       3 5, if it exists.
+                                               4                    3       8
+SOLUTION
+                 2                          3 2                                             3
+                0       1     2     1     00     1              0       3      0     1    0
+     ŒA I  D 41        0     3     0     05  40
+                                           1                    1       2      1     0    05
+                4       3     8     0     10     4              3       8      0     0    1
+              2                             3 2                                             3
+                1       0     3     0 1 0        1              0       3      0    1     0
+             40        1     2     1 0 05  40                 1       2      1    0     05
+                0       3     4     0 4 1        0              0       2      3    4     1
+              2                                3
+                1       0     3      0  1    0
+             40        1     2      1  0    0 5
+                0       0     1     3=2 2 1=2
+              2                                3
+                1       0     0     9=2 7 3=2
+             40        1     0      2  4    1 5
+                0       0     1     3=2 2 1=2
+Theorem 7 shows, since A  I, that A is invertible, and
+                                  2                     3
+                                      9=2 7 3=2
+                          A 1D4 2              4      1 5
+                                     3=2       2 1=2
+
+
+
+    Reasonable Answers
+   Once you have found a candidate for the inverse of a matrix, you can check that
+   your answer is correct by ﬁnding the product of A with A 1 . For the inverse found
+   for matrix A in Example 7, notice
+                2               32                         3 2                   3
+                  0       1 2          9=2      7      3=2          1 0 0
+       AA 1 D 4 1         0 35 4         2      4         15 D 40 1 05
+                  4       3 8          3=2      2      1=2          0 0 1
+
+   conﬁrming that answer is correct. It is not necessary to check that A 1 A D I
+   since A is invertible.
+
+
+
+Another View of Matrix Inversion
+Denote the columns of In by e1 ; : : : ; en . Then row reduction of Œ A I  to Œ I               A 1
+can be viewed as the simultaneous solution of the n systems
+                        Ax D e1 ;       Ax D e2 ;   :::;     Ax D en                              (2)
+where the “augmented columns” of these systems have all been placed next to A to form
+Œ A e1 e2    en  D Œ A I . The equation AA 1 D I and the deﬁnition of matrix
+multiplication show that the columns of A 1 are precisely the solutions of the systems in
+(2). This observation is useful because some applied problems may require ﬁnding only
+one or two columns of A 1 . In this case, only the corresponding systems in (2) need to
+be solved.
+142     CHAPTER 2     Matrix Algebra
+
+
+                                           Numerical Note
+                                          In practical work, A 1 is seldom computed, unless the entries of A 1 are needed.
+                                          Computing both A 1 and A 1 b takes about three times as many arithmetic
+                                          operations as solving Ax D b by row reduction, and row reduction may be more
+                                          accurate.
+
+
+
+                                       Practice Problems
+                                       1. Use determinants to determine which of the following matrices are invertible.
+                                                                                                
+                                                3 9                   4 9                     6 9
+                                          a.                     b.                    c.
+                                                2 6                   0 5                     4 6
+                                                                                2               3
+                                                                                    1 2 1
+                                       2. Find the inverse of the matrix A D 4 1 5 6 5, if it exists.
+                                                                                    5 4 5
+                                       3. If A is an invertible matrix, prove that 5A is an invertible matrix.
+
+
+2.2 Exercises
+Find the inverses of the matrices in Exercises 1–4.                      In Exercises 11–20, mark each statement True or False (T/F).
+                                                                     Justify each answer.
+       8    3                        5    4
+ 1.                            2.
+       5    2                        9    7                              11. (T/F) In order for a matrix B to be the inverse of A, both
+                                                                         equations AB D I and BA D I must be true.
+         8      3                    3      2
+ 3.                            4.
+         7      3                    7      4
+                                                                         12. (T/F) A product of invertible n  n matrices is invertible, and
+ 5. Verify that the inverse you found in Exercise 1 is correct.              the inverse of the product is the product of their inverses in
+                                                                             the same order.
+ 6. Verify that the inverse you found in Exercise 2 is correct.
+ 7. Use the inverse found in Exercise 1 to solve the system              13. (T/F) If A and B are n  n and invertible, then A 1 B      1
+                                                                                                                                            is
+                                                                             the inverse of AB .
+                        8x1 C 3x2 D          2
+                                                                         14. (T/F) If A is invertible, then the inverse of A 1 is A itself.
+                        5x1 C 2x2 D          1
+                                                                                                        
+                                                                                                a     b
+ 8. Use the inverse found in Exercise 2 to solve the system              15. (T/F) If A D                  and ab cd ¤ 0, then A is
+                                                                                                c     d
+                                                                             invertible.
+                        5x1 C 4x2 D          3                                                          
+                        9x1 C 7x2 D          5                                                  a     b
+                                                                         16. (T/F) If A D                  and ad D bc , then A is not
+                                                                                                c     d
+                                                                       invertible.
+                   1     2              1                        1
+ 9. Let     AD               ;   b1 D       ;         b2 D           ;
+                   5    12              3                        5       17. (T/F) If A is an invertible n  n matrix, then the equation
+                         
+            2               3                                                Ax D b is consistent for each b in Rn .
+      b3 D     , and b4 D      .
+            6               5
+      a. Find A 1 , and use it to solve the four equations Ax D          18. (T/F) If A can be row reduced to the identity matrix, then A
+         b1 ; Ax D b2 ; Ax D b3 ; Ax D b4                                    must be invertible.
+      b. The four equations in part (a) can be solved by the             19. (T/F) Each elementary matrix is invertible.
+         same set of row operations, since the coefficient ma-
+         trix is the same in each case. Solve the four equa-             20. (T/F) If A is invertible, then the elementary row operations
+         tions in part (a) by row reducing
+                                         the augmented matrix               that reduce A to the identity In also reduce A 1 to In .
+            A     b1     b2    b3    b4
+                                                                         21. Let A be an invertible n  n matrix, and let B be an n  p
+10. Use matrix algebra to show that if A is invertible and D                 matrix. Show that the equation AX D B has a unique solu-
+    satisﬁes AD D I , then D D A 1 .                                         tion A 1 B:
+                                                                                                   2.2 The Inverse of a Matrix        143
+
+
+22. Let A be an invertible n  n matrix, and let B be an n  p ma-     36. Show that if ad       bc ¤ 0; the formula for A 1 works.
+    trix. Explain why A 1 B can be computed by row reduction:
+                                                                       Exercises 37 and 38 prove special cases of the facts about elemen-
+             If ŒA B      ŒI X ; then X D A 1 B:                tary matrices stated in the box following Example 5. Here A is a
+                                                                       3  3 matrix and I D I3 : (A general proof would require slightly
+    If A is larger than 2  2, then row reduction of ŒA B is much     more notation.)
+    faster than computing both A 1 and A 1 B:
+                                                                       37. a. Use equation (1) from Section 2.1 to show that
+23. Suppose AB D AC; where B and C are n  p matrices and A                   rowi .A/ D rowi .I /  A; for i D 1; 2; 3:
+    is invertible. Show that B D C . Is this true, in general, when        b. Show that if rows l and 2 of A are interchanged, then the
+    A is not invertible?                                                      result may be written as EA, where E is an elementary
+24. Suppose .B C /D D 0, where B and C are m  n matrices                     matrix formed by interchanging rows 1 and 2 of I.
+    and D is invertible. Show that B D C:                                  c. Show that if row 3 of A is multiplied by 5, then the result
+                                                                              may be written as EA, where E is formed by multiplying
+25. Suppose A, B, and C are invertible n  n matrices. Show that
+                                                                              row 3 of I by 5.
+    ABC is also invertible by producing a matrix D such that
+    .ABC / D D I and D .ABC / D I:
+                                                                       38. Show that if row 3 of A is replaced by row3 .A/ 4row1 .A/;
+26. Suppose A and B are n  n; B is invertible, and AB is invert-          the result is EA, where E is formed from I by replacing
+    ible. Show that A is invertible. [Hint: Let C D AB; and solve          row3 .I / by row3 .I / 4row1 .I /:
+    this equation for A.]
+                                                                       Find the inverses of the matrices in Exercises 39–42, if they exist.
+27. Solve the equation AB D BC for A, assuming that A, B, and
+                                                                       Use the algorithm introduced in this section.
+    C are square and B is invertible.                                                                               
+                                                1                             1    2                            9    7
+28. Suppose P is invertible and A D PBP             : Solve for B in   39.                               40.
+                                                                              4    7                            8    6
+    terms of A.
+                                                                           2                 3                2                3
+29. If A, B, and C are n  n invertible matrices, does the equation          1       0     2                   1        2    1
+    C 1 .A C X /B 1 D In have a solution, X? If so, ﬁnd it.            41. 4 3       1     45            42. 4 4        7    35
+30. Suppose A, B, and X are n  n matrices with A, X, and                    2       3     4                   2        6    4
+    A AX invertible, and suppose
+                                                                       43. Use the algorithm from this section to ﬁnd the inverses of
+    .A    AX/ 1 D X       1
+                              B                                  .3/                                2                    3
+                                                                           2              3           1     0     0    0
+                                                                             1    0     0           61
+    a. Explain why B is invertible.                                                                         1     0    07
+                                                                           41     1     0 5 and 6   41
+                                                                                                                         7:
+                                                                                                            1     1    05
+    b. Solve (3) for X. If you need to invert a matrix, explain why          1    1     1
+                                                                                                      1     1     1    1
+       that matrix is invertible.
+                                                                           Let A be the corresponding n  n matrix, and let B be its
+31. Explain why the columns of an n  n matrix A are linearly              inverse. Guess the form of B , and then prove that AB D I
+    independent when A is invertible.                                      and BA D I:
+32. Explain why the columns of an n  n matrix A span Rn when
+    A is invertible. [Hint: Review Theorem 4 in Section 1.4.]          44. Repeat the strategy of Exercise 43 to guess the inverse of
+                                                                                2                            3
+                                                                                    1   0    0        0
+33. Suppose A is n  n and the equation Ax D 0 has only the                     61      2    0           07
+                                                                                6                            7
+    trivial solution. Explain why A has n pivot columns and A is                61      2    3           07
+                                                                           AD6                               7: Prove that your guess is
+    row equivalent to In : By Theorem 7, this shows that A must                 6 :               ::      :: 7
+                                                                                4 ::                 :     :5
+    be invertible. (This exercise and Exercise 34 will be cited in
+    Section 2.3.)                                                                   1   2    3        n
+                                                                           correct.
+34. Suppose A is n  n and the equation Ax D b has a solution                         2              3
+    for each b in Rn . Explain why A must be invertible. [Hint: Is                      2    7    9
+    A row equivalent to In ?]                                          45. Let A D 4 2       5    6 5: Find the third column of A 1
+                                                                                      1    3    4
+                                                a      b
+Exercises 35 and 36 prove Theorem 4 for A D                :
+                                                c     d                    without computing the other columns.
+35. Show that if ad bc D 0; then the equation Ax D 0 has                     2                     3
+                                                                                 25       9     27
+    more than one solution. Why does this imply that A is not T
+                                                                 46. Let A D 4 546      180    537 5: Find the second and third
+    invertible? [Hint: First, consider a D b D 0:    if a and b
+                                                Then,                          154      50    149
+                                                  b
+    are not both zero, consider the vector x D       :              columns of A  1
+                                                                                     without computing the ﬁrst column.
+                                                  a
+  144    CHAPTER 2       Matrix Algebra
+
+                2         3                                                               2                                       3
+                1       2                                                             :0040           :0030         :0010   :0005
+  47. Let A D 4 1       3 5: Construct a 2  3 matrix C (by trial and               6 :0030           :0050         :0030   :0010 7
+                                                                      T 51. Let     6
+                                                                                  DD4                                             7     be   a
+                1       5                                                             :0010           :0030         :0050   :0030 5
+      error) using only l, 1, and 0 as entries, such that CA D I2 :                   :0005           :0010         :0030   :0040
+      Compute AC and note that AC ¤ I3 :                                    ﬂexibility matrix for an elastic beam with four points at
+                                                                          which force is applied. Units are centimeters per newton
+                  1    1    1    0                                          of force. Measurements at the four points show deﬂections
+  48. Let A D                        : Construct a 4  2 matrix D
+                  0    1    1    1                                          of .08, .12, .16, and .12 cm. Determine the forces at the four
+      using only 1 and 0 as entries, such that AD D I2 : Is it possible     points.
+      that CA D I4 for some 4  2 matrix C? Why or why not?                         #1         #2             #3             #4
+                2                          3                                             .08
+                   :005     :002      :001                                                      .12                .16            .12
+  49. Let D D 4 :002        :004      :002 5 be a ﬂexibility matrix,               f1
+                                                                                                f2                            f4
+                   :001     :002      :005                                                                     f3
+      with ﬂexibility measured in inches per pound. Suppose
+      that forces of 30, 50, and 20 lb are applied at points 1,          Deﬂection of elastic beam in Exercises 51 and 52.
+      2, and 3, respectively, in Figure 1 of Example 3. Find the
+      corresponding deﬂections.                                    T 52. With D as in Exercise 51, determine the forces that produce
+                                                                         a deﬂection of .24 cm at the second point on the beam, with
+T 50. Compute the stiffness matrix D 1 for D in Exercise 49. List        zero deﬂections at the other three points. How is the answer
+      the forces needed to produce a deﬂection of .04 in. at point       related to the entries in D 1 ‹ [Hint: First answer the question
+      3, with zero deﬂections at the other points.                       when the deﬂection is 1 cm at the second point.]
+
+
+
+                                           Solutions to Practice Problems
+                                                            
+                                                       3 9
+                                           1. a. det            D 3  6 . 9/  2 D 18 C 18 D 36. The determinant is nonzero,
+                                                       2 6
+                                                 so the matrix is invertible.
+                                                            
+                                                       4 9
+                                              b. det            D 4  5 . 9/  0 D 20 ¤ 0. The matrix is invertible.
+                                                       0 5
+                                                              
+                                                        6 9
+                                              c. det              D 6  6 . 9/. 4/ D 36 36 D 0. The matrix is not invertible.
+                                                        4 6
+                                                         2                             3
+                                                             1 2 1 1 0 0
+                                           2. Œ A I   4 1 5 6 0 1 0 5
+                                                             5 4 5 0 0 1
+                                                         2                           3
+                                                           1 2 1 1 0 0
+                                                        40 3 5 1 1 05
+                                                           0 6 10 5 0 1
+                                                         2                           3
+                                                           1 2 1 1 0 0
+                                                        40 3 5 1 1 05
+                                                           0 0 0 7 2 1
+                                              So Œ A I  is row equivalent to a matrix of the form Œ B D , where B is square
+                                              and has a row of zeros. Further row operations will not transform B into I, so we
+                                              stop. A does not have an inverse.
+                                           3. Since A is an invertible matrix, there exists a matrix C such that AC D I D CA.
+                                              The goal is to ﬁnd a matrix D so that (5A)D D I D D (5A). Set D D 1=5 C .
+                                              Applying Theorem 2 from Section 2.1 establishes that (5A)(1=5 C ) D (5)(1/5)(AC )
+                                              D 1 I D I , and (1/5 C )(5A) D (1/5)(5)(CA) = 1 I D I . Thus 1/5 C is indeed the
+                                              inverse of A, proving that A is invertible.
+                                                                            2.3 Characterizations of Invertible Matrices 145
+
+
+
+2.3 Characterizations of Invertible Matrices
+                                       This section provides a review of most of the concepts introduced in Chapter 1, in relation
+                                       to systems of n linear equations in n unknowns and to square matrices. The main result
+                                       is Theorem 8.
+
+
+                    THEOREM 8             The Invertible Matrix Theorem
+                                          Let A be a square n  n matrix. Then the following statements are equivalent. That
+                                          is, for a given A, the statements are either all true or all false.
+                                          a. A is an invertible matrix.
+                                          b. A is row equivalent to the n  n identity matrix.
+                                          c. A has n pivot positions.
+                                          d. The equation Ax D 0 has only the trivial solution.
+                                          e. The columns of A form a linearly independent set.
+                                          f. The linear transformation x 7! Ax is one-to-one.
+                                          g. The equation Ax D b has at least one solution for each b in Rn .
+                                          h. The columns of A span Rn .
+                                          i. The linear transformation x 7! Ax maps Rn onto Rn .
+                                          j. There is an n  n matrix C such that CA D I .
+                                          k. There is an n  n matrix D such that AD D I .
+                                          l. AT is an invertible matrix.
+
+
+                   (a)                      First, we need some notation. If the truth of statement (a) always implies that state-
+      ( b)                     ( j)
+                                       ment (j) is true, we say that (a) implies (j) and write (a) ) (j). The proof will establish
+                                       the “circle” of implications shown in Figure 1. If any one of these ﬁve statements is
+                                       true, then so are the others. Finally, the proof will link the remaining statements of the
+           (c)           (d)
+                                       theorem to the statements in this circle.
+FIGURE 1
+                                       PROOF If statement (a) is true, then A 1 works for C in (j), so (a) ) (j). Next,
+                                       (j) ) (d) by Exercise 31 in Section 2.1. (Turn back and read the exercise.) Also,
+                                       (d) ) (c) by Exercise 33 in Section 2.2. If A is square and has n pivot positions, then
+                                       the pivots must lie on the main diagonal, in which case the reduced echelon form of A
+                                       is In : Thus (c) ) (b). Also, (b) ) (a) by Theorem 7 in Section 2.2. This completes the
+                                       circle in Figure 1.
+                   (k)                      Next, (a) ) (k) because A 1 works for D . Also, (k) ) (g) by Exercise 32 in
+                                       Section 2.1, and (g) ) (a) by Exercise 34 in Section 2.2. So (k) and (g) are linked
+       (a)                 (g)         to the circle. Further, (g), (h), and (i) are equivalent for any matrix, by Theorem 4 in
+                                       Section 1.4 and Theorem 12(a) in Section 1.9. Thus, (h) and (i) are linked through (g) to
+     (g)           (h)          (i)    the circle.
+                                            Since (d) is linked to the circle, so are (e) and (f), because (d), (e), and (f) are
+     (d)           (e)          (f )   all equivalent for any matrix A. (See Section 1.7 and Theorem 12(b) in Section 1.9.)
+                                       Finally, (a) ) (l) by Theorem 6(c) in Section 2.2, and (l) ) (a) by the same theorem
+             (a)         (l)           with A and AT interchanged. This completes the proof.
+
+                                            Because of Theorem 5 in Section 2.2, statement (g) in Theorem 8 could also be
+                                       written as “The equation Ax D b has a unique solution for each b in Rn .” This statement
+                                       certainly implies (b) and hence implies that A is invertible.
+146   CHAPTER 2    Matrix Algebra
+
+
+                                      The next fact follows from Theorem 8 and Exercise 10 in Section 2.2.
+
+
+                                    Let A and B be square matrices. If AB D I , then A and B are both invertible, with
+                                    B D A 1 and A D B 1 .
+
+
+                                       The Invertible Matrix Theorem divides the set of all n  n matrices into two disjoint
+                                  classes: the invertible (nonsingular) matrices, and the noninvertible (singular) matrices.
+                                  Each statement in the theorem describes a property of every n  n invertible matrix.
+                                  The negation of a statement in the theorem describes a property of every n  n singular
+                                  matrix. For instance, an n  n singular matrix is not row equivalent to In , does not have
+                                  n pivot positions, and has linearly dependent columns. Negations of other statements are
+                                  considered in the exercises.
+
+                                  EXAMPLE 1 Use the Invertible Matrix Theorem to decide if A is invertible:
+                                                                             2                   3
+                                                                            1             0    2
+                                                                        AD4 3             1    25
+                                                                            5             1    9
+                                  SOLUTION                      2             3 2                  3
+                                                                  1 0 2               1 0 2
+                                                         A  40 1 45  40 1 45
+                                                                  0 1 1               0 0 3
+                                  So A has three pivot positions and hence is invertible, by the Invertible Matrix Theorem,
+                                  statement (c).
+STUDY GUIDE offers an expanded        The power of the Invertible Matrix Theorem lies in the connections it provides
+table for the Invertible Matrix   among so many important concepts, such as linear independence of columns of a matrix
+Theorem.
+                                  A and the existence of solutions to equations of the form Ax D b. It should be empha-
+                                  sized, however, that the Invertible Matrix Theorem applies only to square matrices. For
+                                  example, if the columns of a 4  3 matrix are linearly independent, we cannot use the
+                                  Invertible Matrix Theorem to conclude anything about the existence or nonexistence of
+                                  solutions to equations of the form Ax D b.
+
+                                  Invertible Linear Transformations
+                                  Recall from Section 2.1 that matrix multiplication corresponds to composition of linear
+                                  transformations. When a matrix A is invertible, the equation A 1 Ax D x can be viewed
+                                  as a statement about linear transformations. See Figure 2.
+                                                                              Multiplication
+                                                                                   by A
+                                                            x                                        Ax
+                                                                              Multiplication
+                                                                                 by A21
+                                                                    1
+                                                   FIGURE 2 A           transforms Ax back to x.
+
+                                       A linear transformation T W Rn ! Rn is said to be invertible if there exists a func-
+                                  tion S W Rn ! Rn such that
+                                                                S.T .x// D x for all x in Rn                            (1)
+                                                                T .S.x// D x for all x in Rn                            (2)
+                                  The next theorem shows that if such an S exists, it is unique and must be a linear
+                                  transformation. We call S the inverse of T and write it as T 1 .
+                                                 2.3 Characterizations of Invertible Matrices 147
+
+
+
+THEOREM 9      Let T W Rn ! Rn be a linear transformation and let A be the standard matrix for
+               T . Then T is invertible if and only if A is an invertible matrix. In that case, the
+               linear transformation S given by S.x/ D A 1 x is the unique function satisfying
+               equations .1/ and .2/.
+
+
+            Remark: See the comment on the proof of Theorem 7.
+
+            PROOF Suppose that T is invertible. Then (2) shows that T is onto Rn , for if b is in
+            Rn and x D S.b/, then T .x/ D T .S.b// D b, so each b is in the range of T . Thus A is
+            invertible, by the Invertible Matrix Theorem, statement (i).
+                 Conversely, suppose that A is invertible, and let S.x/ D A 1 x. Then, S is a linear
+            transformation, and S obviously satisﬁes (1) and (2). For instance,
+                                       S.T .x// D S.Ax/ D A 1 .Ax/ D x
+            Thus T is invertible. The proof that S is unique is outlined in Exercise 47.
+
+            EXAMPLE 2 What can you say about a one-to-one linear transformation T from Rn
+            into Rn ?
+            SOLUTION The columns of the standard matrix A of T are linearly independent (by
+            Theorem 12 in Section 1.9). So A is invertible, by the Invertible Matrix Theorem, and
+            T maps Rn onto Rn . Also, T is invertible, by Theorem 9.
+
+
+                Numerical Notes
+               In practical work, you might occasionally encounter a “nearly singular” or ill-
+               conditioned matrix—an invertible matrix that can become singular if some of
+               its entries are changed ever so slightly. In this case, row reduction may produce
+               fewer than n pivot positions, as a result of roundoff error. Also, roundoff error can
+               sometimes make a singular matrix appear to be invertible.
+                    Some matrix programs will compute a condition number for a square matrix.
+               The larger the condition number, the closer the matrix is to being singular.
+               The condition number of the identity matrix is 1. A singular matrix has an
+               inﬁnite condition number. In extreme cases, a matrix program may not be able
+               to distinguish between a singular matrix and an ill-conditioned matrix.
+                    Exercises 49– 53 show that matrix computations can produce substantial error
+               when a condition number is large.
+
+
+
+            Practice Problems
+                                   2           3
+                                    2 3 4
+            1. Determine if A D 4 2 3 4 5 is invertible.
+                                    2 3 4
+            2. Suppose that for a certain n  n matrix A, statement (g) of the Invertible Matrix
+               Theorem is not true. What can you say about equations of the form Ax D b?
+            3. Suppose that A and B are n  n matrices and the equation AB x D 0 has a nontrivial
+               solution. What can you say about the matrix AB ?
+ 148       CHAPTER 2       Matrix Algebra
+
+
+ 2.3 Exercises
+ Unless otherwise speciﬁed, assume that all matrices in these ex-         18. (T/F) If the linear transformation x 7! Ax maps Rn into Rn ,
+ ercises are n  n. Determine which of the matrices in Exercises              then A has n pivot positions.
+ 1–10 are invertible. Use as few calculations as possible. Justify
+                                                                          19. (T/F) If AT is not invertible, then A is not invertible.
+ your answers.
+                                                                      20. (T/F) If there is a b in Rn such that the equation Ax D b
+          5    7                          4    6
+  1.                              2.                                          is inconsistent, then the transformation x 7! Ax is not one-
+          3    6                          6    9
+                                                                              to-one.
+      2                   3          2                  3
+          5       0     0                 7    0      4
+                                                                          21. An m  n upper triangular matrix is one whose entries
+  3. 4 3          7     05        4. 4 3       0      15
+                                                                              below the main diagonal are 0’s (as in Exercise 8). When
+          8       5     1                 2    0      9
+                                                                              is a square upper triangular matrix invertible? Justify your
+      2                 3            2                    3                   answer.
+          0     4     7                   1      5      4
+  5. 4 1        0     55          6. 4 0         3      45                22. An m  n lower triangular matrix is one whose entries
+          5     8     2                   3      6      0                     above the main diagonal are 0’s (as in Exercise 3). When
+       2                              3    2                    3             is a square lower triangular matrix invertible? Justify your
+       1           0       2        1        1   3     7      4               answer.
+     6 5           3       9        37     60    5     9      67
+  7. 6
+     4 3
+                                      7 8. 6                    7
+                   0       1        35     40    0     2      85          23. Can a square matrix with two identical columns be invertible?
+       0           3       1        2        0   0     0     10               Why or why not?
+       2                               3                                  24. Is it possible for a 5  5 matrix to be invertible when its
+        4          0        7        7
+      6 6                                                                     columns do not span R5 ? Why or why not?
+      6            1       11        977
+ T 9.
+      4 7          5       10       19 5                                  25. If A is invertible, then the columns of A 1 are linearly
+        1          2        3        1                                        independent. Explain why.
+       2                                3                                 26. If C is 6  6 and the equation C x D v is consistent for every
+        5      3       1        7     9
+      66       4       2        8     87                                      v in R6 , is it possible that for some v, the equation C x D v
+      6                                 7                                     has more than one solution? Why or why not?
+T 10. 6 7      5       3       10     97
+      6                                 7
+      49       6       4        9     55                                  27. If the columns of a 7  7 matrix D are linearly independent,
+        8      5       2       11     4                                       what can you say about solutions of D x D b? Why?
+ In Exercises 11–20, the matrices are all n  n. Each part of             28. If n  n matrices E and F have the property that EF D I ,
+ the exercises is an implication of the form “If ‘statement 1’,               then E and F commute. Explain why.
+ then ‘statement 2’.” Mark an implication as True if the truth of
+ “statement 2” always follows whenever “statement 1” happens to           29. If the equation G x D y has more than one solution for some
+ be true. An implication is False if there is an instance in which            y in Rn , can the columns of G span Rn ? Why or why not?
+ “statement 2” is false but “statement 1” is true. Justify each answer.   30. If the equation H x D c is inconsistent for some c in Rn , what
+ 11. (T/F) If the equation Ax = 0 has only the trivial solution, then         can you say about the equation H x D 0? Why?
+     A is row equivalent to the n  n identity matrix.                    31. If an n  n matrix K cannot be row reduced to In ; what can
+ 12. (T/F) If there is an n  n matrix D such that AD D I , then              you say about the columns of K? Why?
+     there is also an n  n matrix C such that CA D I .                   32. If L is n  n and the equation Lx D 0 has the trivial solution,
+                                             n
+ 13. (T/F) If the columns of A span R , then the columns are                  do the columns of L span Rn ? Why?
+     linearly independent.                                                33. Verify the boxed statement preceding Example 1.
+ 14. (T/F) If the columns of A are linearly independent, then the         34. Explain why the columns of A2 span Rn whenever the
+     columns of A span Rn .                                                   columns of A are linearly independent.
+ 15. (T/F) If A is an n  n matrix, then the equation Ax D b has          35. Show that if AB is invertible, so is A. You cannot use Theorem
+     at least one solution for each b in Rn .                                 6(b), because you cannot assume that A and B are invertible.
+                                                                              [Hint: There is a matrix W such that ABW D I: Why?]
+ 16. (T/F) If the equation Ax D b has at least one solution for each
+     b in Rn , then the solution is unique for each b.                    36. Show that if AB is invertible, so is B.
+ 17. (T/F) If the equation Ax = 0 has a nontrivial solution, then A       37. If A is an n  n matrix and the equation Ax Db has more than
+     has fewer than n pivot positions.                                        one solution for some b, then the transformation x 7! Ax is
+                                                                                   2.3 Characterizations of Invertible Matrices 149
+
+
+     not one-to-one. What else can you say about this transforma- T 49. Suppose an experiment leads to the following system of
+     tion? Justify your answer.                                         equations:
+38. If A is an n  n matrix and the transformation x 7! Ax is                               4:5x1 C 3:1x2      D     19:249                .3/
+    one-to-one, what else can you say about this transformation?                            1:6x1 C 1:1x2      D     6:843
+    Justify your answer.
+39. Suppose A is an n  n matrix with the property that the                    a. Solve system (3), and then solve system (4), below, in
+    equation Ax D b has at least one solution for each b in Rn .                  which the data on the right have been rounded to two
+    Without using Theorems 5 or 8, explain why each equation                      decimal places. In each case, ﬁnd the exact solution.
+    Ax D b has in fact exactly one solution.
+                                                                                             4:5x1 C 3:1x2       D     19:25               .4/
+40. Suppose A is an n  n matrix with the property that the equa-                            1:6x1 C 1:1x2       D     6:84
+    tion Ax D 0 has only the trivial solution. Without using the
+                                                                               b. The entries in (4) differ from those in (3) by less than
+    Invertible Matrix Theorem, explain directly why the equation
+                                                                                  :05%. Find the percentage error when using the solution
+    Ax D b must have a solution for each b in Rn .
+                                                                                  of (4) as an approximation for the solution of (3).
+In Exercises 41 and 42, T is a linear transformation from R2 into              c. Use your matrix program to produce the condition number
+R2 . Show that T is invertible and ﬁnd a formula for T 1 :                        of the coefficient matrix in (3).
+41. T .x1 ; x2 / D . 9x1 C 7x2 ; 4x1     3x2 /                             Exercises 50–52 show how to use the condition number of a matrix
+42. T .x1 ; x2 / D .6x1    8x2 ; 5x1 C 7x2 /                               A to estimate the accuracy of a computed solution of Ax D b:
+                                                                           If the entries of A and b are accurate to about r signiﬁcant digits
+               n       n
+43. Let T W R ! R be an invertible linear transformation. Ex-              and if the condition number of A is approximately 10k (with k a
+    plain why T is both one-to-one and onto Rn . Use equations             positive integer), then the computed solution of Ax D b should
+    (1) and (2). Then give a second explanation using one or more          usually be accurate to at least r k signiﬁcant digits.
+    theorems.
+                                                                         T 50. Find the condition number of the matrix A in Exercise 9.
+44. Let T be a linear transformation that maps Rn onto Rn . Show               Construct a random vector x in R4 and compute b D Ax.
+    that T 1 exists and maps Rn onto Rn . Is T 1 also one-to-                  Then use your matrix program to compute the solution x1 of
+    one?                                                                       Ax D b. To how many digits do x and x1 agree? Find out the
+                                                                               number of digits your matrix program stores accurately, and
+45. Suppose T and U are linear transformations from Rn to Rn
+                                                                               report how many digits of accuracy are lost when x1 is used
+    such that T .U x/ D x for all x in Rn . Is it true that U.T x/ D x
+                                                                               in place of the exact solution x.
+    for all x in Rn ? Why or why not?
+                                                                    T 51. Repeat Exercise 50 for the matrix in Exercise 10.
+46. Suppose a linear transformation T W Rn ! Rn has the prop-
+    erty that T .u/ D T .v/ for some pair of distinct vectors u and T 52. Solve an equation Ax D b for a suitable b to ﬁnd the last
+    v in Rn . Can T map Rn onto Rn ? Why or why not?                      column of the inverse of the ﬁfth-order Hilbert matrix
+                                                                               2                                      3
+                n     n
+47. Let T W R ! R be an invertible linear transformation,                         1      1=2     1=3      1=4     1=5
+                                                                               6 1=2     1=3     1=4      1=5     1=6 7
+    and let S and U be functions from Rn into Rn such that                     6                                      7
+                                                      n                   A D  6 1=3     1=4     1=5      1=6     1=7 7
+    S .T .x// D x and U .T .x// D x for all x in R . Show that                 6                                      7
+                                                                               4 1=4     1=5     1=6      1=7     1=8 5
+    U.v/ D S.v/ for all v in Rn . This will show that T has a
+    unique inverse, as asserted in Theorem 9. [Hint: Given any                   1=5     1=6     1=7      1=8     1=9
+     v in Rn , we can write v D T .x/ for some x. Why? Compute                 How many digits in each entry of x do you expect to be
+     S.v/ and U.v/.]                                                           correct? Explain. [Note: The exact solution is .630; 12600;
+                                                                               56700; 88200; 44100/:]
+48. Suppose T and S satisfy the invertibility equations (1) and
+    (2), where T is a linear transformation. Show directly that T 53. Some matrix programs, such as MATLAB, have a command
+    S is a linear transformation. [Hint: Given u, v in Rn , let       to create Hilbert matrices of various sizes. If possible, use an
+    x D S.u/; y D S(v). Then T .x/ D u; T .y/ D v: Why? Apply         inverse command to compute the inverse of a twelfth-order
+    S to both sides of the equation T .x/ C T .y/ D T .x C y/:        or larger Hilbert matrix, A. Compute AA 1 : Report what you
+    Also, consider T .c x/ D cT .x/.]                                 ﬁnd.
+
+                                         Solutions to Practice Problems
+STUDY GUIDE offers additional
+resources for reviewing and              1. The columns of A are obviously linearly dependent because columns 2 and 3 are
+reﬂecting on what you have                  multiples of column 1. Hence, A cannot be invertible (by the Invertible Matrix
+learned.
+                                            Theorem).
+150   CHAPTER 2   Matrix Algebra
+
+
+                                   Solutions to Practice Problems (Continued)
+                                   2. If statement (g) is not true, then the equation Ax D b is inconsistent for at least one
+                                      b in Rn .
+                                   3. Apply the Invertible Matrix Theorem to the matrix AB in place of A. Then statement
+                                      (d) becomes: AB x D 0 has only the trivial solution. This is not true. So AB is not
+                                      invertible.
+
+
+
+2.4 Partitioned Matrices
+                               A key feature of our work with matrices has been the ability to regard a matrix A as a list
+                               of column vectors rather than just a rectangular array of numbers. This point of view has
+                               been so useful that we wish to consider other partitions of A, indicated by horizontal
+                               and vertical dividing rules, as in Example 1 below. Partitioned matrices appear in most
+                               modern applications of linear algebra because the notation highlights essential structures
+                               in matrix analysis, as in the chapter introductory example on aircraft design. This section
+                               provides an opportunity to review matrix algebra and use the Invertible Matrix Theorem.
+
+                               EXAMPLE 1 The matrix
+                                                             2                                       3
+                                                             3           0      1    5      9      2
+                                                        AD 4 5           2      4    0      3      15
+                                                             8           6      3    1      7      4
+                               can also be written as the 2  3 partitioned (or block) matrix
+                                                                                      
+                                                                     A11    A12    A13
+                                                              AD
+                                                                     A21    A22    A23
+                               whose entries are the blocks (or submatrices)
+                                                                                                     
+                                                       3 0 1                   5          9             2
+                                           A11 D                     ; A12 D                  ; A13 D
+                                                       5 2 4                   0          3             1
+                                                                                                     
+                                           A21 D       8 6 3 ; A22 D 1                    7 ; A23 D     4
+
+                               EXAMPLE 2 When a matrix A appears in a mathematical model of a physical sys-
+                               tem such as an electrical network, a transportation system, or a large corporation, it may
+                               be natural to regard A as a partitioned matrix. For instance, if a microcomputer circuit
+                               board consists mainly of three VLSI (very large-scale integrated) microchips, then the
+                               matrix for the circuit board might have the general form
+                                                                   2                     3
+                                                                      A11    A12     A13
+                                                                   6                     7
+                                                             A D 4 A21       A22     A23 5
+                                                                      A31    A32     A33
+                               The submatrices on the “diagonal” of A—namely A11 , A22 , and A33 —concern the three
+                               VLSI chips, while the other submatrices depend on the interconnections among those
+                               microchips.
+
+
+                               Addition and Scalar Multiplication
+                               If matrices A and B are the same size and are partitioned in exactly the same way,
+                               then it is natural to make the same partition of the ordinary matrix sum A C B . In this
+                                                              2.4 Partitioned Matrices 151
+
+
+case, each block of A C B is the (matrix) sum of the corresponding blocks of A and B .
+Multiplication of a partitioned matrix by a scalar is also computed block by block.
+
+
+Multiplication of Partitioned Matrices
+Partitioned matrices can be multiplied by the usual row–column rule as if the block
+entries were scalars, provided that for a product AB , the column partition of A matches
+the row partition of B .
+
+EXAMPLE 3 Let
+                                                                       2             3
+                                                                           6       4
+         2                           3
+       2         3    1    0     4                            6          2       17  
+                                                                6                    7
+     4
+   AD 1          5    2    3     1 5 D A11 A12 ;              BD6          3       7 7 D B1
+                                        A21 A22                 6                    7   B2
+             0   4    2    7     1                              4          1       35
+                                                                           5       2
+    The 5 columns of A are partitioned into a set of 3 columns and then a set of 2
+columns. The 5 rows of B are partitioned in the same way—into a set of 3 rows and
+then a set of 2 rows. We say that the partitions of A and B are conformable for block
+multiplication. It can be shown that the ordinary product AB can be written as
+                                                                2         3
+                                                              5 4
+                    A11 A12 B1              A11 B1 C A12 B2
+           AB D                       D                       D 4 6 25
+                    A21 A22 B2              A21 B1 C A22 B2
+                                                                    2 1
+     It is important for each smaller product in the expression for AB to be written with
+the submatrix from A on the left, since matrix multiplication is not commutative. For
+instance,
+                                            2          3
+                                               6 4                 
+                               2 3 1 4                 5       15 12
+                   A11 B1 D                      2 1 D
+                               1 5 2                            2 5
+                                                 3 7
+                                                              
+                               0 4        1 3             20 8
+                   A12 B2 D                         D
+                               3 1        5 2               8 7
+Hence the top block in AB is
+                                                                                      
+                                     15 12               20    8               5       4
+             A11 B1 C A12 B2 D                   C                     D
+                                      2 5                 8    7               6       2
+
+     The row–column rule for multiplication of block matrices provides the most general
+way to regard the product of two matrices. Each of the following views of a product
+has already been described using simple partitions of matrices: (1) the deﬁnition of Ax
+using the columns of A, (2) the column deﬁnition of AB , (3) the row–column rule for
+computing AB , and (4) the rows of AB as products of the rows of A and the matrix B .
+A ﬁfth view of AB , again using partitions, follows in Theorem 10.
+     The calculations in the next example prepare the way for Theorem 10. Here colk .A/
+is the k th column of A, and rowk .B/ is the k th row of B .
+                                                         2               3
+                                                         a           b
+                                3        1   2
+EXAMPLE 4 Let A D                                and B D 4 c           d 5. Verify that
+                                1        4   5
+                                                           e           f
+             AB D col1 .A/ row1 .B/ C col2 .A/ row2 .B/ C col3 .A/ row3 .B/
+152   CHAPTER 2   Matrix Algebra
+
+
+                               SOLUTION Each term in the preceding equation is an outer product. (See Exercises 35
+                               and 36 in Section 2.1.) By the row–column rule for computing a matrix product,
+                                                                                                  
+                                                                           3              3a    3b
+                                                   col1 .A/ row1 .B/ D          a  b D
+                                                                           1                 a     b
+                                                                                                  
+                                                                           1               c     d
+                                                   col2 .A/ row2 .B/ D          c  d D
+                                                                           4                4c    4d
+                                                                                               
+                                                                         2             2e    2f
+                                                   col3 .A/ row3 .B/ D        e   f D
+                                                                         5               5e    5f
+
+                               Thus
+                                            3
+                                            X                                                                    
+                                                                              3a C c C 2e         3b C d C 2f
+                                                   colk .A/ rowk .B/ D
+                                                                             a 4c C 5e           b 4d C 5f
+                                            k D1
+
+                               This matrix is obviously AB . Notice that the .1; 1/-entry in AB is the sum of the .1; 1/-
+                               entries in the three outer products, the .1; 2/-entry in AB is the sum of the .1; 2/-entries
+                               in the three outer products, and so on.
+
+
+            THEOREM 10             Column–Row Expansion of AB
+                                   If A is m  n and B is n  p , then                           2  3
+                                                                                           row1 .B/
+                                                                                         6 row2 .B/ 7
+                                                                                         6          7
+                                               AB D Œ col1 .A/ col2 .A/    coln .A/  6    ::    7                 (1)
+                                                                                         4     :    5
+                                                                                                     rown .B/
+                                                      D col1 .A/ row1 .B/ C    C coln .A/ rown .B/
+
+
+
+                               PROOF For each row index i and column index j , the .i; j /-entry in colk .A/ rowk .B/
+                               is the product of aik from colk .A/ and bkj from rowk .B/. Hence the .i; j /-entry in the
+                               sum shown in equation (1) is
+
+                                                    ai1 b1j   C     ai2 b2j        C          C     ai n bnj
+                                                   .k D 1/          .k D 2/                            .k D n/
+
+                               This sum is also the .i; j /-entry in AB , by the row–column rule.
+
+
+
+                               Inverses of Partitioned Matrices
+                               The next example illustrates calculations involving inverses and partitioned matrices.
+
+
+                               EXAMPLE 5 A matrix of the form
+                                                                                          
+                                                                                 A11 A12
+                                                                    AD
+                                                                                  0 A22
+
+                               is said to be block upper triangular. Assume that A11 is p  p , A22 is q  q , and A is
+                               invertible. Find a formula for A 1 .
+                                                                    2.4 Partitioned Matrices 153
+
+
+SOLUTION Denote A 1 by B and partition B so that
+                                                             
+                                 A11 A12        B11 B12     I  0
+                                                         D p                                           (2)
+                                  0 A22         B21 B22      0 Iq
+     This matrix equation provides four equations that will lead to the unknown blocks
+B11 ; : : : ; B22 . Compute the product on the left side of equation (2), and equate each entry
+with the corresponding block in the identity matrix on the right. That is, set
+                                       A11 B11 C A12 B21 D Ip                                          (3)
+                                       A11 B12 C A12 B22 D 0                                           (4)
+                                                 A22 B21 D 0                                           (5)
+                                                 A22 B22 D Iq                                          (6)
+By itself, equation (6) does not show that A22 is invertible. However, since A22 is
+square, the Invertible Matrix Theorem and (6) together show that A22 is invertible and
+B22 D A221 . Next, left-multiply both sides of (5) by A221 and obtain
+                                          B21 D A221 0 D 0
+so that (3) simpliﬁes to
+                                          A11 B11 C 0 D Ip
+Since A11 is square, this shows that A11 is invertible and B11 D A111 . Finally, use these
+results with (4) to ﬁnd that
+             A11 B12 D A12 B22 D A12 A221 and B12 D A111 A12 A221
+Thus                             "             # 1       "                          #
+                                     A11 A12                 A111   A111 A12 A221
+                      A 1D                           D
+                                      0 A22                   0        A221
+     A block diagonal matrix is a partitioned matrix with zero blocks off the main
+diagonal (of blocks). Such a matrix is invertible if and only if each block on the diagonal
+is invertible. See Exercises 15 and 16.
+
+    Numerical Notes
+
+    1. When matrices are too large to ﬁt in a computer’s high-speed memory,
+       partitioning permits the computer to work with only two or three submatrices
+       at a time. For instance, one linear programming research team simpliﬁed
+       a problem by partitioning the matrix into 837 rows and 51 columns. The
+       problem’s solution took about 4 minutes on a Cray supercomputer.1
+    2. Some high-speed computers, particularly those with vector pipeline architec-
+       ture, perform matrix calculations more efficiently when the algorithms use
+       partitioned matrices.2
+    3. Professional software for high-performance numerical linear algebra, such as
+       LAPACK, makes intensive use of partitioned matrix calculations.
+
+
+1
+ The solution time doesn’t sound too impressive until you learn that each of the 51 block columns contained
+about 250,000 individual columns. The original problem had 837 equations and more than 12,750,000
+variables! Nearly 100 million of the more than 10 billion entries in the matrix were nonzero. See Robert E.
+Bixby et al., “Very Large-Scale Linear Programming: A Case Study in Combining Interior Point and
+Simplex Methods,” Operations Research, 40, no. 5 (1992): 885–897.
+2
+  The importance of block matrix algorithms for computer calculations is described in Matrix Computations,
+3rd ed., by Gene H. Golub and Charles F. van Loan (Baltimore: Johns Hopkins University Press, 1996).
+154       CHAPTER 2            Matrix Algebra
+
+
+                                                                The exercises that follow give practice with matrix algebra and illustrate typical
+                                                            calculations found in applications.
+
+
+                                                                Practice Problems
+                                                                                  
+                                                                               I 0
+                                                                1. Show that         is invertible and ﬁnd its inverse.
+                                                                               A I
+                                                                                                                      
+                                                                2. Compute X TX , where X is partitioned as X1 X2 .
+
+
+2.4 Exercises
+In Exercises 1–9, assume that the matrices are partitioned con-                             11. (T/F) If A D ŒA1 A2  and B D ŒB1 B2 , with A1 and A2
+formably for block multiplication. Compute the products shown                                   the same sizes as B1 and B2 , respectively, then A C B D
+in Exercises 1–4.                                                                               ŒA1 C B1 A2 C B2 :
+                                                
+       I 0 A B                        E 0 A B
+ 1.                              2.                                                         12. (T/F) The deﬁnition of the matrix–vector product Ax is a
+       E I C D                        0 F      C D
+                                                                                                special case of block multiplication.
+                                                                                                                             
+          0 I        W     X                                     I       0        A B                           A11    A12             B1
+ 3.                                                 4.                                      13. (T/F) If A D                  and B D     ; then the parti-
+          I 0        Y     Z                                     X       I        C D                           A21    A22             B2
+In Exercises 5–8, ﬁnd formulas for X, Y, and Z in terms of A, B,                                tions of A and B are conformable for block multiplication.
+and C, and justify your calculations. In some cases, you may need                                                                                        
+to make assumptions about the size of a matrix in order to produce                                                                                        A1
+                                                                                            14. (T/F) If A1 ; A2 ; B1 ; and B2 are n  n matrices, A D        ,
+a formula. [Hint: Compute the product on the left, and set it equal                                                                                       A2
+                                                                                                                      
+to the right side.]                                                                             and B D B1          B2 , then the product BA is deﬁned, but AB
+                                                                                          is not.
+       A B         I 0         0 I                                                                                  
+ 5.                       D                                                                                 B      0
+       C 0 X Y                 Z 0                                                          15. Let A D                , where B and C are square. Show that A
+                                                                                                            0      C
+                                                   
+          X   0        A   0                I       0                                            is invertible if and only if both B and C are invertible.
+ 6.                                 D
+          Y   Z        B   C                0       I
+                   2                 3                                                      16. Show that the block upper triangular matrix A in Example 5 is
+                  A              Z                                                          invertible if and only if both A11 and A22 are invertible. [Hint:
+          X   0 0 4                      I                  0
+ 7.                  0             05D                                                          If A11 and A22 are invertible, the formula for A 1 given in
+          Y   0 I                        0                  I
+                     B             I                                                            Example 5 actually works as the inverse of A.] This fact about
+                                                                                          A is an important part of several computer algorithms that
+          A B          X   Y        Z               I       0 0                                 estimate eigenvalues of matrices. Eigenvalues are discussed
+ 8.                                         D
+          0 I          0   0        I               0       0 I                                 in Chapter 5.
+
+ 9. Suppose A11 is an invertible matrix. Find matrices X and Y                              17. Suppose A11 is invertible. Find X and Y such that
+    such that the product below has the form indicated. Also,                                                                         
+                                                                                                  A11 A12         I 0 A11 0 I Y
+    compute B22 . [Hint: Compute the product on the left, and set                                            D                                               (7)
+                                                                                                  A21 A22         X I       0     S 0 I
+    it equal to the right side.]
+      2           32                        3 2                              3                   where S D A22 A21 A111 A12 : The matrix S is called the
+       I      0 0    A11                A12       B11                    B12                     Schur complement of A11 : Likewise, if A22 is invertible,
+      4X      I 0 54 A21                A22 5 D 4 0                      B22 5                   the matrix A11 A12 A221 A21 is called the Schur complement
+       Y      0 I    A31                A32       0                      B32                     of A22 : Such expressions occur frequently in the theory of
+                           23 2                                          3                       systems engineering, and elsewhere.
+                      I 0 0       I                                  0 0
+10. The inverse of 4 C I 0 5 is 4 Z                                  I 0 5:                 18. Suppose the block matrix A on the left side of (7) is invertible
+                      A B I       X                                  Y I                        and A11 is invertible. Show that the Schur complement S of
+    Find X, Y, and Z.                                                                           A11 is invertible. [Hint: The outside factors on the right side
+                                                                                                of (7) are always invertible. Verify this.] When A and A11 are
+In Exercises 11–14, mark each statement True or False (T/F).                                    both invertible, (7) leads to a formula for A 1 , using S 1 ,
+Justify each answer.                                                                            A111 , and the other entries in A.
+                                                                                                      2.4 Partitioned Matrices 155
+
+
+19. When a deep space probe is launched, corrections may                    into the bottom equation. The result is an equation of the
+    be necessary to place the probe on a precisely calculated               form W .s/u D y, where W (s ) is a matrix that depends on
+    trajectory. Radio telemetry provides a stream of vectors,               s . W .s/ is called the transfer function of the system because
+    x1 ; : : : ; xk ; giving information at different times about how       it transforms the input u into the output y. Find W .s/ and
+    the probe’s position compares with its planned trajectory.              describe how it is related to the partitioned system matrix on
+    Let Xk be the matrix [x1    xk ]. The matrix Gk D Xk XkT is          the left side of (8). See Exercise 17.
+    computed as the radar data are analyzed. When xkC1 arrives,         22. Suppose the transfer function W .s/ in Exercise 21 is invert-
+    a new GkC1 must be computed. Since the data vectors arrive              ible for some s. It can be shown that the inverse transfer
+    at high speed, the computational burden could be severe.                function W .s/ 1 , which transforms outputs into inputs, is the
+    But partitioned matrix multiplication helps tremendously.               Schur complement of A BC sIn for the matrix below.
+    Compute the column–row expansions of Gk and Gk C1 ; and                 Find this Schur complement. See Exercise 17.
+    describe what must be computed in order to update Gk to                                       
+    form Gk C1 .                                                              A BC sIn B
+                                                                                     C          Im
+                                                                                                                      
+                                                                                                                1    0
+                                                                        23. a. Verify that A2 D I when A D               .
+                                                                                                                3    1
+                                                                            b. Use partitioned matrices to show that M 2 D I when
+                                                                                    2                     3
+                                                                                       1     0    0     0
+                                                                                    63       1    0     07
+                                                                               M D6 41
+                                                                                                          7
+                                                                                             0    1     05
+                                                                                       0     1    3     1
+
+                                                                                                          23(a) [not 23(b)] by con-
+                                                                        24. Generalize the idea of Exercise
+                                                                                                           A 0
+                                                                            structing a 5  5 matrix M D           such that M 2 D I:
+                                                                                                           C D
+                                                                            Make C a nonzero 2  3 matrix. Show that your construction
+           The probe Galileo was launched October 18,                       works.
+           1989, and arrived near Jupiter in early                      25. Use partitioned matrices to prove by induction that the prod-
+           December 1995.                                                   uct of two lower triangular matrices is also lower triangular.
+                                                                            [Hint: A .k C 1/  .k C 1/ matrix A1 can be written in the
+20. Let X be an m  n data matrix such that X T X is invertible,
+                                                                            form below, where a is a scalar, v is in Rk , and A is a k  k
+    and let M D Im X .X T X / 1 X T : Add a column x0 to the
+                                                                            lower triangular matrix. See the Study Guide for help with
+    data and form
+                                                                            induction.]
+     W D ŒX      x0                                                                        
+                                                                                     a    0T
+     Compute W T W: The (1, 1)-entry is X T X . Show that the               A1 D
+                                                                                     v    A
+     Schur complement (Exercise 17) of X T X can be written in
+     the form xT0 M x0 : It can be shown that the quantity              26. Use partitioned matrices to prove by induction that for
+     .xT0 M x0 / 1 is the (2, 2)-entry in .W T W / 1 : This en-             n D 2; 3; : : : ; the n  n matrix A shown below is invertible
+     try has a useful statistical interpretation, under appropriate         and B is its inverse.
+     hypotheses.                                                                 2                                   3
+                                                                                    1       0     0             0
+In the study of engineering control of physical systems, a standard              61         1     0                07
+                                                                                 6                                   7
+set of differential equations is transformed by Laplace transforms               61         1     1                07
+                                                                            AD6                                      7,
+                                                                                 6 :                     ::          7
+into the following system of linear equations:                                   4 ::                       :        5
+                                                                              1       1     1      :::       1
+  A sIn B            x       0
+                        D                                       (8)              2                                       3
+     C        Im u           y                                                        1        0      0             0
+                                                                                 6 1           1      0                07
+where A is n  n; B is n  m; C is m  n, and s is a variable. The               6                                       7
+                                                                                 6 0           1      1                07
+vector u in Rm is the “input” to the system, y in Rm is the “output,”       BD6                                          7
+                                                                                 6 :                ::        ::         7
+and x in Rn is the “state” vector. (Actually, the vectors x, u, and              4 ::                  :         :       5
+y are functions of s, but we suppress this fact because it does not                   0             :::         1      1
+affect the algebraic calculations in Exercises 21 and 22.)
+                                                                            For the induction step, assume A and B are
+21. AssumeA sIn is invertible and view (8) as a system of two               .k C 1/  .k C 1/ matrices, and partition A and B in a form
+    matrix equations. Solve the top equation for x and substitute           similar to that displayed in Exercise 25.
+  156     CHAPTER 2      Matrix Algebra
+
+
+  27. Without using row reduction, ﬁnd the inverse of                               [Note: It may not be necessary to specify the zero blocks
+          2                         3                                               in B.]
+            1     2    0    0     0
+          63      5    0    0     07
+          6                         7                                   T 29. Suppose memory or size restrictions prevent your matrix
+      AD6 6 0     0    2    0     077                                           program from working with matrices having more than 32
+          40      0    0    7     85                                            rows and 32 columns, and suppose some project involves
+            0     0    0    5     6                                             50  50 matrices A and B . Describe the commands or oper-
+T 28. For block operations, it may be necessary to access or enter              ations of your matrix program that accomplish the following
+        submatrices of a large matrix. Describe the functions or com-           tasks.
+        mands of your matrix program that accomplish the following              a. Compute A C B.
+        tasks. Suppose A is a 20  30 matrix.                                   b. Compute AB.
+        a. Display the submatrix of A from rows 15 to 20 and                    c. Solve Ax D b for some vector b in R50 , assuming   that
+                                                                                                                                         
+            columns 5 to 10.                                                       A can be partitioned into a 2  2 block matrix Aij ,
+        b. Insert a 5  10 matrix B into A, beginning at row 10 and                with A11 an invertible 20  20 matrix, A22 an invertible
+           column 20.                                                              30  30 matrix, and A12 a zero matrix. [Hint: Describe
+                                                             
+                                                       A 0                         appropriate smaller systems to solve, without using any
+        c. Create a 50  50 matrix of the form B D              .                  matrix inverses.]
+                                                       0 AT
+
+
+
+                                          Solutions to Practice Problems
+                                                                                                             
+                                                  I 0                                             W           X
+                                          1. If         is invertible, its inverse has the form                  . Verify that
+                                                  A I                                             Y           Z
+                                                                                                                 
+                                                                     I 0        W    X       W                X
+                                                                                        D
+                                                                     A I        Y    Z     AW C Y           AX C Z
+
+                                              So W , X , Y , and Z must satisfy W D I , X D 0, AW C Y D 0, and AX C Z D I .
+                                              It follows that Y D A and Z D I . Hence
+                                                                                               
+                                                                           I 0      I 0         I 0
+                                                                                           D
+                                                                           A I      A I         0 I
+
+                                             The product in the reverse
+                                                                          is also the identity, so the block matrix is invertible,
+                                                                        order
+                                                                     I 0
+                                             and its inverse is             . (You could also appeal to the Invertible Matrix
+                                                                    A I
+                                             Theorem.)
+                                                      "     #                "                 #
+                                               T        X1T h           i      X1T X1 X1T X2
+                                          2. X X D              X1 X2 D                          . The partitions of X T and X are
+                                                        X2T                    X2T X1 X2T X2
+                                             automatically conformable for block multiplication because the columns of X T are
+                                             the rows of X . This partition of X TX is used in several computer algorithms for
+                                             matrix computations.
+
+
+
+  2.5 Matrix Factorizations
+                                         A factorization of a matrix A is an equation that expresses A as a product of two or more
+                                         matrices. Whereas matrix multiplication involves a synthesis of data (combining the
+                                         effects of two or more linear transformations into a single matrix), matrix factorization is
+                                         an analysis of data. In the language of computer science, the expression of A as a product
+                                         amounts to a preprocessing of the data in A, organizing that data into two or more parts
+                                         whose structures are more useful in some way, perhaps more accessible for computation.
+                                                                 2.5   Matrix Factorizations 157
+
+
+      Matrix factorizations and, later, factorizations of linear transformations will appear
+at a number of key points throughout the text. This section focuses on a factorization that
+lies at the heart of several important computer programs widely used in applications, such
+as the airﬂow problem described in the chapter introduction. Several other factorizations,
+to be studied later, are introduced in the exercises.
+
+
+The LU Factorization
+The LU factorization, described below, is motivated by the fairly common industrial and
+business problem of solving a sequence of equations, all with the same coefficient matrix:
+                        Ax D b1 ;         Ax D b2 ;       :::;    Ax D bp                    (1)
+See Exercise 32, for example. Also see Section 5.8, where the inverse power method
+is used to estimate eigenvalues of a matrix by solving equations like those in sequence
+(1), one at a time.
+     When A is invertible, one could compute A 1 and then compute A 1 b1 , A 1 b2 ,
+and so on. However, it is more efficient to solve the ﬁrst equation in sequence (1) by
+row reduction and obtain an LU factorization of A at the same time. Thereafter, the
+remaining equations in sequence (1) are solved with the LU factorization.
+     At ﬁrst, assume that A is an m  n matrix that can be row reduced to echelon
+form, without row interchanges. (Later, we will treat the general case.) Then A can be
+written in the form A D LU , where L is an m  m lower triangular matrix with 1’s on
+the diagonal and U is an m  n echelon form of A. For instance, see Figure 1. Such a
+factorization is called an LU factorization of A. The matrix L is invertible and is called
+a unit lower triangular matrix.
+
+                      1         0         0      0         *      *      *        *
+                      *         1         0      0 0              *      *        *
+                   A5
+                      *         *         1      0 0       0      0               *
+                      *         *         *      1 0       0      0      0        0
+                                      L                           U
+                   FIGURE 1 An LU factorization.
+
+     Before studying how to construct L and U , we should look at why they are so
+useful. When A D LU , the equation Ax D b can be written as L.U x/ D b. Writing y
+for U x, we can ﬁnd x by solving the pair of equations
+
+                                               Ly D b
+                                                                                             (2)
+                                               Ux D y
+
+First solve Ly D b for y; and then solve U x D y for x. See Figure 2. Each equation is
+easy to solve because L and U are triangular.
+
+                                              Multiplication
+
+                                                  by A
+              x                                                                       b
+
+
+
+
+                     Multiplication               y              Multiplication
+                         by U                                        by L
+FIGURE 2 Factorization of the mapping x 7! Ax.
+158   CHAPTER 2   Matrix Algebra
+
+
+                               EXAMPLE 1 It can be veriﬁed that
+                                       2                   3 2                             32                   3
+                                       3        7     2 2              1    0    0       0    3       7   2   2
+                                     6 3        5     1 07   6         1    1    0       07 60        2   1   27
+                                   AD6
+                                     4 6
+                                                           7D6                             76                   7 D LU
+                                                4     0 55 4           2    5    1       0 54 0       0   1   15
+                                       9        5     5 12             3    8    3       1    0       0   0   1
+                                                                                              3   2
+                                                                                            9
+                                                                                         6 57
+                               Use this LU factorization of A to solve Ax D b, where b D 6    7
+                                                                                         4 7 5.
+                                                                                           11
+                               SOLUTION The solution of Ly D b needs only 6 multiplications and 6 additions,
+                               because the arithmetic takes place only in column 5. (The zeros below each pivot in
+                               L are created automatically by the choice of row operations.)
+                                              2                          3 2                       3
+                                                 1 0 0 0               9        1 0 0 0 9
+                                            6 1 1         0 0        57     6                   47           
+                                  L b D6                                 7  60 1 0 0              7D I       y
+                                              4 2      5 1 0           75 40 0 1 0 55
+                                                 3 8 3 1 11                     0 0 0 1 1
+
+                               Then, for U x D y, the “backward” phase of row reduction requires 4 divisions, 6 mul-
+                               tiplications, and 6 additions. (For instance, creating the zeros in column 4 of Œ U y 
+                               requires 1 division in row 4 and 3 multiplication–addition pairs to add multiples of row 4
+                               to the rows above.)
+                                               2                        3 2                           3         2      3
+                                                 3 7 2 2 9                      1 0 0 0 3                            3
+                                             60      2 1 2 47              6            0 0 47                6      7
+                                  U      y D6                           7  60 1                      7; x D 6 4 7
+                                               40 0         1 1 5       5    4  0 0 1 0 6             5         4    65
+                                                 0 0 0 1 1                      0 0 0 1 1                            1
+
+                                   To ﬁnd x requires 28 arithmetic operations, or “ﬂops” (ﬂoating point operations),
+                               excluding the cost of ﬁnding L and U . In contrast, row reduction of Œ A b  to Œ I x 
+                               takes 62 operations.
+
+                                   The computational efficiency of the LU factorization depends on knowing L and U .
+                               The next algorithm shows that the row reduction of A to an echelon form U amounts to
+                               an LU factorization because it produces L with essentially no extra work. After the ﬁrst
+                               row reduction, L and U are available for solving additional equations whose coefficient
+                               matrix is A.
+
+
+                               An LU Factorization Algorithm
+                               Suppose A can be reduced to an echelon form U using only row replacements that add a
+                               multiple of one row to another row below it. In this case, there exist unit lower triangular
+                               elementary matrices E1 ; : : : ; Ep such that
+
+                                                                    Ep    E1 A D U                                  (3)
+
+                               Then
+                                                             A D .Ep    E1 / 1 U D LU
+                               where
+                                                                  L D .Ep    E1 / 1                                 (4)
+                                                           2.5   Matrix Factorizations 159
+
+
+It can be shown that products and inverses of unit lower triangular matrices are also unit
+lower triangular. (For instance, see Exercise 19.) Thus L is unit lower triangular.
+     Note that the row operations in equation (3), which reduce A to U , also reduce
+the L in equation (4) to I , because Ep    E1 L D .Ep    E1 /.Ep    E1 / 1 D I. This
+observation is the key to constructing L.
+
+
+   ALGORITHM FOR AN LU FACTORIZATION
+   1. Reduce A to an echelon form U by a sequence of row replacement operations,
+      if possible.
+   2. Place entries in L such that the same sequence of row operations reduces L
+      to I.
+
+
+     Step 1 is not always possible, but when it is, the argument above shows that an LU
+factorization exists. Example 2 will show how to implement step 2. By construction, L
+will satisfy
+                                    .Ep    E1 /L D I
+using the same E1 ; : : : ; Ep as in equation (3). Thus L will be invertible, by the Invertible
+Matrix Theorem, with .Ep    E1 / D L 1 . From (3), L 1 A D U , and A D LU . So
+step 2 will produce an acceptable L.
+
+EXAMPLE 2 Find an LU factorization of
+                                  2                            3
+                                 2          4     1    5     2
+                               6 4          5     3    8     17
+                             AD6
+                               4 2
+                                                               7
+                                            5     4    1     85
+                                 6          0     7    3     1
+SOLUTION Since A has four rows, L should be 4  4. The ﬁrst column of L is the
+ﬁrst column of A divided by the top pivot entry:
+                                  2                  3
+                                      1 0 0 0
+                                  6 2 1          0 07
+                            LD6   4 1
+                                                     7
+                                                 1 05
+                                      3            1
+
+Compare the ﬁrst columns of A and L. The row operations that create zeros in the
+ﬁrst column of A will also create zeros in the ﬁrst column of L. To make this same
+correspondence of row operations on A hold for the rest of L, watch a row reduction
+of A to an echelon form U . That is, highlight the entries in each matrix that are used to
+determine the sequence of row operations that transform A into U . [See the highlighted
+entries in equation (5).]
+             2                         3 2                           3
+                  2 4 1 5 2                    2 4 1 5 2
+             6 4       5 3 8 17             6                       37
+        AD6                            7  60 3 1 2                  7 D A1            (5)
+             4 2       5 4 1 8 5 4 0 9 3 4 10 5
+                  6 0 7 3 1                    0 12 4 12 5
+                    2                       3 2                           3
+                      2 4 1 5 2                     2 4 1 5 2
+                    60 3 1 2              37     6                      37
+            A2 D 6                         7  60 3 1 2                  7DU
+                    40 0 0           2 15 40 0 0 2 15
+                      0 0 0 4 7                     0 0 0 0 5
+160   CHAPTER 2      Matrix Algebra
+
+
+                                    These highlighted entries determine the row reduction of A to U . At each pivot column,
+                                    divide the highlighted entries by the pivot and place the result into L:
+                                                2     3
+                                                    2 2      3
+                                                6 47       3  
+                                                6     7
+                                                4 2 54 9 5 2
+                                                                      
+                                                    6     12     4     5
+                                                  2         3      2 5
+                                                 2 #          #      #  #3                        2                        3
+                                                   1                                           1             0     0     0
+                                                 6 2           1                7            6 2             1     0     07
+                                                 6                              7,   and L D 6                             7
+                                                 4 1           3      1         5            4 1             3     1     05
+                                                   3           4      2     1                  3             4     2     1
+                                         An easy calculation veriﬁes that this L and U satisfy LU D A.
+                                          In practical work, row interchanges are nearly always needed, because partial piv-
+                                    oting is used for high accuracy. (Recall that this procedure selects, among the possible
+                                    choices for a pivot, an entry in the column having the largest absolute value.) To handle
+                                    row interchanges, the LU factorization above can be modiﬁed easily to produce an L that
+                                    is permuted lower triangular, in the sense that a rearrangement (called a permutation)
+                                    of the rows of L can make L .unit/ lower triangular. The resulting permuted LU factor-
+                                    ization solves Ax D b in the same way as before, except that the reduction of Œ L b 
+STUDY GUIDE offers information      to Œ I y  follows the order of the pivots in L from left to right, starting with the pivot
+about permuted LU factorizations.   in the ﬁrst column. A reference to an “LU factorization” usually includes the possibility
+                                    that L might be permuted lower triangular. For details, see the Study Guide.
+
+                                        Numerical Notes
+                                       The following operation counts apply to an n  n dense matrix A (with most
+                                       entries nonzero) for n moderately large, say, n  30.1
+
+                                       1. Computing an LU factorization of A takes about 2n3 =3 ﬂops (about the same
+                                          as row reducing Œ A b /, whereas ﬁnding A 1 requires about 2n3 ﬂops.
+                                       2. Solving Ly D b and U x D y requires about 2n2 ﬂops, because any n  n
+                                          triangular system can be solved in about n2 ﬂops.
+                                       3. Multiplication of b by A 1 also requires about 2n2 ﬂops, but the result may
+                                          not be as accurate as that obtained from L and U (because of roundoff error
+                                          when computing both A 1 and A 1 b/.
+                                       4. If A is sparse (with mostly zero entries), then L and U may be sparse, too,
+                                          whereas A 1 is likely to be dense. In this case, a solution of Ax D b with an
+                                          LU factorization is much faster than using A 1 . See Exercise 31.
+
+
+
+                                    A Matrix Factorization in Electrical Engineering
+                                    Matrix factorization is intimately related to the problem of constructing an electrical
+                                    network with speciﬁed properties. The following discussion gives just a glimpse of the
+                                    connection between factorization and circuit design.
+
+                                    1
+                                      See Section 3.8 in Applied Linear Algebra, 3rd ed., by Ben Noble and James W. Daniel (Englewood Cliffs,
+                                    NJ: Prentice-Hall, 1988). Recall that for our purposes, a ﬂop is C, , , or .
+                                                                          2.5    Matrix Factorizations 161
+
+
+     Suppose the box in Figure 3 represents some sort    of electric circuit, with an input
+                                                          v1
+and output. Record the input voltage and current by            (with voltage v in volts and
+                                                           i1
+                                                                       
+                                                                        v2
+current i in amps), and record the output voltage and current by            . Frequently, the
+                                                                        i2
+                         
+                  v        v2
+transformation 1 7!             is linear. That is, there is a matrix A, called the transfer
+                  i1        i2
+matrix, such that                              
+                                      v2          v
+                                           DA 1
+                                      i2           i1
+
+                                              i1                     i2
+
+                        input       v1             electric                       output
+                      terminals                                           v2    terminals
+                                                   circuit
+
+
+
+                      FIGURE 3 A circuit with input and output
+                      terminals.
+    Figure 4 shows a ladder network, where two circuits (there could be more) are
+connected in series, so that the output of one circuit becomes the input of the next circuit.
+The left circuit in Figure 4 is called a series circuit, with resistance R1 (in ohms).
+                           i1                      i2         i2                     i3
+
+                                         R1
+                      v1                                v2                 R2             v3
+
+
+
+                                A series circuit                   A shunt circuit
+                      FIGURE 4 A ladder network.
+
+The right circuit in Figure 4 is a shunt circuit, with resistance R2 . Using Ohm’s law and
+Kirchhoff’s laws, one can show that the transfer matrices of the series and shunt circuits,
+respectively, are
+                                                                 
+                           1 R1                           1       0
+                                            and
+                           0      1                      1=R2     1
+                       Transfer matrix                              Transfer matrix
+                       of series circuit                            of shunt circuit
+
+EXAMPLE 3
+a. Compute the transfer matrix of the ladder network in Figure 4.
+                                                              
+                                                         1 8
+b. Design a ladder network whose transfer matrix is              .
+                                                        :5 5
+SOLUTION
+a. Let A1 and A2 be the transfer matrices of the series and shunt circuits, respectively.
+   Then an input vector x is transformed ﬁrst into A1 x and then into A2 .A1 x/. The series
+   connection of the circuits corresponds to composition of linear transformations, and
+   the transfer matrix of the ladder network is (note the order)
+                                                                            
+                           1       0    1 R1               1            R1
+            A2 A1 D                                D                                    (6)
+                         1=R2      1    0     1           1=R2      1 C R1 =R2
+162    CHAPTER 2       Matrix Algebra
+                                                                        
+                                                                   1 8
+                                      b. To factor the matrix              into the product of transfer matrices, as in equation
+                                                                  :5 5
+                                          (6), look for R1 and R2 in Figure 4 to satisfy
+                                                                                                      
+                                                                    1             R1              1 8
+                                                                                          D
+                                                                   1=R2     1 C R1 =R2           :5 5
+
+                                          From the .1; 2/-entries, R1 D 8 ohms, and from the .2; 1/-entries, 1=R2 D :5 ohm
+                                          and R2 D 1=:5 D 2 ohms. With these values, the network in Figure 4 has the desired
+                                          transfer matrix.
+                                          A network transfer matrix summarizes the input–output behavior (the design spec-
+                                      iﬁcations) of the network without reference to the interior circuits. To physically build
+                                      a network with speciﬁed properties, an engineer ﬁrst determines if such a network can
+                                      be constructed (or realized). Then the engineer tries to factor the transfer matrix into
+                                      matrices corresponding to smaller circuits that perhaps are already manufactured and
+                                      ready for assembly. In the common case of alternating current, the entries in the trans-
+                                      fer matrix are usually rational complex-valued functions. (See Exercises 21 and 22 in
+                                      Section 2.4.) A standard problem is to ﬁnd a minimal realization that uses the smallest
+                                      number of electrical components.
+
+                                        Practice Problem
+                                                                         2                            3
+                                                                             2      4       2       3
+                                                                        6    6      9       5       87
+                                                                        6                             7
+                                        Find an LU factorization of A D 6
+                                                                        6    2      7       3       977. [Note: It will turn out that A
+                                                                        4    4      2       2       15
+                                                                             6      3       3       4
+                                        has only three pivot columns, so the method of Example 2 will produce only the ﬁrst
+                                        three columns of L. The remaining two columns of L come from I5 .]
+
+
+2.5 Exercises
+                                                                             2                        32              3
+In Exercises 1–6, solve the equation Ax D b by using the LU                 1               0       0    2     1    2
+factorization given for A. In Exercises l and 2, also solve Ax D b      AD4 3               1       0 54 0     3    45
+by ordinary row reduction.                                                  4               1       1    0     0    1
+           2                3       2      3
+               3    7     2              7                                   2                  3      2   3
+ 1. A D 4 3         5     1 5; b D 4 5 5                                      2         2     4          0
+               6    4     0              2                           4. A D 4 1         3     1 5, b D 4 5 5
+           2                32                3                               3         7     5          7
+               1    0     0     3     7     2                               2                     32                     3
+     AD4 1          1     0540        2     15                                 1            0   0     2    2           4
+               2    5     1     0     0     1                           A D 4 1=2           1   0 54 0     2           15
+          2                  3      2     3                                   3=2           5   1     0    0           6
+          4        3       5            2
+ 2. A D 4 4        5       7 5, b D 4 4 5                                    2                          3      2 3
+          8        6       8            6                                     1         2       4     3         1
+        2                    32              3                              6 2         7       7     67       677
+          1        0       0     4    3    5                         5. A D 6
+                                                                            4 1
+                                                                                                        7, b D 6 7
+                                                                                        2       6     45       405
+    AD4 1          1       0540       2    25
+                                                                              4         1       9     8         3
+          2        0       1     0    0    2                                2                           32                     3
+          2                    3       2 3                                    1         0       0     0     1    2      4    3
+          2            1      2          1                                  6 2         1       0     07  60     3      1    07
+                                                                        AD6 4 1
+                                                                                                        76                     7
+ 3. A D 4 6            0      2 5, b D 4 0 5                                            0       1     0 54 0     0      2    15
+          8            1      5          4                                    4         3       5     1     0    0      0    1
+                                                                                                         2.5 Matrix Factorizations 163
+
+          2                     3      2    3
+          1        3    4     0           1                         Exercises 22–26 provide a glimpse of some widely used matrix
+        6 3        6    7     27       6    7
+        6
+ 6. A D 4                       7, b D 6 2 7                        factorizations, some of which are discussed later in the text.
+          3        3    0     45       4 15
+          5        3    2     9           2                         22. (Reduced LU Factorization) With A as in the Practice Prob-
+        2                       32                    3                 lem, ﬁnd a 5  3 matrix B and a 3  4 matrix C such that
+          1        0    0     0     1   3    4      0                   A D BC: Generalize this idea to the case where A is m  n;
+        6 3        1    0     07  6                 27
+    AD4 6                       76 0    3    5        7                 A D LU; and U has only three nonzero rows.
+          3        2    1     0 54 0    0    2      05
+          5        4    1     1     0   0    0      1               23. (Rank Factorization) Suppose an m  n matrix A admits a
+                                                                        factorization A D CD where C is m  4 and D is 4  n:
+Find an LU factorization of the matrices in Exercises 7–16 (with
+                                                                        a. Show that A is the sum of four outer products. (See
+L unit lower triangular). Note that MATLAB will usually produce
+                                                                            Section 2.4.)
+a permuted LU factorization because it uses partial pivoting for
+numerical accuracy.                                                       b. Let m D 400 and n D 100: Explain why a computer pro-
+                                                                         grammer might prefer to store the data from A in the form
+         2     5                           6    9                            of two matrices C and D.
+ 7.                                   8.
+         3     4                           4    5
+     2                  3                2                3         24. (QR Factorization) Suppose A D QR; where Q and R are
+         3     1      2                      5     3    4               n  n; R is invertible and upper triangular, and Q has the
+ 9. 4 3        2    10 5             10. 4 10      8    95              property that QT Q D I: Show that for each b in Rn , the
+         9     5      6                     15     1    2               equation Ax D b has a unique solution. What computations
+     2                3                  2                3             with Q and R will produce the solution?
+         3     6    3                        2     4    2
+11. 4 6        7    25               12. 4 1       5    45          25. (Singular Value Decomposition) Suppose A D UDV T ;
+         1     7    0                        6     2    4               where U and V are n  n matrices with the property that
+                                                                        U T U D I and V T V D I; and where D is a diagonal matrix
+     2                      3            2                      3
+         1     3    5     3                  1     4    1     5         with positive numbers 1 ; : : : ; n on the diagonal. Show that
+     6 1       5    8     47             6 3       7    2     977       A is invertible, and ﬁnd a formula for A 1 .
+13. 64 4
+                            7        14. 6
+               2    5     75             4 2       3    1     45
+                                                                    26. (Spectral Factorization) Suppose a 3  3 matrix A admits a
+         2     4    7     5                  1     6    1     7
+                                                                        factorization as A D PDP 1 ; where P is some invertible
+                                         2                  3           3  3 matrix and D is the diagonal matrix
+     2                      3                2       6    6
+                                         6 4                                  2                   3
+         2     4    4     2              6           5    777                   1       0       0
+15. 4 6        9    7     35         16. 6
+                                         6   3       5    177           D D 40        1=2       05
+         1     4    8     0              4 6         4    85                    0       0     1=3
+                                             8       3    9               Show that this factorization is useful when computing high
+                                              1                           powers of A. Find fairly simple formulas for A2 ; A3 ; and Ak
+17. When A is invertible, MATLAB ﬁnds A by factoring A D
+                                                                          (k a positive integer), using P and the entries in D.
+    LU (where L may be permuted lower triangular), inverting
+    L and U, and then computing U 1 L 1 : Use this method to        27. Design two different ladder networks that each output 9 volts
+    compute the inverse of A in Exercise 2. (Apply the algorithm        and 4 amps when the input is 12 volts and 6 amps.
+    of Section 2.2 to L and to U.)
+                                                                    28. Show that if three shunt circuits (with resistances R1 ; R2 ; R3 )
+18. Find A 1 as in Exercise 17, using A from Exercise 3.                are connected in series, the resulting network has the same
+                                                                        transfer matrix as a single shunt circuit. Find a formula for
+19. Let A be a lower triangular n  n matrix with nonzero entries       the resistance in that circuit.
+    on the diagonal. Show that A is invertible and A 1 is lower
+    triangular. [Hint: Explain why A can be changed into I using    29. a. Compute the transfer matrix of the network in the ﬁgure.
+                                                                                                    
+    only row replacements and scaling. (Where are the pivots?)                           4=3     12
+    Also, explain why the row operations that reduce A to I             b. Let A D                     . Design a ladder network
+                                                                                         1=4       3
+    change I into a lower triangular matrix.]                              whose transfer matrix is A by ﬁnding a suitable matrix
+                                                                           factorization of A.
+20. Let A D LU be an LU factorization. Explain why A can be
+    row reduced to U using only replacement operations. (This             i1              i2        i2            i3        i3        i4
+    fact is the converse of what was proved in the text.)
+                                                                                                             R2
+21. Suppose A D BC; where B is invertible. Show that any             v1              R1        v2                      v3        R3        v4
+    sequence of row operations that reduces B to I also reduces A
+    to C. The converse is not true, since the zero matrix may be
+    factored as 0 D B.0/:
+  164     CHAPTER 2      Matrix Algebra
+
+
+  30. Find a different factorization of the A in Exercise 29, and            c. Obtain A 1 and note that A 1 is a dense matrix with no
+      thereby design a different ladder network whose transfer                  band structure. When A is large, L and U can be stored in
+      matrix is A.                                                              much less space than A 1 : This fact is another reason for
+                                                                                preferring the LU factorization of A to A 1 itself.
+T 31. The solution to the steady-state heat ﬂow problem for the
+        plate in the ﬁgure is approximated by the solution to the T 32. The band matrix A shown below can be used to estimate the
+        equation Ax D b; where b D .5; 15; 0; 10; 0; 10; 20; 30/ and    unsteady conduction of heat in a rod when the temperatures
+             2                                             3            at points p1 ; : : : ; p5 on the rod change with time.2
+                  4     1    1
+             6 1        4    0    1                        7                             Dx       Dx
+             6                                             7
+             6 1        0    4    1     1                  7                                   p     p2     p3   p4    p5
+             6                                             7                                    1
+             6          1    1    4     0    1             7
+        AD6  6
+                                                           7
+                                                           7
+             6               1    0     4    1     1       7            The constant C in the matrix depends on the physical nature
+             6                    1     1    4     0    1  7            of the rod, the distance x between the points on the rod,
+             6                                             7
+             4                          1    0     4    15              and the length of time t between successive temperature
+                                             1     1    4               measurements. Suppose that for k D 0; 1; 2; : : : ; a vector tk
+                              08   08    08   08
+                                                                        in R5 lists the temperatures at time kt . If the two ends of the
+                                                                        rod are maintained at 0ı , then the temperature vectors satisfy
+                               1    3     5    7                        the equation AtkC1 D tk .k D 0; 1; : : : /; where
+                      58                             208
+                                                                           2                                                             3
+                               2    4     6    8
+                                                                             .1 C 2C /            C
+                      58                             208                   6      C         .1 C 2C /         C                          7
+                                                                           6                                                             7
+                                                                      AD6  6                      C      .1 C 2C /      C                7
+                                                                                                                                         7
+                                                                           4                                  C     .1 C 2C /       C    5
+                             108 108 108 108
+                                                                                                                        C       .1 C 2C /
+        (Refer to Exercise 43 of Section 1.1.) The missing entries in
+        A are zeros. The nonzero entries of A lie within a band along   a. Find the LU factorization of A when C D 1: A matrix
+        the main diagonal. Such band matrices occur in a variety of         such as A with three nonzero diagonals is called a tridiag-
+        applications and often are extremely large (with thousands of       onal matrix. The L and U factors are bidiagonal matrices.
+        rows and columns but relatively narrow bands).                       b. Suppose C D 1 and t0 D .10; 12; 12; 12; 10/: Use the
+        a. Use the method of Example 2 to construct an LU factor-               LU factorization of A to ﬁnd the temperature distributions
+           ization of A, and note that both factors are band matrices           t1 ; t2 ; t3 , and t4 .
+           (with two nonzero diagonals below or above the main
+           diagonal). Compute LU A to check your work.                  2
+                                                                         See Biswa N. Datta, Numerical Linear Algebra and Applications (Paciﬁc
+        b. Use the LU factorization to solve Ax D b:                    Grove, CA: Brooks/Cole, 1994), pp. 200–201.
+
+
+
+
+                                          Solution to Practice Problem
+                                                            2                3   2                                 3
+                                                               2 4 2 3             2                     4    2 3
+                                                            6 6    9   5   8 7   60                      3    1 17
+                                                            6                7   6                                 7
+                                                       AD6  6 2    7 3 97        6
+                                                                             7  60                      3    1 67 7
+                                                            4 4    2 2 1     5   40                      6    2 75
+                                                               6 3 3 4             0                     9    3 13
+                                                           2               3   2                                 3
+                                                              2 4 2 3            2                   4       2 3
+                                                           60 3      1   1 7   60                    3       1 17
+                                                           6               7   6                                 7
+                                                         660 0      0 57      6
+                                                                           7  60                    0       0 577DU
+                                                           40 0      0 55      40                    0       0 05
+                                                              0 0 0 10           0                   0       0 0
+
+                                             Divide the entries in each highlighted column by the pivot at the top. The resulting
+                                          columns form the ﬁrst three columns in the lower half of L. This suffices to make row
+                                          reduction of L to I correspond to reduction of A to U . Use the last two columns of I5
+                                                           2.6 The Leontief Input Output Model 165
+
+
+               to make L unit lower triangular.
+                       2     3
+                           2 2       3
+                       6 67        3 2
+                       6     7               3
+                       6 2 76 3 7          5
+                       6     76      7
+                       4 4 54 6 54 5 5
+                           6       9      10
+                          2       3      5
+                         2 #        #       #        3          2                           3
+                             1                                       1    0    0    0     0
+                         6   3       1                7       6      3    1    0    0     07
+                         6                            7       6                             7
+                         6   1       1       1     7     LD6      1    1    1    0     07
+                         6                            7,      6                             7
+                         4   2       2       1        5       4      2    2    1    1     05
+                             3       3       2                       3    3    2    0     1
+
+
+
+
+2.6 The Leontief Input Output Model
+               Linear algebra played an essential role in the Nobel prize–winning work of Wassily
+               Leontief, as mentioned at the beginning of Chapter 1. The economic model described in
+               this section is the basis for more elaborate models used in many parts of the world.
+                    Suppose a nation’s economy is divided into n sectors that produce goods or services,
+               and let x be a production vector in Rn that lists the output of each sector for one year.
+               Also, suppose another part of the economy (called the open sector) does not produce
+               goods or services but only consumes them, and let d be a ﬁnal demand vector (or bill
+               of ﬁnal demands) that lists the values of the goods and services demanded from the
+               various sectors by the nonproductive part of the economy. The vector d can represent
+               consumer demand, government consumption, surplus production, exports, or other ex-
+               ternal demands.
+                    As the various sectors produce goods to meet consumer demand, the producers
+               themselves create additional intermediate demand for goods they need as inputs for
+               their own production. The interrelations between the sectors are very complex, and the
+               connection between the ﬁnal demand and the production is unclear. Leontief asked if
+               there is a production level x such that the amounts produced (or “supplied”) will exactly
+               balance the total demand for that production, so that
+                                     8          9                      8         9
+                                     < amount =                     < ﬁnal =
+                                                        intermediate
+                                       produced D                    C demand                        (1)
+                                     :          ;         demand       :         ;
+                                            x                                d
+               The basic assumption of Leontief’s input–output model is that for each sector, there
+               is a unit consumption vector in Rn that lists the inputs needed per unit of output of
+               the sector. All input and output units are measured in millions of dollars, rather than in
+               quantities such as tons or bushels. (Prices of goods and services are held constant.)
+                    As a simple example, suppose the economy consists of three sectors—manufac-
+               turing, agriculture, and services—with unit consumption vectors c1 , c2 , and c3 , as shown
+               in the table that follows.
+166   CHAPTER 2   Matrix Algebra
+
+
+                                                                     Inputs Consumed per Unit of Output
+                                            Purchased from         Manufacturing         Agriculture   Services
+                                            Manufacturing                  .50               .40         .20
+                                            Agriculture                    .20               .30         .10
+                                            Services                       .10               .10         .30
+                                                                            "                "            "
+                                                                            c1               c2           c3
+
+                               EXAMPLE 1 What amounts will be consumed by the manufacturing sector if it
+                               decides to produce 100 units?
+                               SOLUTION Compute
+                                                                            23 2 3
+                                                                         :50       50
+                                                            100c1 D 1004 :20 5 D 4 20 5
+                                                                         :10       10
+                               To produce 100 units, manufacturing will order (i.e., “demand”) and consume 50 units
+                               from other parts of the manufacturing sector, 20 units from agriculture, and 10 units
+                               from services.
+                                    If manufacturing decides to produce x1 units of output, then x1 c1 represents the
+                               intermediate demands of manufacturing, because the amounts in x1 c1 will be consumed
+                               in the process of creating the x1 units of output. Likewise, if x2 and x3 denote the planned
+                               outputs of the agriculture and services sectors, x2 c2 and x3 c3 list their corresponding
+                               intermediate demands. The total intermediate demand from all three sectors is given by
+                                                    fintermediate demandg D x1 c1 C x2 c2 C x3 c3
+                                                                          D Cx                                            (2)
+
+                               where C is the consumption matrix Œ c1 c2 c3 , namely
+                                                               2                 3
+                                                                  :50 :40 :20
+                                                          C D 4 :20 :30 :10 5                                             (3)
+                                                                  :10 :10 :30
+                               Equations (1) and (2) yield Leontief’s model.
+
+
+                                   THE LEONTIEF INPUT–OUTPUT MODEL, OR PRODUCTION
+                                   EQUATION
+                                                     x   D    Cx   C   d                                            (4)
+                                                          Amount          Intermediate     Final
+                                                          produced          demand        demand
+
+
+
+                                   Equation (4) may also be written as I x        C x D d, or
+                                                                     .I      C /x D d                                     (5)
+
+                               EXAMPLE 2 Consider the economy whose consumption matrix is given by (3).
+                               Suppose the ﬁnal demand is 50 units for manufacturing, 30 units for agriculture, and
+                               20 units for services. Find the production level x that will satisfy this demand.
+                                                         2.6 The Leontief Input Output Model 167
+
+
+             SOLUTION The coefficient matrix in (5) is
+                                 2              3    2               3 2                    3
+                                 1       0    0        :5    :4   :2       :5      :4    :2
+                       I    C D 40       1    05     4 :2    :3   :1 5 D 4 :2      :7    :1 5
+                                 0       0    1        :1    :1   :3       :1      :1    :7
+
+             To solve (5), row reduce the augmented matrix
+               2                    3 2                     3           2                       3
+                   :5 :4 :2 50               5 4 2 500                    1          0    0 226
+               4 :2 :7 :1 30 5  4 2 7                1 300 5      4 0          1    0 119 5
+                   :1 :1 :7 20               1 1 7 200                    0          0    1 78
+
+             The last column is rounded to the nearest whole unit. Manufacturing must produce
+             approximately 226 units, agriculture 119 units, and services only 78 units.
+
+                  If the matrix I C is invertible, then we can apply Theorem 5 in Section 2.2, with A
+             replaced by .I C /, and from the equation .I C /x D d obtain x D .I C / 1 d. The
+             theorem below shows that in most practical cases, I C is invertible and the production
+             vector x is economically feasible, in the sense that the entries in x are nonnegative.
+                  In the theorem, the term column sum denotes the sum of the entries in a column
+             of a matrix. Under ordinary circumstances, the column sums of a consumption matrix
+             are less than 1 because a sector should require less than one unit’s worth of inputs to
+             produce one unit of output.
+
+
+THEOREM 11      Let C be the consumption matrix for an economy, and let d be the ﬁnal demand.
+                If C and d have nonnegative entries and if each column sum of C is less than 1,
+                then .I C / 1 exists and the production vector
+
+                                                 x D .I     C / 1d
+
+                has nonnegative entries and is the unique solution of
+
+                                                    x D Cx C d
+
+
+                 The following discussion will suggest why the theorem is true and will lead to a
+             new way to compute .I C / 1 .
+
+
+             A Formula for ( I – C ) –1
+             Imagine that the demand represented by d is presented to the various industries at the
+             beginning of the year, and the industries respond by setting their production levels at
+             x D d, which will exactly meet the ﬁnal demand. As the industries prepare to produce d,
+             they send out orders for their raw materials and other inputs. This creates an intermediate
+             demand of C d for inputs.
+                  To meet the additional demand of C d, the industries will need as additional inputs
+             the amounts in C.C d/ D C 2 d. Of course, this creates a second round of intermediate
+             demand, and when the industries decide to produce even more to meet this new demand,
+             they create a third round of demand, namely C.C 2 d/ D C 3 d. And so it goes.
+                  Theoretically, this process could continue indeﬁnitely, although in real life it would
+             not take place in such a rigid sequence of events. We can diagram this hypothetical
+             situation as follows:
+168   CHAPTER 2   Matrix Algebra
+
+
+                                                                       Demand That     Inputs Needed to
+                                                                       Must Be Met     Meet This Demand
+                                               Final demand                  d                   Cd
+                                               Intermediate demand
+                                                 1st round                  Cd            C.C d/ D C 2 d
+                                                                             2
+                                                 2nd round                 C d           C.C 2 d/ D C 3 d
+                                                 3rd round                 C 3d          C.C 3 d/ D C 4 d
+                                                                             ::                 ::
+                                                                              :                  :
+
+                                    The production level x that will meet all of this demand is
+                                                             x D d C C d C C 2d C C 3d C   
+                                                              D .I C C C C 2 C C 3 C    /d                           (6)
+                                    To make sense of equation (6), consider the following algebraic identity:
+                                                  .I    C /.I C C C C 2 C    C C m / D I       C mC1                 (7)
+                               It can be shown that if the column sums in C are all strictly less than 1, then I C is in-
+                               vertible, C m approaches the zero matrix as m gets arbitrarily large, and I C mC1 ! I .
+                               (This fact is analogous to the fact that if a positive number t is less than 1, then t m ! 0
+                               as m increases.) Using equation (7), write
+
+                                                    .I C / 1  I C C C C 2 C C 3 C    C C m
+                                                                                                                        (8)
+                                                     when the column sums of C are less than 1.
+
+                               The approximation in (8) means that the right side can be made as close to .I C / 1
+                               as desired by taking m sufficiently large.
+                                   In actual input–output models, powers of the consumption matrix approach the zero
+                               matrix rather quickly. So (8) really provides a practical way to compute .I C / 1 .
+                               Likewise, for any d, the vectors C m d approach the zero vector quickly, and (6) is a
+                               practical way to solve .I C /x D d. If the entries in C and d are nonnegative, then (6)
+                               shows that the entries in x are nonnegative, too.
+
+                               The Economic Importance of Entries in ( I – C ) –1
+                               The entries in .I C / 1 are signiﬁcant because they can be used to predict how the
+                               production x will have to change when the ﬁnal demand d changes. In fact, the entries
+                               in column j of .I C / 1 are the increased amounts the various sectors will have to
+                               produce in order to satisfy an increase of 1 unit in the ﬁnal demand for output from
+                               sector j . See Exercise 8.
+
+                                   Numerical Note
+                                   In any applied problem (not just in economics), an equation Ax D b can always be
+                                   written as .I C /x D b, with C D I A. If the system is large and sparse (with
+                                   mostly zero entries), it can happen that the column sums of the absolute values in
+                                   C are less than 1. In this case, C m ! 0. If C m approaches zero quickly enough,
+                                   (6) and (8) will provide practical formulas for solving Ax D b and ﬁnding A 1 .
+                                                                                       2.6 The Leontief Input Output Model 169
+
+
+                                         Practice Problem
+                                         Suppose an economy has two sectors: goods and services. One unit of output from
+                                         goods requires inputs of .2 unit from goods and .5 unit from services. One unit of
+                                         output from services requires inputs of .4 unit from goods and .3 unit from services.
+                                         There is a ﬁnal demand of 20 units of goods and 30 units of services. Set up the Leontief
+                                         input–output model for this situation.
+
+
+
+
+2.6 Exercises
+
+
+                          Agriculture                          Manufacturing                     Services
+
+
+
+
+                                                      Open Sector
+
+
+
+
+Exercises 1–4 refer to an economy that is divided into three              4. Determine the production levels needed to satisfy a ﬁnal de-
+sectors—manufacturing, agriculture, and services. For each unit              mand of 18 units for manufacturing, 18 units for agriculture,
+of output, manufacturing requires .10 unit from other companies              and 0 units for services.
+in that sector, .30 unit from agriculture, and .30 unit from services.
+For each unit of output, agriculture uses .20 unit of its own output,
+                                                                          5. Consider the production model x D C x C d for an economy
+.60 unit from manufacturing, and .10 unit from services. For each
+                                                                             with two sectors, where
+unit of output, the services sector consumes .10 unit from services,                                  
+.60 unit from manufacturing, but no agricultural products.                           :0   :5             50
+                                                                             C D               ;    dD
+                                                                                     :6   :2             30
+ 1. Construct the consumption matrix for this economy, and de-
+                                                                               Use an inverse matrix to determine the production level
+    termine what intermediate demands are created if agriculture
+                                                                               necessary to satisfy the ﬁnal demand.
+    plans to produce 100 units.
+                                                                                                                                   
+ 2. Determine the production levels needed to satisfy a ﬁnal                                                    :1   :6              18
+    demand of 18 units for agriculture, with no ﬁnal demand for           6. Repeat Exercise 5 with C D                   , and d D     .
+                                                                                                                :5   :2              11
+    the other sectors. (Do not compute an inverse matrix.)
+
+ 3. Determine the production levels needed to satisfy a ﬁnal              7. Let C and d be as in Exercise 5.
+    demand of 18 units for manufacturing, with no ﬁnal demand                a. Determine the production level necessary to satisfy a ﬁnal
+    for the other sectors. (Do not compute an inverse matrix.)                  demand for 1 unit of output from sector 1.
+

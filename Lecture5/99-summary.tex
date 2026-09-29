@@ -1,0 +1,67 @@
+\section[Summary]{Summary}
+
+\begin{frame}{Integrated Textbook Practice}
+\small
+\begin{columns}[T]
+\column{.48\textwidth}
+\textbf{Invertibility}
+\[
+A=\begin{bmatrix}2&3&4\\2&3&4\\2&3&4\end{bmatrix}.
+\]
+What is the cheapest reason that $A$ is singular?
+
+\medskip
+\textbf{Block multiplication}
+If $X=[\,X_1\ X_2\,]$, write $X^TX$ in block form.
+
+\column{.48\textwidth}
+\textbf{LU practice}
+\[
+A=\begin{bmatrix}
+2&-4&-2&3\\
+6&-9&-5&8\\
+2&-7&-3&9\\
+4&-2&-2&-1\\
+-6&3&3&4
+\end{bmatrix}.
+\]
+The matrix has three pivot columns. Which parts of $L$ come from elimination, and which parts come from $I_5$?
+\end{columns}
+\end{frame}
+
+\begin{frame}{Practice Connections}
+\small
+\begin{columns}[T]
+\column{.48\textwidth}
+The first matrix has identical rows, so it has fewer than three pivot positions. By the Invertible Matrix Theorem, it is singular.
+
+\medskip
+For $X=[\,X_1\ X_2\,]$,
+\[
+X^TX=
+\begin{bmatrix}
+X_1^TX_1&X_1^TX_2\\
+X_2^TX_1&X_2^TX_2
+\end{bmatrix}.
+\]
+
+\column{.48\textwidth}
+For the LU practice problem, elimination supplies the first three columns below the diagonal of $L$. The remaining columns are chosen from $I_5$ so that $L$ is unit lower triangular.
+
+\medskip
+The same row operations that reduce $A$ to $U$ must reduce $L$ to $I_5$.
+\end{columns}
+\end{frame}
+
+\begin{frame}{Summary}
+\begin{enumerate}
+  \item In a matrix equation, multiplication order determines which inverse goes on which side.
+  \item For a square matrix, pivots, solution behavior, column properties, and transformation properties describe the same invertibility condition.
+  \item A valid block product requires matching inner block dimensions.
+  \item An LU factorization reuses elimination work when the coefficient matrix stays fixed.
+\end{enumerate}
+\medskip
+\begin{alertblock}{Exit check}
+For each topic, identify the calculation that reveals the structure: row reduction, block multiplication, or triangular solution.
+\end{alertblock}
+\end{frame}

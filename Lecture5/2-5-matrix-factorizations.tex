@@ -1,0 +1,330 @@
+% Textbook Section 2.5, pp. 156--164.
+\section[Factorizations]{Matrix Factorizations}
+\sectioncard{2.5}{Matrix Factorizations}
+
+\newcommand{\pivotentry}[1]{\colorbox{blue!15}{\(\mathstrut #1\)}}
+
+\begin{frame}{Why Factor a Matrix?}
+Matrix multiplication combines the effects of several transformations. A factorization analyzes a matrix by expressing it as a product of matrices with useful structure.
+\pause
+The LU factorization is motivated by repeated systems with the same coefficient matrix:
+\[
+A\vect x=\vect b_1,\qquad
+A\vect x=\vect b_2,\qquad\ldots,\qquad
+A\vect x=\vect b_p.
+\]
+\pause
+Row reduction of the first system can also preprocess $A$. The resulting factors can then be reused for every later right-hand side.
+\end{frame}
+
+\begin{frame}{The LU Factorization}
+Suppose row replacement operations reduce an $m\times n$ matrix $A$ to an echelon form $U$ without row interchanges. Then
+\[
+A=LU,
+\]
+where $L$ is an invertible $m\times m$ unit lower-triangular matrix.
+\pause
+To solve $A\vect x=\vect b$, write
+\[
+L(U\vect x)=\vect b.
+\]
+With $\vect y=U\vect x$, solve the two triangular systems
+\[
+\boxed{L\vect y=\vect b}
+\qquad\text{followed by}\qquad
+\boxed{U\vect x=\vect y}.
+\]
+\end{frame}
+
+\begin{frame}[shrink=8]{Textbook Example 1: A Given LU Factorization}
+\[
+A=\begin{bmatrix}
+3&-7&-2&2\\
+-3&5&1&0\\
+6&-4&0&-5\\
+-9&5&-5&12
+\end{bmatrix}
+=
+\underbrace{\begin{bmatrix}
+1&0&0&0\\
+-1&1&0&0\\
+2&-5&1&0\\
+-3&8&3&1
+\end{bmatrix}}_{L}
+\underbrace{\begin{bmatrix}
+3&-7&-2&2\\
+0&-2&-1&2\\
+0&0&-1&1\\
+0&0&0&-1
+\end{bmatrix}}_{U}.
+\]
+Solve $A\vect x=\vect b$, where
+\[
+\vect b=\begin{bmatrix}-9\\5\\7\\11\end{bmatrix}.
+\]
+\pause
+We first solve $L\vect y=\vect b$, and then solve $U\vect x=\vect y$.
+\end{frame}
+
+\begin{frame}{Example 1: Forward Substitution}
+\small
+\[
+\left[\begin{array}{rrrr|r}
+1&0&0&0&-9\\
+-1&1&0&0&5\\
+2&-5&1&0&7\\
+-3&8&3&1&11
+\end{array}\right]
+\sim
+\left[\begin{array}{rrrr|r}
+1&0&0&0&-9\\
+0&1&0&0&-4\\
+0&0&1&0&5\\
+0&0&0&1&1
+\end{array}\right].
+\]
+\pause
+Thus
+\[
+\vect y=\begin{bmatrix}-9\\-4\\5\\1\end{bmatrix}.
+\]
+Because $L$ is lower triangular, the entries of $\vect y$ are obtained from top to bottom.
+\end{frame}
+
+\begin{frame}{Example 1: Back Substitution}
+\small
+\[
+\left[\begin{array}{rrrr|r}
+3&-7&-2&2&-9\\
+0&-2&-1&2&-4\\
+0&0&-1&1&5\\
+0&0&0&-1&1
+\end{array}\right]
+\sim
+\left[\begin{array}{rrrr|r}
+1&0&0&0&3\\
+0&1&0&0&4\\
+0&0&1&0&-6\\
+0&0&0&1&-1
+\end{array}\right].
+\]
+\pause
+Hence
+\[
+\boxed{\vect x=\begin{bmatrix}3\\4\\-6\\-1\end{bmatrix}}.
+\]
+The entries are obtained from bottom to top because $U$ is upper triangular.
+\end{frame}
+
+\begin{frame}{Example 1: Verification and Work}
+Substitution verifies
+\[
+A\begin{bmatrix}3\\4\\-6\\-1\end{bmatrix}
+=\begin{bmatrix}-9\\5\\7\\11\end{bmatrix}.
+\]
+\pause
+The textbook counts 28 arithmetic operations after $L$ and $U$ are known. Reducing the augmented matrix $[\,A\ \vect b\,]$ to $[\,I\ \vect x\,]$ takes 62 operations.
+\medskip
+\begin{block}{Reason for reuse}
+For a new right-hand side, the same $L$ and $U$ are used again. Only the two triangular systems change.
+\end{block}
+\end{frame}
+
+\begin{frame}{Textbook Example 2: Setup}
+Find an LU factorization of
+\[
+A=\begin{bmatrix}
+2&4&-1&5&-2\\
+-4&-5&3&-8&1\\
+2&-5&-4&1&8\\
+-6&0&7&-3&1
+\end{bmatrix}.
+\]
+Since $A$ has four rows, $L$ should be $4\times4$.
+\end{frame}
+
+\begin{frame}{Textbook Example 2: The First Column of $L$}
+The first column of $L$ is the first column of $A$ divided by the top pivot entry:
+\[
+\frac{1}{2}\begin{bmatrix}2\\-4\\2\\-6\end{bmatrix}
+=\begin{bmatrix}1\\-2\\1\\-3\end{bmatrix}.
+\]
+Thus
+\[
+L=\begin{bmatrix}
+1&0&0&0\\
+-2&1&0&0\\
+1& &1&0\\
+-3& & &1
+\end{bmatrix},
+\]
+where the remaining entries will come from the later pivot columns.
+\end{frame}
+
+\begin{frame}[shrink=11]{Textbook Example 2: Row Reduction Produces $U$}
+The highlighted entries determine the sequence of row operations from $A$ to $U$:
+\[
+A=
+\begin{bmatrix}
+\pivotentry{2}&4&-1&5&-2\\
+\pivotentry{-4}&-5&3&-8&1\\
+\pivotentry{2}&-5&-4&1&8\\
+\pivotentry{-6}&0&7&-3&1
+\end{bmatrix}
+\sim A_1=
+\begin{bmatrix}
+2&4&-1&5&-2\\
+0&\pivotentry{3}&1&2&-3\\
+0&\pivotentry{-9}&-3&-4&10\\
+0&\pivotentry{12}&4&12&-5
+\end{bmatrix}
+\]
+\[
+A_1\sim A_2=
+\begin{bmatrix}
+2&4&-1&5&-2\\
+0&3&1&2&-3\\
+0&0&0&\pivotentry{2}&1\\
+0&0&0&\pivotentry{4}&7
+\end{bmatrix}
+\sim U=
+\begin{bmatrix}
+2&4&-1&5&-2\\
+0&3&1&2&-3\\
+0&0&0&2&1\\
+0&0&0&0&\pivotentry{5}
+\end{bmatrix}.
+\]
+\end{frame}
+
+\begin{frame}{Textbook Example 2: Columns of $L$}
+At each pivot column, divide the highlighted entries by the pivot and place the result into the corresponding column of $L$:
+\[
+\frac{1}{2}\begin{bmatrix}2\\-4\\2\\-6\end{bmatrix}
+=\begin{bmatrix}1\\-2\\1\\-3\end{bmatrix},
+\qquad
+\frac{1}{3}\begin{bmatrix}3\\-9\\12\end{bmatrix}
+=\begin{bmatrix}1\\-3\\4\end{bmatrix},
+\]
+\[
+\frac{1}{2}\begin{bmatrix}2\\4\end{bmatrix}
+=\begin{bmatrix}1\\2\end{bmatrix},
+\qquad
+\frac{1}{5}\begin{bmatrix}5\end{bmatrix}
+=\begin{bmatrix}1\end{bmatrix}.
+\]
+The resulting columns begin at successive pivot rows.
+\end{frame}
+
+\begin{frame}{Textbook Example 2: The Factor $L$}
+Placing the four resulting columns into a unit lower triangular matrix gives
+\[
+L=\begin{bmatrix}
+1&0&0&0\\
+-2&1&0&0\\
+1&-3&1&0\\
+-3&4&2&1
+\end{bmatrix}.
+\]
+Together with the echelon form $U$ from the row reduction,
+\[
+\boxed{A=LU}.
+\]
+An easy calculation verifies that this $L$ and $U$ satisfy $LU=A$.
+\end{frame}
+
+\begin{frame}{Why the Factorization Works}
+For the matrices constructed in Example 2, direct multiplication gives $LU=A$.
+\pause
+The same row operations reduce $A$ to $U$ and $L$ to $I$. If their elementary matrices are $E_1,\ldots,E_p$, then
+\[
+E_p\cdots E_1A=U,
+\qquad E_p\cdots E_1L=I.
+\]
+\pause
+Therefore $L=(E_p\cdots E_1)^{-1}$ and
+\[
+A=(E_p\cdots E_1)^{-1}U=LU.
+\]
+\end{frame}
+
+\begin{frame}{Algorithm for an LU Factorization}
+\begin{block}{Step 1}
+Reduce $A$ to an echelon form $U$ using row replacement operations, if possible.
+\end{block}
+\pause
+\begin{block}{Step 2}
+Place entries in $L$ so that the same sequence of row operations reduces $L$ to $I$.
+\end{block}
+\medskip
+The row operations reduce both matrices in parallel:
+\[
+A\longrightarrow U,
+\qquad
+L\longrightarrow I.
+\]
+Therefore $L^{-1}A=U$, so $A=LU$.
+\end{frame}
+
+\begin{frame}{Row Interchanges and Partial Pivoting}
+The preceding construction assumes that row replacement operations are sufficient. In practical work, row interchanges are usually needed for numerical accuracy.
+\pause
+Partial pivoting chooses a pivot with the largest absolute value among the available entries in its column.
+\medskip
+With row interchanges, the textbook describes $L$ as \textbf{permuted lower triangular}: a rearrangement of its rows produces a unit lower-triangular matrix.
+\medskip
+The two-stage solution process still applies, but the triangular reduction follows the pivot order.
+\end{frame}
+
+\begin{frame}[shrink=4]{Numerical Notes}
+For a dense $n\times n$ matrix with moderately large $n$:
+\begin{enumerate}
+  \item Computing an LU factorization takes about
+  \[
+  \frac{2n^3}{3}\text{ flops}.
+  \]
+  Computing $A^{-1}$ takes about $2n^3$ flops.
+  \item Solving $L\vect y=\vect b$ and $U\vect x=\vect y$ takes about $2n^2$ flops.
+  \item Multiplying $A^{-1}\vect b$ also takes about $2n^2$ flops, but errors from forming $A^{-1}$ may reduce accuracy.
+  \item If $A$ is sparse, $L$ and $U$ may remain sparse while $A^{-1}$ is likely to be dense.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Textbook Example 3: A Ladder Network}
+A series circuit and a shunt circuit have transfer matrices
+\[
+A_1=\begin{bmatrix}1&-R_1\\0&1\end{bmatrix},\qquad
+A_2=\begin{bmatrix}1&0\\-1/R_2&1\end{bmatrix}.
+\]
+The series connection applies $A_1$ first and then $A_2$:
+\[
+A_2A_1=
+\begin{bmatrix}
+1&-R_1\\
+-1/R_2&1+R_1/R_2
+\end{bmatrix}.
+\]
+The order $A_2A_1$ records that the input passes through the series circuit first.
+\end{frame}
+
+\begin{frame}{Textbook Example 3: Design by Factorization}
+The target transfer matrix is
+\[
+\begin{bmatrix}1&-8\\-.5&5\end{bmatrix}.
+\]
+\pause
+We seek $R_1$ and $R_2$ such that
+\[
+\begin{bmatrix}
+1&-R_1\\
+-1/R_2&1+R_1/R_2
+\end{bmatrix}
+=\begin{bmatrix}1&-8\\-.5&5\end{bmatrix}.
+\]
+\pause
+Comparing entries gives
+\[
+R_1=8\ \Omega,\qquad \frac1{R_2}=.5\quad\Longrightarrow\quad R_2=2\ \Omega.
+\]
+The matrix factorization identifies the physical components required by the design.
+\end{frame}

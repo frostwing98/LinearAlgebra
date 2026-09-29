@@ -1,0 +1,260 @@
+\section{Matrix Equations}
+
+\begin{frame}{Warm-up: The Row-Reduction Algorithm}
+Find the inverse of the coefficient matrix from the next example:
+\[
+A=\begin{bmatrix}-7&3\\5&-2\end{bmatrix}.
+\]
+\pause
+\small
+\[
+\left[\begin{array}{cc|cc}-7&3&1&0\\5&-2&0&1\end{array}\right]
+\xrightarrow{R_1\leftarrow R_1+R_2}
+\left[\begin{array}{cc|cc}-2&1&1&1\\5&-2&0&1\end{array}\right]
+\]
+\[
+\xrightarrow{R_2\leftarrow R_2+2R_1}
+\left[\begin{array}{cc|cc}-2&1&1&1\\1&0&2&3\end{array}\right]
+\xrightarrow{R_1\leftrightarrow R_2}
+\left[\begin{array}{cc|cc}1&0&2&3\\-2&1&1&1\end{array}\right]
+\]
+\[
+\xrightarrow{R_2\leftarrow R_2+2R_1}
+\left[\begin{array}{cc|cc}1&0&2&3\\0&1&5&7\end{array}\right].
+\]
+\pause
+Therefore
+\[
+A^{-1}=\begin{bmatrix}2&3\\5&7\end{bmatrix}.
+\]
+\end{frame}
+
+\begin{frame}{Solving a $2\times2$ System with $A^{-1}$}
+Solve
+\[
+-7x_1+3x_2=2,\qquad 5x_1-2x_2=1.
+\]
+\pause
+In matrix form,
+\[
+A\vect x=\vect b,\qquad
+A=\begin{bmatrix}-7&3\\5&-2\end{bmatrix},\quad
+\vect b=\begin{bmatrix}2\\1\end{bmatrix}.
+\]
+\pause
+Multiplying on the left by the inverse gives
+\[
+\vect x=A^{-1}\vect b
+=\begin{bmatrix}2&3\\5&7\end{bmatrix}
+\begin{bmatrix}2\\1\end{bmatrix}
+=\begin{bmatrix}7\\17\end{bmatrix}.
+\]
+\end{frame}
+
+\begin{frame}{Why the Solution Is Unique}
+Suppose $A$ is invertible and $A\vect x=\vect b$. Then
+\[
+A^{-1}A\vect x=A^{-1}\vect b
+\quad\Longrightarrow\quad
+\vect x=A^{-1}\vect b.
+\]
+\pause
+If $\vect w$ is another solution, then
+\[
+A\vect w=\vect b
+\quad\Longrightarrow\quad
+\vect w=A^{-1}\vect b.
+\]
+Thus $\vect w=\vect x$. Any solution must equal $A^{-1}\vect b$.
+\end{frame}
+
+\begin{frame}{Unique Solutions from Invertibility}
+\theorembox{Theorem 5}{If $A$ is an invertible $n\times n$ matrix, then for every $\vect b\in\R^n$, the equation $A\vect x=\vect b$ has the unique solution
+\[
+\vect x=A^{-1}\vect b.
+\]}
+\medskip
+\begin{block}{Homogeneous special case}
+If $A$ is invertible, then $A\vect x=\vect0$ has only the trivial solution $\vect x=\vect0$.
+\end{block}
+\end{frame}
+
+\begin{frame}{Solution Types of Linear Systems}
+For a general $m\times n$ matrix $A$, the system $A\vect x=\vect b$ may have
+\[
+\text{no solution},\qquad \text{one solution},\qquad\text{or infinitely many solutions}.
+\]
+\pause
+If $A$ is square and invertible, every $A\vect x=\vect b$ has exactly one solution:
+\[
+\vect x=A^{-1}\vect b.
+\]
+\pause
+The homogeneous system $A\vect x=\vect0$ always has the trivial solution. It has either only that solution or infinitely many solutions.
+\end{frame}
+
+\begin{frame}{Example: The Inverse-Matrix Algorithm}
+Solve
+\[
+\begin{cases}
+x_1+2x_2-x_3=-5,\\
+2x_1-x_2+x_3=6,\\
+x_1-x_2-3x_3=-3.
+\end{cases}
+\]
+\pause
+We will write the system as $A\vect x=\vect b$ and compute $\vect x=A^{-1}\vect b$.
+\end{frame}
+
+\begin{frame}{Example: Matrix Form}
+\[
+A=\begin{bmatrix}
+1&2&-1\\2&-1&1\\1&-1&-3
+\end{bmatrix},\qquad
+\vect x=\begin{bmatrix}x_1\\x_2\\x_3\end{bmatrix},\qquad
+\vect b=\begin{bmatrix}-5\\6\\-3\end{bmatrix}.
+\]
+The inverse, found by row reduction, is
+\[
+A^{-1}=\frac1{19}
+\begin{bmatrix}
+4&7&1\\7&-2&-3\\-1&3&-5
+\end{bmatrix}.
+\]
+\end{frame}
+
+\begin{frame}{Example: Solution}
+\[
+\vect x=A^{-1}\vect b
+=\frac1{19}
+\begin{bmatrix}
+4&7&1\\7&-2&-3\\-1&3&-5
+\end{bmatrix}
+\begin{bmatrix}-5\\6\\-3\end{bmatrix}
+\]
+\pause
+\[
+=\frac1{19}\begin{bmatrix}19\\-38\\38\end{bmatrix}
+=\begin{bmatrix}1\\-2\\2\end{bmatrix}.
+\]
+Thus $x_1=1$, $x_2=-2$, and $x_3=2$.
+\end{frame}
+
+\begin{frame}{General Matrix Equations $AX=B$}
+Suppose $A$ is $n\times n$ and $X,B$ are $n\times s$. If $A$ is invertible,
+\[
+A^{-1}AX=A^{-1}B
+\quad\Longrightarrow\quad
+\boxed{X=A^{-1}B}.
+\]
+\begin{block}{Conditions for the inverse-matrix algorithm}
+\begin{enumerate}
+  \item The coefficient matrix $A$ is square.
+  \item The coefficient matrix $A$ is invertible.
+\end{enumerate}
+\end{block}
+\end{frame}
+
+\begin{frame}[shrink=8]{Three Common Matrix Equations}
+% \begin{columns}[T]
+% \column{.28\textwidth}\centering
+\begin{itemize}
+  \item $AX=B$ \pause $\sim X=A^{-1}B$\pause
+  \item $XA=B$ \pause $\sim X=BA^{-1}$\pause
+  \item $AXB=C$ \pause $\sim X=A^{-1}CB^{-1}$
+\end{itemize}
+% \[AX=B,\qquad X=A^{-1}B\]\\
+% \column{.28\textwidth}\centering
+% \[XA=B,\qquad X=BA^{-1}\]\\
+% \column{.40\textwidth}\centering
+% \[AXB=C,\qquad X=A^{-1}CB^{-1}\]\\
+% \end{columns}
+% \pause
+% For example, solve $AX=B$ with
+% \[
+% A=\begin{bmatrix}0&-1&1\\1&0&0\\1&0&2\end{bmatrix},\qquad
+% B=\begin{bmatrix}0&-1\\2&-5\\0&1\end{bmatrix}.
+% \]
+% Since
+% \[
+% A^{-1}=\begin{bmatrix}0&1&0\\-1&-\frac12&\frac12\\0&-\frac12&\frac12\end{bmatrix},
+% \quad
+% X=A^{-1}B=\begin{bmatrix}2&-5\\-1&4\\-1&3\end{bmatrix}.
+% \]
+\end{frame}
+
+\begin{frame}[shrink=8]{Exercises: Matrix Equations I}
+\textbf{1.} Solve $XA=B$ for
+\[
+A=\begin{bmatrix}1&0&-2\\2&4&-1\\0&1&1\end{bmatrix},\qquad
+B=\begin{bmatrix}1&0&2\\2&4&3\end{bmatrix}.
+\]
+\pause
+\[
+A^{-1}=\begin{bmatrix}5&-2&8\\-2&1&-3\\2&-1&4\end{bmatrix},
+\quad X=BA^{-1}=\begin{bmatrix}9&-4&16\\8&-3&16\end{bmatrix}.
+\]
+\pause
+\textbf{2.} Solve
+\[
+\begin{bmatrix}1&4\\0&1\end{bmatrix}X
+\begin{bmatrix}1&0\\3&1\end{bmatrix}
+=\begin{bmatrix}-1&1\\1&0\end{bmatrix}.
+\]
+Multiplying by the two inverses gives $X=\begin{bmatrix}-8&1\\1&0\end{bmatrix}$.
+\end{frame}
+
+\begin{frame}{Exercise: Collect the $X$ Terms}
+\textbf{3.} Solve $AX=A+2X$ for
+\[
+A=\begin{bmatrix}4&0&0\\0&1&0\\0&0&1\end{bmatrix}.
+\]
+\pause
+\[(A-2I)X=A,\qquad X=(A-2I)^{-1}A.\]
+\end{frame}
+
+\begin{frame}{Exercise: Multiply on the Correct Side}
+\textbf{4.} Solve $A^2-XA-I=0$, where
+\[
+A=\begin{bmatrix}1&0&3\\2&1&1\\-1&0&1\end{bmatrix}.
+\]
+\pause
+\[
+X=(A^2-I)A^{-1}=A-A^{-1}
+=\begin{bmatrix}.75&0&3.75\\2.75&0&-.25\\-1.25&0&.75\end{bmatrix}.
+\]
+\end{frame}
+
+\begin{frame}{Exercise: Isolating an Unknown Matrix}
+Suppose $A,B,C$ are invertible $n\times n$ matrices and $A=B(D-I_n)C$. Solve $D$.
+\pause
+Multiplying on the left by $B^{-1}$ and on the right by $C^{-1}$ gives
+\[
+B^{-1}AC^{-1}=D-I_n.
+\]
+Therefore
+\[
+\boxed{D=B^{-1}AC^{-1}+I_n}.
+\]
+The order of the factors must be preserved.
+\end{frame}
+
+\begin{frame}[shrink=7]{Exercise: A Matrix Equation with a Transpose}
+Let
+\[
+ABA^T=2BA^T+I,\qquad
+A=\begin{bmatrix}1&0&0\\0&1&2\\0&0&1\end{bmatrix}.
+\]. Solve B.
+\pause
+Since $2BA^T=2IBA^T$,
+\[
+(A-2I)BA^T=I,
+\quad B=(A-2I)^{-1}(A^T)^{-1}=\bigl[A^T(A-2I)\bigr]^{-1}.
+\]
+\pause
+\[
+A^T(A-2I)=\begin{bmatrix}-1&0&0\\0&-1&2\\0&-2&3\end{bmatrix},
+\quad
+\boxed{B=\begin{bmatrix}-1&0&0\\0&3&-2\\0&2&-1\end{bmatrix}}.
+\]
+\end{frame}
