@@ -1,0 +1,402 @@
+% Reference deck: Chapter 3, Section 3.2.
+\section[Properties]{Properties of Determinants}
+\sectioncard{3.2}{Properties of Determinants}
+
+\begin{frame}{Determinants and Elimination}
+Cofactor expansion becomes expensive as the matrix grows.
+\pause
+
+Gaussian elimination can create a triangular matrix quickly, but row operations may change the determinant.
+\medskip
+
+The central question is therefore:
+\[
+\boxed{\text{How does each elementary row operation change }\det A?}
+\]
+\end{frame}
+
+\begin{frame}{Three Row Operations}
+Let $B$ be obtained from a square matrix $A$ by one row operation.
+\theorembox{Theorem 3}{The determinant changes according to the operation:}
+\renewcommand{\arraystretch}{1.35}
+\begin{center}
+\begin{tabular}{>{\raggedright\arraybackslash}p{.48\linewidth}c}
+\toprule
+Operation from $A$ to $B$ & Relationship \\
+\midrule
+$R_i\leftarrow R_i+cR_j$, $i\ne j$ & $\det B=\det A$ \\
+$R_i\leftrightarrow R_j$ & $\det B=-\det A$ \\
+$R_i\leftarrow kR_i$ & $\det B=k\det A$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{frame}
+
+\begin{frame}{Row Replacement Preserves the Determinant}
+Let
+\[
+A=\begin{bmatrix}1&2\\3&4\end{bmatrix},
+\qquad \det A=-2.
+\]
+Apply $R_2\leftarrow R_2-3R_1$:
+\[
+B=\begin{bmatrix}1&2\\0&-2\end{bmatrix},
+\qquad \det B=-2.
+\]
+\pause
+Row replacement is the workhorse for determinant computation because it creates zeros without changing the determinant.
+\end{frame}
+
+\begin{frame}{A Row Interchange Reverses the Sign}
+Interchange the two rows:
+\[
+A=\begin{bmatrix}1&2\\3&4\end{bmatrix}
+\quad\longrightarrow\quad
+B=\begin{bmatrix}3&4\\1&2\end{bmatrix}.
+\]
+Then
+\[
+\det A=-2,
+\qquad
+\det B=2=-\det A.
+\]
+\pause
+After $r$ row interchanges, the accumulated factor is
+\[
+(-1)^r.
+\]
+\end{frame}
+
+\begin{frame}{Equal Rows Force a Zero Determinant}
+Suppose $A$ has two equal rows. Interchanging those rows leaves the matrix unchanged.
+\pause
+
+The interchange rule also says the determinant changes sign:
+\[
+\det A=-\det A.
+\]
+Therefore
+\[
+2\det A=0
+\qquad\Longrightarrow\qquad
+\boxed{\det A=0}.
+\]
+\end{frame}
+
+\begin{frame}{Scaling One Row Scales the Determinant}
+Let
+\[
+A=\begin{bmatrix}1&2\\3&4\end{bmatrix},
+\qquad \det A=-2.
+\]
+Apply $R_1\leftarrow5R_1$:
+\[
+B=\begin{bmatrix}5&10\\3&4\end{bmatrix}.
+\]
+Then
+\[
+\det B=5(4)-10(3)=-10=5\det A.
+\]
+\pause
+Factoring $k$ out of one row divides the visible row by $k$ and places a factor $k$ outside the determinant.
+\end{frame}
+
+\begin{frame}{Two Immediate Zero Tests}
+\begin{block}{A zero row}
+Scaling a zero row by any $k\ne1$ leaves the matrix unchanged, so
+\[
+\det A=k\det A.
+\]
+Hence $\det A=0$.
+\end{block}
+\pause
+\begin{block}{One row is a multiple of another}
+Use a row replacement to turn that row into a zero row. Row replacement preserves the determinant, so again $\det A=0$.
+\end{block}
+\end{frame}
+
+\begin{frame}{Determinant by Row Reduction}
+Reduce $A$ to an upper triangular matrix $U$.
+\pause
+Then
+\[
+\det U=u_{11}u_{22}\cdots u_{nn}.
+\]
+To recover $\det A$, keep a ledger:
+\begin{itemize}
+  \item row replacements contribute no factor;
+  \item each row interchange contributes $-1$;
+  \item each row scaling by $k$ contributes $k$ from the old determinant to the new one.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Elimination Example: Setup}
+Compute
+\[
+\det A,
+\qquad
+A=\begin{bmatrix}
+1&4&2\\
+2&8&9\\
+1&7&0
+\end{bmatrix}.
+\]
+Use row replacements:
+\[
+R_2\leftarrow R_2-2R_1,
+\qquad
+R_3\leftarrow R_3-R_1.
+\]
+\pause
+Because both operations are replacements, the determinant does not change.
+\end{frame}
+
+\begin{frame}{Elimination Example: Finish}
+The replacements give
+\[
+\det A=
+\begin{vmatrix}
+1&4&2\\
+0&0&5\\
+0&3&-2
+\end{vmatrix}.
+\]
+Interchange rows $2$ and $3$:
+\[
+U=\begin{bmatrix}
+1&4&2\\
+0&3&-2\\
+0&0&5
+\end{bmatrix},
+\qquad
+\det U=1(3)(5)=15.
+\]
+\pause
+One interchange gives
+\[
+\boxed{\det A=-\det U=-15}.
+\]
+\end{frame}
+
+\begin{frame}{Elimination Without Swaps or Scaling}
+Let
+\[
+B=\begin{bmatrix}
+2&1&0\\
+4&3&1\\
+-2&2&5
+\end{bmatrix}.
+\]
+Use only row replacements:
+\[
+\begin{aligned}
+R_2&\leftarrow R_2-2R_1,\\
+R_3&\leftarrow R_3+R_1,\\
+R_3&\leftarrow R_3-3R_2.
+\end{aligned}
+\]
+\pause
+This produces
+\[
+U=\begin{bmatrix}2&1&0\\0&1&1\\0&0&2\end{bmatrix},
+\qquad
+\boxed{\det B=2(1)(2)=4}.
+\]
+\end{frame}
+
+\begin{frame}{Avoid Scaling When Possible}
+Standard reduced row echelon form encourages us to scale every pivot to $1$.
+For determinants, this creates extra bookkeeping.
+\pause
+
+Instead, stop at any convenient echelon form:
+\[
+\begin{bmatrix}
+p_1&*&\cdots&*\\
+0&p_2&\cdots&*\\
+\vdots&\ddots&\ddots&\vdots\\
+0&\cdots&0&p_n
+\end{bmatrix}.
+\]
+\pause
+If only row replacements and $r$ interchanges were used, then
+\[
+\boxed{\det A=(-1)^r p_1p_2\cdots p_n}.
+\]
+\end{frame}
+
+\begin{frame}{Combining Elimination and Cofactor Expansion}
+For
+\[
+A=\begin{bmatrix}
+0&1&2&-1\\
+2&5&7&3\\
+0&3&6&2\\
+2&5&4&-2
+\end{bmatrix},
+\]
+first use $R_4\leftarrow R_4-R_2$ to create
+\[
+\begin{bmatrix}
+0&1&2&-1\\
+2&5&7&3\\
+0&3&6&2\\
+0&0&-3&-5
+\end{bmatrix}.
+\]
+\pause
+Now the first column has a single nonzero entry, so a cofactor expansion reduces the problem to a $3\times3$ determinant.
+\end{frame}
+
+\begin{frame}{Column Operations}
+Column operations have the same effects as the corresponding row operations:
+\begin{itemize}
+  \item adding a multiple of one column to another preserves the determinant;
+  \item interchanging two columns reverses the sign;
+  \item multiplying one column by $k$ multiplies the determinant by $k$.
+\end{itemize}
+\pause
+This follows from the transpose property:
+\[
+\boxed{\det(A^T)=\det A}.
+\]
+A column operation on $A$ is the corresponding row operation on $A^T$.
+\end{frame}
+
+\begin{frame}{Transpose Property: Example}
+Let
+\[
+A=\begin{bmatrix}1&2&0\\3&4&5\\0&6&7\end{bmatrix},
+\qquad
+A^T=\begin{bmatrix}1&3&0\\2&4&6\\0&5&7\end{bmatrix}.
+\]
+Expanding $A$ down its first column and $A^T$ across its first row gives the same cofactors and the same value:
+\[
+\det A=\det A^T.
+\]
+\pause
+Rows and columns therefore play symmetric roles in determinant calculations.
+\end{frame}
+
+\begin{frame}{Multiplicative Property}
+\theorembox{Theorem 6}{If $A$ and $B$ are $n\times n$ matrices, then}
+\[
+\boxed{\det(AB)=(\det A)(\det B)}.
+\]
+\pause
+For
+\[
+A=\begin{bmatrix}2&1\\3&2\end{bmatrix},
+\qquad
+B=\begin{bmatrix}4&3\\1&2\end{bmatrix},
+\]
+we have $\det A=1$, $\det B=5$, and
+\[
+AB=\begin{bmatrix}9&8\\14&13\end{bmatrix},
+\qquad
+\det(AB)=117-112=5.
+\]
+\end{frame}
+
+\begin{frame}{Consequences of Multiplicativity}
+For square matrices of the same order,
+\[
+\det(A_1A_2\cdots A_m)
+=\det A_1\det A_2\cdots\det A_m.
+\]
+In particular,
+\[
+\det(A^k)=(\det A)^k
+\qquad(k=1,2,\ldots).
+\]
+\pause
+Also, because multiplying the entire $n\times n$ matrix by $c$ scales each of its $n$ rows,
+\[
+\boxed{\det(cA)=c^n\det A}.
+\]
+\end{frame}
+
+\begin{frame}{The Determinant Is Not Additive}
+\begin{alertblock}{Common misconception}
+In general,
+\[
+\det(A+B)\ne\det A+\det B.
+\]
+\end{alertblock}
+\pause
+For $A=B=I_2$,
+\[
+\det(A+B)=\det(2I_2)=4,
+\]
+while
+\[
+\det A+\det B=1+1=2.
+\]
+\end{frame}
+
+\begin{frame}{Linearity in One Row or Column}
+The determinant is linear in one row when all other rows stay fixed.
+For example,
+\[
+\det\begin{bmatrix}
+\vect u+\vect v\\
+\vect r_2\\
+\vdots\\
+\vect r_n
+\end{bmatrix}
+=
+\det\begin{bmatrix}
+\vect u\\
+\vect r_2\\
+\vdots\\
+\vect r_n
+\end{bmatrix}
++
+\det\begin{bmatrix}
+\vect v\\
+\vect r_2\\
+\vdots\\
+\vect r_n
+\end{bmatrix}.
+\]
+\pause
+The same statement holds for one column. It does not imply additivity in the entire matrix.
+\end{frame}
+
+\begin{frame}{Practice: Track the Operations}
+Suppose $A$ is reduced to an upper triangular matrix $U$ by
+\begin{enumerate}
+  \item two row replacements;
+  \item one row interchange;
+  \item multiplying one row by $3$.
+\end{enumerate}
+If $\det U=-18$, find $\det A$.
+\pause
+
+The net relationship is
+\[
+\det U=(-1)(3)\det A.
+\]
+Therefore
+\[
+\boxed{\det A=6}.
+\]
+\end{frame}
+
+\begin{frame}{Practice: Use Structure First}
+Without expanding, evaluate
+\[
+\det\begin{bmatrix}
+1&2&3&4\\
+0&5&6&7\\
+0&0&-2&8\\
+0&0&0&3
+\end{bmatrix}.
+\]
+\pause
+The matrix is upper triangular, so
+\[
+\boxed{\det A=1(5)(-2)(3)=-30}.
+\]
+\end{frame}
+

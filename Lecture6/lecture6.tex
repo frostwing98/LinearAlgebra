@@ -1,13 +1,13 @@
-% Lecture 5: matrix equations, invertibility, block matrices, and LU.
+% Lecture 6: determinants, Sections 3.1 and 3.2.
+% The source outline is Lecture6/04.ppt. Applications are reserved for Lecture 7.
 % Full build from the repository root:
-%   pdflatex -interaction=nonstopmode -halt-on-error Lecture5/lecture5.tex
-% Partial build, for example Section 2.4 only:
-%   pdflatex "\def\lecturepart{2-4}\input{Lecture5/lecture5.tex}"
+%   pdflatex -interaction=nonstopmode -halt-on-error Lecture6/lecture6.tex
+% Partial build, for example Section 3.2 only:
+%   pdflatex "\def\lecturepart{3-2}\input{Lecture6/lecture6.tex}"
 \pdfminorversion=7
 \documentclass[aspectratio=169]{beamer}
 
 \usepackage{graphicx}
-
 \usepackage{amsmath,amssymb,mathtools}
 \usepackage{xspace}
 \usepackage{tikz}
@@ -30,7 +30,7 @@
 \usetikzlibrary{arrows.meta,calc,fit,matrix,positioning,shapes.geometric}
 
 \makeatletter
-\def\input@path{{../}{Lecture5/}}
+\def\input@path{{../}{Lecture6/}}
 \makeatother
 
 \setbeamercolor{headline}{fg=black,bg=black}
@@ -55,7 +55,6 @@
 \definecolor{theorembg}{RGB}{245,245,255}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\vect}[1]{\mathbf{#1}}
-\newcommand{\rank}{\operatorname{rank}}
 \newcommand{\sourcepage}[1]{}
 \newcommand{\sectioncard}[2]{%
   \begin{frame}[plain]
@@ -68,18 +67,17 @@
     \textbf{#1}\par #2
   \end{beamercolorbox}}
 
-% Select one part on the command line with \def\lecturepart{2-4}.
-% Supported values: all, overview, 2-2, 2-3, 2-4, 2-5, summary.
+% Select one part on the command line with \def\lecturepart{3-1}.
+% Supported values: all, overview, additions, 3-1, 3-2, summary.
 \providecommand{\lecturepart}{all}
 \newcommand{\loadlecturepart}[2]{%
   \ifdefstring{\lecturepart}{all}{\input{#2}}{%
     \ifdefstring{\lecturepart}{#1}{\input{#2}}{}}}
 
 \begin{document}
-\loadlecturepart{overview}{Lecture5/00-overview.tex}
-\loadlecturepart{2-2}{Lecture5/2-2-matrix-equations.tex}
-\loadlecturepart{2-3}{Lecture5/2-3-invertible-matrices.tex}
-\loadlecturepart{2-4}{Lecture5/2-4-partitioned-matrices.tex}
-\loadlecturepart{2-5}{Lecture5/2-5-matrix-factorizations.tex}
-\loadlecturepart{summary}{Lecture5/99-summary.tex}
+\loadlecturepart{overview}{Lecture6/00-overview.tex}
+\loadlecturepart{additions}{Lecture6/01-additional-details.tex}
+\loadlecturepart{3-1}{Lecture6/3-1-introduction-to-determinants.tex}
+\loadlecturepart{3-2}{Lecture6/3-2-properties-of-determinants.tex}
+\loadlecturepart{summary}{Lecture6/99-summary.tex}
 \end{document}

@@ -1,0 +1,219 @@
+% Candidate teaching additions drawn from 04-lec.pdf.
+% This block appears before the existing Section 3.1 slides so it can be
+% reviewed as a unit. It may later be distributed among Sections 3.1 and 3.2.
+\section[Review additions]{Additional Details for Review}
+\sectioncard{Review}{Additional Details}
+
+\begin{frame}{Forming a Minor}
+To form $A_{32}$, delete row $3$ and column $2$.
+\[
+A=\begin{bmatrix}
+1&\textcolor{lectureblue}{2}&5&0\\
+2&\textcolor{lectureblue}{0}&4&1\\
+\textcolor{red}{3}&\textcolor{red}{1}&\textcolor{red}{0}&\textcolor{red}{7}\\
+0&\textcolor{lectureblue}{4}&2&0
+\end{bmatrix}
+\qquad\Longrightarrow\qquad
+A_{32}=\begin{bmatrix}
+1&5&0\\
+2&4&1\\
+0&2&0
+\end{bmatrix}.
+\]
+\begin{center}
+\textcolor{red}{Red entries belong to row $3$.}
+\qquad
+\textcolor{lectureblue}{Blue entries belong to column $2$.}
+\end{center}
+\pause
+Everything that remains keeps its original order.
+\end{frame}
+
+\begin{frame}{From a Minor to a Cofactor}
+Continue with the same position, $(3,2)$.
+\begin{enumerate}
+  \item The minor is
+  \[
+  M_{32}=\det A_{32}
+  =\begin{vmatrix}1&5&0\\2&4&1\\0&2&0\end{vmatrix}=-2.
+  \]
+  \pause
+  \item The checkerboard sign at $(3,2)$ is negative:
+  \[
+  C_{32}=(-1)^{3+2}M_{32}=-(-2)=2.
+  \]
+  \pause
+  \item Since $a_{32}=1$, this entry contributes
+  \[
+  a_{32}C_{32}=1(2)=2
+  \]
+  to an expansion across row $3$ or down column $2$.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Choosing a Computation Method}
+\small
+\renewcommand{\arraystretch}{1.35}
+\begin{center}
+\begin{tabular}{>{\raggedright\arraybackslash}p{.40\linewidth}>{\raggedright\arraybackslash}p{.48\linewidth}}
+\toprule
+Matrix structure & Efficient method \\
+\midrule
+$2\times2$ & Use $ad-bc$ \\
+One row or column has many zeros & Use cofactor expansion there \\
+Triangular & Multiply the diagonal entries \\
+Large and dense & Use elimination and track determinant changes \\
+\bottomrule
+\end{tabular}
+\end{center}
+\pause
+A direct cofactor calculation grows roughly like $n!$, while elimination takes about
+\[
+\frac{2n^3}{3}
+\]
+arithmetic operations. For $n=25$, these scales are approximately $1.55\times10^{25}$ and $10{,}417$.
+\end{frame}
+
+\begin{frame}{Operation Ledger: Reduction}
+\small
+Compute the determinant of
+\[
+A=\begin{bmatrix}
+0&2&1\\
+1&1&0\\
+2&5&3
+\end{bmatrix}.
+\]
+Use the following operations:
+\[
+\begin{aligned}
+R_1&\leftrightarrow R_2,\\
+R_3&\leftarrow R_3-2R_1,\\
+R_2&\leftarrow \tfrac12 R_2,\\
+R_3&\leftarrow R_3-3R_2.
+\end{aligned}
+\]
+\pause
+The resulting triangular matrix is
+\[
+U=\begin{bmatrix}
+1&1&0\\
+0&1&\tfrac12\\
+0&0&\tfrac32
+\end{bmatrix}.
+\]
+\end{frame}
+
+\begin{frame}{Operation Ledger: Recovering $\det A$}
+\small
+\renewcommand{\arraystretch}{1.35}
+\begin{center}
+\begin{tabular}{lc}
+\toprule
+Operation & Effect on the current determinant \\
+\midrule
+One row interchange & multiply by $-1$ \\
+Two row replacements & multiply by $1$ \\
+$R_2\leftarrow\tfrac12R_2$ & multiply by $\tfrac12$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+Therefore
+\[
+\det U=(-1)\left(\frac12\right)\det A.
+\]
+\pause
+Since
+\[
+\det U=1(1)\left(\frac32\right)=\frac32,
+\]
+we obtain
+\[
+\boxed{\det A=-2\det U=-3}.
+\]
+\end{frame}
+
+\begin{frame}{Combining Elimination and Cofactor Expansion}
+Let
+\[
+A=\begin{bmatrix}
+0&1&2&-1\\
+2&5&7&3\\
+0&3&6&2\\
+2&5&4&-2
+\end{bmatrix}.
+\]
+Apply the row replacement $R_4\leftarrow R_4-R_2$:
+\[
+\det A=
+\begin{vmatrix}
+0&1&2&-1\\
+2&5&7&3\\
+0&3&6&2\\
+0&0&-3&-5
+\end{vmatrix}.
+\]
+\pause
+Now the first column contains a single nonzero entry.
+\end{frame}
+
+\begin{frame}{Combining Methods: Finish}
+Expand down the first column:
+\[
+\det A
+=2(-1)^{2+1}
+\begin{vmatrix}
+1&2&-1\\
+3&6&2\\
+0&-3&-5
+\end{vmatrix}.
+\]
+\pause
+The $3\times3$ determinant is
+\begin{align*}
+&1[-30+6]-2[-15-0]+(-1)[-9-0]\\
+&=-24+30+9=15.
+\end{align*}
+Therefore
+\[
+\boxed{\det A=-2(15)=-30}.
+\]
+The row replacement created the zero pattern, and the cofactor expansion used it.
+\end{frame}
+
+\begin{frame}{Linearity in One Row}
+Hold every row except one fixed. In that one row, the determinant satisfies both linearity rules:
+\[
+D(\ldots,c\vect u,\ldots)=cD(\ldots,\vect u,\ldots),
+\]
+\[
+D(\ldots,\vect u+\vect v,\ldots)
+=D(\ldots,\vect u,\ldots)+D(\ldots,\vect v,\ldots).
+\]
+\pause
+The same rules hold when one column varies and all other columns remain fixed.
+\medskip
+
+\begin{alertblock}{Keep the other rows or columns fixed}
+These rules do not imply $\det(A+B)=\det A+\det B$ when every row changes at once.
+\end{alertblock}
+\end{frame}
+
+\begin{frame}{Concept Check}
+Let $A$ be a $3\times3$ matrix with $\det A=5$.
+\begin{enumerate}
+  \item One row of $A$ is multiplied by $2$. What is the new determinant?
+  \item The entire matrix is multiplied by $2$. What is $\det(2A)$?
+  \item Three row interchanges are performed. What is the new determinant?
+\end{enumerate}
+\pause
+\[
+\boxed{10},
+\qquad
+\boxed{2^3(5)=40},
+\qquad
+\boxed{(-1)^3(5)=-5}.
+\]
+\pause
+Scaling one row and scaling the whole matrix are different operations.
+\end{frame}

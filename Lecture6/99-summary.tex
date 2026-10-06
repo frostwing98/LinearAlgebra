@@ -1,0 +1,44 @@
+\section[Summary]{Summary}
+
+\begin{frame}{Determinant Computation}
+\begin{enumerate}
+  \item Use $ad-bc$ for a $2\times2$ determinant.
+  \item For cofactor expansion, choose a row or column containing many zeros.
+  \item For a triangular matrix, multiply the diagonal entries.
+  \item For a larger dense matrix, use elimination and track swaps and scalings.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Core Properties}
+\[
+\begin{array}{rcl}
+R_i\leftarrow R_i+cR_j &:& \det\text{ unchanged},\\[.5ex]
+R_i\leftrightarrow R_j &:& \det\text{ changes sign},\\[.5ex]
+R_i\leftarrow kR_i &:& \det\text{ multiplied by }k,\\[.5ex]
+\det(A^T)&=&\det A,\\[.5ex]
+\det(AB)&=&(\det A)(\det B),\\[.5ex]
+\det(cA)&=&c^n\det A.
+\end{array}
+\]
+\end{frame}
+
+\begin{frame}{Exit Check}
+Let
+\[
+A=\begin{bmatrix}
+2&1&0\\
+4&3&1\\
+0&5&2
+\end{bmatrix}.
+\]
+\begin{enumerate}
+  \item Which method would you choose to compute $\det A$?
+  \item Which row operations would preserve the determinant?
+  \item If two rows became equal, what could you conclude immediately?
+\end{enumerate}
+\pause
+\begin{block}{Next lecture}
+We will use determinants to study invertibility, linear systems, Cramer's rule, and geometric scaling.
+\end{block}
+\end{frame}
+

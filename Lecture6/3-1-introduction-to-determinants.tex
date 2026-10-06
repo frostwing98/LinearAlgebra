@@ -1,0 +1,331 @@
+% Reference deck: Chapter 3, Section 3.1.
+\section[Introduction]{Introduction to Determinants}
+\sectioncard{3.1}{Introduction to Determinants}
+
+\begin{frame}{A Scalar Attached to a Square Matrix}
+For a square matrix $A$, its \textbf{determinant} is a scalar written
+\[
+\det A
+\qquad\text{or}\qquad
+|A|.
+\]
+\pause
+The determinant is defined only for square matrices.
+\medskip
+
+\begin{alertblock}{Notation warning}
+The symbols
+\[
+\begin{vmatrix}a&b\\c&d\end{vmatrix}
+\quad\text{and}\quad
+\begin{bmatrix}a&b\\c&d\end{bmatrix}
+\]
+represent different objects: the first is a number, while the second is a matrix.
+\end{alertblock}
+\end{frame}
+
+\begin{frame}{Determinants of Orders One and Two}
+For a $1\times1$ matrix,
+\[
+\det\begin{bmatrix}a\end{bmatrix}=a.
+\]
+\pause
+For a $2\times2$ matrix,
+\[
+\det\begin{bmatrix}a&b\\c&d\end{bmatrix}
+=ad-bc.
+\]
+\pause
+The two products follow the two diagonals:
+\[
+\underbrace{ad}_{\text{main diagonal}}
+-
+\underbrace{bc}_{\text{other diagonal}}.
+\]
+\end{frame}
+
+\begin{frame}{A $2\times2$ Example}
+Let
+\[
+A=\begin{bmatrix}4&7\\2&6\end{bmatrix}.
+\]
+Then
+\[
+\det A
+=\begin{vmatrix}4&7\\2&6\end{vmatrix}
+=4(6)-7(2)
+=10.
+\]
+\pause
+For a $2\times2$ matrix, the inverse formula already shows why the determinant matters:
+\[
+A^{-1}=\frac{1}{\det A}\begin{bmatrix}6&-7\\-2&4\end{bmatrix}.
+\]
+The general connection with invertibility will be developed in the next lecture.
+\end{frame}
+
+\begin{frame}{From $2\times2$ to Larger Matrices}
+The $2\times2$ diagonal formula does not directly tell us how to handle an $n\times n$ matrix.
+\pause
+
+The scalable idea is to reduce the size of the problem:
+\[
+n\times n
+\quad\longrightarrow\quad
+(n-1)\times(n-1)
+\quad\longrightarrow\quad\cdots\quad\longrightarrow\quad
+2\times2.
+\]
+\pause
+To do this, we delete one row and one column at a time.
+\end{frame}
+
+\begin{frame}{Submatrices and Minors}
+Let $A=[a_{ij}]$ be an $n\times n$ matrix. The submatrix $A_{ij}$ is obtained by deleting row $i$ and column $j$.
+\medskip
+
+For
+\[
+A=\begin{bmatrix}
+1&2&5&0\\
+2&0&4&1\\
+3&1&0&7\\
+0&4&2&0
+\end{bmatrix},
+\]
+deleting row $3$ and column $2$ gives
+\[
+A_{32}=\begin{bmatrix}1&5&0\\2&4&1\\0&2&0\end{bmatrix}.
+\]
+\pause
+The \textbf{$(i,j)$-minor} is
+\[
+M_{ij}=\det A_{ij}.
+\]
+\end{frame}
+
+\begin{frame}{Cofactors and the Sign Pattern}
+The \textbf{$(i,j)$-cofactor} is
+\[
+C_{ij}=(-1)^{i+j}M_{ij}=(-1)^{i+j}\det A_{ij}.
+\]
+\pause
+The signs form a checkerboard pattern:
+\[
+\begin{bmatrix}
++&-&+&- &\cdots\\
+-&+&-&+ &\cdots\\
++&-&+&- &\cdots\\
+-&+&-&+ &\cdots\\
+\vdots&\vdots&\vdots&\vdots&\ddots
+\end{bmatrix}.
+\]
+\pause
+The sign belongs to the \emph{position} $(i,j)$, independent of the sign of $a_{ij}$.
+\end{frame}
+
+\begin{frame}{Recursive Definition of the Determinant}
+For $n\ge2$, define the determinant by expanding across the first row:
+\[
+\det A
+=a_{11}C_{11}+a_{12}C_{12}+\cdots+a_{1n}C_{1n}.
+\]
+Equivalently,
+\[
+\boxed{\det A=\sum_{j=1}^{n}(-1)^{1+j}a_{1j}\det A_{1j}}.
+\]
+\pause
+For a $3\times3$ matrix,
+\[
+\det A=a_{11}\det A_{11}-a_{12}\det A_{12}+a_{13}\det A_{13}.
+\]
+\end{frame}
+
+\begin{frame}{First-Row Expansion: Example}
+Let
+\[
+A=\begin{bmatrix}1&5&0\\2&4&1\\0&2&0\end{bmatrix}.
+\]
+Expanding across the first row gives
+\begin{align*}
+\det A
+&=1\begin{vmatrix}4&1\\2&0\end{vmatrix}
+-5\begin{vmatrix}2&1\\0&0\end{vmatrix}
++0\begin{vmatrix}2&4\\0&2\end{vmatrix}\\
+&=1(0-2)-5(0-0)+0(4-0)\\
+&=-2.
+\end{align*}
+\end{frame}
+
+\begin{frame}{Cofactor Expansion Along Any Row or Column}
+\theorembox{Theorem 1}{The determinant of an $n\times n$ matrix may be computed by a cofactor expansion across any row or down any column.}
+\medskip
+
+Across row $i$:
+\[
+\det A=\sum_{j=1}^{n}a_{ij}C_{ij}.
+\]
+Down column $j$:
+\[
+\det A=\sum_{i=1}^{n}a_{ij}C_{ij}.
+\]
+\pause
+Every choice gives the same determinant. The amount of arithmetic may be very different.
+\end{frame}
+
+\begin{frame}{Choose the Row or Column with Zeros}
+For
+\[
+A=\begin{bmatrix}1&5&0\\2&4&1\\0&2&0\end{bmatrix},
+\]
+the third row contains two zeros. Expand there:
+\begin{align*}
+\det A
+&=0C_{31}+2C_{32}+0C_{33}\\
+&=2(-1)^{3+2}\begin{vmatrix}1&0\\2&1\end{vmatrix}\\
+&=-2.
+\end{align*}
+\pause
+Only one $2\times2$ determinant was needed.
+\end{frame}
+
+\begin{frame}{Column Expansion: Example}
+Let
+\[
+B=\begin{bmatrix}
+2&0&3\\
+1&0&4\\
+5&2&-1
+\end{bmatrix}.
+\]
+The second column has two zeros, so
+\begin{align*}
+\det B
+&=0C_{12}+0C_{22}+2C_{32}\\
+&=2(-1)^{3+2}\begin{vmatrix}2&3\\1&4\end{vmatrix}\\
+&=-2(8-3)=-10.
+\end{align*}
+\end{frame}
+
+\begin{frame}{A Sparse $4\times4$ Determinant}
+Compute
+\[
+\det A,
+\qquad
+A=\begin{bmatrix}
+0&2&0&0\\
+3&1&4&0\\
+0&5&2&0\\
+0&0&0&6
+\end{bmatrix}.
+\]
+\pause
+Expand down column $4$, then across row $1$ of the remaining matrix:
+\begin{align*}
+\det A
+&=6\begin{vmatrix}0&2&0\\3&1&4\\0&5&2\end{vmatrix}\\
+&=6\left[-2\begin{vmatrix}3&4\\0&2\end{vmatrix}\right]
+=6[-2(6)]=-72.
+\end{align*}
+\end{frame}
+
+\begin{frame}{Triangular Matrices}
+\theorembox{Theorem 2}{If $A$ is triangular, then its determinant is the product of its main diagonal entries.}
+\medskip
+
+For example,
+\[
+\det\begin{bmatrix}
+3&-1&4&2\\
+0&5&7&1\\
+0&0&-2&6\\
+0&0&0&4
+\end{bmatrix}
+=3(5)(-2)(4)=-120.
+\]
+\pause
+The same rule holds for lower triangular and diagonal matrices.
+\end{frame}
+
+\begin{frame}{Why the Triangular Rule Works}
+Expand a triangular determinant along a row or column with many zeros.
+For an upper triangular matrix,
+\[
+\det\begin{bmatrix}
+a_{11}&*&\cdots&*\\
+0&a_{22}&\cdots&*\\
+\vdots&\ddots&\ddots&\vdots\\
+0&\cdots&0&a_{nn}
+\end{bmatrix}
+=a_{11}\det\begin{bmatrix}
+a_{22}&\cdots&*\\
+\vdots&\ddots&\vdots\\
+0&\cdots&a_{nn}
+\end{bmatrix}.
+\]
+Repeating the expansion gives
+\[
+\det A=a_{11}a_{22}\cdots a_{nn}.
+\]
+\end{frame}
+
+\begin{frame}{A $3\times3$ Shortcut: Sarrus' Rule}
+For a $3\times3$ matrix only,
+\[
+\det\begin{bmatrix}a&b&c\\d&e&f\\g&h&i\end{bmatrix}
+=aei+bfg+cdh-ceg-bdi-afh.
+\]
+\pause
+For example,
+\begin{align*}
+\det\begin{bmatrix}1&2&3\\0&4&5\\1&0&6\end{bmatrix}
+&=1(4)(6)+2(5)(1)+3(0)(0)\\
+&\quad-3(4)(1)-2(0)(6)-1(5)(0)\\
+&=22.
+\end{align*}
+\end{frame}
+
+\begin{frame}{Shortcut Warning}
+\begin{alertblock}{Sarrus' rule stops at order three}
+The diagonal pattern for a $2\times2$ or $3\times3$ determinant does not generalize to $4\times4$ or larger matrices.
+\end{alertblock}
+\pause
+For larger matrices, use one of the reliable methods:
+\begin{itemize}
+  \item cofactor expansion;
+  \item the triangular rule when the matrix is already triangular;
+  \item row reduction while tracking determinant changes, developed in Section 3.2.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Practice: Choose Before You Compute}
+Which expansion is most efficient?
+\[
+A=\begin{bmatrix}
+2&0&5&0\\
+1&0&3&0\\
+4&7&2&6\\
+0&0&1&0
+\end{bmatrix}.
+\]
+\pause
+Column $4$ contains three zeros. Expanding there leaves a $3\times3$ determinant whose second column also contains two zeros.
+\pause
+\begin{block}{Strategy}
+Before calculating any minor, scan every row and column for zeros.
+\end{block}
+\end{frame}
+
+\begin{frame}{Practice: Cofactor Sign}
+Suppose an expansion uses the entry $a_{42}=-3$.
+What is the signed term contributed by this entry?
+\pause
+\[
+a_{42}C_{42}
+=(-3)(-1)^{4+2}\det A_{42}
+=-3\det A_{42}.
+\]
+\pause
+The position $(4,2)$ has a positive cofactor sign. The term is negative because the matrix entry itself is negative.
+\end{frame}
+
