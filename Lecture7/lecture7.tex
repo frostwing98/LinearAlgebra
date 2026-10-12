@@ -1,0 +1,921 @@
+% Lecture 7: determinant properties and applications, subspaces, dimension, and rank.
+% Sources: Lecture7/04.ppt (Sections 3.2--3.3) and Lecture7/05.pptx.
+% Build from the repository root after copying this file to Lecture7:
+%   pdflatex -interaction=nonstopmode -halt-on-error Lecture7/lecture7.tex
+\pdfminorversion=7
+\documentclass[aspectratio=169]{beamer}
+
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{xspace}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{pifont}
+\usepackage{etoolbox}
+\usepackage{arydshln}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[UTF8,heading=false]{ctex}
+\else
+  \usepackage{fontspec}
+  \usepackage{xeCJK}
+  \setCJKmainfont{Microsoft YaHei}
+\fi
+\usetikzlibrary{arrows.meta,calc,fit,matrix,positioning,shapes.geometric}
+
+\makeatletter
+\def\input@path{{../}{Lecture7/}}
+\makeatother
+
+\setbeamercolor{headline}{fg=black,bg=black}
+\setbeamercolor{section in head/foot}{bg=gray}
+\setbeamertemplate{headline}{%
+  \begin{beamercolorbox}[ht=2.25ex,dp=3.75ex]{section in head/foot}
+    \insertnavigation{\paperwidth}
+  \end{beamercolorbox}}
+
+\mode<presentation>{
+  \usetheme{OSUCSE169}
+  \setbeamercovered{transparent=28}
+}
+\setbeamertemplate{footline}[frame number]
+\setbeamertemplate{navigation symbols}{}
+\setbeamercovered{invisible}
+
+\definecolor{lecturegreen}{RGB}{48,105,21}
+\definecolor{lectureblue}{RGB}{0,76,170}
+\definecolor{lectureorange}{RGB}{202,105,0}
+\definecolor{lecturemagenta}{RGB}{210,0,135}
+\definecolor{theorembg}{RGB}{245,245,255}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\vect}[1]{\mathbf{#1}}
+\newcommand{\Col}{\operatorname{Col}}
+\newcommand{\Nul}{\operatorname{Nul}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\Span}{\operatorname{Span}}
+\newcommand{\sectioncard}[2]{%
+  \begin{frame}[plain]
+    \vfill\centering
+    {\Huge\color{lectureorange}\bfseries #1\\[1ex]#2}
+    \vfill
+  \end{frame}}
+\newcommand{\theorembox}[2]{%
+  \begin{beamercolorbox}[sep=1.2ex,wd=\linewidth]{block body}
+    \textbf{#1}\par #2
+  \end{beamercolorbox}}
+
+\begin{document}
+
+\begin{frame}[plain]
+  \vfill
+  {\Huge\color{lecturegreen}\bfseries Lecture 7}
+  \bigskip
+
+  {\LARGE\color{lecturegreen}\bfseries Determinant Applications, Subspaces, Dimension, and Rank}
+  \vfill
+\end{frame}
+
+\begin{frame}{Roadmap}
+  \begin{enumerate}
+    \item 3.2 Properties of Determinants
+    \item 3.3 Applications of Determinant Properties
+    \item 2.8 Subspaces of $\R^n$
+    \item 2.9 Dimension and Rank
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}{Learning Goals}
+  By the end of the lecture, you should be able to
+  \begin{itemize}
+    \item track determinant changes under row and column operations;
+    \item connect determinants with invertibility and linear systems;
+    \item apply Cramer's rule to small square systems;
+    \item recognize subspaces and find bases for column and null spaces;
+    \item compute coordinates, dimension, rank, and nullity.
+  \end{itemize}
+\end{frame}
+
+% -----------------------------------------------------------------------------
+\section[Determinant Properties]{Properties of Determinants}
+\sectioncard{3.2}{Properties of Determinants}
+
+\begin{frame}{Elementary Row Operations and Determinants}
+Let $B$ be obtained from a square matrix $A$ by one elementary row operation.
+\renewcommand{\arraystretch}{1.35}
+\begin{center}
+\begin{tabular}{>{\raggedright\arraybackslash}p{.47\linewidth}c}
+\toprule
+Operation from $A$ to $B$ & Effect on the determinant \\
+\midrule
+$R_i\leftrightarrow R_j$ & $\det B=-\det A$ \\
+$R_i\leftarrow kR_i$ & $\det B=k\det A$ \\
+$R_i\leftarrow R_i+cR_j$, $i\ne j$ & $\det B=\det A$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{frame}
+
+\begin{frame}{A Row Interchange Reverses the Sign}
+If two rows of $A$ are interchanged to produce $B$, then
+\[
+\boxed{\det B=-\det A}.
+\]
+For example,
+\[
+\begin{vmatrix}1&7&5\\6&6&2\\3&5&8\end{vmatrix}
+=-
+\begin{vmatrix}1&7&5\\3&5&8\\6&6&2\end{vmatrix}.
+\]
+\pause
+After $r$ row interchanges, the accumulated factor is $(-1)^r$.
+\end{frame}
+
+\begin{frame}{Equal Rows Force a Zero Determinant}
+Suppose $A$ has two equal rows. Interchanging them leaves $A$ unchanged, but the interchange rule gives
+\[
+\det A=-\det A.
+\]
+Therefore
+\[
+\boxed{\det A=0}.
+\]
+\pause
+The same argument applies when two columns are equal.
+\end{frame}
+
+\begin{frame}{Scaling One Row}
+If one row of $A$ is multiplied by $k$ to produce $B$, then
+\[
+\boxed{\det B=k\det A}.
+\]
+Only one row is scaled in this statement.
+\pause
+
+If every row of an $n\times n$ matrix is scaled by $k$, then
+\[
+\boxed{\det(kA)=k^n\det A}.
+\]
+In particular,
+\[
+\det(-A)=(-1)^n\det A.
+\]
+\end{frame}
+
+\begin{frame}{Two Immediate Zero Tests}
+\begin{block}{A zero row or column}
+If $A$ contains a zero row or zero column, then $\det A=0$.
+\end{block}
+\pause
+\begin{block}{A multiple row or column}
+If one row is a scalar multiple of another row, then $\det A=0$. The same statement holds for columns.
+\end{block}
+\pause
+For example,
+\[
+\begin{vmatrix}2&-4&5\\1&2&4\\-2&4&-5\end{vmatrix}=0
+\]
+because the third row is $-1$ times the first row.
+\end{frame}
+
+\begin{frame}{Row Replacement Preserves the Determinant}
+If a multiple of one row is added to another row, then
+\[
+\boxed{\det B=\det A}.
+\]
+Thus row replacement can create zeros without adding a correction factor.
+\pause
+
+The same rule holds for column replacement.
+\end{frame}
+
+\begin{frame}{Cofactor Expansion After Row Replacement}
+Compute
+\[
+D=\begin{vmatrix}
+1&3&-1&2\\
+1&-5&3&-4\\
+0&2&1&-1\\
+-5&1&3&-3
+\end{vmatrix}.
+\]
+Use $R_2\leftarrow R_2-R_1$ and $R_4\leftarrow R_4+5R_1$:
+\[
+D=\begin{vmatrix}
+1&3&-1&2\\0&-8&4&-6\\0&2&1&-1\\0&16&-2&7
+\end{vmatrix}.
+\]
+\pause
+Expanding down the first column and reducing the remaining determinant gives
+\[
+\boxed{D=-40}.
+\]
+\end{frame}
+
+\begin{frame}{A Determinant Ledger}
+Reduce $A$ to an upper triangular matrix $U$ and record each operation.
+\begin{itemize}
+  \item Row replacement contributes no factor.
+  \item Each row interchange contributes a factor $-1$.
+  \item Scaling a row by $k$ multiplies the determinant by $k$.
+\end{itemize}
+\pause
+If elimination uses only row replacements and $r$ interchanges, then
+\[
+\boxed{\det A=(-1)^r u_{11}u_{22}\cdots u_{nn}}.
+\]
+\end{frame}
+
+\begin{frame}{Elimination Example}
+Compute
+\[
+\det\begin{bmatrix}2&4&6\\5&6&7\\7&6&10\end{bmatrix}.
+\]
+Factor $2$ from the first row, then use row replacement:
+\[
+2\begin{vmatrix}1&2&3\\5&6&7\\7&6&10\end{vmatrix}
+=2\begin{vmatrix}1&2&3\\0&-4&-8\\0&-8&-11\end{vmatrix}
+=2(-4)\begin{vmatrix}1&2&3\\0&1&2\\0&-8&-11\end{vmatrix}.
+\]
+One more replacement produces a final pivot $5$, so
+\[
+\boxed{\det A=2(-4)(1)(5)=-40}.
+\]
+\end{frame}
+
+\begin{frame}{Use Structure Before Expanding}
+Let
+\[
+D=\begin{vmatrix}
+3&2&2&2\\2&3&2&2\\2&2&3&2\\2&2&2&3
+\end{vmatrix}.
+\]
+Add all rows to the first row, giving $(9,9,9,9)$, and factor out $9$.
+Then subtract the first row from the other rows:
+\[
+D=9\begin{vmatrix}
+1&1&1&1\\0&1&0&0\\0&0&1&0\\0&0&0&1
+\end{vmatrix}=\boxed{9}.
+\]
+\end{frame}
+
+\begin{frame}{Combining Expansion and Reduction}
+Compute
+\[
+\begin{vmatrix}
+1&2&3&4\\0&5&0&0\\2&7&6&10\\2&9&7&11
+\end{vmatrix}.
+\]
+Expand down the second row:
+\[
+=5\begin{vmatrix}1&3&4\\2&6&10\\2&7&11\end{vmatrix}.
+\]
+Use $R_2\leftarrow R_2-2R_1$ and $R_3\leftarrow R_3-2R_1$:
+\[
+5\begin{vmatrix}1&3&4\\0&0&2\\0&1&3\end{vmatrix}
+=-5(1)(1)(2)=\boxed{-10}.
+\]
+\end{frame}
+
+\begin{frame}{Transpose Property}
+\theorembox{Theorem}{For every square matrix $A$,}
+\[
+\boxed{\det(A^T)=\det A}.
+\]
+\pause
+Rows and columns therefore play symmetric roles. Every rule for row operations has a corresponding rule for column operations.
+\end{frame}
+
+\begin{frame}{Column Operations}
+The determinant responds to column operations exactly as it responds to row operations:
+\begin{itemize}
+  \item interchanging two columns reverses the sign;
+  \item multiplying one column by $k$ multiplies the determinant by $k$;
+  \item adding a multiple of one column to another preserves the determinant.
+\end{itemize}
+\pause
+A column operation on $A$ is the corresponding row operation on $A^T$.
+\end{frame}
+
+\begin{frame}{Multiplicative Property}
+\theorembox{Theorem}{If $A$ and $B$ are $n\times n$ matrices, then}
+\[
+\boxed{\det(AB)=(\det A)(\det B)}.
+\]
+\pause
+Consequently,
+\[
+\det(A^m)=(\det A)^m.
+\]
+For example, if $\det A=5$, then
+\[
+\det(A^3)=5^3=125.
+\]
+\end{frame}
+
+\begin{frame}{Properties Summary}
+For square matrices $A$ and $B$ and a scalar $c$:
+\[
+\det(AB)=\det A\det B,
+\qquad
+\det(A^T)=\det A,
+\qquad
+\det(cA)=c^n\det A.
+\]
+Also, $\det A=0$ if $A$ has
+\begin{itemize}
+  \item a zero row or column;
+  \item two equal rows or columns;
+  \item one row or column that is a multiple of another.
+\end{itemize}
+\end{frame}
+
+% -----------------------------------------------------------------------------
+\section[Determinant Applications]{Applications of Determinant Properties}
+\sectioncard{3.3}{Applications of Determinant Properties}
+
+\begin{frame}{Application 1: Efficient Computation}
+Two ideas work well together:
+\begin{enumerate}
+  \item create zeros with row or column replacement;
+  \item use cofactor expansion or finish with a triangular determinant.
+\end{enumerate}
+\pause
+Before computing, check for
+\begin{itemize}
+  \item a row or column with many zeros;
+  \item a quick row replacement that creates zeros;
+  \item repeated or proportional rows or columns.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Efficient Computation Example}
+\small
+Compute
+\[
+D=\begin{vmatrix}
+1&4&5&0\\4&5&0&1\\5&0&1&4\\0&1&4&5
+\end{vmatrix}.
+\]
+Adding the four rows to the first row gives $(10,10,10,10)$, so
+\[
+D=10\begin{vmatrix}
+1&1&1&1\\4&5&0&1\\5&0&1&4\\0&1&4&5
+\end{vmatrix}.
+\]
+Row replacement and a cofactor expansion reduce this to
+\[
+10\cdot 8\cdot(-8)\begin{vmatrix}3&2\\1&1\end{vmatrix}
+=\boxed{-640}.
+\]
+\end{frame}
+
+\begin{frame}{Application 2: The Invertibility Test}
+\theorembox{Invertibility Theorem}{A square matrix $A$ is invertible if and only if $\det A\ne0$.}
+\medskip
+If $A$ is invertible, then
+\[
+1=\det I=\det(AA^{-1})=(\det A)(\det A^{-1}),
+\]
+so $\det A\ne0$.
+\pause
+Conversely, elimination shows that $\det A\ne0$ forces a pivot in every row and column, so $A$ is invertible.
+\end{frame}
+
+\begin{frame}{The Determinant of an Inverse}
+If $A$ is invertible, then
+\[
+(\det A)(\det A^{-1})=\det I=1.
+\]
+Therefore
+\[
+\boxed{\det(A^{-1})=\frac{1}{\det A}}.
+\]
+\pause
+If $AB=I$ for square matrices $A$ and $B$, then $\det A\det B=1$, so both matrices are invertible and
+\[
+B=A^{-1}.
+\]
+\end{frame}
+
+\begin{frame}{A Singular Product}
+Suppose $A$ and $B$ are $n\times n$ matrices, $\det B\ne0$, and $\det(AB)=0$.
+Then
+\[
+0=\det(AB)=(\det A)(\det B).
+\]
+Because $\det B\ne0$, it follows that
+\[
+\boxed{\det A=0},
+\]
+so $A$ is singular.
+\end{frame}
+
+\begin{frame}{Equivalent Conditions for a Square Matrix}
+For an $n\times n$ matrix $A$, the following statements are equivalent:
+\begin{enumerate}
+  \item $A$ is invertible.
+  \item $A$ is row equivalent to $I_n$.
+  \item $\det A\ne0$.
+  \item $A\vect x=\vect b$ has a unique solution for every $\vect b\in\R^n$.
+  \item $A\vect x=\vect0$ has only the trivial solution.
+  \item $A^T$ is invertible.
+  \item $\rank A=n$.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Application 3: Classifying Square Systems}
+For a square system $A\vect x=\vect b$:
+\begin{itemize}
+  \item if $\det A\ne0$, the system has exactly one solution;
+  \item if $\det A=0$, compare $\rank A$ and $\rank[A\mid\vect b]$.
+\end{itemize}
+\pause
+When $\det A=0$,
+\[
+\begin{array}{ccl}
+\rank A=\rank[A\mid\vect b]<n &\Longrightarrow& \text{infinitely many solutions},\\[1ex]
+\rank A<\rank[A\mid\vect b] &\Longrightarrow& \text{no solution}.
+\end{array}
+\]
+\end{frame}
+
+\begin{frame}{A Parameterized System}
+Classify the solutions of
+\[
+\left\{\begin{aligned}
+kx+y+z&=1,\\
+x+ky+z&=k,\\
+x+y+kz&=k^2.
+\end{aligned}\right.
+\]
+The coefficient matrix is
+\[
+A=\begin{bmatrix}k&1&1\\1&k&1\\1&1&k\end{bmatrix},
+\qquad
+\det A=(k+2)(k-1)^2.
+\]
+\end{frame}
+
+\begin{frame}{The Parameterized System: Classification}
+From $\det A=(k+2)(k-1)^2$:
+\begin{itemize}
+  \item if $k\ne1,-2$, then $\det A\ne0$ and the system has a unique solution;
+  \item if $k=1$, then $\rank A=\rank[A\mid\vect b]=1<3$, so the system has infinitely many solutions;
+  \item if $k=-2$, then $\rank A=2<\rank[A\mid\vect b]=3$, so the system has no solution.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Homogeneous and Nonhomogeneous Systems}
+For $A_{m\times n}\vect x=\vect0$:
+\[
+\begin{array}{ccl}
+\rank A=n &\Longleftrightarrow& \text{only the trivial solution},\\
+\rank A<n &\Longleftrightarrow& \text{nontrivial solutions exist}.
+\end{array}
+\]
+For $A_{m\times n}\vect x=\vect b$:
+\[
+\begin{array}{ccl}
+\rank A=\rank[A\mid\vect b]=n &\Longrightarrow& \text{one solution},\\
+\rank A=\rank[A\mid\vect b]<n &\Longrightarrow& \text{infinitely many},\\
+\rank A\ne\rank[A\mid\vect b] &\Longrightarrow& \text{no solution}.
+\end{array}
+\]
+\end{frame}
+
+\begin{frame}{Application 4: Cramer's Rule}
+\theorembox{Cramer's Rule}{Let $A$ be an invertible $n\times n$ matrix. The unique solution of $A\vect x=\vect b$ is}
+\[
+\boxed{x_i=\frac{\det A_i(\vect b)}{\det A}},
+\qquad i=1,2,\ldots,n,
+\]
+where $A_i(\vect b)$ is obtained from $A$ by replacing column $i$ with $\vect b$.
+\pause
+Cramer's rule requires $\det A\ne0$.
+\end{frame}
+
+\begin{frame}{Cramer's Rule Example}
+Solve
+\[
+\left\{\begin{aligned}
+x_1+2x_2-x_3&=-5,\\
+2x_1-x_2+x_3&=6,\\
+x_1-x_2-3x_3&=-3.
+\end{aligned}\right.
+\]
+The determinants are
+\[
+\det A=19,
+\qquad
+\det A_1=19,
+\qquad
+\det A_2=-38,
+\qquad
+\det A_3=38.
+\]
+Thus
+\[
+\boxed{(x_1,x_2,x_3)=(1,-2,2)}.
+\]
+\end{frame}
+
+\begin{frame}{A Four-Variable Example}
+For the system
+\[
+\left\{\begin{aligned}
+2x_1+x_2-5x_3+x_4&=8,\\
+x_1-3x_2-6x_4&=9,\\
+2x_2-x_3+2x_4&=-5,\\
+x_1+4x_2-7x_3+6x_4&=0,
+\end{aligned}\right.
+\]
+the source computation gives
+\[
+\det A=27,
+\quad
+(\det A_1,\det A_2,\det A_3,\det A_4)=(81,-108,-27,27).
+\]
+Therefore
+\[
+\boxed{(x_1,x_2,x_3,x_4)=(3,-4,-1,1)}.
+\]
+\end{frame}
+
+\begin{frame}{When to Use Cramer's Rule}
+Cramer's rule gives an exact formula and helps prove theoretical results.
+\pause
+
+For hand calculations, it is practical mainly for $2\times2$ and small $3\times3$ systems. Larger systems require many determinants, so elimination is usually more efficient.
+\medskip
+
+For a general linear system, use row reduction to determine consistency and solve. Use inverse matrices or Cramer's rule only when the coefficient matrix is square and invertible.
+\end{frame}
+
+% -----------------------------------------------------------------------------
+\section[Subspaces]{Subspaces of Rn}
+\sectioncard{2.8}{Subspaces of $\R^n$}
+
+\begin{frame}{Span}
+For vectors $\vect v_1,\ldots,\vect v_p\in\R^n$,
+\[
+\Span\{\vect v_1,\ldots,\vect v_p\}
+=\left\{c_1\vect v_1+\cdots+c_p\vect v_p:c_1,\ldots,c_p\in\R\right\}.
+\]
+This set contains every linear combination of the given vectors.
+\pause
+
+We call it the subset of $\R^n$ spanned or generated by $\vect v_1,\ldots,\vect v_p$.
+\end{frame}
+
+\begin{frame}{Subspaces of \texorpdfstring{$\R^n$}{R^n}}
+A subset $H$ of $\R^n$ is a \textbf{subspace} if
+\begin{enumerate}
+  \item $\vect0\in H$;
+  \item $\vect u+\vect v\in H$ whenever $\vect u,\vect v\in H$;
+  \item $c\vect u\in H$ whenever $\vect u\in H$ and $c\in\R$.
+\end{enumerate}
+\pause
+The last two conditions say that $H$ is closed under addition and scalar multiplication.
+\end{frame}
+
+\begin{frame}{Every Span Is a Subspace}
+Let $H=\Span\{\vect v_1,\vect v_2\}$. Then
+\[
+\vect0=0\vect v_1+0\vect v_2\in H.
+\]
+If
+\[
+\vect u=s_1\vect v_1+s_2\vect v_2,
+\qquad
+\vect v=t_1\vect v_1+t_2\vect v_2,
+\]
+then
+\[
+\vect u+\vect v=(s_1+t_1)\vect v_1+(s_2+t_2)\vect v_2\in H.
+\]
+Also, $c\vect u=(cs_1)\vect v_1+(cs_2)\vect v_2\in H$.
+\end{frame}
+
+\begin{frame}{Geometric Examples}
+\begin{itemize}
+  \item A line through the origin in $\R^2$ or $\R^3$ is a subspace.
+  \item A plane through the origin in $\R^3$ is a subspace.
+  \item $\R^n$ is a subspace of itself.
+  \item The zero subspace $\{\vect0\}$ is a subspace.
+\end{itemize}
+\pause
+\begin{alertblock}{The origin matters}
+A line or plane that does not pass through the origin cannot be a subspace because it does not contain $\vect0$.
+\end{alertblock}
+\end{frame}
+
+\begin{frame}{Column Space}
+For $A=[\vect a_1\ \cdots\ \vect a_n]\in\R^{m\times n}$, the \textbf{column space} is
+\[
+\Col A=\Span\{\vect a_1,\ldots,\vect a_n\}.
+\]
+Thus $\Col A$ is a subspace of $\R^m$.
+\pause
+
+A vector $\vect b$ belongs to $\Col A$ exactly when
+\[
+A\vect x=\vect b
+\]
+is consistent.
+\end{frame}
+
+\begin{frame}{Column Space Example}
+Let
+\[
+A=\begin{bmatrix}1&-3&-4\\-4&6&-2\\-3&7&6\end{bmatrix},
+\qquad
+\vect b=\begin{bmatrix}3\\3\\-4\end{bmatrix}.
+\]
+Row reduction gives
+\[
+\left[\begin{array}{ccc|c}
+1&-3&-4&3\\-4&6&-2&3\\-3&7&6&-4
+\end{array}\right]
+\sim
+\left[\begin{array}{ccc|c}
+1&-3&-4&3\\0&-6&-18&15\\0&0&0&0
+\end{array}\right].
+\]
+The system is consistent, so $\boxed{\vect b\in\Col A}$.
+\end{frame}
+
+\begin{frame}{Null Space}
+The \textbf{null space} of an $m\times n$ matrix $A$ is
+\[
+\Nul A=\{\vect x\in\R^n:A\vect x=\vect0\}.
+\]
+It is a subspace of $\R^n$.
+\pause
+
+Indeed, $A\vect0=\vect0$, and if $A\vect u=A\vect v=\vect0$, then
+\[
+A(\vect u+\vect v)=A\vect u+A\vect v=\vect0.
+\]
+For any scalar $c$,
+\[
+A(c\vect u)=cA\vect u=\vect0.
+\]
+\end{frame}
+
+\begin{frame}{Basis for a Subspace}
+A \textbf{basis} for a subspace $H$ is a set of vectors that
+\begin{enumerate}
+  \item lies in $H$;
+  \item spans $H$;
+  \item is linearly independent.
+\end{enumerate}
+\pause
+
+A basis contains enough vectors to generate the subspace, with no redundant vector.
+\end{frame}
+
+\begin{frame}{The Standard Basis}
+The columns of $I_n$ form the standard basis for $\R^n$:
+\[
+\vect e_1=\begin{bmatrix}1\\0\\\vdots\\0\end{bmatrix},
+\quad
+\vect e_2=\begin{bmatrix}0\\1\\\vdots\\0\end{bmatrix},
+\quad\ldots\quad,
+\vect e_n=\begin{bmatrix}0\\0\\\vdots\\1\end{bmatrix}.
+\]
+Thus
+\[
+\{\vect e_1,\ldots,\vect e_n\}
+\]
+is a basis for $\R^n$.
+\end{frame}
+
+\begin{frame}{A Basis for a Null Space}
+Let
+\[
+A=\begin{bmatrix}
+-3&6&-1&1&-7\\
+1&-2&2&3&-1\\
+2&-4&5&8&-4
+\end{bmatrix}.
+\]
+Row reduction of $A\vect x=\vect0$ gives
+\[
+\begin{bmatrix}
+1&-2&0&-1&3\\
+0&0&1&2&-2\\
+0&0&0&0&0
+\end{bmatrix}.
+\]
+The free variables are $x_2,x_4,x_5$.
+\end{frame}
+
+\begin{frame}{Null-Space Basis: Parametric Form}
+The equations give
+\[
+x_1=2x_2+x_4-3x_5,
+\qquad
+x_3=-2x_4+2x_5.
+\]
+Hence
+\[
+\vect x=x_2\begin{bmatrix}2\\1\\0\\0\\0\end{bmatrix}
++x_4\begin{bmatrix}1\\0\\-2\\1\\0\end{bmatrix}
++x_5\begin{bmatrix}-3\\0\\2\\0\\1\end{bmatrix}.
+\]
+Therefore these three vectors form a basis for $\Nul A$.
+\end{frame}
+
+\begin{frame}{A Basis for a Column Space}
+Row operations preserve the linear dependence relations among the columns, but they change the actual column vectors.
+\pause
+
+To find a basis for $\Col A$:
+\begin{enumerate}
+  \item row reduce $A$ to an echelon form;
+  \item identify the pivot column indices;
+  \item take those columns from the original matrix $A$.
+\end{enumerate}
+\pause
+Do not use the pivot columns from the echelon form as vectors in $\Col A$.
+\end{frame}
+
+\begin{frame}{Pivot Columns and Column Space}
+\theorembox{Pivot Column Theorem}{The pivot columns of a matrix $A$ form a basis for $\Col A$.}
+\medskip
+If the pivot columns of an echelon form occur in columns $1$, $2$, and $5$, then
+\[
+\{\vect a_1,\vect a_2,\vect a_5\}
+\]
+is a basis for $\Col A$, where the vectors come from the original matrix.
+\end{frame}
+
+% -----------------------------------------------------------------------------
+\section[Dimension and Rank]{Dimension and Rank}
+\sectioncard{2.9}{Dimension and Rank}
+
+\begin{frame}{Why a Basis Matters}
+Every vector in a subspace has a unique representation as a linear combination of basis vectors.
+\pause
+
+If $\beta=\{\vect b_1,\ldots,\vect b_p\}$ is a basis and
+\[
+\vect x=c_1\vect b_1+\cdots+c_p\vect b_p
+=d_1\vect b_1+\cdots+d_p\vect b_p,
+\]
+then
+\[
+\vect0=(c_1-d_1)\vect b_1+\cdots+(c_p-d_p)\vect b_p.
+\]
+Linear independence forces $c_i=d_i$ for every $i$.
+\end{frame}
+
+\begin{frame}{Coordinate Vectors}
+Let $\beta=\{\vect b_1,\ldots,\vect b_p\}$ be a basis for $H$.
+If
+\[
+\vect x=c_1\vect b_1+\cdots+c_p\vect b_p,
+\]
+then the coordinate vector of $\vect x$ relative to $\beta$ is
+\[
+\boxed{[\vect x]_\beta=
+\begin{bmatrix}c_1\\\vdots\\c_p\end{bmatrix}}.
+\]
+The basis determines the coordinate system.
+\end{frame}
+
+\begin{frame}{Coordinate Example}
+Let
+\[
+\vect v_1=\begin{bmatrix}3\\6\\2\end{bmatrix},
+\quad
+\vect v_2=\begin{bmatrix}-1\\0\\1\end{bmatrix},
+\quad
+\vect x=\begin{bmatrix}3\\12\\7\end{bmatrix},
+\quad
+\beta=\{\vect v_1,\vect v_2\}.
+\]
+Solve $c_1\vect v_1+c_2\vect v_2=\vect x$:
+\[
+\left[\begin{array}{cc|c}3&-1&3\\6&0&12\\2&1&7\end{array}\right]
+\sim
+\left[\begin{array}{cc|c}1&0&2\\0&1&3\\0&0&0\end{array}\right].
+\]
+Thus
+\[
+\boxed{[\vect x]_\beta=\begin{bmatrix}2\\3\end{bmatrix}}.
+\]
+\end{frame}
+
+\begin{frame}{Dimension}
+The \textbf{dimension} of a nonzero subspace $H$, written $\dim H$, is the number of vectors in any basis for $H$.
+\[
+\dim\{\vect0\}=0.
+\]
+Examples:
+\begin{itemize}
+  \item $\dim\R^n=n$;
+  \item a line through the origin has dimension $1$;
+  \item a plane through the origin in $\R^3$ has dimension $2$.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Rank and Nullity}
+The \textbf{rank} of a matrix is the dimension of its column space:
+\[
+\boxed{\rank A=\dim(\Col A)}.
+\]
+The \textbf{nullity} is the dimension of its null space:
+\[
+\boxed{\operatorname{nullity}A=\dim(\Nul A)}.
+\]
+\pause
+Rank equals the number of pivot columns. Nullity equals the number of free variables in $A\vect x=\vect0$.
+\end{frame}
+
+\begin{frame}{Rank Example}
+Suppose row reduction gives
+\[
+A\sim
+\begin{bmatrix}
+2&5&-3&-4&8\\
+0&-3&2&5&-7\\
+0&0&0&4&-6\\
+0&0&0&0&0
+\end{bmatrix}.
+\]
+The pivot columns are $1$, $2$, and $4$. Therefore
+\[
+\boxed{\rank A=3}.
+\]
+If $A$ has five columns, then the two nonpivot variables are free, so $\dim(\Nul A)=2$.
+\end{frame}
+
+\begin{frame}{The Rank--Nullity Theorem}
+\theorembox{Rank--Nullity Theorem}{If $A$ has $n$ columns, then}
+\[
+\boxed{\rank A+\dim(\Nul A)=n}.
+\]
+\pause
+Every column corresponds either to
+\begin{itemize}
+  \item a pivot variable, counted by $\rank A$, or
+  \item a free variable, counted by $\dim(\Nul A)$.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{A Basis Criterion in a Finite-Dimensional Space}
+Let $H$ be a $p$-dimensional subspace of $\R^n$.
+\begin{itemize}
+  \item Any linearly independent set of exactly $p$ vectors in $H$ is automatically a basis for $H$.
+  \item Any set of exactly $p$ vectors that spans $H$ is automatically a basis for $H$.
+\end{itemize}
+\pause
+Once the number of vectors matches the dimension, either spanning or linear independence implies the other condition.
+\end{frame}
+
+\begin{frame}{The Invertible Matrix Theorem: New Forms}
+For an $n\times n$ matrix $A$, the following are equivalent to invertibility:
+\begin{itemize}
+  \item the columns of $A$ form a basis for $\R^n$;
+  \item $\Col A=\R^n$;
+  \item $\dim(\Col A)=n$;
+  \item $\rank A=n$;
+  \item $\Nul A=\{\vect0\}$;
+  \item $\dim(\Nul A)=0$.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{How the Equivalences Connect}
+The logical chain is
+\[
+\Col A=\R^n
+\Longrightarrow
+\dim(\Col A)=n
+\Longrightarrow
+\rank A=n.
+\]
+Rank--nullity then gives
+\[
+\dim(\Nul A)=0
+\Longrightarrow
+\Nul A=\{\vect0\}.
+\]
+Thus $A\vect x=\vect0$ has only the trivial solution, one of the original forms of the Invertible Matrix Theorem.
+\end{frame}
+
+\begin{frame}{Lecture Summary}
+\begin{itemize}
+  \item Determinant properties make elimination and cofactor expansion efficient.
+  \item A nonzero determinant is equivalent to invertibility for a square matrix.
+  \item Rank comparison classifies all linear systems; Cramer's rule solves small invertible square systems.
+  \item Column and null spaces are subspaces with bases obtained from pivots and free variables.
+  \item Coordinates are unique relative to a basis, and rank--nullity divides the variables into pivot and free variables.
+\end{itemize}
+\end{frame}
+
+\end{document}
