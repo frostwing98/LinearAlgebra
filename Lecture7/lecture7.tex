@@ -583,11 +583,11 @@ The last two conditions say that $H$ is closed under addition and scalar multipl
 \end{frame}
 
 \begin{frame}{Every Span Is a Subspace}
-Let $H=\Span\{\vect v_1,\vect v_2\}$. Then
-\[
-\vect0=0\vect v_1+0\vect v_2\in H.
-\]
-If
+If $\vect v_1, \vect v_2$ are in $\mathbb{R}^n$, let $H=\Span\{\vect v_1,\vect v_2\}$. Then $H$ is in the subspace of $\mathbb{R}^n$.
+
+To verify this, note that zero vector is in $H$ because $0 \vect v_1 + 0 \vect v_2 $ is a linear combination of $\vect v_1$ and $\vect v_2$.
+
+Take two arbitrary vectors
 \[
 \vect u=s_1\vect v_1+s_2\vect v_2,
 \qquad
@@ -602,8 +602,9 @@ Also, $c\vect u=(cs_1)\vect v_1+(cs_2)\vect v_2\in H$.
 
 \begin{frame}{Geometric Examples}
 \begin{itemize}
-  \item A line through the origin in $\R^2$ or $\R^3$ is a subspace.
-  \item A plane through the origin in $\R^3$ is a subspace.
+  \item If $\vect v_1$ is not zero vector and $\vect v_2$ is $k \vect v_1$, then these two span a line. Line is another example of subspace.
+  \item A line $L$ not through the origin is not a subspace because it does not contain the origin.
+  \item For $\mathbb{R}^n$ the set of all linear combinations of $\vect v_1, \vect v_2 \dots \vect v_p$ is a subspace.
   \item $\R^n$ is a subspace of itself.
   \item The zero subspace $\{\vect0\}$ is a subspace.
 \end{itemize}
@@ -614,7 +615,7 @@ A line or plane that does not pass through the origin cannot be a subspace becau
 \end{frame}
 
 \begin{frame}{Column Space}
-For $A=[\vect a_1\ \cdots\ \vect a_n]\in\R^{m\times n}$, the \textbf{column space} is
+For $A=[\vect a_1\ \cdots\ \vect a_n]\in\R^{m\times n}$, the \textbf{column space} is the set Col A of \textbf{all linear combinations of the columns of $A$}:
 \[
 \Col A=\Span\{\vect a_1,\ldots,\vect a_n\}.
 \]
@@ -649,7 +650,7 @@ The system is consistent, so $\boxed{\vect b\in\Col A}$.
 \end{frame}
 
 \begin{frame}{Null Space}
-The \textbf{null space} of an $m\times n$ matrix $A$ is
+The \textbf{null space} of an $m\times n$ matrix $A$ is the set Nul A of \textbf{all solutions of the homogenous equation Ax = 0}
 \[
 \Nul A=\{\vect x\in\R^n:A\vect x=\vect0\}.
 \]
@@ -695,7 +696,7 @@ is a basis for $\R^n$.
 \end{frame}
 
 \begin{frame}{A Basis for a Null Space}
-Let
+Find a basis for the null space of the matrix
 \[
 A=\begin{bmatrix}
 -3&6&-1&1&-7\\
@@ -730,28 +731,70 @@ Hence
 Therefore these three vectors form a basis for $\Nul A$.
 \end{frame}
 
-\begin{frame}{A Basis for a Column Space}
-Row operations preserve the linear dependence relations among the columns, but they change the actual column vectors.
-\pause
-
-To find a basis for $\Col A$:
-\begin{enumerate}
-  \item row reduce $A$ to an echelon form;
-  \item identify the pivot column indices;
-  \item take those columns from the original matrix $A$.
-\end{enumerate}
-\pause
-Do not use the pivot columns from the echelon form as vectors in $\Col A$.
+\begin{frame}{Find A Basis for a Column Space}
+\scriptsize
+\setlength{\abovedisplayskip}{3pt}
+\setlength{\belowdisplayskip}{3pt}
+\textbf{Example 7.} Find a basis for the column space of the matrix
+\[
+B=
+\begin{bmatrix}
+1&0&-3&5&0\\
+0&1&2&-1&0\\
+0&0&0&0&1\\
+0&0&0&0&0
+\end{bmatrix}.
+\]
+\textbf{Solution.} Denote the columns of $B$ by $\vect b_1,\ldots,\vect b_5$ and note that
+\[
+\vect b_3=-3\vect b_1+2\vect b_2,
+\qquad
+\vect b_4=5\vect b_1-\vect b_2.
+\]
+Thus any combination of $\vect b_1,\ldots,\vect b_5$ is a combination of
+$\vect b_1,\vect b_2,\vect b_5$. Indeed, if $\vect v\in\Col B$, then
+\[
+\vect v=c_1\vect b_1+c_2\vect b_2+c_3\vect b_3+c_4\vect b_4+c_5\vect b_5
+\]
+can be written as
+\[
+\vect v=c_1\vect b_1+c_2\vect b_2
++c_3(-3\vect b_1+2\vect b_2)+c_4(5\vect b_1-\vect b_2)+c_5\vect b_5.
+\]
+So $\{\vect b_1,\vect b_2,\vect b_5\}$ spans $\Col B$. These vectors are linearly independent because they are columns from an identity matrix. Therefore the pivot columns of $B$ form a basis for $\Col B$.
 \end{frame}
 
-\begin{frame}{Pivot Columns and Column Space}
-\theorembox{Pivot Column Theorem}{The pivot columns of a matrix $A$ form a basis for $\Col A$.}
-\medskip
-If the pivot columns of an echelon form occur in columns $1$, $2$, and $5$, then
+\begin{frame}{Find A Basis for a Column Space}
+\scriptsize
+\setlength{\abovedisplayskip}{3pt}
+\setlength{\belowdisplayskip}{3pt}
+\textbf{Example 8.} It can be verified that the matrix
 \[
-\{\vect a_1,\vect a_2,\vect a_5\}
+A=[\vect a_1\ \vect a_2\ \cdots\ \vect a_5]
+=
+\begin{bmatrix}
+1&3&3&2&-9\\
+-2&-2&2&-8&2\\
+2&3&0&7&1\\
+3&4&-1&11&-8
+\end{bmatrix}
 \]
-is a basis for $\Col A$, where the vectors come from the original matrix.
+is row equivalent to the matrix $B$ in Example 7. Find a basis for $\Col A$.
+
+\medskip
+\textbf{Solution.} From Example 7, the pivot columns of $A$ are columns $1$, $2$, and $5$. Also,
+\[
+\vect b_3=-3\vect b_1+2\vect b_2,
+\qquad
+\vect b_4=5\vect b_1-\vect b_2.
+\]
+Since row operations do not affect linear dependence relations among the columns of a matrix,
+\[
+\vect a_3=-3\vect a_1+2\vect a_2,
+\qquad
+\vect a_4=5\vect a_1-\vect a_2.
+\]
+Thus $\vect a_3$ and $\vect a_4$ are not needed to generate $\Col A$. Any dependence relation among $\vect a_1,\vect a_2,\vect a_5$ would imply the same relation among $\vect b_1,\vect b_2,\vect b_5$. Since $\{\vect b_1,\vect b_2,\vect b_5\}$ is linearly independent, $\boxed{\{\vect a_1,\vect a_2,\vect a_5\}}$ is a basis for $\Col A$.
 \end{frame}
 
 % -----------------------------------------------------------------------------
@@ -759,10 +802,10 @@ is a basis for $\Col A$, where the vectors come from the original matrix.
 \sectioncard{2.9}{Dimension and Rank}
 
 \begin{frame}{Why a Basis Matters}
-Every vector in a subspace has a unique representation as a linear combination of basis vectors.
+The main reason for selecting a basis for a subspace H, instead of merely a spanning set, is that \textit{vector in H can be written in only one way as a linear combination of the basis vectors.} 
 \pause
 
-If $\beta=\{\vect b_1,\ldots,\vect b_p\}$ is a basis and
+Suppose $\beta=\{\vect b_1,\ldots,\vect b_p\}$ is a basis and suppose a vector $\vect x$ in $H$ can be generated in two ways, say:
 \[
 \vect x=c_1\vect b_1+\cdots+c_p\vect b_p
 =d_1\vect b_1+\cdots+d_p\vect b_p,
@@ -771,12 +814,12 @@ then
 \[
 \vect0=(c_1-d_1)\vect b_1+\cdots+(c_p-d_p)\vect b_p.
 \]
-Linear independence forces $c_i=d_i$ for every $i$.
+Since $\beta$ is linearly dependent, the weight must all be 0. So they must be actually the same.
 \end{frame}
 
 \begin{frame}{Coordinate Vectors}
-Let $\beta=\{\vect b_1,\ldots,\vect b_p\}$ be a basis for $H$.
-If
+Suppose the set $\beta=\{\vect b_1,\ldots,\vect b_p\}$ is a basis for $H$. For each x in $H$, \textbf{the coordinates of x relative to the basis $\beta$} are the weights $c_1,\ldots,c_p$ such that
+
 \[
 \vect x=c_1\vect b_1+\cdots+c_p\vect b_p,
 \]
@@ -785,7 +828,7 @@ then the coordinate vector of $\vect x$ relative to $\beta$ is
 \boxed{[\vect x]_\beta=
 \begin{bmatrix}c_1\\\vdots\\c_p\end{bmatrix}}.
 \]
-The basis determines the coordinate system.
+This is also called \textbf{$\beta$-coordinate vector of x}, and the basis determines the coordinate system.
 \end{frame}
 
 \begin{frame}{Coordinate Example}
@@ -799,6 +842,18 @@ Let
 \quad
 \beta=\{\vect v_1,\vect v_2\}.
 \]
+Then $\beta$ is a basis for $H$ = Span {$\vect v_1$,$\vect v_2$} because $\vect v_1$ and $\vect v_2$ are linearly independent. Determine if x is in $H$, and if it is, find the coordinate vector of x relative to $\beta$.
+
+\textbf{Solution}: If x is in H, then the following vector equation is consistent: 
+
+\[
+c_1 \left[\begin{array}{c}3\\6\\2\end{array}\right]+ c_2 \left[\begin{array}{c}-1\\0\\1\end{array}\right]
+=
+\left[\begin{array}{c}3\\12\\7\end{array}\right].
+\]
+\end{frame}
+\begin{frame}{Coordinate Example}
+
 Solve $c_1\vect v_1+c_2\vect v_2=\vect x$:
 \[
 \left[\begin{array}{cc|c}3&-1&3\\6&0&12\\2&1&7\end{array}\right]
@@ -806,41 +861,65 @@ Solve $c_1\vect v_1+c_2\vect v_2=\vect x$:
 \left[\begin{array}{cc|c}1&0&2\\0&1&3\\0&0&0\end{array}\right].
 \]
 Thus
+
 \[
-\boxed{[\vect x]_\beta=\begin{bmatrix}2\\3\end{bmatrix}}.
+c_1=2, c_2=3, \boxed{[\vect x]_\beta=\begin{bmatrix}2\\3\end{bmatrix}}.
 \]
+
+The basis $\beta$ determines a ``coordinate system'' on H.
 \end{frame}
 
-\begin{frame}{Dimension}
-The \textbf{dimension} of a nonzero subspace $H$, written $\dim H$, is the number of vectors in any basis for $H$.
-\[
-\dim\{\vect0\}=0.
-\]
+\begin{frame}{The Dimension of a Subspace}
+The \textbf{dimension} of a nonzero subspace $H$, written $\dim H$, is the number of vectors in any basis for $H$. The dimension of the zero subspace {$\vect 0$} is defined to be zero.
+% \[
+% \dim\{\vect0\}=0.
+% \]
 Examples:
 \begin{itemize}
   \item $\dim\R^n=n$;
-  \item a line through the origin has dimension $1$;
-  \item a plane through the origin in $\R^3$ has dimension $2$.
+  \item a \textbf{line} through the origin has dimension $1$;
+  \item a \textbf{plane} through the origin in $\R^3$ has dimension $2$.
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Rank and Nullity}
-The \textbf{rank} of a matrix is the dimension of its column space:
-\[
-\boxed{\rank A=\dim(\Col A)}.
-\]
-The \textbf{nullity} is the dimension of its null space:
-\[
-\boxed{\operatorname{nullity}A=\dim(\Nul A)}.
-\]
-\pause
-Rank equals the number of pivot columns. Nullity equals the number of free variables in $A\vect x=\vect0$.
-\end{frame}
+% \begin{frame}{Rank and Nullity}
+% The \textbf{rank} of a matrix is the dimension of its column space:
+% \[
+% \boxed{\rank A=\dim(\Col A)}.
+% \]
+% The \textbf{nullity} is the dimension of its null space:
+% \[
+% \boxed{\operatorname{nullity}A=\dim(\Nul A)}.
+% \]
+% \pause
+% Rank equals the number of pivot columns. Nullity equals the number of free variables in $A\vect x=\vect0$.
+% \end{frame}
 
-\begin{frame}{Rank Example}
-Suppose row reduction gives
+
+\begin{frame}{The Dimension of a Subspace}
+\small
+\setlength{\abovedisplayskip}{4pt}
+\setlength{\belowdisplayskip}{4pt}
+\textbf{Example 3.} Determine the rank of the matrix
 \[
 A\sim
+\begin{bmatrix}
+2&5&-3&-4&8\\
+0&-3&2&5&-7\\
+0&-6&4&14&-20\\
+0&-9&6&5&-6
+\end{bmatrix}.
+\]
+\textbf{Solution.} Reduce $A$ to echelon form:
+\[
+A\sim
+\begin{bmatrix}
+2&5&-3&-4&8\\
+0&-3&2&5&-7\\
+0&-6&4&14&-20\\
+0&-9&6&5&-6
+\end{bmatrix}
+\sim\cdots\sim
 \begin{bmatrix}
 2&5&-3&-4&8\\
 0&-3&2&5&-7\\
@@ -848,12 +927,15 @@ A\sim
 0&0&0&0&0
 \end{bmatrix}.
 \]
-The pivot columns are $1$, $2$, and $4$. Therefore
+\begin{center}
+\textcolor{lectureblue}{Pivot columns: $1$, $2$, and $4$}
+\end{center}
+The matrix $A$ has three pivot columns, so
 \[
 \boxed{\rank A=3}.
 \]
-If $A$ has five columns, then the two nonpivot variables are free, so $\dim(\Nul A)=2$.
 \end{frame}
+
 
 \begin{frame}{The Rank--Nullity Theorem}
 \theorembox{Rank--Nullity Theorem}{If $A$ has $n$ columns, then}
@@ -863,8 +945,8 @@ If $A$ has five columns, then the two nonpivot variables are free, so $\dim(\Nul
 \pause
 Every column corresponds either to
 \begin{itemize}
-  \item a pivot variable, counted by $\rank A$, or
-  \item a free variable, counted by $\dim(\Nul A)$.
+  \item a pivot variable counted by $\rank A$ (because pivot columns represent linearly independent vectors of Col A), or
+  \item a free variable counted by $\dim(\Nul A)$ (because each free variables indicate a basis for solutions to Ax=$\vect 0$).
 \end{itemize}
 \end{frame}
 
@@ -875,7 +957,7 @@ Let $H$ be a $p$-dimensional subspace of $\R^n$.
   \item Any set of exactly $p$ vectors that spans $H$ is automatically a basis for $H$.
 \end{itemize}
 \pause
-Once the number of vectors matches the dimension, either spanning or linear independence implies the other condition.
+Once the number of vectors matches the dimension, linearly independence implies spanning to $\mathbb{R}^n$, and spanning to $\mathbb{R}^n$ implies linear independence.
 \end{frame}
 
 \begin{frame}{The Invertible Matrix Theorem: New Forms}
