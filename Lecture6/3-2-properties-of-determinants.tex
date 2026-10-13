@@ -2,34 +2,34 @@
 \section[Properties]{Properties of Determinants}
 \sectioncard{3.2}{Properties of Determinants}
 
+\begin{frame}{Recall: Elementary Row Operations}
+Gaussian elimination uses three elementary row operations:
+\[
+\begin{array}{ll}
+\text{Row replacement:} & R_i\leftarrow R_i+cR_j,\quad i\ne j,\\[0.5ex]
+\text{Row interchange:} & R_i\leftrightarrow R_j,\\[0.5ex]
+\text{Row scaling:} & R_i\leftarrow kR_i,\quad k\ne0.
+\end{array}
+\]
+\pause
+When we apply the same operation to the entire augmented matrix, the transformed system has the same solution set.
+\medskip
+
+What happens to the determinant under each operation?
+\end{frame}
+
 \begin{frame}{Determinants and Elimination}
 Cofactor expansion becomes expensive as the matrix grows.
 \pause
 
-Gaussian elimination can create a triangular matrix quickly, but row operations may change the determinant.
+Gaussian elimination can create a triangular matrix quickly, and a triangular determinant is easy to calculate.
 \medskip
 
-The central question is therefore:
+The remaining issue is bookkeeping:
 \[
-\boxed{\text{How does each elementary row operation change }\det A?}
+\boxed{\text{Track how each row operation changes }\det A.}
 \]
-\end{frame}
-
-\begin{frame}{Three Row Operations}
-Let $B$ be obtained from a square matrix $A$ by one row operation.
-\theorembox{Theorem 3}{The determinant changes according to the operation:}
-\renewcommand{\arraystretch}{1.35}
-\begin{center}
-\begin{tabular}{>{\raggedright\arraybackslash}p{.48\linewidth}c}
-\toprule
-Operation from $A$ to $B$ & Relationship \\
-\midrule
-$R_i\leftarrow R_i+cR_j$, $i\ne j$ & $\det B=\det A$ \\
-$R_i\leftrightarrow R_j$ & $\det B=-\det A$ \\
-$R_i\leftarrow kR_i$ & $\det B=k\det A$ \\
-\bottomrule
-\end{tabular}
-\end{center}
+We begin by testing the three familiar operations.
 \end{frame}
 
 \begin{frame}{Row Replacement Preserves the Determinant}
@@ -44,7 +44,7 @@ B=\begin{bmatrix}1&2\\0&-2\end{bmatrix},
 \qquad \det B=-2.
 \]
 \pause
-Row replacement is the workhorse for determinant computation because it creates zeros without changing the determinant.
+Row replacement creates a zero without changing the determinant.
 \end{frame}
 
 \begin{frame}{A Row Interchange Reverses the Sign}
@@ -67,22 +67,6 @@ After $r$ row interchanges, the accumulated factor is
 \]
 \end{frame}
 
-\begin{frame}{Equal Rows Force a Zero Determinant}
-Suppose $A$ has two equal rows. Interchanging those rows leaves the matrix unchanged.
-\pause
-
-The interchange rule also says the determinant changes sign:
-\[
-\det A=-\det A.
-\]
-Therefore
-\[
-2\det A=0
-\qquad\Longrightarrow\qquad
-\boxed{\det A=0}.
-\]
-\end{frame}
-
 \begin{frame}{Scaling One Row Scales the Determinant}
 Let
 \[
@@ -101,6 +85,84 @@ Then
 Factoring $k$ out of one row divides the visible row by $k$ and places a factor $k$ outside the determinant.
 \end{frame}
 
+\begin{frame}{Row Operations as Left Multiplication}
+One elementary row operation can be represented by an invertible elementary matrix $E$:
+\[
+B=EA.
+\]
+\pause
+For a linear system, applying the operation to both sides gives
+\[
+Ax=b
+\quad\Longleftrightarrow\quad
+EAx=Eb.
+\]
+The two systems have the same solution set, but $A$ and $EA$ represent different linear transformations.
+\pause
+
+To connect this with the determinant, we need to understand
+\[
+\det(EA).
+\]
+\end{frame}
+
+\begin{frame}{Multiplicative Property}
+\theorembox{Product rule}{If $A$ and $B$ are $n\times n$ matrices, then}
+\[
+\boxed{\det(AB)=(\det A)(\det B)}.
+\]
+\pause
+For
+\[
+A=\begin{bmatrix}2&1\\3&2\end{bmatrix},
+\qquad
+B=\begin{bmatrix}4&3\\1&2\end{bmatrix},
+\]
+we have $\det A=1$, $\det B=5$, and
+\[
+AB=\begin{bmatrix}9&8\\14&13\end{bmatrix},
+\qquad
+\det(AB)=117-112=5.
+\]
+\end{frame}
+
+\begin{frame}{Three Row Operations}
+If $B=EA$, then
+\[
+\det B=\det(EA)=(\det E)(\det A).
+\]
+\pause
+The three experiments give the determinant of each elementary matrix:
+\renewcommand{\arraystretch}{1.35}
+\begin{center}
+\begin{tabular}{>{\raggedright\arraybackslash}p{.48\linewidth}c}
+\toprule
+Operation from $A$ to $B$ & Relationship \\
+\midrule
+$R_i\leftarrow R_i+cR_j$, $i\ne j$ & $\det B=\det A$ \\
+$R_i\leftrightarrow R_j$ & $\det B=-\det A$ \\
+$R_i\leftarrow kR_i$ & $\det B=k\det A$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{frame}
+
+\begin{frame}{Equal Rows Force a Zero Determinant}
+Suppose $A$ has two equal rows. Interchanging those rows leaves the matrix unchanged.
+\pause
+
+The interchange rule also says the determinant changes sign:
+\[
+\det A=-\det A.
+\]
+Therefore
+\[
+2\det A=0
+\qquad\Longrightarrow\qquad
+\boxed{\det A=0}.
+\]
+\end{frame}
+
 \begin{frame}{Two Immediate Zero Tests}
 \begin{block}{A zero row}
 Scaling a zero row by any $k\ne1$ leaves the matrix unchanged, so
@@ -113,6 +175,24 @@ Hence $\det A=0$.
 \begin{block}{One row is a multiple of another}
 Use a row replacement to turn that row into a zero row. Row replacement preserves the determinant, so again $\det A=0$.
 \end{block}
+\end{frame}
+
+\begin{frame}{Consequences of Multiplicativity}
+For square matrices of the same order,
+\[
+\det(A_1A_2\cdots A_m)
+=\det A_1\det A_2\cdots\det A_m.
+\]
+In particular,
+\[
+\det(A^k)=(\det A)^k
+\qquad(k=1,2,\ldots).
+\]
+\pause
+Also, because multiplying the entire $n\times n$ matrix by $c$ scales each of its $n$ rows,
+\[
+\boxed{\det(cA)=c^n\det A}.
+\]
 \end{frame}
 
 \begin{frame}{Determinant by Row Reduction}
@@ -130,51 +210,82 @@ To recover $\det A$, keep a ledger:
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Elimination Example: Setup}
-Compute
+\begin{frame}{Operation Ledger: Reduction}
+\small
+Compute the determinant of
 \[
-\det A,
-\qquad
 A=\begin{bmatrix}
-1&4&2\\
-2&8&9\\
-1&7&0
+0&2&1\\
+1&1&0\\
+2&5&3
 \end{bmatrix}.
 \]
-Use row replacements:
+Use the following operations:
 \[
-R_2\leftarrow R_2-2R_1,
-\qquad
-R_3\leftarrow R_3-R_1.
+\begin{aligned}
+R_1&\leftrightarrow R_2,\\
+R_3&\leftarrow R_3-2R_1,\\
+R_2&\leftarrow \tfrac12 R_2,\\
+R_3&\leftarrow R_3-3R_2.
+\end{aligned}
 \]
 \pause
-Because both operations are replacements, the determinant does not change.
-\end{frame}
-
-\begin{frame}{Elimination Example: Finish}
-The replacements give
-\[
-\det A=
-\begin{vmatrix}
-1&4&2\\
-0&0&5\\
-0&3&-2
-\end{vmatrix}.
-\]
-Interchange rows $2$ and $3$:
+The resulting triangular matrix is
 \[
 U=\begin{bmatrix}
-1&4&2\\
-0&3&-2\\
-0&0&5
-\end{bmatrix},
-\qquad
-\det U=1(3)(5)=15.
+1&1&0\\
+0&1&\tfrac12\\
+0&0&\tfrac32
+\end{bmatrix}.
+\]
+\end{frame}
+
+\begin{frame}{Operation Ledger: Recovering $\det A$}
+\small
+\renewcommand{\arraystretch}{1.35}
+\begin{center}
+\begin{tabular}{lc}
+\toprule
+Operation & Effect on the current determinant \\
+\midrule
+One row interchange & multiply by $-1$ \\
+Two row replacements & multiply by $1$ \\
+$R_2\leftarrow\tfrac12R_2$ & multiply by $\tfrac12$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+Therefore
+\[
+\det U=(-1)\left(\frac12\right)\det A.
 \]
 \pause
-One interchange gives
+Since
 \[
-\boxed{\det A=-\det U=-15}.
+\det U=1(1)\left(\frac32\right)=\frac32,
+\]
+we obtain
+\[
+\boxed{\det A=-2\det U=-3}.
+\]
+\end{frame}
+
+\begin{frame}{Practice: Track the Operations}
+Suppose $A$ is reduced to an upper triangular matrix $U$ by
+\begin{enumerate}
+  \item two row replacements;
+  \item one row interchange;
+  \item multiplying one row by $3$.
+\end{enumerate}
+If $\det U=-18$, find $\det A$.
+\pause
+
+The net relationship is
+\[
+\det U=(-1)(3)\det A.
+\]
+Therefore
+\[
+\boxed{\det A=6}.
 \]
 \end{frame}
 
@@ -226,41 +337,51 @@ If only row replacements and $r$ interchanges were used, then
 \end{frame}
 
 \begin{frame}{Combining Elimination and Cofactor Expansion}
-For
+Let
 \[
 A=\begin{bmatrix}
 0&1&2&-1\\
 2&5&7&3\\
 0&3&6&2\\
 2&5&4&-2
-\end{bmatrix},
+\end{bmatrix}.
 \]
-first use $R_4\leftarrow R_4-R_2$ to create
+Apply the row replacement $R_4\leftarrow R_4-R_2$:
 \[
-\begin{bmatrix}
+\det A=
+\begin{vmatrix}
 0&1&2&-1\\
 2&5&7&3\\
 0&3&6&2\\
 0&0&-3&-5
-\end{bmatrix}.
+\end{vmatrix}.
 \]
 \pause
-Now the first column has a single nonzero entry, so a cofactor expansion reduces the problem to a $3\times3$ determinant.
+Now the first column contains a single nonzero entry.
 \end{frame}
 
-\begin{frame}{Column Operations}
-Column operations have the same effects as the corresponding row operations:
-\begin{itemize}
-  \item adding a multiple of one column to another preserves the determinant;
-  \item interchanging two columns reverses the sign;
-  \item multiplying one column by $k$ multiplies the determinant by $k$.
-\end{itemize}
-\pause
-This follows from the transpose property:
+\begin{frame}{Combining Methods: Finish}
+Expand down the first column:
 \[
-\boxed{\det(A^T)=\det A}.
+\det A
+=2(-1)^{2+1}
+\begin{vmatrix}
+1&2&-1\\
+3&6&2\\
+0&-3&-5
+\end{vmatrix}.
 \]
-A column operation on $A$ is the corresponding row operation on $A^T$.
+\pause
+The $3\times3$ determinant is
+\begin{align*}
+&1[-30+6]-2[-15-0]+(-1)[-9-0]\\
+&=-24+30+9=15.
+\end{align*}
+Therefore
+\[
+\boxed{\det A=-2(15)=-30}.
+\]
+The row replacement created the zero pattern, and the cofactor expansion used it.
 \end{frame}
 
 \begin{frame}{Transpose Property: Example}
@@ -272,48 +393,24 @@ A^T=\begin{bmatrix}1&3&0\\2&4&6\\0&5&7\end{bmatrix}.
 \]
 Expanding $A$ down its first column and $A^T$ across its first row gives the same cofactors and the same value:
 \[
-\det A=\det A^T.
+\boxed{\det(A^T)=\det A}.
 \]
 \pause
 Rows and columns therefore play symmetric roles in determinant calculations.
 \end{frame}
 
-\begin{frame}{Multiplicative Property}
-\theorembox{Theorem 6}{If $A$ and $B$ are $n\times n$ matrices, then}
-\[
-\boxed{\det(AB)=(\det A)(\det B)}.
-\]
+\begin{frame}{Column Operations}
+Column operations have the same effects on the determinant as the corresponding row operations:
+\begin{itemize}
+  \item adding a multiple of one column to another preserves the determinant;
+  \item interchanging two columns reverses the sign;
+  \item multiplying one column by $k$ multiplies the determinant by $k$.
+\end{itemize}
 \pause
-For
-\[
-A=\begin{bmatrix}2&1\\3&2\end{bmatrix},
-\qquad
-B=\begin{bmatrix}4&3\\1&2\end{bmatrix},
-\]
-we have $\det A=1$, $\det B=5$, and
-\[
-AB=\begin{bmatrix}9&8\\14&13\end{bmatrix},
-\qquad
-\det(AB)=117-112=5.
-\]
-\end{frame}
-
-\begin{frame}{Consequences of Multiplicativity}
-For square matrices of the same order,
-\[
-\det(A_1A_2\cdots A_m)
-=\det A_1\det A_2\cdots\det A_m.
-\]
-In particular,
-\[
-\det(A^k)=(\det A)^k
-\qquad(k=1,2,\ldots).
-\]
-\pause
-Also, because multiplying the entire $n\times n$ matrix by $c$ scales each of its $n$ rows,
-\[
-\boxed{\det(cA)=c^n\det A}.
-\]
+A column operation on $A$ is the corresponding row operation on $A^T$.
+\begin{alertblock}{When solving a system}
+Column operations generally change the variables in $Ax=b$. Use them for determinant calculations only unless the variable transformation is also tracked.
+\end{alertblock}
 \end{frame}
 
 \begin{frame}{The Determinant Is Not Additive}
@@ -334,69 +431,53 @@ while
 \]
 \end{frame}
 
-\begin{frame}{Linearity in One Row or Column}
-The determinant is linear in one row when all other rows stay fixed.
-For example,
+\begin{frame}{Linearity in One Row}
+Hold every row except one fixed. In that row, the determinant satisfies both linearity rules:
 \[
-\det\begin{bmatrix}
-\vect u+\vect v\\
-\vect r_2\\
-\vdots\\
-\vect r_n
-\end{bmatrix}
-=
-\det\begin{bmatrix}
-\vect u\\
-\vect r_2\\
-\vdots\\
-\vect r_n
-\end{bmatrix}
-+
-\det\begin{bmatrix}
-\vect v\\
-\vect r_2\\
-\vdots\\
-\vect r_n
-\end{bmatrix}.
+D(\ldots,c\vect u,\ldots)=cD(\ldots,\vect u,\ldots),
+\]
+\[
+D(\ldots,\vect u+\vect v,\ldots)
+=D(\ldots,\vect u,\ldots)+D(\ldots,\vect v,\ldots).
 \]
 \pause
-The same statement holds for one column. It does not imply additivity in the entire matrix.
+The same rules hold when one column varies and all other columns remain fixed.
+\medskip
+
+\begin{alertblock}{Keep the other rows or columns fixed}
+These rules do not imply $\det(A+B)=\det A+\det B$ when every row changes at once.
+\end{alertblock}
 \end{frame}
 
-\begin{frame}{Practice: Track the Operations}
-Suppose $A$ is reduced to an upper triangular matrix $U$ by
+\begin{frame}{Concept Check}
+Let $A$ be a $3\times3$ matrix with $\det A=5$.
 \begin{enumerate}
-  \item two row replacements;
-  \item one row interchange;
-  \item multiplying one row by $3$.
+  \item One row of $A$ is multiplied by $2$. What is the new determinant?
+  \item The entire matrix is multiplied by $2$. What is $\det(2A)$?
+  \item Three row interchanges are performed. What is the new determinant?
 \end{enumerate}
-If $\det U=-18$, find $\det A$.
 \pause
-
-The net relationship is
 \[
-\det U=(-1)(3)\det A.
-\]
-Therefore
-\[
-\boxed{\det A=6}.
-\]
-\end{frame}
-
-\begin{frame}{Practice: Use Structure First}
-Without expanding, evaluate
-\[
-\det\begin{bmatrix}
-1&2&3&4\\
-0&5&6&7\\
-0&0&-2&8\\
-0&0&0&3
-\end{bmatrix}.
+\boxed{10},
+\qquad
+\boxed{2^3(5)=40},
+\qquad
+\boxed{(-1)^3(5)=-5}.
 \]
 \pause
-The matrix is upper triangular, so
-\[
-\boxed{\det A=1(5)(-2)(3)=-30}.
-\]
+Scaling one row and scaling the whole matrix are different operations.
 \end{frame}
 
+\begin{frame}{Determinant Calculation Strategy}
+\begin{enumerate}
+  \item Inspect the matrix for zeros or triangular structure.
+  \pause
+  \item Use row replacements to create more zeros.
+  \pause
+  \item Swap rows when necessary and track the sign. Avoid scaling when convenient.
+  \pause
+  \item Finish with a cofactor expansion or a diagonal product.
+  \pause
+  \item Reverse the recorded factors to recover the original determinant.
+\end{enumerate}
+\end{frame}

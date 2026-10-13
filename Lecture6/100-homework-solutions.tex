@@ -1,0 +1,410 @@
+% Homework review for selected exercises from Chapters 1 and 2.
+% Problem data follow homeworks.pdf. The supplied answers.pdf uses different
+% numerical data for Section 2.1, Exercises 9 and 12; those two are solved
+% directly from the textbook statements here.
+\section[Homework]{Homework Solutions}
+\sectioncard{Homework}{Selected Exercises from Chapters 1 and 2}
+
+\begin{frame}{Homework Review: What We Will Practice}
+\begin{columns}[T,onlytextwidth]
+  \begin{column}{.48\textwidth}
+    \textbf{Chapter 1}
+    \begin{itemize}
+      \item Linear independence
+      \item Linear transformations
+      \item Standard matrices
+    \end{itemize}
+  \end{column}
+  \begin{column}{.48\textwidth}
+    \textbf{Chapter 2}
+    \begin{itemize}
+      \item Matrix products
+      \item Transposes and outer products
+      \item Inverses and matrix equations
+    \end{itemize}
+  \end{column}
+\end{columns}
+\medskip
+\begin{block}{A useful habit}
+At every step, check dimensions and name the theorem or matrix operation being used.
+\end{block}
+\end{frame}
+
+\begin{frame}{1.7, Exercise 2: Are the Vectors Independent?}
+Determine whether
+\[
+\vect v_1=\begin{bmatrix}0\\0\\2\end{bmatrix},
+\qquad
+\vect v_2=\begin{bmatrix}0\\5\\-8\end{bmatrix},
+\qquad
+\vect v_3=\begin{bmatrix}-3\\4\\1\end{bmatrix}
+\]
+are linearly independent. Put the vectors into the columns of $A$:
+\[
+\left[ A\mid\vect0\right]
+=\left[\begin{array}{ccc|c}
+0&0&-3&0\\0&5&4&0\\2&-8&1&0
+\end{array}\right]
+\sim
+\left[\begin{array}{ccc|c}
+2&-8&1&0\\0&5&4&0\\0&0&-3&0
+\end{array}\right].
+\]
+\pause
+There is a pivot in every variable column, so $A\vect x=\vect0$ has only
+$\vect x=\vect0$. Therefore
+\[
+\boxed{\{\vect v_1,\vect v_2,\vect v_3\}\text{ is linearly independent}.}
+\]
+\end{frame}
+
+\begin{frame}{1.7, Exercise 8: Are the Columns Independent?}
+\footnotesize
+Let
+\[
+A=\begin{bmatrix}
+1&-3&3&-2\\
+-3&7&-1&2\\
+0&1&-4&3
+\end{bmatrix}.
+\]
+We solve $A\vect x=\vect0$:
+\[
+\begin{bmatrix}
+1&-3&3&-2&0\\-3&7&-1&2&0\\0&1&-4&3&0
+\end{bmatrix}
+\xrightarrow{R_2\leftarrow R_2+3R_1}
+\begin{bmatrix}
+1&-3&3&-2&0\\0&-2&8&-4&0\\0&1&-4&3&0
+\end{bmatrix}
+\xrightarrow{R_2\leftarrow R_2+2R_3}
+\begin{bmatrix}
+1&-3&3&-2&0\\0&-2&8&-4&0\\0&0&0&2&0
+\end{bmatrix}.
+\]
+Because there are at most three pivot positions yet there are four variables, the equation $Ax =
+0$ has a \textbf{nontrivial solution} and the columns of A are linearly dependent.
+\end{frame}
+
+\begin{frame}{1.8, Exercise 3: Find a Preimage}
+\footnotesize
+For $T(\vect x)=A\vect x$, solve $A\vect x=\vect b$, where
+\[
+A=\begin{bmatrix}1&0&-2\\-2&1&6\\3&-2&-5\end{bmatrix},
+\qquad
+\vect b=\begin{bmatrix}-1\\7\\-3\end{bmatrix}.
+\]
+Row reduce the augmented matrix:
+\[
+\left[\begin{array}{ccc|c}
+1&0&-2&-1\\-2&1&6&7\\3&-2&-5&-3
+\end{array}\right]
+\xrightarrow[R_3\leftarrow R_3-3R_1]{R_2\leftarrow R_2+2R_1}
+\left[\begin{array}{ccc|c}
+1&0&-2&-1\\0&1&2&5\\0&-2&1&0
+\end{array}\right]
+\xrightarrow{R_3\leftarrow R_3+2R_2}
+\left[\begin{array}{ccc|c}
+1&0&-2&-1\\0&1&2&5\\0&0&5&10
+\end{array}\right].
+\]
+\pause
+Back-substitution gives
+$x_3=2$, $x_2=1$, and $x_1=3$.
+Hence
+\[
+\boxed{\vect x=(3,1,2)^T}.
+\]
+Every variable is a pivot variable, so this preimage is unique.
+\end{frame}
+
+\begin{frame}{1.8, Exercise 9: Find the Kernel}
+\footnotesize
+Find all $\vect x\in\R^4$ satisfying $A\vect x=\vect0$ for
+\[
+A=\begin{bmatrix}1&-4&7&-5\\0&1&-4&3\\2&-6&6&-4\end{bmatrix}.
+\]
+\[
+A\xrightarrow{R_3\leftarrow R_3-2R_1}
+\begin{bmatrix}1&-4&7&-5\\0&1&-4&3\\0&2&-8&6\end{bmatrix}
+\xrightarrow{R_3\leftarrow R_3-2R_2}
+\begin{bmatrix}1&-4&7&-5\\0&1&-4&3\\0&0&0&0\end{bmatrix}.
+\]
+\pause
+Let $x_3=s$ and $x_4=t$. Then
+\[
+x_2=4s-3t,
+\qquad
+x_1=9s-7t.
+\]
+Therefore
+\[
+\boxed{\vect x
+=s\begin{bmatrix}9\\4\\1\\0\end{bmatrix}
++t\begin{bmatrix}-7\\-3\\0\\1\end{bmatrix}},
+\qquad s,t\in\R.
+\]
+\end{frame}
+
+\begin{frame}{1.8, Exercise 11: Is $\vect b$ in the Range?}
+\footnotesize
+Use the matrix from Exercise 9 and
+\[
+\vect b=\begin{bmatrix}-1\\1\\0\end{bmatrix}.
+\]
+The augmented matrix follows the same row operations:
+\[
+\left[\begin{array}{cccc|c}
+1&-4&7&-5&-1\\0&1&-4&3&1\\2&-6&6&-4&0
+\end{array}\right]
+\longrightarrow
+\left[\begin{array}{cccc|c}
+1&-4&7&-5&-1\\0&1&-4&3&1\\0&2&-8&6&2
+\end{array}\right]
+\longrightarrow
+\left[\begin{array}{cccc|c}
+1&-4&7&-5&-1\\0&1&-4&3&1\\0&0&0&0&0
+\end{array}\right].
+\]
+The system is consistent, so $\vect b$ is in the range if the transform.
+\end{frame}
+
+\begin{frame}{1.9, Exercise 6: Matrix of a Horizontal Shear}
+The transformation leaves $\vect e_1$ unchanged and maps
+$\vect e_2$ to $\vect e_2+5\vect e_1$.
+\pause
+
+The columns of the standard matrix are the images of the standard basis vectors:
+\[
+T(\vect e_1)=\begin{bmatrix}1\\0\end{bmatrix},
+\qquad
+T(\vect e_2)=\vect e_2+5\vect e_1
+=\begin{bmatrix}5\\1\end{bmatrix}.
+\]
+Therefore
+\[
+\boxed{A=\begin{bmatrix}T(\vect e_1)&T(\vect e_2)\end{bmatrix}
+=\begin{bmatrix}1&5\\0&1\end{bmatrix}}.
+\]
+Indeed, $A(x_1,x_2)^T=(x_1+5x_2,x_2)^T$, a horizontal shear.
+\end{frame}
+
+\begin{frame}{1.9, Exercise 15: Fill in the Matrix}
+Find the matrix $A$ such that, for every $x_1,x_2,x_3$,
+\[
+A\begin{bmatrix}x_1\\x_2\\x_3\end{bmatrix}
+=\begin{bmatrix}2x_1-3x_3\\4x_1\\x_1-x_2+x_3\end{bmatrix}.
+\]
+\pause
+Read the coefficients in each output component as one row:
+\[
+\begin{array}{ccl}
+2x_1+0x_2-3x_3 &\longrightarrow& \begin{bmatrix}2&0&-3\end{bmatrix},\\
+4x_1+0x_2+0x_3 &\longrightarrow& \begin{bmatrix}4&0&0\end{bmatrix},\\
+x_1-x_2+x_3 &\longrightarrow& \begin{bmatrix}1&-1&1\end{bmatrix}.
+\end{array}
+\]
+Hence
+\[
+\boxed{A=\begin{bmatrix}2&0&-3\\4&0&0\\1&-1&1\end{bmatrix}}.
+\]
+\end{frame}
+
+\begin{frame}{2.1, Exercise 9: When Does $AB=BA$?}
+Let
+\[
+A=\begin{bmatrix}3&4\\-2&1\end{bmatrix},
+\qquad
+B=\begin{bmatrix}5&-6\\3&k\end{bmatrix}.
+\]
+Compute in both orders:
+\[
+AB=\begin{bmatrix}27&-18+4k\\-7&12+k\end{bmatrix},
+\qquad
+BA=\begin{bmatrix}27&14\\9-2k&12+k\end{bmatrix}.
+\]
+\pause
+Equality requires corresponding entries to agree:
+\[
+-18+4k=14
+\quad\text{and}\quad
+-7=9-2k.
+\]
+Both equations give $\boxed{k=8}$. With this value, every entry of $AB$ and $BA$ agrees.
+\end{frame}
+
+\begin{frame}{2.1, Exercise 12: Build a Nonzero $B$ with $AB=0$}
+Let
+\[
+A=\begin{bmatrix}2&-8\\-1&4\end{bmatrix}.
+\]
+Each column $\vect b$ of $B$ must satisfy $A\vect b=\vect0$.
+Solving
+\[
+2x_1-8x_2=0
+\quad\Longleftrightarrow\quad
+x_1=4x_2
+\]
+
+Choose two different nonzero multiples:
+\[
+B=\begin{bmatrix}4&8\\1&2\end{bmatrix}.
+\]
+Then
+\[
+AB=
+\begin{bmatrix}2&-8\\-1&4\end{bmatrix}
+\begin{bmatrix}4&8\\1&2\end{bmatrix}
+=\begin{bmatrix}0&0\\0&0\end{bmatrix}.
+\]
+\end{frame}
+
+\begin{frame}{2.1, Exercise 35: Scalar Products}
+Let
+\[
+\vect u=\begin{bmatrix}-2\\3\\-4\end{bmatrix},
+\qquad
+\vect v=\begin{bmatrix}a\\b\\c\end{bmatrix}.
+\]
+First compute the two $1\times1$ products:
+\[
+\vect u^T\vect v
+=\begin{bmatrix}-2&3&-4\end{bmatrix}
+\begin{bmatrix}a\\b\\c\end{bmatrix}
+=-2a+3b-4c,
+\]
+\[
+\vect v^T\vect u
+=\begin{bmatrix}a&b&c\end{bmatrix}
+\begin{bmatrix}-2\\3\\-4\end{bmatrix}
+=-2a+3b-4c.
+\]
+Thus $\boxed{\vect u^T\vect v=\vect v^T\vect u}$.
+\end{frame}
+
+\begin{frame}{2.1, Exercise 35: Outer Products}
+Now compute the two $3\times3$ products column by row:
+\[
+\vect u\vect v^T
+=\begin{bmatrix}-2\\3\\-4\end{bmatrix}
+\begin{bmatrix}a&b&c\end{bmatrix}
+=\boxed{\begin{bmatrix}
+-2a&-2b&-2c\\3a&3b&3c\\-4a&-4b&-4c
+\end{bmatrix}},
+\]
+\pause
+\[
+\vect v\vect u^T
+=\begin{bmatrix}a\\b\\c\end{bmatrix}
+\begin{bmatrix}-2&3&-4\end{bmatrix}
+=\boxed{\begin{bmatrix}
+-2a&3a&-4a\\-2b&3b&-4b\\-2c&3c&-4c
+\end{bmatrix}}.
+\]
+Notice that $\vect v\vect u^T=(\vect u\vect v^T)^T$; in general the two outer products are not equal.
+\end{frame}
+
+\begin{frame}{2.2, Exercise 3: Find the Inverse}
+For
+\[
+A=\begin{bmatrix}8&3\\-7&-3\end{bmatrix},
+\]
+first compute the determinant:
+\[
+\det A=8(-3)-3(-7)=-24+21=-3\ne0.
+\]
+Therefore $A$ is invertible, and the $2\times2$ inverse formula gives
+\[
+A^{-1}
+=-\frac{1}{3}\begin{bmatrix}-3&-3\\7&8\end{bmatrix}
+=\boxed{\begin{bmatrix}1&1\\-\frac73&-\frac83\end{bmatrix}}.
+\]
+\pause
+Quick check:
+\[
+A\,A^{-1}
+=-\frac13\begin{bmatrix}8&3\\-7&-3\end{bmatrix}
+\begin{bmatrix}-3&-3\\7&8\end{bmatrix}
+=-\frac13\begin{bmatrix}-3&0\\0&-3\end{bmatrix}=I_2.
+\]
+\end{frame}
+
+\begin{frame}{2.2, Exercise 16: True or False?}
+\begin{block}{Statement}
+If $A=\begin{bmatrix}a&b\\c&d\end{bmatrix}$ and $ad=bc$, then $A$ is not invertible.
+\end{block}
+\pause
+The determinant is
+\[
+\det A=ad-bc.
+\]
+Under the condition $ad=bc$,
+\[
+\det A=ad-bc=0.
+\]
+\pause
+A $2\times2$ matrix is invertible exactly when its determinant is nonzero.
+Therefore the statement is \boxed{\text{True}}.
+\end{frame}
+
+\begin{frame}{2.2, Exercise 24: Cancel an Invertible Factor}
+Suppose
+\[
+(B-C)D=0,
+\]
+where $B$ and $C$ are $m\times n$ matrices and $D$ is invertible.
+Because the product is defined, $D$ is $n\times n$.
+\pause
+
+Multiply both sides on the \textbf{right} by $D^{-1}$:
+\[
+\bigl((B-C)D\bigr)D^{-1}=0D^{-1}.
+\]
+By associativity,
+\[
+(B-C)(DD^{-1})=0
+\quad\Longrightarrow\quad
+(B-C)I_n=0.
+\]
+Thus $B-C=0$, so
+\[
+\boxed{B=C}.
+\]
+The side matters: $D$ was on the right, so $D^{-1}$ must also be applied on the right.
+\end{frame}
+
+\begin{frame}{2.2, Exercise 29: Solve a Matrix Equation}
+Assume $A$, $B$, and $C$ are invertible $n\times n$ matrices and solve
+\[
+C^{-1}(A+X)B^{-1}=I_n.
+\]
+\pause
+Multiply on the left by $C$:
+\[
+(A+X)B^{-1}=C.
+\]
+Multiply on the right by $B$:
+\[
+A+X=CB.
+\]
+Subtract $A$:
+\[
+\boxed{X=CB-A}.
+\]
+\pause
+Check:
+\[
+C^{-1}\bigl(A+(CB-A)\bigr)B^{-1}
+=C^{-1}(CB)B^{-1}=I_n.
+\]
+\end{frame}
+
+\begin{frame}{Homework Review: Ideas to Keep}
+\begin{enumerate}
+  \item To test independence, solve the homogeneous equation and look for free variables.
+  \item To test whether $\vect b$ is in a range, test consistency of $A\vect x=\vect b$.
+  \item The columns of a standard matrix are $T(\vect e_1),\ldots,T(\vect e_n)$.
+  \item Matrix multiplication is order-sensitive; preserve the side of every operation.
+  \item An invertible matrix can be cancelled by multiplying by its inverse on the correct side.
+\end{enumerate}
+\end{frame}
