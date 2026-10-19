@@ -1,0 +1,507 @@
+% Mock midterm answer walkthrough.
+% Compile from the repository root:
+%   pdflatex -interaction=nonstopmode -halt-on-error -output-directory=output/pdf Lecture8/mock-mid-term-answers.tex
+% This file also compiles directly from inside Lecture8/.
+\pdfminorversion=7
+\documentclass[aspectratio=169]{beamer}
+
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{array,booktabs}
+\usepackage{xcolor}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[UTF8,heading=false]{ctex}
+\else
+  \usepackage{fontspec}
+  \usepackage{xeCJK}
+  \setCJKmainfont{Microsoft YaHei}
+\fi
+
+% The course theme is at the repository root.
+\makeatletter
+\def\input@path{{./}{../}{Lecture8/}}
+\makeatother
+
+\mode<presentation>{
+  \usetheme{OSUCSE169}
+  \setbeamercovered{invisible}
+}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}[frame number]
+\setbeamercolor{headline}{fg=black,bg=black}
+\setbeamercolor{section in head/foot}{bg=gray}
+\setbeamertemplate{headline}{%
+  \begin{beamercolorbox}[ht=2.25ex,dp=3.75ex]{section in head/foot}
+    \insertnavigation{\paperwidth}
+  \end{beamercolorbox}}
+
+\definecolor{lecturegreen}{RGB}{48,105,21}
+\definecolor{lectureblue}{RGB}{0,76,170}
+\definecolor{lectureorange}{RGB}{202,105,0}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\vect}[1]{\mathbf{#1}}
+\newcommand{\Span}{\operatorname{Span}}
+\newcommand{\Col}{\operatorname{Col}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\nullity}{\operatorname{nullity}}
+\newcommand{\sectioncard}[2]{%
+  \begin{frame}[plain]
+    \vfill\centering
+    {\Huge\color{lectureorange}\bfseries #1}\par\bigskip
+    {\LARGE\color{lecturegreen}\bfseries #2}
+    \vfill
+  \end{frame}}
+\newcommand{\answerbox}[1]{%
+  \begin{beamercolorbox}[sep=1.0ex,wd=\linewidth]{block body}
+    \textbf{Answer:} #1
+  \end{beamercolorbox}}
+
+\title{MATH 100: Linear Algebra}
+\subtitle{Mock Midterm - Answers and Walkthrough}
+\author{Yuqing Yang}
+\institute{Macau University of Science and Technology}
+\date{10/21/2026}
+
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+\begin{frame}{Walkthrough goals}
+For each question, identify
+\begin{itemize}
+  \item the idea being tested;
+  \item the shortest reliable method;
+  \item the steps that earn partial credit;
+  \item the final answer in a form that can be checked quickly.
+\end{itemize}
+\end{frame}
+
+\section{Multiple choice}
+\sectioncard{Section I}{Multiple choice - 20 points}
+
+\begin{frame}{MC 1 - Number of solutions}
+\[
+\left[\begin{array}{ccc|c}
+1&0&2&3\\
+0&1&-1&4\\
+0&0&0&0
+\end{array}\right]
+\]
+There is no contradictory row. The third column has no pivot, so $x_3$ is free.
+\[
+x_1=3-2x_3,
+\qquad
+x_2=4+x_3.
+\]
+\answerbox{\textbf{C.} Infinitely many solutions.}
+\end{frame}
+
+\begin{frame}{MC 2 - Guaranteed dependence}
+Any set containing more than $n$ vectors in $\R^n$ is linearly dependent.
+\[
+4>3.
+\]
+Therefore four vectors in $\R^3$ cannot all be linearly independent.
+\answerbox{\textbf{C.} Four vectors in $\R^3$.}
+\end{frame}
+
+\begin{frame}{MC 3 - Product dimensions}
+\[
+A_{3\times2}B_{2\times4}.
+\]
+The inner dimensions match, so the product exists. The outer dimensions give its size:
+\[
+(3\times2)(2\times4)\longrightarrow 3\times4.
+\]
+\answerbox{\textbf{D.} $AB$ is $3\times4$.}
+\end{frame}
+
+\begin{frame}{MC 4 - Inverse of a product}
+The factors reverse order:
+\[
+(AB)^{-1}=B^{-1}A^{-1}.
+\]
+Check:
+\[
+(AB)(B^{-1}A^{-1})
+=A(BB^{-1})A^{-1}
+=AA^{-1}=I.
+\]
+\answerbox{\textbf{B.} $(AB)^{-1}=B^{-1}A^{-1}$.}
+\end{frame}
+
+\begin{frame}{MC 5 - Onto transformations}
+For $T(\vect x)=A\vect x$ to map onto $\R^m$, the equation
+\[
+A\vect x=\vect b
+\]
+must be consistent for every $\vect b\in\R^m$.
+This occurs exactly when $A$ has a pivot in every row.
+\answerbox{\textbf{A.} $A$ has a pivot in every row.}
+\end{frame}
+
+\begin{frame}{MC 6 - Determinant changes}
+Start with $\det A=2$.
+\begin{align*}
+\text{multiply one row by }-3 &\Longrightarrow \text{factor }-3,\\
+\text{interchange two rows} &\Longrightarrow \text{factor }-1.
+\end{align*}
+Hence
+\[
+\det B=(-3)(-1)(2)=6.
+\]
+\answerbox{\textbf{B.} $\det B=6$.}
+\end{frame}
+
+\begin{frame}{MC 7 - Singular matrices}
+If $A\vect x=\vect0$ has a nontrivial solution, then
+\begin{itemize}
+  \item the columns of $A$ are linearly dependent;
+  \item $A$ does not have a pivot in every column;
+  \item $A$ is not invertible.
+\end{itemize}
+\answerbox{\textbf{C.} $A\vect x=\vect0$ has a nontrivial solution.}
+\end{frame}
+
+\begin{frame}{MC 8 - Basis for the column space}
+The pivot columns are columns 1 and 3.
+\medskip
+
+Use the corresponding columns from the \textbf{original} matrix, not the reduced matrix.
+\[
+\{\vect a_1,\vect a_3\}
+\]
+is linearly independent and spans $\Col A$.
+\answerbox{\textbf{B.} $\{\vect a_1,\vect a_3\}$.}
+\end{frame}
+
+\begin{frame}{MC 9 - Rank and nullity}
+The matrix has seven columns, so rank-nullity gives
+\[
+\rank A+\nullity A=7.
+\]
+With $\rank A=3$,
+\[
+\nullity A=7-3=4.
+\]
+\answerbox{\textbf{C.} The nullity is $4$.}
+\end{frame}
+
+\begin{frame}{MC 10 - A linear transformation}
+\[
+T(x,y)=(x+2y,3x-y)
+=
+\begin{bmatrix}
+1&2\\3&-1
+\end{bmatrix}
+\begin{bmatrix}x\\y\end{bmatrix}.
+\]
+This is a matrix transformation, so it is linear. The other options contain a constant, a square, or a product of variables.
+\answerbox{\textbf{C.} $T(x,y)=(x+2y,3x-y)$.}
+\end{frame}
+
+\section{Brief answers}
+\sectioncard{Section II}{Brief answers - 10 points}
+
+\begin{frame}{Brief 1 - Consistency with a parameter}
+The last row represents
+\[
+0=h-5.
+\]
+The system is consistent exactly when the right side is zero:
+\[
+h-5=0.
+\]
+\answerbox{$\boxed{h=5}$.}
+\end{frame}
+
+\begin{frame}{Brief 2 - Pivot and free variables}
+\[
+\begin{bmatrix}
+\boxed{1}&2&0&-1&0&3\\
+0&0&\boxed{1}&4&0&-2\\
+0&0&0&0&\boxed{1}&5\\
+0&0&0&0&0&0
+\end{bmatrix}
+\]
+Pivot columns: $1,3,5$. Free-variable columns: $2,4,6$.
+\answerbox{$\boxed{3}$ pivot variables and $\boxed{3}$ free variables.}
+\end{frame}
+
+\begin{frame}{Brief 3 - Checking an inverse}
+\[
+A=\begin{bmatrix}1&2\\3&7\end{bmatrix},
+\qquad
+C=\begin{bmatrix}7&-2\\-3&1\end{bmatrix}.
+\]
+\[
+AC=
+\begin{bmatrix}
+7-6&-2+2\\
+21-21&-6+7
+\end{bmatrix}
+=I_2.
+\]
+Also $CA=I_2$.
+\answerbox{Yes. $C=A^{-1}$.}
+\end{frame}
+
+\begin{frame}{Brief 4 - Membership in a span}
+Solve
+\[
+c_1\vect v_1+c_2\vect v_2+c_3\vect v_3=\vect b.
+\]
+The coordinate equations are
+\[
+c_1+c_3=2,
+\qquad
+c_2+c_3=3,
+\qquad
+c_1+c_2=1.
+\]
+They give $(c_1,c_2,c_3)=(0,1,2)$.
+\answerbox{Yes. $\vect b=\vect v_2+2\vect v_3$.}
+\end{frame}
+
+\begin{frame}{Brief 5 - Isolating a matrix factor}
+Starting with
+\[
+ABC=P,
+\]
+multiply by $A^{-1}$ on the left:
+\[
+BC=A^{-1}P.
+\]
+Then multiply by $C^{-1}$ on the right:
+\[
+B=A^{-1}PC^{-1}.
+\]
+\answerbox{$\boxed{B=A^{-1}PC^{-1}}$.}
+\end{frame}
+
+\section{Exercises}
+\sectioncard{Section III}{Exercises - 70 points}
+
+\begin{frame}{Exercise 1 - Solving a linear system}
+\small
+\[
+\left[\begin{array}{ccc|c}
+1&2&-1&3\\
+2&5&1&8\\
+-1&-1&2&-1
+\end{array}\right]
+\xrightarrow[,R_3\leftarrow R_3+R_1,]{,R_2\leftarrow R_2-2R_1,}
+\left[\begin{array}{ccc|c}
+1&2&-1&3\\
+0&1&3&2\\
+0&1&1&2
+\end{array}\right]
+\]
+\[
+\xrightarrow{R_3\leftarrow R_3-R_2}
+\left[\begin{array}{ccc|c}
+1&2&-1&3\\
+0&1&3&2\\
+0&0&-2&0
+\end{array}\right].
+\]
+Thus $z=0$, $y=2$, and $x=-1$.
+\answerbox{$\boxed{(x,y,z)=(-1,2,0)}$.}
+\end{frame}
+
+\begin{frame}{Exercise 2 - Matrix multiplication}
+\small
+\[
+AB=
+\begin{bmatrix}1&-2&3\\0&4&-1\end{bmatrix}
+\begin{bmatrix}2&1\\-1&3\\4&0\end{bmatrix}.
+\]
+\[
+=\begin{bmatrix}
+1(2)+(-2)(-1)+3(4)&1(1)+(-2)(3)+3(0)\\
+0(2)+4(-1)+(-1)(4)&0(1)+4(3)+(-1)(0)
+\end{bmatrix}
+\]
+\answerbox{$\displaystyle \boxed{AB=\begin{bmatrix}16&-5\\-8&12\end{bmatrix}}$.}
+\end{frame}
+
+\begin{frame}{Exercise 3 - Determinant}
+\[
+D=\begin{bmatrix}
+2&0&0&0\\
+1&3&4&0\\
+0&2&-1&5\\
+0&0&0&4
+\end{bmatrix}.
+\]
+Expand along row 1, then along the last column of the remaining matrix:
+\begin{align*}
+\det D
+&=2\det\begin{bmatrix}3&4&0\\2&-1&5\\0&0&4\end{bmatrix}\\
+&=2(4)\det\begin{bmatrix}3&4\\2&-1\end{bmatrix}
+=8(-3-8).
+\end{align*}
+\answerbox{$\boxed{\det D=-88}$.}
+\end{frame}
+
+\begin{frame}[shrink=4]{Exercise 4 - Finding an inverse}
+\small
+\[
+\left[\begin{array}{ccc|ccc}
+1&1&0&1&0&0\\
+0&1&1&0&1&0\\
+1&0&1&0&0&1
+\end{array}\right]
+\xrightarrow{R_3\leftarrow R_3-R_1}
+\left[\begin{array}{ccc|ccc}
+1&1&0&1&0&0\\
+0&1&1&0&1&0\\
+0&-1&1&-1&0&1
+\end{array}\right]
+\]
+\[
+\xrightarrow{R_3\leftarrow R_3+R_2}
+\left[\begin{array}{ccc|ccc}
+1&1&0&1&0&0\\
+0&1&1&0&1&0\\
+0&0&2&-1&1&1
+\end{array}\right]
+\longrightarrow
+\left[\begin{array}{ccc|ccc}
+1&0&0&\frac12&-\frac12&\frac12\\
+0&1&0&\frac12&\frac12&-\frac12\\
+0&0&1&-\frac12&\frac12&\frac12
+\end{array}\right].
+\]
+\answerbox{$\displaystyle \boxed{A^{-1}=\frac12\begin{bmatrix}1&-1&1\\1&1&-1\\-1&1&1\end{bmatrix}}$.}
+\end{frame}
+
+\begin{frame}{Exercise 5 - LU factorization}
+Use the elimination multipliers
+\[
+m_{21}=2,
+\qquad
+m_{31}=-1,
+\qquad
+m_{32}=1.
+\]
+The row replacements produce
+\[
+U=\begin{bmatrix}
+2&4&-2\\
+0&1&1\\
+0&0&4
+\end{bmatrix}.
+\]
+Place the multipliers below the diagonal of $L$:
+\answerbox{$\displaystyle
+\boxed{L=\begin{bmatrix}1&0&0\\2&1&0\\-1&1&1\end{bmatrix},
+\quad
+U=\begin{bmatrix}2&4&-2\\0&1&1\\0&0&4\end{bmatrix}}$.}
+\end{frame}
+
+\begin{frame}{Exercise 6 - Recovering the original determinant}
+The three operations have determinant factors
+\[
+-1,
+\qquad
+3,
+\qquad
+1.
+\]
+Therefore
+\[
+\det B=(-1)(3)(1)\det A=-3\det A.
+\]
+Given $\det B=36$,
+\[
+36=-3\det A.
+\]
+\answerbox{$\boxed{\det A=-12}$.}
+\end{frame}
+
+\begin{frame}{Exercise 7(a) - Unique solutions}
+The coefficient matrix is triangular:
+\[
+A(k)=\begin{bmatrix}
+1&1&0\\
+0&k-1&1\\
+0&0&k+2
+\end{bmatrix}.
+\]
+Hence
+\[
+\det A(k)=1(k-1)(k+2).
+\]
+The system has a unique solution exactly when the determinant is nonzero.
+\answerbox{$\boxed{k\ne1,-2}$.}
+\end{frame}
+
+\begin{frame}{Exercise 7(b) - The case \texorpdfstring{$k=1$}{k=1}}
+At $k=1$,
+\[
+\begin{cases}
+x_1+x_2=2,\\
+x_3=1,\\
+3x_3=3.
+\end{cases}
+\]
+The third equation repeats the second. Let $x_2=t$:
+\[
+x_1=2-t,
+\qquad
+x_3=1.
+\]
+\answerbox{Infinitely many solutions:
+$\displaystyle \boxed{\vect x=\begin{bmatrix}2\\0\\1\end{bmatrix}
++t\begin{bmatrix}-1\\1\\0\end{bmatrix},\ t\in\R}$.}
+\end{frame}
+
+\begin{frame}{Exercise 7(c) - The case \texorpdfstring{$k=-2$}{k=-2}}
+At $k=-2$, the final row of the augmented system is
+\[
+\left[\begin{array}{ccc|c}
+0&0&0&3
+\end{array}\right].
+\]
+This row represents the contradiction
+\[
+0=3.
+\]
+Equivalently,
+\[
+\rank A<\rank[A\mid\vect b].
+\]
+\answerbox{The system is inconsistent and has no solution.}
+\end{frame}
+
+\begin{frame}{Compact answer key}
+\small
+\textbf{Multiple choice}
+\[
+\boxed{\text{C, C, D, B, A, B, C, B, C, C}}
+\]
+\textbf{Brief answers}
+\begin{enumerate}
+  \item $h=5$.
+  \item 3 pivot variables and 3 free variables.
+  \item Yes, $C=A^{-1}$.
+  \item $\vect b=\vect v_2+2\vect v_3$.
+  \item $B=A^{-1}PC^{-1}$.
+\end{enumerate}
+\textbf{Exercises}
+\[
+(-1,2,0),\quad
+\begin{bmatrix}16&-5\\-8&12\end{bmatrix},\quad
+-88,\quad
+A^{-1},\quad
+A=LU,\quad
+-12,
+\]
+with the parameter cases $k\ne1,-2$, $k=1$, and $k=-2$ classified above.
+\end{frame}
+
+\end{document}

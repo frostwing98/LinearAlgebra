@@ -1,0 +1,630 @@
+% Lecture 8: Midterm review, mock exam, and walkthrough setup.
+% Compile from the repository root with:
+%   pdflatex -interaction=nonstopmode -halt-on-error -output-directory=output/pdf Lecture8/lecture8.tex
+\pdfminorversion=7
+\documentclass[aspectratio=169]{beamer}
+
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{array,booktabs}
+\usepackage{xcolor}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[UTF8,heading=false]{ctex}
+\else
+  \usepackage{fontspec}
+  \usepackage{xeCJK}
+  \setCJKmainfont{Microsoft YaHei}
+\fi
+
+% Allow compilation both from the repository root and from Lecture8/.
+% The custom Beamer theme is stored at the repository root.
+\makeatletter
+\def\input@path{{./}{../}{Lecture8/}}
+\makeatother
+
+\mode<presentation>{
+  \usetheme{OSUCSE169}
+  \setbeamercovered{invisible}
+}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}[frame number]
+\setbeamercolor{headline}{fg=black,bg=black}
+\setbeamercolor{section in head/foot}{bg=gray}
+\setbeamertemplate{headline}{%
+  \begin{beamercolorbox}[ht=2.25ex,dp=3.75ex]{section in head/foot}
+    \insertnavigation{\paperwidth}
+  \end{beamercolorbox}}
+
+\definecolor{lecturegreen}{RGB}{48,105,21}
+\definecolor{lectureblue}{RGB}{0,76,170}
+\definecolor{lectureorange}{RGB}{202,105,0}
+\definecolor{softgray}{RGB}{245,245,245}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\vect}[1]{\mathbf{#1}}
+\newcommand{\Span}{\operatorname{Span}}
+\newcommand{\Col}{\operatorname{Col}}
+\newcommand{\Nul}{\operatorname{Nul}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\nullity}{\operatorname{nullity}}
+\newcommand{\keybox}[2]{%
+  \begin{beamercolorbox}[sep=1.0ex,wd=\linewidth]{block body}
+    \textbf{#1}\par #2
+  \end{beamercolorbox}}
+\newcommand{\sectioncard}[2]{%
+  \begin{frame}[plain]
+    \vfill\centering
+    {\Huge\color{lectureorange}\bfseries #1}\par\bigskip
+    {\LARGE\color{lecturegreen}\bfseries #2}
+    \vfill
+  \end{frame}}
+
+\title{MATH 100: Linear Algebra}
+\subtitle{Lecture 8 - Midterm Review}
+\author{Yuqing Yang}
+\institute{Macau University of Science and Technology}
+\date{10/21/2026}
+
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+\begin{frame}{Today's session}
+\begin{enumerate}
+  \item Review the main ideas from Lectures 2--7.
+  \item Complete a mock midterm under exam conditions.
+  \item Work through the mock exam and compare solution methods.
+\end{enumerate}
+\medskip
+\begin{block}{Lecture 1 reminder}
+The midterm is closed-book. Use the review to identify topics that still require practice.
+\end{block}
+\end{frame}
+
+\section{Systems and transformations}
+\sectioncard{Part I}{Systems, vectors, and transformations}
+
+\begin{frame}{The central equation}
+\centering
+{\LARGE
+\[
+A\vect x=\vect b
+\]}
+\vspace{-1ex}
+\begin{columns}[T]
+\column{.48\textwidth}
+\textbf{Existence}
+\begin{itemize}
+  \item Is the system consistent?
+  \item Is $\vect b$ in the span of the columns?
+  \item Is $\vect b$ in $\Col A$?
+\end{itemize}
+\column{.48\textwidth}
+\textbf{Uniqueness}
+\begin{itemize}
+  \item Are there free variables?
+  \item Is $\Nul A=\{\vect0\}$?
+  \item Are the columns independent?
+\end{itemize}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Linear combinations and span}
+For $\vect v_1,\ldots,\vect v_p\in\R^n$,
+\[
+\Span\{\vect v_1,\ldots,\vect v_p\}
+=\{c_1\vect v_1+\cdots+c_p\vect v_p:c_i\in\R\}.
+\]
+If $A=[\vect a_1\ \cdots\ \vect a_n]$, then
+\[
+\vect b\in\Span\{\vect a_1,\ldots,\vect a_n\}
+\iff A\vect x=\vect b\text{ is consistent}.
+\]
+\begin{block}{Computational test}
+Row reduce $[A\mid\vect b]$. A row $[0\ \cdots\ 0\mid d]$ with $d\ne0$ proves that $\vect b$ is not in the span.
+\end{block}
+\end{frame}
+
+\begin{frame}{Three forms of one system}
+The following descriptions have the same solution set:
+\begin{enumerate}
+  \item a system of linear equations;
+  \item a vector equation,
+  \[
+  x_1\vect a_1+\cdots+x_n\vect a_n=\vect b;
+  \]
+  \item a matrix equation,
+  \[
+  A\vect x=\vect b.
+  \]
+\end{enumerate}
+For $A\in\R^{m\times n}$, the input is in $\R^n$ and the output is in $\R^m$.
+\end{frame}
+
+\begin{frame}{Pivots, free variables, and solution types}
+\renewcommand{\arraystretch}{1.35}
+\begin{center}
+\begin{tabular}{>{\raggedright\arraybackslash}p{.34\linewidth}>{\raggedright\arraybackslash}p{.51\linewidth}}
+\toprule
+Row-reduction result & Conclusion \\
+\midrule
+$[0\ \cdots\ 0\mid d]$, $d\ne0$ & No solution \\
+Consistent, no free variables & One solution \\
+Consistent, at least one free variable & Infinitely many solutions \\
+\bottomrule
+\end{tabular}
+\end{center}
+\medskip
+For $A\vect x=\vect0$:
+\[
+\text{nontrivial solutions exist}
+\iff \text{at least one free variable exists}.
+\]
+\end{frame}
+
+\begin{frame}{Parametric vector form}
+For a homogeneous system,
+\[
+\vect x=s\vect v_1+t\vect v_2.
+\]
+For a consistent nonhomogeneous system,
+\[
+\vect x=\vect p+s\vect v_1+t\vect v_2,
+\]
+where $\vect p$ is one particular solution and the parameter vectors solve $A\vect x=\vect0$.
+\begin{block}{Workflow}
+Identify free variables, introduce parameters, solve for pivot variables, then separate the constant and parameter vectors.
+\end{block}
+\end{frame}
+
+\begin{frame}{Linear independence}
+$\{\vect v_1,\ldots,\vect v_p\}$ is linearly independent when
+\[
+x_1\vect v_1+\cdots+x_p\vect v_p=\vect0
+\]
+has only the trivial solution.
+\begin{itemize}
+  \item Put the vectors into the columns of $A$ and solve $A\vect x=\vect0$.
+  \item A set containing $\vect0$ is dependent.
+  \item Two vectors are dependent exactly when one is a scalar multiple of the other.
+  \item More than $n$ vectors in $\R^n$ are dependent.
+  \item A dependent set contains a vector that is a linear combination of the others.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Linear transformations}
+A transformation $T$ is linear when
+\[
+T(\vect u+\vect v)=T(\vect u)+T(\vect v),
+\qquad
+T(c\vect u)=cT(\vect u).
+\]
+Therefore,
+\[
+T(c_1\vect v_1+\cdots+c_p\vect v_p)
+=c_1T(\vect v_1)+\cdots+c_pT(\vect v_p).
+\]
+Every matrix transformation $T(\vect x)=A\vect x$ is linear.
+\begin{alertblock}{Quick rejection test}
+If $T(\vect0)\ne\vect0$, then $T$ is not linear.
+\end{alertblock}
+\end{frame}
+
+\begin{frame}{The standard matrix}
+Every linear transformation $T:\R^n\to\R^m$ has a unique matrix
+\[
+A=[T(\vect e_1)\ \cdots\ T(\vect e_n)]
+\]
+such that $T(\vect x)=A\vect x$.
+\begin{block}{Composition order}
+If $A$ acts first and $B$ acts second, then the composition has matrix $BA$.
+\end{block}
+The standard matrices studied in class describe dilations, contractions, shears, projections, and reflections.
+\end{frame}
+
+\begin{frame}{Onto and one-to-one}
+For $T(\vect x)=A\vect x$, with $A\in\R^{m\times n}$:
+\begin{columns}[T]
+\column{.48\textwidth}
+\textbf{Onto $\R^m$}
+\begin{itemize}
+  \item $A\vect x=\vect b$ is consistent for every $\vect b\in\R^m$.
+  \item $A$ has a pivot in every row.
+\end{itemize}
+\column{.48\textwidth}
+\textbf{One-to-one}
+\begin{itemize}
+  \item $A\vect x=\vect0$ has only the trivial solution.
+  \item $A$ has a pivot in every column.
+\end{itemize}
+\end{columns}
+Also,
+\[
+\ker T=\Nul A,
+\qquad
+\operatorname{range}T=\Col A.
+\]
+\end{frame}
+
+\section{Matrix operations}
+\sectioncard{Part II}{Matrix operations and invertibility}
+
+\begin{frame}{Matrix multiplication}
+The product is defined when the inner dimensions match:
+\[
+A_{m\times r}B_{r\times n}=C_{m\times n}.
+\]
+Three useful views:
+\begin{itemize}
+  \item each entry is a row-column dot product;
+  \item each column of $AB$ is $A$ times the corresponding column of $B$;
+  \item in $AB\vect x$, the matrix $B$ acts first.
+\end{itemize}
+\[
+A(BC)=(AB)C,
+\quad
+A(B+C)=AB+AC.
+\]
+In general, $AB\ne BA$, and $AB=0$ does not force $A=0$ or $B=0$.
+\end{frame}
+
+\begin{frame}{Transpose and special matrices}
+\[
+(A^T)_{ij}=A_{ji}.
+\]
+\begin{align*}
+(A^T)^T&=A,&
+(A+B)^T&=A^T+B^T,\\
+(cA)^T&=cA^T,&
+(AB)^T&=B^TA^T.
+\end{align*}
+\begin{itemize}
+  \item $A$ is symmetric when $A^T=A$.
+  \item $A$ is skew-symmetric when $A^T=-A$.
+  \item The diagonal entries of a skew-symmetric matrix are zero.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Inverse matrices}
+A square matrix is invertible when
+\[
+AA^{-1}=I=A^{-1}A.
+\]
+\begin{align*}
+(A^{-1})^{-1}&=A,\\
+(AB)^{-1}&=B^{-1}A^{-1},\\
+(A^T)^{-1}&=(A^{-1})^T.
+\end{align*}
+Row-reduction algorithm:
+\[
+[A\mid I]\longrightarrow[I\mid A^{-1}].
+\]
+If the left block cannot become $I$, then $A$ is singular.
+\end{frame}
+
+\begin{frame}{Matrix equations}
+When the required inverses exist,
+\begin{align*}
+AX=B &\Longrightarrow X=A^{-1}B,\\
+XA=B &\Longrightarrow X=BA^{-1},\\
+AXB=C &\Longrightarrow X=A^{-1}CB^{-1}.
+\end{align*}
+\begin{alertblock}{Order matters}
+Multiply by an inverse on the side where the matching factor appears. Do not commute matrix factors.
+\end{alertblock}
+\end{frame}
+
+\begin{frame}[shrink=7]{The Invertible Matrix Theorem}
+For a square $n\times n$ matrix $A$, the following are equivalent:
+\begin{columns}[T]
+\column{.49\textwidth}
+\begin{itemize}
+  \item $A$ is invertible.
+  \item $A\sim I_n$.
+  \item $A$ has $n$ pivots.
+  \item $A\vect x=\vect0$ has only the trivial solution.
+  \item The columns are independent.
+  \item The columns span $\R^n$.
+\end{itemize}
+\column{.49\textwidth}
+\begin{itemize}
+  \item $A\vect x=\vect b$ has one solution for every $\vect b$.
+  \item $\vect x\mapsto A\vect x$ is one-to-one and onto.
+  \item $A^T$ is invertible.
+  \item $\rank A=n$.
+  \item $\Nul A=\{\vect0\}$.
+  \item $\det A\ne0$.
+\end{itemize}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Partitioned matrices}
+Block multiplication follows the usual row-column rule:
+\[
+\begin{bmatrix}A_{11}&A_{12}\\A_{21}&A_{22}\end{bmatrix}
+\begin{bmatrix}B_{11}&B_{12}\\B_{21}&B_{22}\end{bmatrix}
+=
+\begin{bmatrix}
+A_{11}B_{11}+A_{12}B_{21}&A_{11}B_{12}+A_{12}B_{22}\\
+A_{21}B_{11}+A_{22}B_{21}&A_{21}B_{12}+A_{22}B_{22}
+\end{bmatrix}.
+\]
+Every block product must have compatible dimensions.
+\[
+AB=\sum_{k=1}^{n}\operatorname{col}_k(A)\operatorname{row}_k(B).
+\]
+\end{frame}
+
+\begin{frame}{LU factorization}
+Write
+\[
+A=LU,
+\]
+where $L$ is unit lower triangular and $U$ is echelon or upper triangular.
+\begin{enumerate}
+  \item Reduce $A$ to $U$ using row replacements.
+  \item Record the elimination multipliers in $L$.
+  \item Verify $LU=A$.
+\end{enumerate}
+To solve $A\vect x=\vect b$:
+\[
+L\vect y=\vect b
+\quad\text{then}\quad
+U\vect x=\vect y.
+\]
+The factorization can be reused for many right-hand sides.
+\end{frame}
+
+\section{Determinants}
+\sectioncard{Part III}{Determinants and their applications}
+
+\begin{frame}{Determinant computation}
+For a $2\times2$ matrix,
+\[
+\det\begin{bmatrix}a&b\\c&d\end{bmatrix}=ad-bc.
+\]
+For larger matrices,
+\[
+C_{ij}=(-1)^{i+j}\det A_{ij},
+\qquad
+\det A=\sum_j a_{ij}C_{ij}.
+\]
+\begin{itemize}
+  \item Expand along a row or column with many zeros.
+  \item If $A$ is triangular, multiply its diagonal entries.
+  \item Sarrus' rule applies only to $3\times3$ matrices.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Row operations and determinants}
+\renewcommand{\arraystretch}{1.4}
+\begin{center}
+\begin{tabular}{>{\raggedright\arraybackslash}p{.46\linewidth}>{\raggedright\arraybackslash}p{.34\linewidth}}
+\toprule
+Row operation & Effect on determinant \\
+\midrule
+$R_i\leftrightarrow R_j$ & Multiply by $-1$ \\
+$R_i\leftarrow cR_i$ & Multiply by $c$ \\
+$R_i\leftarrow R_i+cR_j$ & No change \\
+\bottomrule
+\end{tabular}
+\end{center}
+The same rules hold for column operations. A zero row, two equal rows, or proportional rows force the determinant to be zero.
+\end{frame}
+
+\begin{frame}{Determinant identities}
+For square $n\times n$ matrices,
+\begin{align*}
+\det(AB)&=\det A\det B,\\
+\det(A^T)&=\det A,\\
+\det(cA)&=c^n\det A,\\
+\det(A^k)&=(\det A)^k.
+\end{align*}
+If $A$ is invertible,
+\[
+\det(A^{-1})=\frac{1}{\det A}.
+\]
+\begin{alertblock}{False in general}
+$\det(A+B)=\det A+\det B$.
+\end{alertblock}
+\end{frame}
+
+\begin{frame}{Determinants and system classification}
+For square $A$,
+\[
+A\text{ is invertible}\iff\det A\ne0.
+\]
+Hence $\det A\ne0$ gives one solution for every $\vect b$.
+\medskip
+
+If $\det A=0$, compare ranks:
+\begin{align*}
+\rank A=\rank[A\mid\vect b]<n
+&\Longrightarrow \text{infinitely many solutions},\\
+\rank A<\rank[A\mid\vect b]
+&\Longrightarrow \text{no solution}.
+\end{align*}
+The equation $\det A=0$ does not by itself prove inconsistency.
+\end{frame}
+
+\begin{frame}{Cramer's rule}
+If $A$ is invertible, then the solution of $A\vect x=\vect b$ satisfies
+\[
+x_i=\frac{\det A_i(\vect b)}{\det A},
+\]
+where $A_i(\vect b)$ replaces column $i$ of $A$ with $\vect b$.
+\begin{itemize}
+  \item Confirm that $A$ is square and $\det A\ne0$.
+  \item Replace a column, not a row.
+  \item Use elimination for larger or general systems.
+\end{itemize}
+\end{frame}
+
+\section{Subspaces and rank}
+\sectioncard{Part IV}{Subspaces, bases, dimension, and rank}
+
+\begin{frame}{Subspaces}
+A subset $H\subseteq\R^n$ is a subspace when
+\begin{enumerate}
+  \item $\vect0\in H$;
+  \item $\vect u+\vect v\in H$ whenever $\vect u,\vect v\in H$;
+  \item $c\vect u\in H$ whenever $\vect u\in H$.
+\end{enumerate}
+Examples include every span, $\Col A$, $\Nul A$, $\R^n$, and $\{\vect0\}$.
+\begin{alertblock}{Origin test}
+A line or plane that does not pass through the origin is not a subspace.
+\end{alertblock}
+\end{frame}
+
+\begin{frame}{Column space and null space}
+For $A\in\R^{m\times n}$,
+\[
+\Col A=\Span\{\vect a_1,\ldots,\vect a_n\}\subseteq\R^m,
+\]
+\[
+\Nul A=\{\vect x\in\R^n:A\vect x=\vect0\}\subseteq\R^n.
+\]
+Membership tests:
+\begin{align*}
+\vect b\in\Col A
+&\iff A\vect x=\vect b\text{ is consistent},\\
+\vect x\in\Nul A
+&\iff A\vect x=\vect0.
+\end{align*}
+\end{frame}
+
+\begin{frame}{Bases for column and null spaces}
+\textbf{Basis for $\Col A$}
+\begin{enumerate}
+  \item Row reduce $A$ and locate the pivot columns.
+  \item Take the corresponding columns from the original matrix.
+\end{enumerate}
+\medskip
+\textbf{Basis for $\Nul A$}
+\begin{enumerate}
+  \item Solve $A\vect x=\vect0$.
+  \item Write the solution in parametric vector form.
+  \item Use one coefficient vector for each free parameter.
+\end{enumerate}
+\begin{alertblock}{Column-space warning}
+Do not use the columns of the reduced matrix as a basis for the original column space.
+\end{alertblock}
+\end{frame}
+
+\begin{frame}{Coordinates and dimension}
+If $\beta=\{\vect b_1,\ldots,\vect b_p\}$ is a basis for $H$, then every $\vect x\in H$ has a unique representation
+\[
+\vect x=c_1\vect b_1+\cdots+c_p\vect b_p.
+\]
+Its coordinate vector is
+\[
+[\vect x]_\beta=\begin{bmatrix}c_1\\\vdots\\c_p\end{bmatrix}.
+\]
+The dimension of $H$ is the number of vectors in any basis:
+\[
+\dim H=p.
+\]
+\end{frame}
+
+\begin{frame}{Rank and nullity}
+\[
+\rank A=\dim(\Col A)=\text{number of pivot columns},
+\]
+\[
+\nullity A=\dim(\Nul A)=\text{number of free variables}.
+\]
+If $A$ has $n$ columns, then
+\[
+\boxed{\rank A+\nullity A=n}.
+\]
+For an $n\times n$ matrix,
+\[
+A\text{ invertible}
+\iff \rank A=n
+\iff \nullity A=0.
+\]
+\end{frame}
+
+\begin{frame}{Choosing a method}
+\small
+\renewcommand{\arraystretch}{1.27}
+\begin{center}
+\begin{tabular}{>{\raggedright\arraybackslash}p{.46\linewidth}>{\raggedright\arraybackslash}p{.42\linewidth}}
+\toprule
+Question & First move \\
+\midrule
+$\vect b$ in a span or column space? & Reduce $[A\mid\vect b]$ \\
+Columns independent? & Solve $A\vect x=\vect0$ \\
+Onto or one-to-one? & Check row or column pivots \\
+Basis for $\Col A$? & Original pivot columns \\
+Basis for $\Nul A$? & Parametric homogeneous solution \\
+Square matrix invertible? & Easiest equivalent condition \\
+Large determinant? & Tracked elimination \\
+Repeated systems with one $A$? & LU factorization \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{frame}
+
+\begin{frame}{Common mistakes}
+\begin{itemize}
+  \item Keeping the factor order when transposing or inverting a product.
+  \item Treating matrix multiplication as commutative.
+  \item Assuming $\det(A+B)=\det A+\det B$.
+  \item Forgetting $\det(cA)=c^n\det A$.
+  \item Concluding that $\det A=0$ means no solution.
+  \item Taking column-space basis vectors from the reduced matrix.
+  \item Confusing a pivot in every row with a pivot in every column.
+  \item Using Cramer's rule for a singular or rectangular matrix.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Review checkpoint}
+Can you answer these questions without notes?
+\begin{enumerate}
+  \item How do pivots classify a linear system?
+  \item How do you test span, independence, onto, and one-to-one?
+  \item How do you find inverse, column-space basis, and null-space basis?
+  \item How do row operations change a determinant?
+  \item Which statements are equivalent to invertibility?
+  \item How do rank and nullity divide the variables?
+\end{enumerate}
+\end{frame}
+
+\section{Mock exam}
+\sectioncard{Part V}{Mock midterm}
+
+\begin{frame}{Mock exam format}
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{lcc}
+\toprule
+Section & Questions & Points \\
+\midrule
+Multiple choice & 10 & 20 \\
+Brief answers & 5 & 10 \\
+Exercises & 7 & 70 \\
+\midrule
+Total & 22 & 100 \\
+\bottomrule
+\end{tabular}
+\end{center}
+\medskip
+Show enough work to make your reasoning clear. The walkthrough begins after the exam session ends.
+\end{frame}
+
+\begin{frame}{Walkthrough focus}
+For each problem, we will compare
+\begin{itemize}
+  \item the mathematical idea being tested;
+  \item the shortest reliable method;
+  \item the steps that earn partial credit;
+  \item the most likely incorrect approach.
+\end{itemize}
+\medskip
+Bring questions from the mock exam into the walkthrough.
+\end{frame}
+
+\end{document}
