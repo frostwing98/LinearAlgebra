@@ -29,7 +29,6 @@
 \newcommand{\Col}{\operatorname{Col}}
 \newcommand{\Nul}{\operatorname{Nul}}
 \newcommand{\rank}{\operatorname{rank}}
-\newcommand{\nullity}{\operatorname{nullity}}
 \newcommand{\pts}[1]{\hfill\textbf{[#1 pts]}}
 \newcommand{\answerline}{\ifshowsolutions\else\par\vspace{0.55in}\hrulefill\par\fi}
 \newcommand{\workarea}[1]{\ifshowsolutions\else\vspace{#1}\fi}
@@ -175,14 +174,14 @@ How many solutions does the system have?
 \end{enumerate}
 \solution{\textbf{B.} Use the corresponding pivot columns from the original matrix.}
 
-\item A $4\times7$ matrix has rank $3$. What is its nullity?
+\item A $4\times7$ matrix has rank $3$. How many free variables does the homogeneous system $A\vect x=\vect0$ have?
 \begin{enumerate}[label=\Alph*.]
   \item $1$
   \item $3$
   \item $4$
   \item $7$
 \end{enumerate}
-\solution{\textbf{C.} Rank-nullity gives $3+\nullity A=7$.}
+\solution{\textbf{C.} Rank $3$ means there are $3$ pivot columns. Since $A$ has $7$ columns, the remaining $7-3=4$ columns correspond to free variables.}
 
 \item Which transformation from $\R^2$ to $\R^2$ is linear?
 \begin{enumerate}[label=\Alph*.]

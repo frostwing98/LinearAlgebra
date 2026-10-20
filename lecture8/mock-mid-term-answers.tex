@@ -2,7 +2,6 @@
 % Compile from the repository root:
 %   pdflatex -interaction=nonstopmode -halt-on-error -output-directory=output/pdf Lecture8/mock-mid-term-answers.tex
 % This file also compiles directly from inside Lecture8/.
-\pdfminorversion=7
 \documentclass[aspectratio=169]{beamer}
 
 \usepackage{amsmath,amssymb,mathtools}
@@ -44,7 +43,6 @@
 \newcommand{\Span}{\operatorname{Span}}
 \newcommand{\Col}{\operatorname{Col}}
 \newcommand{\rank}{\operatorname{rank}}
-\newcommand{\nullity}{\operatorname{nullity}}
 \newcommand{\sectioncard}[2]{%
   \begin{frame}[plain]
     \vfill\centering
@@ -178,16 +176,14 @@ is linearly independent and spans $\Col A$.
 \answerbox{\textbf{B.} $\{\vect a_1,\vect a_3\}$.}
 \end{frame}
 
-\begin{frame}{MC 9 - Rank and nullity}
-The matrix has seven columns, so rank-nullity gives
+\begin{frame}{MC 9 - Number of free variables}
+Rank $3$ means that $A$ has $3$ pivot columns. Since $A$ has $7$ columns,
 \[
-\rank A+\nullity A=7.
+\#\text{ free variables}
+=\#\text{ columns}-\#\text{ pivot columns}
+=7-3=4.
 \]
-With $\rank A=3$,
-\[
-\nullity A=7-3=4.
-\]
-\answerbox{\textbf{C.} The nullity is $4$.}
+\answerbox{\textbf{C.} The system $A\vect x=\vect0$ has $4$ free variables.}
 \end{frame}
 
 \begin{frame}{MC 10 - A linear transformation}
