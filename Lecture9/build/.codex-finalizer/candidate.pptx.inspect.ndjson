@@ -1,0 +1,170 @@
+{"kind":"deck","id":"pr/6l1ovz","name":"Deck"}
+{"kind":"layout","id":"ly/alkzmt43","editable":false,"name":"Master","type":"master"}
+{"kind":"layout","id":"ly/a5w7ehgr","editable":false,"name":"Title Slide","type":"title","placeholders":[{"name":"title","type":"title"},{"name":"subtitle","type":"subtitle"}]}
+{"kind":"layout","id":"ly/29s7e90r","editable":false,"name":"Section Header","type":"sectionHeader","placeholders":[{"name":"title","type":"title"}]}
+{"kind":"layout","id":"ly/fe9sbqxo","editable":false,"name":"Title and Body","type":"tx","placeholders":[{"name":"title","type":"title"},{"name":"body","type":"body"}]}
+{"kind":"layout","id":"ly/m10fat0f","editable":false,"name":"Title and Two Column","type":"twoColTx","placeholders":[{"name":"title","type":"title"},{"name":"Left column","type":"body"},{"name":"Right column","type":"body"}]}
+{"kind":"layout","id":"ly/90rep4b2","editable":false,"name":"Title and One Column","type":"tx","placeholders":[{"name":"title","type":"title"},{"name":"body","type":"body"}]}
+{"kind":"layout","id":"ly/7e1s76hw","editable":false,"name":"Blank","type":"blank"}
+{"kind":"slide","id":"sl/378hlh","slideIndex":0,"layout":{"id":"ly/7e1s76hw","name":"Blank"},"title":"Slide 1","textShapes":0,"backgroundColor":"rgba(255,255,255,1)"}
+{"kind":"image","id":"im/d4jexcnm","slideIndex":0,"position":{"left":0,"top":0,"width":1280,"height":720},"fit":"cover","name":"","alt":"Lecture 9 slide 01"}
+{"kind":"notes","id":"nt/378hlh","slideIndex":0,"text":""}
+{"kind":"slide","id":"sl/gcjen2","slideIndex":1,"layout":{"id":"ly/7e1s76hw","name":"Blank"},"title":"Slide 2","textShapes":0,"backgroundColor":"rgba(255,255,255,1)"}
+{"kind":"image","id":"im/ihsbudo3","slideIndex":1,"position":{"left":0,"top":0,"width":1280,"height":720},"fit":"cover","name":"","alt":"Lecture 9 slide 02"}
+{"kind":"notes","id":"nt/gcjen2","slideIndex":1,"text":""}
+{"kind":"slide","id":"sl/7xzn9k","slideIndex":2,"layout":{"id":"ly/7e1s76hw","name":"Blank"},"title":"Slide 3","textShapes":0,"backgroundColor":"rgba(255,255,255,1)"}
+{"kind":"image","id":"im/e5wfytkb","slideIndex":2,"position":{"left":0,"top":0,"width":1280,"height":720},"fit":"cover","name":"","alt":"Lecture 9 slide 03"}
+{"kind":"notes","id":"nt/7xzn9k","slideIndex":2,"text":""}
+{"kind":"slide","id":"sl/gw6kmp","slideIndex":3,"layout":{"id":"ly/7e1s76hw","name":"Blank"},"title":"Slide 4","textShapes":0,"backgroundColor":"rgba(255,255,255,1)"}
+{"kind":"image","id":"im/betkji5o","slideIndex":3,"position":{"left":0,"top":0,"width":1280,"height":720},"fit":"cover","name":"","alt":"Lecture 9 slide 04"}
+{"kind":"notes","id":"nt/gw6kmp","slideIndex":3,"text":""}
+{"kind":"slide","id":"sl/wiuz7n","slideIndex":4,"layout":{"id":"ly/7e1s76hw","name":"Blank"},"title":"Slide 5","textShapes":0,"backgroundColor":"rgba(255,255,255,1)"}
+{"kind":"image","id":"im/9g7udczm","slideIndex":4,"position":{"left":0,"top":0,"width":1280,"height":720},"fit":"cover","name":"","alt":"Lecture 9 slide 05"}
+{"kind":"notes","id":"nt/wiuz7n","slideIndex":4,"text":""}
+{"kind":"slide","id":"sl/ycuekk","slideIndex":5,"layout":{"id":"ly/7e1s76hw","name":"Blank"},"title":"Slide 6","textShapes":0,"backgroundColor":"rgba(255,255,255,1)"}
+{"kind":"image","id":"im/nmtofulc","slideIndex":5,"position":{"left":0,"top":0,"width":1280,"height":720},"fit":"cover","name":"","alt":"Lecture 9 slide 06"}
+{"kind":"notes","id":"nt/ycuekk","slideIndex":5,"text":""}
+{"kind":"slide","id":"sl/0zdbcy","slideIndex":6,"layout":{"id":"ly/7e1s76hw","name":"Blank"},"title":"Slide 7","textShapes":0,"backgroundColor":"rgba(255,255,255,1)"}
+{"kind":"image","id":"im/ji5oz2t4","slideIndex":6,"position":{"left":0,"top":0,"width":1280,"height":720},"fit":"cover","name":"","alt":"Lecture 9 slide 07"}
+{"kind":"notes","id":"nt/0zdbcy","slideIndex":6,"text":""}
+{"kind":"slide","id":"sl/crzsa6","slideIndex":7,"layout":{"id":"ly/7e1s76hw","name":"Blank"},"title":"Slide 8","textShapes":0,"backgroundColor":"rgba(255,255,255,1)"}
+{"kind":"image","id":"im/k36hof2h","slideIndex":7,"position":{"left":0,"top":0,"width":1280,"height":720},"fit":"cover","name":"","alt":"Lecture 9 slide 08"}
+{"kind":"notes","id":"nt/crzsa6","slideIndex":7,"text":""}
+{"kind":"slide","id":"sl/b11vl4","slideIndex":8,"layout":{"id":"ly/7e1s76hw","name":"Blank"},"title":"Slide 9","textShapes":0,"backgroundColor":"rgba(255,255,255,1)"}
+{"kind":"image","id":"im/x8rixojm","slideIndex":8,"position":{"left":0,"top":0,"width":1280,"height":720},"fit":"cover","name":"","alt":"Lecture 9 slide 09"}
+{"kind":"notes","id":"nt/b11vl4","slideIndex":8,"text":""}
+{"kind":"slide","id":"sl/deqjg4","slideIndex":9,"layout":{"id":"ly/7e1s76hw","name":"Blank"},"title":"Slide 10","textShapes":0,"backgroundColor":"rgba(255,255,255,1)"}
+{"kind":"image","id":"im/ylwbixkr","slideIndex":9,"position":{"left":0,"top":0,"width":1280,"height":720},"fit":"cover","name":"","alt":"Lecture 9 slide 10"}
+{"kind":"notes","id":"nt/deqjg4","slideIndex":9,"text":""}
+{"kind":"slide","id":"sl/u9j1lh","slideIndex":10,"layout":{"id":"ly/7e1s76hw","name":"Blank"},"title":"Slide 11","textShapes":0,"backgroundColor":"rgba(255,255,255,1)"}
+{"kind":"image","id":"im/ut8rud43","slideIndex":10,"position":{"left":0,"top":0,"width":1280,"height":720},"fit":"cover","name":"","alt":"Lecture 9 slide 11"}
+{"kind":"notes","id":"nt/u9j1lh","slideIndex":10,"text":""}
+{"kind":"slide","id":"sl/lcfx00","slideIndex":11,"layout":{"id":"ly/7e1s76hw","name":"Blank"},"title":"Slide 12","textShapes":0,"backgroundColor":"rgba(255,255,255,1)"}
+{"kind":"image","id":"im/y9wv6lov","slideIndex":11,"position":{"left":0,"top":0,"width":1280,"height":720},"fit":"cover","name":"","alt":"Lecture 9 slide 12"}
+{"kind":"notes","id":"nt/lcfx00","slideIndex":11,"text":""}
+{"kind":"slide","id":"sl/2i7l1b","slideIndex":12,"layout":{"id":"ly/7e1s76hw","name":"Blank"},"title":"Slide 13","textShapes":0,"backgroundColor":"rgba(255,255,255,1)"}
+{"kind":"image","id":"im/o3qdcnel","slideIndex":12,"position":{"left":0,"top":0,"width":1280,"height":720},"fit":"cover","name":"","alt":"Lecture 9 slide 13"}
+{"kind":"notes","id":"nt/2i7l1b","slideIndex":12,"text":""}
+{"kind":"slide","id":"sl/vgxizw","slideIndex":13,"layout":{"id":"ly/7e1s76hw","name":"Blank"},"title":"Slide 14","textShapes":0,"backgroundColor":"rgba(255,255,255,1)"}
+{"kind":"image","id":"im/yp4jatkf","slideIndex":13,"position":{"left":0,"top":0,"width":1280,"height":720},"fit":"cover","name":"","alt":"Lecture 9 slide 14"}
+{"kind":"notes","id":"nt/vgxizw","slideIndex":13,"text":""}
+{"kind":"slide","id":"sl/vcau36","slideIndex":14,"layout":{"id":"ly/7e1s76hw","name":"Blank"},"title":"Slide 15","textShapes":0,"backgroundColor":"rgba(255,255,255,1)"}
+{"kind":"image","id":"im/7exkrq9k","slideIndex":14,"position":{"left":0,"top":0,"width":1280,"height":720},"fit":"cover","name":"","alt":"Lecture 9 slide 15"}
+{"kind":"notes","id":"nt/vcau36","slideIndex":14,"text":""}
+{"kind":"slide","id":"sl/34z9mi","slideIndex":15,"layout":{"id":"ly/7e1s76hw","name":"Blank"},"title":"Slide 16","textShapes":0,"backgroundColor":"rgba(255,255,255,1)"}
+{"kind":"image","id":"im/vmhwz29o","slideIndex":15,"position":{"left":0,"top":0,"width":1280,"height":720},"fit":"cover","name":"","alt":"Lecture 9 slide 16"}
+{"kind":"notes","id":"nt/34z9mi","slideIndex":15,"text":""}
+{"kind":"slide","id":"sl/o3rbth","slideIndex":16,"layout":{"id":"ly/7e1s76hw","name":"Blank"},"title":"Slide 17","textShapes":0,"backgroundColor":"rgba(255,255,255,1)"}
+{"kind":"image","id":"im/54ru5cnu","slideIndex":16,"position":{"left":0,"top":0,"width":1280,"height":720},"fit":"cover","name":"","alt":"Lecture 9 slide 17"}
+{"kind":"notes","id":"nt/o3rbth","slideIndex":16,"text":""}
+{"kind":"slide","id":"sl/49k7vu","slideIndex":17,"layout":{"id":"ly/7e1s76hw","name":"Blank"},"title":"Slide 18","textShapes":0,"backgroundColor":"rgba(255,255,255,1)"}
+{"kind":"image","id":"im/fe5svudk","slideIndex":17,"position":{"left":0,"top":0,"width":1280,"height":720},"fit":"cover","name":"","alt":"Lecture 9 slide 18"}
+{"kind":"notes","id":"nt/49k7vu","slideIndex":17,"text":""}
+{"kind":"slide","id":"sl/csdd7e","slideIndex":18,"layout":{"id":"ly/7e1s76hw","name":"Blank"},"title":"Slide 19","textShapes":0,"backgroundColor":"rgba(255,255,255,1)"}
+{"kind":"image","id":"im/pgb6hkfa","slideIndex":18,"position":{"left":0,"top":0,"width":1280,"height":720},"fit":"cover","name":"","alt":"Lecture 9 slide 19"}
+{"kind":"notes","id":"nt/csdd7e","slideIndex":18,"text":""}
+{"kind":"slide","id":"sl/ppo1z8","slideIndex":19,"layout":{"id":"ly/7e1s76hw","name":"Blank"},"title":"Slide 20","textShapes":0,"backgroundColor":"rgba(255,255,255,1)"}
+{"kind":"image","id":"im/1snahofy","slideIndex":19,"position":{"left":0,"top":0,"width":1280,"height":720},"fit":"cover","name":"","alt":"Lecture 9 slide 20"}
+{"kind":"notes","id":"nt/ppo1z8","slideIndex":19,"text":""}
+{"kind":"slide","id":"sl/aof1pm","slideIndex":20,"layout":{"id":"ly/7e1s76hw","name":"Blank"},"title":"Slide 21","textShapes":0,"backgroundColor":"rgba(255,255,255,1)"}
+{"kind":"image","id":"im/14nmxsj6","slideIndex":20,"position":{"left":0,"top":0,"width":1280,"height":720},"fit":"cover","name":"","alt":"Lecture 9 slide 21"}
+{"kind":"notes","id":"nt/aof1pm","slideIndex":20,"text":""}
+{"kind":"slide","id":"sl/3dcr4j","slideIndex":21,"layout":{"id":"ly/7e1s76hw","name":"Blank"},"title":"Slide 22","textShapes":0,"backgroundColor":"rgba(255,255,255,1)"}
+{"kind":"image","id":"im/vm9g7qpg","slideIndex":21,"position":{"left":0,"top":0,"width":1280,"height":720},"fit":"cover","name":"","alt":"Lecture 9 slide 22"}
+{"kind":"notes","id":"nt/3dcr4j","slideIndex":21,"text":""}
+{"kind":"slide","id":"sl/vvzj9k","slideIndex":22,"layout":{"id":"ly/7e1s76hw","name":"Blank"},"title":"Slide 23","textShapes":0,"backgroundColor":"rgba(255,255,255,1)"}
+{"kind":"image","id":"im/fqd8vqt8","slideIndex":22,"position":{"left":0,"top":0,"width":1280,"height":720},"fit":"cover","name":"","alt":"Lecture 9 slide 23"}
+{"kind":"notes","id":"nt/vvzj9k","slideIndex":22,"text":""}
+{"kind":"slide","id":"sl/buapm6","slideIndex":23,"layout":{"id":"ly/7e1s76hw","name":"Blank"},"title":"Slide 24","textShapes":0,"backgroundColor":"rgba(255,255,255,1)"}
+{"kind":"image","id":"im/i14vip87","slideIndex":23,"position":{"left":0,"top":0,"width":1280,"height":720},"fit":"cover","name":"","alt":"Lecture 9 slide 24"}
+{"kind":"notes","id":"nt/buapm6","slideIndex":23,"text":""}
+{"kind":"slide","id":"sl/caoieq","slideIndex":24,"layout":{"id":"ly/7e1s76hw","name":"Blank"},"title":"Slide 25","textShapes":0,"backgroundColor":"rgba(255,255,255,1)"}
+{"kind":"image","id":"im/p4vato3e","slideIndex":24,"position":{"left":0,"top":0,"width":1280,"height":720},"fit":"cover","name":"","alt":"Lecture 9 slide 25"}
+{"kind":"notes","id":"nt/caoieq","slideIndex":24,"text":""}
+{"kind":"slide","id":"sl/ny0w0n","slideIndex":25,"layout":{"id":"ly/7e1s76hw","name":"Blank"},"title":"Slide 26","textShapes":0,"backgroundColor":"rgba(255,255,255,1)"}
+{"kind":"image","id":"im/98fado3e","slideIndex":25,"position":{"left":0,"top":0,"width":1280,"height":720},"fit":"cover","name":"","alt":"Lecture 9 slide 26"}
+{"kind":"notes","id":"nt/ny0w0n","slideIndex":25,"text":""}
+{"kind":"slide","id":"sl/qd84et","slideIndex":26,"layout":{"id":"ly/7e1s76hw","name":"Blank"},"title":"Slide 27","textShapes":0,"backgroundColor":"rgba(255,255,255,1)"}
+{"kind":"image","id":"im/rqt43yhg","slideIndex":26,"position":{"left":0,"top":0,"width":1280,"height":720},"fit":"cover","name":"","alt":"Lecture 9 slide 27"}
+{"kind":"notes","id":"nt/qd84et","slideIndex":26,"text":""}
+{"kind":"slide","id":"sl/xhkw0d","slideIndex":27,"layout":{"id":"ly/7e1s76hw","name":"Blank"},"title":"Slide 28","textShapes":0,"backgroundColor":"rgba(255,255,255,1)"}
+{"kind":"image","id":"im/tgr2po3a","slideIndex":27,"position":{"left":0,"top":0,"width":1280,"height":720},"fit":"cover","name":"","alt":"Lecture 9 slide 28"}
+{"kind":"notes","id":"nt/xhkw0d","slideIndex":27,"text":""}
+{"kind":"slide","id":"sl/n40vgb","slideIndex":28,"layout":{"id":"ly/7e1s76hw","name":"Blank"},"title":"Slide 29","textShapes":0,"backgroundColor":"rgba(255,255,255,1)"}
+{"kind":"image","id":"im/kf2xsryd","slideIndex":28,"position":{"left":0,"top":0,"width":1280,"height":720},"fit":"cover","name":"","alt":"Lecture 9 slide 29"}
+{"kind":"notes","id":"nt/n40vgb","slideIndex":28,"text":""}
+{"kind":"slide","id":"sl/zhq880","slideIndex":29,"layout":{"id":"ly/7e1s76hw","name":"Blank"},"title":"Slide 30","textShapes":0,"backgroundColor":"rgba(255,255,255,1)"}
+{"kind":"image","id":"im/2t8n6lgz","slideIndex":29,"position":{"left":0,"top":0,"width":1280,"height":720},"fit":"cover","name":"","alt":"Lecture 9 slide 30"}
+{"kind":"notes","id":"nt/zhq880","slideIndex":29,"text":""}
+{"kind":"slide","id":"sl/6x0cef","slideIndex":30,"layout":{"id":"ly/7e1s76hw","name":"Blank"},"title":"Slide 31","textShapes":0,"backgroundColor":"rgba(255,255,255,1)"}
+{"kind":"image","id":"im/vipw7y5g","slideIndex":30,"position":{"left":0,"top":0,"width":1280,"height":720},"fit":"cover","name":"","alt":"Lecture 9 slide 31"}
+{"kind":"notes","id":"nt/6x0cef","slideIndex":30,"text":""}
+{"kind":"slide","id":"sl/j6ylro","slideIndex":31,"layout":{"id":"ly/7e1s76hw","name":"Blank"},"title":"Slide 32","textShapes":0,"backgroundColor":"rgba(255,255,255,1)"}
+{"kind":"image","id":"im/tob6hsz6","slideIndex":31,"position":{"left":0,"top":0,"width":1280,"height":720},"fit":"cover","name":"","alt":"Lecture 9 slide 32"}
+{"kind":"notes","id":"nt/j6ylro","slideIndex":31,"text":""}
+{"kind":"slide","id":"sl/j59frd","slideIndex":32,"layout":{"id":"ly/7e1s76hw","name":"Blank"},"title":"Slide 33","textShapes":0,"backgroundColor":"rgba(255,255,255,1)"}
+{"kind":"image","id":"im/z29obu50","slideIndex":32,"position":{"left":0,"top":0,"width":1280,"height":720},"fit":"cover","name":"","alt":"Lecture 9 slide 33"}
+{"kind":"notes","id":"nt/j59frd","slideIndex":32,"text":""}
+{"kind":"slide","id":"sl/vvocs6","slideIndex":33,"layout":{"id":"ly/7e1s76hw","name":"Blank"},"title":"Slide 34","textShapes":0,"backgroundColor":"rgba(255,255,255,1)"}
+{"kind":"image","id":"im/e10jihof","slideIndex":33,"position":{"left":0,"top":0,"width":1280,"height":720},"fit":"cover","name":"","alt":"Lecture 9 slide 34"}
+{"kind":"notes","id":"nt/vvocs6","slideIndex":33,"text":""}
+{"kind":"slide","id":"sl/w72mdi","slideIndex":34,"layout":{"id":"ly/7e1s76hw","name":"Blank"},"title":"Slide 35","textShapes":0,"backgroundColor":"rgba(255,255,255,1)"}
+{"kind":"image","id":"im/ba1cvi9c","slideIndex":34,"position":{"left":0,"top":0,"width":1280,"height":720},"fit":"cover","name":"","alt":"Lecture 9 slide 35"}
+{"kind":"notes","id":"nt/w72mdi","slideIndex":34,"text":""}
+{"kind":"slide","id":"sl/7rp8ef","slideIndex":35,"layout":{"id":"ly/7e1s76hw","name":"Blank"},"title":"Slide 36","textShapes":0,"backgroundColor":"rgba(255,255,255,1)"}
+{"kind":"image","id":"im/lgr2lgj6","slideIndex":35,"position":{"left":0,"top":0,"width":1280,"height":720},"fit":"cover","name":"","alt":"Lecture 9 slide 36"}
+{"kind":"notes","id":"nt/7rp8ef","slideIndex":35,"text":""}
+{"kind":"slide","id":"sl/fdh1nz","slideIndex":36,"layout":{"id":"ly/7e1s76hw","name":"Blank"},"title":"Slide 37","textShapes":0,"backgroundColor":"rgba(255,255,255,1)"}
+{"kind":"image","id":"im/gzi1sjyx","slideIndex":36,"position":{"left":0,"top":0,"width":1280,"height":720},"fit":"cover","name":"","alt":"Lecture 9 slide 37"}
+{"kind":"notes","id":"nt/fdh1nz","slideIndex":36,"text":""}
+{"kind":"slide","id":"sl/iibm5d","slideIndex":37,"layout":{"id":"ly/7e1s76hw","name":"Blank"},"title":"Slide 38","textShapes":0,"backgroundColor":"rgba(255,255,255,1)"}
+{"kind":"image","id":"im/1wfqp03y","slideIndex":37,"position":{"left":0,"top":0,"width":1280,"height":720},"fit":"cover","name":"","alt":"Lecture 9 slide 38"}
+{"kind":"notes","id":"nt/iibm5d","slideIndex":37,"text":""}
+{"kind":"slide","id":"sl/bjnh2d","slideIndex":38,"layout":{"id":"ly/7e1s76hw","name":"Blank"},"title":"Slide 39","textShapes":0,"backgroundColor":"rgba(255,255,255,1)"}
+{"kind":"image","id":"im/bu1c7y5o","slideIndex":38,"position":{"left":0,"top":0,"width":1280,"height":720},"fit":"cover","name":"","alt":"Lecture 9 slide 39"}
+{"kind":"notes","id":"nt/bjnh2d","slideIndex":38,"text":""}
+{"kind":"slide","id":"sl/csrljv","slideIndex":39,"layout":{"id":"ly/7e1s76hw","name":"Blank"},"title":"Slide 40","textShapes":0,"backgroundColor":"rgba(255,255,255,1)"}
+{"kind":"image","id":"im/3690n2lg","slideIndex":39,"position":{"left":0,"top":0,"width":1280,"height":720},"fit":"cover","name":"","alt":"Lecture 9 slide 40"}
+{"kind":"notes","id":"nt/csrljv","slideIndex":39,"text":""}
+{"kind":"slide","id":"sl/10vr1o","slideIndex":40,"layout":{"id":"ly/7e1s76hw","name":"Blank"},"title":"Slide 41","textShapes":0,"backgroundColor":"rgba(255,255,255,1)"}
+{"kind":"image","id":"im/ozadoj61","slideIndex":40,"position":{"left":0,"top":0,"width":1280,"height":720},"fit":"cover","name":"","alt":"Lecture 9 slide 41"}
+{"kind":"notes","id":"nt/10vr1o","slideIndex":40,"text":""}
+{"kind":"slide","id":"sl/r3bh78","slideIndex":41,"layout":{"id":"ly/7e1s76hw","name":"Blank"},"title":"Slide 42","textShapes":0,"backgroundColor":"rgba(255,255,255,1)"}
+{"kind":"image","id":"im/dkz2tgna","slideIndex":41,"position":{"left":0,"top":0,"width":1280,"height":720},"fit":"cover","name":"","alt":"Lecture 9 slide 42"}
+{"kind":"notes","id":"nt/r3bh78","slideIndex":41,"text":""}
+{"kind":"slide","id":"sl/jcol5x","slideIndex":42,"layout":{"id":"ly/7e1s76hw","name":"Blank"},"title":"Slide 43","textShapes":0,"backgroundColor":"rgba(255,255,255,1)"}
+{"kind":"image","id":"im/kbedwzep","slideIndex":42,"position":{"left":0,"top":0,"width":1280,"height":720},"fit":"cover","name":"","alt":"Lecture 9 slide 43"}
+{"kind":"notes","id":"nt/jcol5x","slideIndex":42,"text":""}
+{"kind":"slide","id":"sl/wgfok2","slideIndex":43,"layout":{"id":"ly/7e1s76hw","name":"Blank"},"title":"Slide 44","textShapes":0,"backgroundColor":"rgba(255,255,255,1)"}
+{"kind":"image","id":"im/nmlgv21g","slideIndex":43,"position":{"left":0,"top":0,"width":1280,"height":720},"fit":"cover","name":"","alt":"Lecture 9 slide 44"}
+{"kind":"notes","id":"nt/wgfok2","slideIndex":43,"text":""}
+{"kind":"slide","id":"sl/kelk9i","slideIndex":44,"layout":{"id":"ly/7e1s76hw","name":"Blank"},"title":"Slide 45","textShapes":0,"backgroundColor":"rgba(255,255,255,1)"}
+{"kind":"image","id":"im/u14nap4r","slideIndex":44,"position":{"left":0,"top":0,"width":1280,"height":720},"fit":"cover","name":"","alt":"Lecture 9 slide 45"}
+{"kind":"notes","id":"nt/kelk9i","slideIndex":44,"text":""}
+{"kind":"slide","id":"sl/ktk6hb","slideIndex":45,"layout":{"id":"ly/7e1s76hw","name":"Blank"},"title":"Slide 46","textShapes":0,"backgroundColor":"rgba(255,255,255,1)"}
+{"kind":"image","id":"im/fu1ofe9c","slideIndex":45,"position":{"left":0,"top":0,"width":1280,"height":720},"fit":"cover","name":"","alt":"Lecture 9 slide 46"}
+{"kind":"notes","id":"nt/ktk6hb","slideIndex":45,"text":""}
+{"kind":"slide","id":"sl/m91uzw","slideIndex":46,"layout":{"id":"ly/7e1s76hw","name":"Blank"},"title":"Slide 47","textShapes":0,"backgroundColor":"rgba(255,255,255,1)"}
+{"kind":"image","id":"im/69wvax87","slideIndex":46,"position":{"left":0,"top":0,"width":1280,"height":720},"fit":"cover","name":"","alt":"Lecture 9 slide 47"}
+{"kind":"notes","id":"nt/m91uzw","slideIndex":46,"text":""}
+{"kind":"slide","id":"sl/45p9q8","slideIndex":47,"layout":{"id":"ly/7e1s76hw","name":"Blank"},"title":"Slide 48","textShapes":0,"backgroundColor":"rgba(255,255,255,1)"}
+{"kind":"image","id":"im/wbu1sjet","slideIndex":47,"position":{"left":0,"top":0,"width":1280,"height":720},"fit":"cover","name":"","alt":"Lecture 9 slide 48"}
+{"kind":"notes","id":"nt/45p9q8","slideIndex":47,"text":""}
+{"kind":"slide","id":"sl/wg2wr2","slideIndex":48,"layout":{"id":"ly/7e1s76hw","name":"Blank"},"title":"Slide 49","textShapes":0,"backgroundColor":"rgba(255,255,255,1)"}
+{"kind":"image","id":"im/gnqh8r6t","slideIndex":48,"position":{"left":0,"top":0,"width":1280,"height":720},"fit":"cover","name":"","alt":"Lecture 9 slide 49"}
+{"kind":"notes","id":"nt/wg2wr2","slideIndex":48,"text":""}
+{"kind":"slide","id":"sl/20tqe1","slideIndex":49,"layout":{"id":"ly/7e1s76hw","name":"Blank"},"title":"Slide 50","textShapes":0,"backgroundColor":"rgba(255,255,255,1)"}
+{"kind":"image","id":"im/6xsrq1wn","slideIndex":49,"position":{"left":0,"top":0,"width":1280,"height":720},"fit":"cover","name":"","alt":"Lecture 9 slide 50"}
+{"kind":"notes","id":"nt/20tqe1","slideIndex":49,"text":""}
+{"kind":"slide","id":"sl/c4ryc2","slideIndex":50,"layout":{"id":"ly/7e1s76hw","name":"Blank"},"title":"Slide 51","textShapes":0,"backgroundColor":"rgba(255,255,255,1)"}
+{"kind":"image","id":"im/650byx07","slideIndex":50,"position":{"left":0,"top":0,"width":1280,"height":720},"fit":"cover","name":"","alt":"Lecture 9 slide 51"}
+{"kind":"notes","id":"nt/c4ryc2","slideIndex":50,"text":""}
+{"kind":"slide","id":"sl/pln6hs","slideIndex":51,"layout":{"id":"ly/7e1s76hw","name":"Blank"},"title":"Slide 52","textShapes":0,"backgroundColor":"rgba(255,255,255,1)"}
+{"kind":"image","id":"im/sj69c3a9","slideIndex":51,"position":{"left":0,"top":0,"width":1280,"height":720},"fit":"cover","name":"","alt":"Lecture 9 slide 52"}
+{"kind":"notes","id":"nt/pln6hs","slideIndex":51,"text":""}
+{"kind":"slide","id":"sl/352iu5","slideIndex":52,"layout":{"id":"ly/7e1s76hw","name":"Blank"},"title":"Slide 53","textShapes":0,"backgroundColor":"rgba(255,255,255,1)"}
+{"kind":"image","id":"im/ihsbqtk7","slideIndex":52,"position":{"left":0,"top":0,"width":1280,"height":720},"fit":"cover","name":"","alt":"Lecture 9 slide 53"}
+{"kind":"notes","id":"nt/352iu5","slideIndex":52,"text":""}
+{"kind":"slide","id":"sl/7w40bu","slideIndex":53,"layout":{"id":"ly/7e1s76hw","name":"Blank"},"title":"Slide 54","textShapes":0,"backgroundColor":"rgba(255,255,255,1)"}
+{"kind":"image","id":"im/yh03qhk7","slideIndex":53,"position":{"left":0,"top":0,"width":1280,"height":720},"fit":"cover","name":"","alt":"Lecture 9 slide 54"}
+{"kind":"notes","id":"nt/7w40bu","slideIndex":53,"text":""}

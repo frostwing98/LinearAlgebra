@@ -1,0 +1,247 @@
+% Source slide 18
+\section[4.2 Null and Column Spaces]{4.2 Null Spaces, Column Spaces, and Linear Transformations}
+\chaptercard{4}{Vector Spaces}{4.2}{NULL SPACES, COLUMN SPACES, AND LINEAR TRANSFORMATIONS}
+
+% Source slide 19
+\begin{frame}[shrink=15]{NULL SPACE OF A MATRIX}
+\begin{itemize}
+\item \textbf{Definition:} The \textcolor{sourceblue}{\textbf{null space}} of an $m\times n$ matrix $A$, written as $\Nul A$, is the set of all solutions of the homogeneous equation $A\vect x=0$. In set notation,
+\[
+\Nul A=\{\vect x:\vect x\text{ is in }\R^n\text{ and }A\vect x=0\}.
+\]
+\item \sourcehead{Theorem 2:} The null space of an $m\times n$ matrix $A$ is a subspace of $\R^n$. Equivalently, the set of all solutions to a system $A\vect x=0$ of $m$ homogeneous linear equations in $n$ unknowns is a subspace of $\R^n$.
+\item \textbf{Proof:} $\Nul A$ is a subset of $\R^n$ because $A$ has $n$ columns.
+\item We need to show that $\Nul A$ satisfies the three properties of a subspace.
+\end{itemize}
+\end{frame}
+
+% Source slide 20
+\begin{frame}[shrink=13]{NULL SPACE OF A MATRIX}
+\begin{itemize}
+\item $0$ is in $\Nul A$.
+\item Next, let $\vect u$ and $\vect v$ represent any two vectors in $\Nul A$.
+\item Then
+\[
+A\vect u=0\qquad\text{and}\qquad A\vect v=0.
+\]
+\item To show that $\vect u+\vect v$ is in $\Nul A$, we must show that $A(\vect u+\vect v)=0$.
+\item Using a property of matrix multiplication, compute
+\[
+A(\vect u+\vect v)=A\vect u+A\vect v=0+0=0.
+\]
+\item Thus $\vect u+\vect v$ is in $\Nul A$, and $\Nul A$ is closed under vector addition.
+\end{itemize}
+\end{frame}
+
+% Source slide 21
+\begin{frame}[shrink=10]{NULL SPACE OF A MATRIX}
+\begin{itemize}
+\item Finally, if $c$ is any scalar, then
+\[
+A(c\vect u)=c(A\vect u)=c(0)=0,
+\]
+which shows that $c\vect u$ is in $\Nul A$.
+\item Thus $\Nul A$ is a subspace of $\R^n$.
+\item \textbf{An Explicit Description of $\Nul A$}
+\item There is no obvious relation between vectors in $\Nul A$ and the entries in $A$.
+\item We say that $\Nul A$ is defined \emph{implicitly}, because it is defined by a condition that must be checked.
+\end{itemize}
+\end{frame}
+
+% Source slide 22
+\begin{frame}[shrink=10]{NULL SPACE OF A MATRIX}
+\begin{itemize}
+\item No explicit list or description of the elements in $\Nul A$ is given.
+\item \emph{Solving} the equation $A\vect x=0$ amounts to producing an \emph{explicit} description of $\Nul A$.
+\item \textbf{Example 3:} Find a spanning set for the null space of the matrix
+\[
+A=\begin{bmatrix}
+-3&6&-1&1&-7\\
+1&-2&2&3&-1\\
+2&-4&5&8&-4
+\end{bmatrix}.
+\]
+\end{itemize}
+\end{frame}
+
+% Source slide 23
+\begin{frame}[shrink=15]{NULL SPACE OF A MATRIX}
+\begin{itemize}
+\item \textbf{Solution:} The first step is to find the general solution of $A\vect x=0$ in terms of free variables.
+\item Row reduce the augmented matrix $[A\ \ 0]$ to reduce echelon form in order to write the basic variables in terms of the free variables:
+\end{itemize}
+\[
+\begin{bmatrix}
+1&-2&0&-1&3&0\\
+0&0&1&2&-2&0\\
+0&0&0&0&0&0
+\end{bmatrix},
+\qquad
+\begin{aligned}
+x_1-2x_2-x_4+3x_5&=0,\\
+x_3+2x_4-2x_5&=0,\\
+0&=0.
+\end{aligned}
+\]
+\end{frame}
+
+% Source slide 24
+\begin{frame}[shrink=18]{NULL SPACE OF A MATRIX}
+\begin{itemize}
+\item The general solution is $x_1=2x_2+x_4-3x_5$, $x_3=-2x_4+2x_5$, with $x_2,x_4$, and $x_5$ free.
+\item Next, decompose the vector giving the general solution into a linear combination of \emph{vectors where the weights are the free variables}. That is,
+\end{itemize}
+\[
+\begin{bmatrix}x_1\\x_2\\x_3\\x_4\\x_5\end{bmatrix}
+=\begin{bmatrix}2x_2+x_4-3x_5\\x_2\\-2x_4+2x_5\\x_4\\x_5\end{bmatrix}
+=x_2\underbrace{\begin{bmatrix}2\\1\\0\\0\\0\end{bmatrix}}_{\vect u}
++x_4\underbrace{\begin{bmatrix}1\\0\\-2\\1\\0\end{bmatrix}}_{\vect v}
++x_5\underbrace{\begin{bmatrix}-3\\0\\2\\0\\1\end{bmatrix}}_{\vect w}.
+\]
+\end{frame}
+
+% Source slide 25
+\begin{frame}[shrink=15]{NULL SPACE OF A MATRIX}
+\[
+=x_2\vect u+x_4\vect v+x_5\vect w \tag{3}
+\]
+\begin{itemize}
+\item Every linear combination of $\vect u$, $\vect v$, and $\vect w$ is an element of $\Nul A$.
+\item Thus $\{\vect u,\vect v,\vect w\}$ is a spanning set for $\Nul A$.
+\end{itemize}
+\begin{enumerate}
+\item The spanning set produced by the method in Example (3) is automatically linearly independent because the free variables are the weights on the spanning vectors.
+\item When $\Nul A$ contains nonzero vectors, the number of vectors in the spanning set for $\Nul A$ equals the number of free variables in the equation $A\vect x=0$.
+\end{enumerate}
+\end{frame}
+
+% Source slide 26
+\begin{frame}[shrink=13]{COLUMN SPACE OF A MATRIX}
+\begin{itemize}
+\item \textbf{Definition:} The column space of an $m\times n$ matrix $A$, written as $\Col A$, is the set of all linear combinations of the columns of $A$. If $A=[\vect a_1\ \cdots\ \vect a_n]$, then
+\[
+\Col A=\Span\{\vect a_1,\ldots,\vect a_n\}.
+\]
+\item \sourcehead{Theorem 3:} The column space of an $m\times n$ matrix $A$ is a subspace of $\R^m$.
+\item A typical vector in $\Col A$ can be written as $A\vect x$ for some $\vect x$ because the notation $A\vect x$ stands for a linear combination of the columns of $A$. That is,
+\[
+\Col A=\{\vect b:\vect b=A\vect x\text{ for some }\vect x\text{ in }\R^n\}.
+\]
+\end{itemize}
+\end{frame}
+
+% Source slide 27
+\begin{frame}[shrink=13]{COLUMN SPACE OF A MATRIX}
+\begin{itemize}
+\item The column space of an $m\times n$ matrix $A$ is all of $\R^m$ if and only if the equation $A\vect x=\vect b$ has a solution for each $\vect b$ in $\R^m$.
+\item \textbf{Example 7:} Let
+\[
+A=\begin{bmatrix}2&4&-2&1\\-2&-5&7&3\\3&7&-8&6\end{bmatrix},
+\qquad
+\vect u=\begin{bmatrix}3\\-2\\-1\\0\end{bmatrix},
+\qquad
+\vect v=\begin{bmatrix}3\\-1\\3\end{bmatrix}.
+\]
+\end{itemize}
+\end{frame}
+
+% Source slide 28
+\begin{frame}[shrink=14]{COLUMN SPACE OF A MATRIX}
+\begin{enumerate}
+\item[(a.)] Determine if $\vect u$ is in $\Nul A$. Could $\vect u$ be in $\Col A$?
+\item[(b.)] Determine if $\vect v$ is in $\Col A$. Could $\vect v$ be in $\Nul A$?
+\end{enumerate}
+\begin{itemize}
+\item \textbf{Solution:}
+\end{itemize}
+\begin{enumerate}
+\item[(a.)] An explicit description of $\Nul A$ is not needed here. Simply compute the product $A\vect u$.
+\end{enumerate}
+\[
+A\vect u=
+\begin{bmatrix}2&4&-2&1\\-2&-5&7&3\\3&7&-8&6\end{bmatrix}
+\begin{bmatrix}3\\-2\\-1\\0\end{bmatrix}
+=\begin{bmatrix}0\\-3\\3\end{bmatrix}
+\ne\begin{bmatrix}0\\0\\0\end{bmatrix}.
+\]
+\end{frame}
+
+% Source slide 29
+\begin{frame}[shrink=14]{COLUMN SPACE OF A MATRIX}
+\begin{itemize}
+\item $\vect u$ is \emph{not} a solution of $A\vect x=0$, so $\vect u$ is not in $\Nul A$.
+\item Also, with four entries, $\vect u$ could not possibly be in $\Col A$, since $\Col A$ is a subspace of $\R^3$.
+\end{itemize}
+\begin{enumerate}
+\item[(b.)] Reduce $[A\ \ \vect v]$ to an echelon form.
+\end{enumerate}
+\[
+[A\ \ \vect v]=
+\begin{bmatrix}2&4&-2&1&3\\-2&-5&7&3&-1\\3&7&-8&6&3\end{bmatrix}
+\sim
+\begin{bmatrix}2&4&-2&1&3\\0&1&-5&-4&-2\\0&0&0&17&1\end{bmatrix}.
+\]
+\begin{itemize}
+\item The equation $A\vect x=\vect v$ is consistent, so $\vect v$ is in $\Col A$.
+\end{itemize}
+\end{frame}
+
+% Source slide 30
+\begin{frame}[shrink=13]{CONTRAST BETWEEN $\Nul A$ AND $\Col A$ FOR AN $m\times n$ MATRIX $A$}
+\renewcommand{\arraystretch}{1.35}
+\begin{tabular}{|>{\raggedright\arraybackslash}p{.45\linewidth}|>{\raggedright\arraybackslash}p{.45\linewidth}|}
+\hline
+\centering $\Nul A$ & \centering $\Col A$\tabularnewline
+\hline
+1. $\Nul A$ is a subspace of $\R^n$. & 1. $\Col A$ is a subspace of $\R^m$.\\
+\hline
+2. $\Nul A$ is implicitly defined; \emph{i.e.}, you are given only a condition $(A\vect x=0)$ that vectors in $\Nul A$ must satisfy. & 2. $\Col A$ is explicitly defined; \emph{i.e.}, you are told how to build vectors in $\Col A$.\\
+\hline
+\end{tabular}
+\end{frame}
+
+% Source slide 31
+\begin{frame}[shrink=13]{CONTRAST BETWEEN $\Nul A$ AND $\Col A$ FOR AN $m\times n$ MATRIX $A$}
+\renewcommand{\arraystretch}{1.35}
+\begin{tabular}{|>{\raggedright\arraybackslash}p{.45\linewidth}|>{\raggedright\arraybackslash}p{.45\linewidth}|}
+\hline
+3. It takes time to find vectors in $\Nul A$. Row operations on $[A\ \ 0]$ are required. & 3. It is easy to find vectors in $\Col A$. The columns of a are displayed; others are formed from them.\\
+\hline
+4. There is no obvious relation between $\Nul A$ and the entries in $A$. & 4. There is an obvious relation between $\Col A$ and the entries in $A$, since each column of $A$ is in $\Col A$.\\
+\hline
+\end{tabular}
+\end{frame}
+
+% Source slide 32
+\begin{frame}[shrink=13]{CONTRAST BETWEEN $\Nul A$ AND $\Col A$ FOR AN $m\times n$ MATRIX $A$}
+\renewcommand{\arraystretch}{1.35}
+\begin{tabular}{|>{\raggedright\arraybackslash}p{.45\linewidth}|>{\raggedright\arraybackslash}p{.45\linewidth}|}
+\hline
+5. A typical vector $\vect v$ in $\Nul A$ has the property that $A\vect v=0$. & 5. A typical vector $\vect v$ in $\Col A$ has the property that the equation $A\vect x=\vect v$ is consistent.\\
+\hline
+6. Given a specific vector $\vect v$, it is easy to tell if $\vect v$ is in $\Nul A$. Just compare $A\vect v$. & 6. Given a specific vector $\vect v$, it may take time to tell if $\vect v$ is in $\Col A$. Row operations on $[A\ \ \vect v]$ are required.\\
+\hline
+\end{tabular}
+\end{frame}
+
+% Source slide 33
+\begin{frame}[shrink=13]{CONTRAST BETWEEN $\Nul A$ AND $\Col A$ FOR AN $m\times n$ MATRIX $A$}
+\renewcommand{\arraystretch}{1.35}
+\begin{tabular}{|>{\raggedright\arraybackslash}p{.45\linewidth}|>{\raggedright\arraybackslash}p{.45\linewidth}|}
+\hline
+7. $\Nul A=\{0\}$ if and only if the equation $A\vect x=0$ has only the trivial solution. & 7. $\Col A=\R^m$ if and only if the equation $A\vect x=\vect b$ has a solution for every $\vect b$ in $\R^m$.\\
+\hline
+8. $\Nul A=\{0\}$ if and only if the linear transformation $\vect x\mapsto A\vect x$ is one-to-one. & 8. $\Col A=\R^m$ if and only if the linear transformation $\vect x\mapsto A\vect x$ maps $\R^n$ onto $\R^m$.\\
+\hline
+\end{tabular}
+\end{frame}
+
+% Source slide 34
+\begin{frame}{KERNEL AND RANGE OF A LINEAR TRANSFORMATION}
+\begin{itemize}
+\item The \textbf{kernel} (or \textbf{null space}) of such a $T$ is the set of all $\vect u$ in $V$ such that $T(\vect u)=0$ (the zero vector in $W$).
+\item The \textbf{range} of $T$ is the set of all vectors in $W$ of the form $T(\vect x)$ for some $\vect x$ in $V$.
+\item The kernel of $T$ is a subspace of $V$.
+\item The range of $T$ is a subspace of $W$.
+\end{itemize}
+\end{frame}

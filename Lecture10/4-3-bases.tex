@@ -1,0 +1,225 @@
+% Source slide 35
+\section[4.3 Bases]{4.3 Linearly Independent Sets and Bases}
+\chaptercard{4}{Vector Spaces}{4.3}{LINEARLY INDEPENDENT SETS; BASES}
+
+% Source slide 36
+\begin{frame}[shrink=13]{LINEAR INDEPENDENT SETS; BASES}
+\begin{itemize}
+\item An indexed set of vectors $\{\vect v_1,\ldots,\vect v_p\}$ in $V$ is said to be \textbf{linearly independent} if the vector equation
+\[
+c_1\vect v_1+c_2\vect v_2+\cdots+c_p\vect v_p=0 \tag{1}
+\]
+has \emph{only} the trivial solution, $c_1=0,\ldots,c_p=0$.
+\item The set $\{\vect v_1,\ldots,\vect v_p\}$ is said to be \textbf{linearly dependent} if (1) has a nontrivial solution, \emph{i.e.}, if there are some weights, $c_1,\ldots,c_p$, \emph{not all zero}, such that (1) holds.
+\item In such a case, (1) is called a \textbf{linear dependence relation} among $\vect v_1,\ldots,\vect v_p$.
+\end{itemize}
+\end{frame}
+
+% Source slide 37
+\begin{frame}[shrink=16]{LINEAR INDEPENDENT SETS; BASES}
+\begin{itemize}
+\item \sourcehead{Theorem 4:} An indexed set $\{\vect v_1,\ldots,\vect v_p\}$ of two or more vectors, with $\vect v_1\ne0$, is linearly dependent if and only if some $\vect v_j$ (with $j>1$) is a linear combination of the preceding vectors, $\vect v_1,\ldots,\vect v_{j-1}$.
+\item \textbf{Definition:} Let $H$ be a subspace of a vector space $V$. An indexed set of vectors $B=\{\vect b_1,\ldots,\vect b_p\}$ in $V$ is a basis for $H$ if
+\begin{enumerate}
+\item[(i)] $B$ is a linearly independent set, and
+\item[(ii)] The subspace spanned by $B$ coincides with $H$; that is,
+\[
+H=\Span\{\vect b_1,\ldots,\vect b_p\}.
+\]
+\end{enumerate}
+\end{itemize}
+\end{frame}
+
+% Source slide 38
+\begin{frame}{LINEAR INDEPENDENT SETS; BASES}
+\begin{itemize}
+\item The definition of a basis applies to the case when $H=V$, because any vector space is a subspace of itself.
+\item Thus a basis of $V$ is a linearly independent set that spans $V$.
+\item When $H\ne V$, condition (ii) includes the requirement that each of the vectors $\vect b_1,\ldots,\vect b_p$ must belong to $H$, because $\Span\{\vect b_1,\ldots,\vect b_p\}$ contains $\vect b_1,\ldots,\vect b_p$.
+\end{itemize}
+\end{frame}
+
+% Source slide 39
+\begin{frame}[shrink=13]{STANDARD BASIS}
+\begin{itemize}
+\item Let $\vect e_1,\ldots,\vect e_n$ be the columns of the $n\times n$ matrix, $I_n$.
+\item That is,
+\[
+\vect e_1=\begin{bmatrix}1\\0\\\vdots\\0\end{bmatrix},
+\quad
+\vect e_2=\begin{bmatrix}0\\1\\\vdots\\0\end{bmatrix},
+\quad\ldots,\quad
+\vect e_n=\begin{bmatrix}0\\\vdots\\0\\1\end{bmatrix}.
+\]
+\item The set $\{\vect e_1,\ldots,\vect e_n\}$ is called the \textbf{standard basis} for $\R^n$. See the following figure.
+\end{itemize}
+\begin{center}
+\begin{tikzpicture}[>=Stealth,scale=0.58]
+  \draw[->] (0,0)--(-2,-1.3) node[below] {$x_1$};
+  \draw[->] (0,0)--(2.3,0) node[right] {$x_2$};
+  \draw[->] (0,0)--(0,2.2) node[above] {$x_3$};
+  \draw[->,very thick,cyan] (0,0)--(-1.15,-.75) node[below] {$\vect e_1$};
+  \draw[->,very thick,cyan] (0,0)--(1.35,0) node[below] {$\vect e_2$};
+  \draw[->,very thick,cyan] (0,0)--(0,1.25) node[right] {$\vect e_3$};
+\end{tikzpicture}
+
+The standard basis for $\R^3$.
+\end{center}
+\end{frame}
+
+% Source slide 40
+\begin{frame}[shrink=15]{THE SPANNING SET THEOREM}
+\begin{itemize}
+\item \textbf{Theorem 5:} Let $S=\{\vect v_1,\ldots,\vect v_p\}$ be a set in $V$, and let $H=\Span\{\vect v_1,\ldots,\vect v_p\}$.
+\begin{enumerate}
+\item[(a.)] If one of the vectors in $S$---say, $\vect v_k$---is a linear combination of the remaining vectors in $S$, then the set formed from $S$ by removing $\vect v_k$ still spans $H$.
+\item[(b.)] If $H\ne\{0\}$, some subset of $S$ is a basis for $H$.
+\end{enumerate}
+\item \textbf{Proof:}
+\begin{enumerate}
+\item[(a.)] By rearranging the list of vectors in $S$, if necessary, we may suppose that $\vect v_p$ is a linear combination of $\vect v_1,\ldots,\vect v_{p-1}$---say,
+\end{enumerate}
+\end{itemize}
+\end{frame}
+
+% Source slide 41
+\begin{frame}[shrink=16]{THE SPANNING SET THEOREM}
+\[
+\vect v_p=a_1\vect v_1+\cdots+a_{p-1}\vect v_{p-1} \tag{3}
+\]
+\begin{itemize}
+\item Given any $\vect x$ in $H$, we may write
+\[
+\vect x=c_1\vect v_1+\cdots+c_{p-1}\vect v_{p-1}+c_p\vect v_p \tag{4}
+\]
+for suitable scalars $c_1,\ldots,c_p$.
+\item Substituting the expression for $\vect v_p$ from (3) into (4), it is easy to see that $\vect x$ is a linear combination of $\vect v_1,\ldots,\vect v_{p-1}$.
+\item Thus $\{\vect v_1,\ldots,\vect v_{p-1}\}$ spans $H$, because $\vect x$ was an arbitrary element of $H$.
+\end{itemize}
+\end{frame}
+
+% Source slide 42
+\begin{frame}[shrink=13]{THE SPANNING SET THEOREM}
+\begin{enumerate}
+\item[(b.)] If the original spanning set $S$ is linearly independent, then it is already a basis for $H$.
+\begin{itemize}
+\item Otherwise, one of the vectors in $S$ depends on the others and can be deleted, by part (a).
+\item So long as there are two or more vectors in the spanning set, we can repeat this process until the spanning set is linearly independent and hence is a basis for $H$.
+\item If the spanning set is eventually reduced to one vector, that vector will be nonzero (and hence linearly independent) because $H\ne\{0\}$.
+\end{itemize}
+\end{enumerate}
+\end{frame}
+
+% Source slide 43
+\begin{frame}[shrink=15]{THE SPANNING SET THEOREM}
+\begin{itemize}
+\item \textbf{Example 7:} Let
+\[
+\vect v_1=\begin{bmatrix}0\\2\\-1\end{bmatrix},
+\qquad
+\vect v_2=\begin{bmatrix}2\\2\\0\end{bmatrix},
+\qquad
+\vect v_3=\begin{bmatrix}6\\16\\-5\end{bmatrix},
+\]
+and $H=\Span\{\vect v_1,\vect v_2,\vect v_3\}$. Note that $\vect v_3=5\vect v_1+3\vect v_2$, and show that $\Span\{\vect v_1,\vect v_2,\vect v_3\}=\Span\{\vect v_1,\vect v_2\}$. Then find a basis for the subspace $H$.
+\item \textbf{Solution:} Every vector in $\Span\{\vect v_1,\vect v_2\}$ belongs to $H$ because
+\[
+c_1\vect v_1+c_2\vect v_2=c_1\vect v_1+c_2\vect v_2+0\vect v_3.
+\]
+\end{itemize}
+\end{frame}
+
+% Source slide 44
+\begin{frame}[shrink=14]{THE SPANNING SET THEOREM}
+\begin{itemize}
+\item Now let $\vect x$ be any vector in $H$---say,
+\[
+\vect x=c_1\vect v_1+c_2\vect v_2+c_3\vect v_3.
+\]
+\item Since $\vect v_3=5\vect v_1+3\vect v_2$, we may substitute
+\begin{align*}
+\vect x&=c_1\vect v_1+c_2\vect v_2+c_3(5\vect v_1+3\vect v_2)\\
+&=(c_1+5c_3)\vect v_1+(c_2+3c_3)\vect v_2.
+\end{align*}
+\item Thus $\vect x$ is in $\Span\{\vect v_1,\vect v_2\}$, so every vector in $H$ already belongs to $\Span\{\vect v_1,\vect v_2\}$.
+\item We conclude that $H$ and $\Span\{\vect v_1,\vect v_2\}$ are actually the set of vectors.
+\item It follows that $\{\vect v_1,\vect v_2\}$ is a basis of $H$ since $\{\vect v_1,\vect v_2\}$ is linearly independent.
+\end{itemize}
+\end{frame}
+
+% Source slide 45
+\begin{frame}[shrink=15]{BASIS FOR $\Col B$}
+\begin{itemize}
+\item \textbf{Example 8:} Find a basis for $\Col B$, where
+\[
+B=[\vect b_1\ \vect b_2\ \cdots\ \vect b_5]
+=\begin{bmatrix}
+1&4&0&2&0\\
+0&0&1&-1&0\\
+0&0&0&0&1\\
+0&0&0&0&0
+\end{bmatrix}.
+\]
+\item \textbf{Solution:} Each nonpivot column of $B$ is a linear combination of the pivot columns.
+\item In fact, $\vect b_2=4\vect b_1$ and $\vect b_4=2\vect b_1-\vect b_3$.
+\item By the Spanning Set Theorem, we may discard $\vect b_2$ and $\vect b_4$, and $\{\vect b_1,\vect b_3,\vect b_5\}$ will still span $\Col B$.
+\end{itemize}
+\end{frame}
+
+% Source slide 46
+\begin{frame}[shrink=14]{BASIS FOR $\Col B$}
+\begin{itemize}
+\item Let
+\[
+S=\{\vect b_1,\vect b_3,\vect b_5\}
+=\left\{
+\begin{bmatrix}1\\0\\0\\0\end{bmatrix},
+\begin{bmatrix}0\\1\\0\\0\end{bmatrix},
+\begin{bmatrix}0\\0\\1\\0\end{bmatrix}
+\right\}.
+\]
+\item Since $\vect b_1\ne0$ and no vector in $S$ is a linear combination of the vectors that precede it, $S$ is linearly independent. (Theorem 4).
+\item Thus $S$ is a basis for $\Col B$.
+\end{itemize}
+\end{frame}
+
+% Source slide 47
+\begin{frame}[shrink=14]{BASES FOR $\Nul A$ AND $\Col A$}
+\begin{itemize}
+\item \sourcehead{Theorem 6:} The pivot columns of a matrix $A$ form a basis for $\Col A$.
+\item \textbf{Proof:} Let $B$ be the reduced echelon form of $A$.
+\item The set of pivot columns of $B$ is linearly independent, for no vector in the set is a linear combination of the vectors that precede it.
+\item Since $A$ is row equivalent to $B$, the pivot columns of $A$ are linearly independent as well, because any linear dependence relation among the columns of $A$ corresponds to a linear dependence relation among the columns of $B$.
+\end{itemize}
+\end{frame}
+
+% Source slide 48
+\begin{frame}[shrink=13]{BASES FOR $\Nul A$ AND $\Col A$}
+\begin{itemize}
+\item For this reason, every nonpivot column of $A$ is a linear combination of the pivot columns of $A$.
+\item Thus the nonpivot columns of a may be discarded from the spanning set for $\Col A$, by the Spanning Set Theorem.
+\item This leaves the pivot columns of $A$ as a basis for $\Col A$.
+\item \textbf{Warning:} The pivot columns of a matrix $A$ are evident when $A$ has been reduced only to echelon form.
+\item But, be careful to use the pivot columns of $A$ itself for the basis of $\Col A$.
+\end{itemize}
+\end{frame}
+
+% Source slide 49
+\begin{frame}[shrink=12]{BASES FOR $\Nul A$ AND $\Col A$}
+\begin{itemize}
+\item Row operations can change the column space of a matrix.
+\item The columns of an echelon form $B$ of $A$ are often not in the column space of $A$.
+\item \textbf{Two Views of a Basis}
+\item When the Spanning Set Theorem is used, the deletion of vectors from a spanning set must stop when the set becomes linearly independent.
+\item If an additional vector is deleted, it will not be a linear combination of the remaining vectors, and hence the smaller set will no longer span $V$.
+\end{itemize}
+\end{frame}
+
+% Source slide 50
+\begin{frame}{TWO VIEWS OF A BASIS}
+\begin{itemize}
+\item Thus a basis is a spanning set that is as small as possible.
+\item A basis is also a linearly independent set that is as large as possible.
+\item If $S$ is a basis for $V$, and if $S$ is enlarged by one vector---say, $\vect w$---from $V$, then the new set cannot be linearly independent, because $S$ spans $V$, and $\vect w$ is therefore a linear combination of the elements in $S$.
+\end{itemize}
+\end{frame}

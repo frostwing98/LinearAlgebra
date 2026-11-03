@@ -1,0 +1,497 @@
+% Student exam. Compile midterm_exam_answers.tex for the answer key.
+% Layout follows jiayang_mid_term.tex.
+\documentclass[12pt,a4paper,addpoints]{exam}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage[margin=1in]{geometry}
+\usepackage{wasysym}
+\usepackage[shortlabels]{enumitem}
+\usepackage{multicol}
+\usepackage{afterpage}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{listings}
+\lstset{language=C,basicstyle=\ttfamily\small,columns=fullflexible,showstringspaces=false,escapeinside={(*@}{@*)}}
+\checkboxchar{$\Box$}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+\setlength{\columnsep}{1cm}
+
+\newcommand{\todo}[1]{\textcolor{red}{(To do): #1}}
+\newcommand{\tored}[1]{\textcolor{red}{\textbf{#1}}}
+\def\CourseTitle{Computer Programming}
+\def\ExamName{Midterm Examination}
+\def\CourseNumber{BE 104}
+\def\ExamDate{November 30, 2026}
+\def\Term{2609}
+\def\ExamDuration{120 minutes}
+
+\pagestyle{headandfoot}
+\runningheader{{\CourseNumber} - {\CourseTitle}}{}{{\ExamName} - {\Term}}
+\firstpagefooter{}{Page \thepage\ of \numpages}{Please go on to the next page\ldots}
+\runningfooter{}{Page \thepage\ of \numpages}{\iflastpage{End of exam.}{Please go on to the next page\ldots}}
+\renewcommand{\fillinlinelength}{0.8cm}
+
+\newcommand{\answertext}[1]{%
+  \ifprintanswers\par\noindent\textcolor{red}{\textbf{Solution:} #1}\par\fi}
+\newcommand{\studentspace}[1]{\ifprintanswers\else\vspace{#1}\fi}
+
+\begin{document}
+\begin{center}
+\Large {{\CourseNumber} - {\CourseTitle}\\
+\vspace{5pt}
+\textbf{\ExamName}\\
+\vspace{5pt}
+Date: \enspace {\ExamDate}}
+\end{center}
+
+\vspace{10pt}
+\hrule
+\vspace{10pt}
+
+\begin{center}
+\vspace{10pt}
+\textbf{Please read the following instructions carefully.}
+\vspace{10pt}
+\begin{itemize}
+    \item Write your name, student ID, and sign the cover page.
+    \item The duration of this exam is \textbf{{\ExamDuration}}.
+    \item No electronic devices allowed.
+    \item This question booklet contains \textbf{\numquestions} questions, \textbf{\numpages} pages (including the cover) for the total of \textbf{\numpoints} points/marks. Check to see if any pages are missing.
+    \item Show all of your work. Marks are awarded for the work, not just the answer.
+    % \item Write your answers in the space provided. If you need more space, use the back of the current page and indicate this in the provided space.
+    \item \textbf{Read the instructions for individual questions carefully} before answering the questions. Clearly identify your answer for each problem.
+    \item \textbf{Write the answers in English to the best you can. Grammar errors and spelling mistakes will not result in loss of points.}
+    \item The last page contains a C syntax reference. You may detach the paper for your reference.
+    \item Return all the exam papers and draft papers upon completion.
+    \item \textbf{\large Good Luck!}
+\end{itemize}
+\end{center}
+
+\vspace{3cm}
+\noindent
+\begin{minipage}{0.5\linewidth}
+    \makebox[3.5in]{\textbf{\large Student Name:} \hrulefill} \\[30pt]
+    \makebox[3.5in]{\textbf{\large Student ID:} \hrulefill} \\[30pt]
+    \makebox[3.5in]{\textbf{\large Signature:} \hrulefill} \\[60pt]
+\end{minipage}%
+
+\newpage
+\begin{center}\large\textbf{Part I -- Multiple Choice: Single Answer (20 points)}\end{center}
+\noindent Select exactly one correct choice. Each question is worth 2 points.
+
+\begin{questions}
+\addpoints
+
+\question[2] Which statement correctly declares an \texttt{int} variable named \texttt{count} and initializes it to zero?
+\begin{choices}
+  \choice \texttt{int count = 0;}
+  \choice \texttt{int count == 0;}
+  \choice \texttt{integer count = 0;}
+  \choice \texttt{int 0 = count;}
+\end{choices}
+\answertext{\texttt{int count = 0;}}
+
+\question[2] Which \texttt{scanf} statement correctly reads an \texttt{int} into \texttt{n}?
+\begin{choices}
+  \choice \texttt{scanf("\%d", \&n);}
+  \choice \texttt{scanf("\%d", n);}
+  \choice \texttt{scanf("\%f", \&n);}
+  \choice \texttt{scanf("\%c", \&n);}
+\end{choices}
+\answertext{\texttt{scanf("\%d", \&n);}}
+
+\question[2] Which \texttt{printf} statement correctly prints the integer \texttt{12}?
+\begin{choices}
+  \choice \texttt{printf("\%d\textbackslash n", 12);}
+  \choice \texttt{printf("\%c\textbackslash n", "12");}
+  \choice \texttt{printf("\%d\textbackslash n", 3.5);}
+  \choice \texttt{printf("\%s\textbackslash n", 'A');}
+\end{choices}
+\answertext{The first statement.}
+
+\question[2] Which declaration creates a \texttt{char} variable named \texttt{letter} initialized to \texttt{Q}?
+\begin{choices}
+  \choice \texttt{char letter = 'Q';}
+  \choice \texttt{char letter = "Q";}
+  \choice \texttt{int letter = 'Q';}
+  \choice \texttt{char letter = 'QQ';}
+\end{choices}
+\answertext{\texttt{char letter = 'Q';}}
+
+\question[2] Which expression has the value \texttt{3.5}? \textit{Reminder: C may perform implicit type conversion (casting) when an expression contains different numeric types.}
+\begin{choices}
+  \choice \texttt{7 / 2}
+  \choice \texttt{7 / 2.0}
+  \choice \texttt{7 \% 2}
+  \choice \texttt{7 / 2 + 1}
+\end{choices}
+\answertext{\texttt{7 / 2.0}}
+
+\question[2] Which condition is true only when \texttt{age} is at least 18 \textbf{and} \texttt{score} is at least 60?
+\begin{choices}
+  \choice \texttt{age >= 18 \&\& score >= 60}
+  \choice \texttt{age >= 18 || score >= 60}
+  \choice \texttt{age < 18 \&\& score < 60}
+  \choice \texttt{age == 18 \&\& score == 60}
+\end{choices}
+\answertext{\texttt{age >= 18 \&\& score >= 60}}
+
+\question[2] Which condition tests whether \texttt{number} is equal to 5?
+\begin{choices}
+  \choice \texttt{number == 5}
+  \choice \texttt{number = 5}
+  \choice \texttt{number != 5}
+  \choice \texttt{number > 5}
+\end{choices}
+\answertext{\texttt{number == 5}}
+
+\question[2] The statement \texttt{if (x == 0)} checks whether \texttt{x} is zero. What does \texttt{if (x = 0)} do?
+\begin{choices}
+  \choice It assigns zero to \texttt{x}; the condition is false.
+  \choice It compares \texttt{x} with zero.
+  \choice It produces a syntax error.
+  \choice It always makes the condition true.
+\end{choices}
+\answertext{It assigns zero to \texttt{x}; the condition is false.}
+
+\question[2] Which loop prints \texttt{1 2 3 }?
+\begin{choices}
+  \choice \texttt{for (i = 1; i <= 3; i++) printf("\%d ", i);}
+  \choice \texttt{for (i = 1; i < 3; i++) printf("\%d ", i);}
+  \choice \texttt{for (i = 0; i < 3; i++) printf("\%d ", i);}
+  \choice \texttt{for (i = 3; i >= 1; i--) printf("\%d ", i);}
+\end{choices}
+\answertext{The first loop.}
+
+\question[2] Which loop structure always executes its body at least once?
+\begin{choices}
+  \choice \texttt{do \{ ... \} while (condition);}
+  \choice \texttt{while (condition) \{ ... \}}
+  \choice \texttt{for (; condition; ) \{ ... \}}
+  \choice None of the loop structures in C.
+\end{choices}
+\answertext{\texttt{do \{ ... \} while (condition);}}
+
+% \newpage
+\begin{center}\large\textbf{Part II -- Brief Answers (30 points)}\end{center}
+\noindent Answer each question clearly. The points for each question are shown.
+
+\question[10] Use \textbf{8-bit two's-complement} representation.
+\begin{parts}
+  \part Write the 8-bit binary values of $7$, $29$, and $-7$.
+  \part Use 8-bit binary representation to calculate $29-7$.
+  \part Write the 8-bit hexadecimal value of $29$.
+\end{parts}
+\noindent\textit{Example: $11$ is \texttt{00001011} in 8-bit binary and \texttt{0x0B} in hexadecimal.}
+\studentspace{3.2cm}
+\answertext{$7=\texttt{00000111}$, $29=\texttt{00011101}$, and $-7=\texttt{11111001}$.\\
+$\texttt{00011101}+\texttt{11111001}=\texttt{1 00010110}$; discard the carry, so $29-7=\texttt{00010110}=22$.\\
+$29=\texttt{0x1D}$.}
+\newpage
+\question[10] For each name below, state whether it is a valid C variable name.
+\begin{center}
+\begin{tabular}{lllll}
+A) \texttt{final\_score} & B) \texttt{3rdValue} & C) \texttt{average value} & D) \texttt{for} & E) \texttt{total2}
+\end{tabular}
+\end{center}
+\studentspace{2.5cm}
+\answertext{\texttt{final\_score} and \texttt{total2} are valid. \texttt{3rdValue} starts with a digit; \texttt{average value} contains a space; and \texttt{for} is a reserved keyword.}
+
+\question[5] Explain what \textbf{integer overflow} is in C.
+\studentspace{1.5cm}
+\answertext{Integer overflow occurs when a calculation produces a value outside the range that an integer type can represent. The result is not the intended mathematical value; for signed integers, overflow is undefined behavior in C.}
+
+\question[5] Explain one difference between a \texttt{while} loop and a \texttt{do ... while} loop.
+\studentspace{1.5cm}
+\answertext{A \texttt{while} loop checks its condition before executing the body, so it can execute zero times. A \texttt{do ... while} loop checks after its body, so it executes at least once.}
+
+\begin{center}\large\textbf{Part III -- Program Output (10 points)}\end{center}
+
+\question[5] Write exactly what this program prints.
+\begin{lstlisting}
+#include <stdio.h>
+int main(void) {
+    int x = 5, y = 2;
+    int z = x + y;
+    if (z > 6)
+        z = z - 3;
+    else
+        z = z + 3;
+    printf("%d %d\n", x, z);
+    return 0;
+}
+\end{lstlisting}
+\studentspace{1.2cm}
+\answertext{\texttt{5 4}}
+
+\question[5] Write exactly what this program prints. 
+\begin{lstlisting}
+#include <stdio.h>
+int main(void) {
+    int i, j;
+    for (i = 1; i <= 3; i++) {
+        for (j = 0; j < i; j++)
+            printf("%d", i + j);
+        printf(" ");
+    }
+    return 0;
+}
+\end{lstlisting}
+\studentspace{0.3cm}
+\answertext{\texttt{1 23 345 } (there is one trailing space).}
+
+\begin{center}\large\textbf{Part IV -- Fill in the Blanks (10 points)}\end{center}
+
+\question[5] Fill in the \textbf{condition only} so the program prints \texttt{Adult} when the entered age is 18 or higher, and \texttt{Minor} otherwise.
+\begin{lstlisting}
+#include <stdio.h>
+int main(void) {
+    int age;
+    scanf("%d", &age);
+    if (________________________)
+        printf("Adult\n");
+    else
+        printf("Minor\n");
+    return 0;
+}
+\end{lstlisting}
+\studentspace{1.0cm}
+\answertext{\texttt{age >= 18}}
+
+\question[5] Fill in the blanks to complete the \texttt{while} loop. It should calculate \texttt{1 * 2 * \ldots * n} for a positive \texttt{n}.
+\begin{lstlisting}
+int i = 1;
+int product = 1;
+while (________________________) {
+    product = product * i;
+    ________________________;
+}
+printf("%d\n", product);
+\end{lstlisting}
+\studentspace{1.2cm}
+\answertext{\texttt{i <= n} and \texttt{i++}.}
+
+\begin{center}\large\textbf{Part V -- Program Correction (10 points)}\end{center}
+
+\question[5] Xiaoming's friend writes terrible codes. This program has four errors. Rewrite or directly mark the code so that it compiles. Do not change its intended behavior.
+\begin{lstlisting}
+#include <stdio.h>
+int mian() {
+    int x
+    x = 3;
+    if (x > 0) {
+        print("positive\n");
+    } else {
+        printf(not positive\n);
+    }
+    return 0;
+}
+\end{lstlisting}
+\studentspace{2.4cm}
+\answertext{(2 points) Change \texttt{mian} to \texttt{main}. (1 point) Add a semicolon after \texttt{int x}. (1 point) Change \texttt{print} to \texttt{printf}. (1 point) Add double quotation marks around \texttt{not positive\textbackslash n}.}
+
+\question Xiaoming's friend learned from you, but still writes terrible codes. This program is intended to print each side length and its square area from 1 through \texttt{n}, one pair per line. It should then print \texttt{the area of a square of length 8 is: 64}. The program has three errors. Complete the following corrections.
+\begin{lstlisting}
+#include <stdio.h>
+int main(void) {
+    int n;
+    int i = 0;
+    scanf("%d", &n);
+    while (i <= n)
+        printf("%d %d\n", i, i * i);
+        i++;
+    i = 8;
+    printf("the area of a square of length 8 is: %c\n", i * i);
+    return 0;
+}
+\end{lstlisting}
+\begin{parts}
+  \part[2] The program does not end normally and prints 0 0 forever. Find why and correct the code.
+  \part[2] The loop mistakenly prints \texttt{0 0} before the intended values because we want it to start from 1 1. Correct the code.
+  \part[1] The final line prints \texttt{@} instead of \texttt{64}. Correct the code and explain why \texttt{@} was printed.
+\end{parts}
+\studentspace{4.0cm}
+\answertext{(a) Add braces around the \texttt{while} body so that it contains both \texttt{printf("\%d \%d\textbackslash n", i, i * i);} and \texttt{i++;}. (b) Change the initialization to \texttt{int i = 1;}. (c) Change \texttt{\%c} to \texttt{\%d}. The value of \texttt{i * i} is 64; with \texttt{\%c}, \texttt{printf} interprets 64 as an ASCII character code, and ASCII 64 is \texttt{@}.}
+
+\newpage
+\begin{center}\large\textbf{Part VI -- Program Writing (20 points)}\end{center}
+
+\question[10] You decided to show Xiaoming's friend how to write good quality code! The useful functions below are already defined. Write the body of \texttt{main} only. Your \texttt{main} function must read two integers by calling \texttt{readNumber}, determine the larger value by calling \texttt{larger}, print it by calling \texttt{printLarger}, and return 0. You do \textbf{not} need to rewrite the functions above \texttt{main}.
+\begin{lstlisting}
+#include <stdio.h>
+
+int readNumber(void) {
+    int value;
+    scanf("%d", &value);
+    return value;
+}
+
+int larger(int left, int right) {
+    if (left >= right)
+        return left;
+    return right;
+}
+
+void printLarger(int value) {
+    printf("Larger value = %d\n", value);
+}
+
+int main(void) {
+    /* Write the body here. */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+\end{lstlisting}
+\ifprintanswers
+\begin{lstlisting}[basicstyle=\ttfamily\small\color{red}]
+int main(void) {
+    int first = readNumber();
+    int second = readNumber();
+    int result = larger(first, second);
+    printLarger(result);
+    return 0;
+}
+\end{lstlisting}
+\else
+\vfill
+\newpage
+\fi
+
+\question[10] On yes, now you need to show your capability without our help. Write a program that reads a positive integer \texttt{n}, then use \textbf{any loop structure} to calculate and print the sum of all integers from 1 through \texttt{n}. Print the result in the format \texttt{sum = {value}}. For example, when \texttt{n} is 10, the output is \texttt{sum = 55}.
+\begin{lstlisting}
+#include <stdio.h>
+
+int main(void) {
+    /* Write your code here. */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+}
+\end{lstlisting}
+% \studentspace{10.0cm}
+\ifprintanswers
+\begin{lstlisting}[basicstyle=\ttfamily\small\color{red}]
+#include <stdio.h>
+int main(void) {
+    int n, i, sum = 0;
+    scanf("%d", &n);
+    for (i = 1; i <= n; i++) {
+        sum += i;
+    }
+    printf("Sum = %d\n", sum);
+    return 0;
+}
+\end{lstlisting}
+\fi
+
+\end{questions}
+
+\vfill
+\noindent\makebox[2.5in]{\textbf{\Large Score:} \hrulefill}
+
+\newpage
+\begin{center}\Large\textbf{C Syntax Reference (Not Graded)}\end{center}
+\noindent Use this page as a reminder of basic C syntax. It is a reference, not a solution sheet.
+\begin{lstlisting}[basicstyle=\ttfamily\footnotesize]
+#include <stdio.h>
+
+/* Function definition */
+int add(int left, int right) {
+    return left + right;
+}
+
+int main(void) {
+    int number, i, total = 0, exampleSum;
+
+    /* Function call */
+    exampleSum = add(3, 4);
+    printf("3 + 4 = %d\n", exampleSum);
+
+    /* Input and output */
+    printf("Enter an integer: ");
+    scanf("%d", &number);
+
+    /* if / else if / else */
+    if (number > 0)
+        printf("positive\n");
+    else if (number == 0)
+        printf("zero\n");
+    else
+        printf("negative\n");
+
+    /* for loop: initialization; condition; update */
+    for (i = 1; i <= number; i++) {
+        total = total + i;
+    }
+    printf("Total = %d\n", total);
+
+    /* while loop */
+    i = number;
+    while (i > 0) {
+        printf("%d ", i);
+        i--;
+    }
+    printf("\n");
+
+    return 0;
+}
+\end{lstlisting}
+
+\end{document}

@@ -1,0 +1,503 @@
+% MATH 100 official midterm examination.
+% All questions in this version are distinct from the Lecture 8 mock exam.
+% Student version: compile this file directly.
+% Instructor version: compile solutions.tex, which defines \instructorversion.
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=18mm,headheight=15pt]{geometry}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{array,booktabs}
+\usepackage{enumitem}
+\usepackage{needspace}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\definecolor{solutionblue}{RGB}{0,76,170}
+\newif\ifshowsolutions
+\ifdefined\instructorversion
+  \showsolutionstrue
+\else
+  \showsolutionsfalse
+\fi
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\vect}[1]{\mathbf{#1}}
+\newcommand{\Col}{\operatorname{Col}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\pts}[1]{\hfill\textbf{[#1 pts]}}
+\newcommand{\answerline}{\ifshowsolutions\else\par\vspace{0.48in}\hrulefill\par\fi}
+\newcommand{\workarea}[1]{\ifshowsolutions\else\vspace{#1}\fi}
+\newcommand{\mcneedspace}{\ifshowsolutions\Needspace{12\baselineskip}\fi}
+\newcommand{\solution}[1]{%
+  \ifshowsolutions
+    \par\medskip
+    {\color{solutionblue}\textbf{Solution.} #1}
+    \par\medskip
+  \fi}
+
+\def\CourseTitle{Linear Algebra}
+\def\ExamName{Midterm Examination}
+\def\CourseNumber{MATH 100}
+\def\ExamDate{October 28}
+\def\Term{Fall 2026}
+\def\ExamDuration{2 hours}
+\def\TotalQuestions{21}
+\def\TotalPoints{100}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{MATH 100: Linear Algebra}
+\rhead{Midterm Examination}
+\cfoot{\thepage}
+
+\fancypagestyle{coverpage}{%
+  \fancyhf{}
+  \cfoot{Page \thepage\ of \pageref{LastPage}}
+  \rfoot{Please go on to the next page\ldots}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}}
+
+\setlist[itemize]{leftmargin=1.5em,itemsep=0.25em,topsep=0.35em}
+\setlist[enumerate,1]{leftmargin=*,itemsep=0.9em}
+\setlist[enumerate,2]{leftmargin=2.0em,itemsep=0.2em,topsep=0.3em}
+
+\begin{document}
+
+\thispagestyle{coverpage}
+
+\begin{center}
+  \Large
+  {{\CourseNumber} - {\CourseTitle}}\\
+  \vspace{5pt}
+  \textbf{\ExamName}\\
+  \vspace{5pt}
+  Term: \enspace {\Term} \qquad Date: \enspace {\ExamDate}
+  \ifshowsolutions
+    \\\vspace{8pt}
+    {\large\color{solutionblue}\bfseries Instructor solution version}
+  \fi
+\end{center}
+
+\vspace{10pt}
+\hrule
+\vspace{10pt}
+
+\begin{center}
+\vspace{10pt}
+\textbf{Please read the following instructions carefully.}
+\vspace{10pt}
+\begin{itemize}
+  \item Write your name, student ID, and sign the cover page.
+  \item The duration of this examination is \textbf{\ExamDuration}.
+  \item This is a closed-book examination. No phones, notes, or other electronic devices are allowed.
+  \item This question booklet contains \textbf{\TotalQuestions} questions, \textbf{\pageref{LastPage}} pages (including the cover), for a total of \textbf{\TotalPoints} points. Check that no pages are missing.
+  \item Show all of your work. Marks are awarded for the work, not just the final answer.
+  \item Read the instructions for individual questions carefully and clearly identify each answer.
+  \item If you need more space, clearly label work completed on additional paper.
+  \item Return all examination and draft papers upon completion.
+  \item \textbf{\large Good Luck!}
+\end{itemize}
+\end{center}
+
+\vspace{2cm}
+\noindent
+\begin{minipage}{0.58\linewidth}
+  \raggedright
+  \makebox[3.6in]{\textbf{\large Student Name:} \hrulefill} \\[26pt]
+  \makebox[3.6in]{\textbf{\large Student ID:} \hrulefill} \\[26pt]
+  \makebox[3.6in]{\textbf{\large Signature:} \hrulefill} \\[45pt]
+\end{minipage}
+
+\newpage
+
+\section*{Section I. Multiple choice \hfill 20 points}
+
+\begingroup\small
+Choose the best answer. Each question is worth 2 points.
+
+\begin{enumerate}
+\mcneedspace
+\item Which matrix is in row echelon form?
+\begin{center}
+\begin{tabular}{@{}p{.45\linewidth}p{.45\linewidth}@{}}
+A. $\begin{bmatrix}1&0\\0&0\\0&1\end{bmatrix}$ &
+B. $\begin{bmatrix}1&2&0\\0&0&1\\0&0&0\end{bmatrix}$ \\[1.5em]
+C. $\begin{bmatrix}0&1\\1&0\end{bmatrix}$ &
+D. $\begin{bmatrix}1&0\\1&1\end{bmatrix}$
+\end{tabular}
+\end{center}
+\solution{\textbf{B.} The leading entries move to the right as the rows descend, and all entries below each pivot are zero.}
+
+\mcneedspace
+\item Which row operation changes
+\[
+\begin{bmatrix}1&2\\3&7\end{bmatrix}
+\quad\text{into}\quad
+\begin{bmatrix}1&2\\0&1\end{bmatrix}?
+\]
+\begin{enumerate}[label=\Alph*.]
+  \item $R_1\leftarrow R_1-3R_2$
+  \item $R_2\leftarrow R_2-3R_1$
+  \item $R_2\leftarrow R_2+3R_1$
+  \item $R_1\leftrightarrow R_2$
+\end{enumerate}
+\solution{\textbf{B.} The new second row is $(3,7)-3(1,2)=(0,1)$.}
+
+\mcneedspace
+\item If $T(x,y)=(2x-y,\ x+3y)$, then $T(1,-2)$ equals
+\begin{enumerate}[label=\Alph*.]
+  \item $(0,-5)$
+  \item $(4,-5)$
+  \item $(4,7)$
+  \item $(-4,-5)$
+\end{enumerate}
+\solution{\textbf{B.} Substitution gives $T(1,-2)=(2+2,1-6)=(4,-5)$.}
+
+\mcneedspace
+\item Suppose Matrix $A$ is $2\times3$, $B$ is $3\times2$, and $C$ is $2\times2$. Which expression is \emph{not} defined?
+\begin{enumerate}[label=\Alph*.]
+  \item $A+B$
+  \item $AB$
+  \item $BA$
+  \item $CA$
+\end{enumerate}
+\solution{\textbf{A.} Matrix addition requires equal dimensions, but $A$ and $B$ have different sizes.}
+
+\mcneedspace
+\item If $A$ is invertible and $XA=C$, then
+\begin{enumerate}[label=\Alph*.]
+  \item $X=A^{-1}C$
+  \item $X=CA^{-1}$
+  \item $X=AC^{-1}$
+  \item $X=C^{-1}A$
+\end{enumerate}
+\solution{\textbf{B.} Multiply on the right by $A^{-1}$: $XAA^{-1}=CA^{-1}$.}
+
+\mcneedspace
+\item The determinant of the matrix
+\[
+\begin{bmatrix}
+1&2&1\\
+2&1&3\\
+1&1&2
+\end{bmatrix}
+\]
+is
+\begin{enumerate}[label=\Alph*.]
+  \item $-2$
+  \item $2$
+  \item $-4$
+  \item $4$
+\end{enumerate}
+\solution{\textbf{A.} Expanding along the first row gives
+$1(2-3)-2(4-3)+(2-1)=-1-2+1=-2$.}
+
+\mcneedspace
+\item If $A$ is $3\times3$ and $\det A=-3$, then $\det(2A^T)$ equals
+\begin{enumerate}[label=\Alph*.]
+  \item $-6$
+  \item $-12$
+  \item $-18$
+  \item $-24$
+\end{enumerate}
+\solution{\textbf{D.} $\det(2A^T)=2^3\det(A^T)=8\det A=-24$.}
+
+\mcneedspace
+\item Let
+\[
+\vect v_1=\begin{bmatrix}1\\0\\2\end{bmatrix},
+\qquad
+\vect v_2=\begin{bmatrix}0\\1\\-1\end{bmatrix}.
+\]
+Which vector belongs to $\operatorname{Span}(\vect v_1,\vect v_2)$?
+\begin{center}
+\begin{tabular}{@{}p{.45\linewidth}p{.45\linewidth}@{}}
+A. $\begin{bmatrix}2\\-1\\5\end{bmatrix}$ &
+B. $\begin{bmatrix}1\\1\\0\end{bmatrix}$ \\[1.5em]
+C. $\begin{bmatrix}0\\2\\1\end{bmatrix}$ &
+D. $\begin{bmatrix}3\\0\\5\end{bmatrix}$
+\end{tabular}
+\end{center}
+\solution{\textbf{A.} The vector equals $2\vect v_1-\vect v_2$.}
+
+\mcneedspace
+\item A matrix has $7$ columns, and its reduced row echelon form has $2$ pivots. How many free variables are there?
+\begin{enumerate}[label=\Alph*.]
+  \item $2$
+  \item $5$
+  \item $7$
+  \item $9$
+\end{enumerate}
+\solution{\textbf{B.} There are $7-2=5$ nonpivot columns, so there are five free variables.}
+
+\mcneedspace
+\item Assuming all blocks are conformable, the lower-left block of
+\[
+\begin{bmatrix}P&0\\Q&R\end{bmatrix}
+\begin{bmatrix}S&0\\U&V\end{bmatrix}
+\]
+is
+\begin{enumerate}[label=\Alph*.]
+  \item $PS$
+  \item $PV$
+  \item $QU+RV$
+  \item $QS+RU$
+\end{enumerate}
+\solution{\textbf{D.} The lower-left block is obtained from the second block row and first block column.}
+\end{enumerate}
+\endgroup
+
+\ifshowsolutions\else\newpage\fi
+\section*{Section II. Brief answers \hfill 20 points}
+
+Give a short answer and enough justification to support it. Each question is worth 4 points.
+
+\begin{enumerate}
+\item For the matrix
+\[
+E=\begin{bmatrix}
+1&0&2&0&-1\\
+0&1&-3&0&4\\
+0&0&0&1&2\\
+0&0&0&0&0
+\end{bmatrix},
+\]
+state $\rank E$ and identify the free-variable columns.
+\answerline
+\solution{The pivot columns are $1,2,4$, so $\boxed{\rank E=3}$ and the free-variable columns are $\boxed{3\text{ and }5}$.}
+
+\item Let $T:\R^2\to\R^2$ be defined by
+\[
+T(x,y)=(x+2y,\ 3x-y).
+\]
+What is the matrix of the transformation $T$?
+\answerline
+\solution{The columns are $T(1,0)$ and $T(0,1)$, so the standard matrix is $\boxed{\begin{bmatrix}1&2\\3&-1\end{bmatrix}}$.}
+
+\item Suppose $A$ is invertible and
+\[
+A(X-I)=B.
+\]
+Use $A$ and $B$ to represent $X$.
+\answerline
+\solution{Multiply on the left by $A^{-1}$: $X-I=A^{-1}B$. Hence $\boxed{X=I+A^{-1}B}$.}
+
+\item Suppose $A$ and $B$ are invertible $3\times3$ matrices with $\det A=2$ and $\det B=-3$. Find $\det(A^{-1}B)$.
+\answerline
+\solution{$\det(A^{-1}B)=\det(A^{-1})\det(B)=\frac12(-3)=\boxed{-\frac32}$.}
+
+\item If $A$ is $4\times3$ and $B$ is $3\times2$, what is the size of $AB$?
+\answerline
+\solution{The inner dimensions agree. The outer dimensions give $\boxed{4\times2}$.}
+\end{enumerate}
+
+\newpage
+\section*{Section III. Exercises \hfill 60 points}
+
+Show the main steps. Point values are shown for each exercise.
+
+\begin{enumerate}
+\item Solve the system by Gaussian elimination. Write the final answer as an ordered triple. \pts{10}
+\[
+\begin{cases}
+x+y+z=4,\\
+2x-y+z=8,\\
+-x+2y+z=-1.
+\end{cases}
+\]
+\workarea{2.2in}
+\solution{Starting from the augmented matrix, use $R_2\leftarrow R_2-2R_1$ and $R_3\leftarrow R_3+R_1$:
+\[
+\left[\begin{array}{ccc|c}
+1&1&1&4\\2&-1&1&8\\-1&2&1&-1
+\end{array}\right]
+\longrightarrow
+\left[\begin{array}{ccc|c}
+1&1&1&4\\0&-3&-1&0\\0&3&2&3
+\end{array}\right].
+\]
+Adding the second row to the third gives $z=3$. Then $-3y-z=0$ gives $y=-1$, and the first equation gives $x=2$. Thus
+\[
+\boxed{(x,y,z)=(2,-1,3)}.
+\]}
+
+% \item Compute $AB$. \pts{10}
+% \[
+% A=\begin{bmatrix}1&-2\\0&3\\4&1\end{bmatrix},
+% \qquad
+% B=\begin{bmatrix}2&1&0\\-1&2&5\end{bmatrix}.
+% \]
+% \workarea{2.0in}
+% \solution{
+% \[
+% AB=
+% \begin{bmatrix}
+% 1(2)+(-2)(-1)&1(1)+(-2)(2)&1(0)+(-2)(5)\\
+% 0(2)+3(-1)&0(1)+3(2)&0(0)+3(5)\\
+% 4(2)+1(-1)&4(1)+1(2)&4(0)+1(5)
+% \end{bmatrix}
+% =\boxed{\begin{bmatrix}4&-3&-10\\-3&6&15\\7&6&5\end{bmatrix}}.
+% \]}
+
+
+\item Let
+\[
+A=\begin{bmatrix}0&1\\-2&3\end{bmatrix},
+\qquad
+B=\begin{bmatrix}1&-1\\4&0\end{bmatrix}.
+\]
+Compute $A^2+AB+I$. \pts{10}
+\workarea{2.0in}
+\solution{First,
+\[
+A^2=\begin{bmatrix}-2&3\\-6&7\end{bmatrix},
+\qquad
+AB=\begin{bmatrix}4&0\\10&2\end{bmatrix}.
+\]
+Therefore
+\[
+A^2+AB+I_2
+=\begin{bmatrix}-2&3\\-6&7\end{bmatrix}
++\begin{bmatrix}4&0\\10&2\end{bmatrix}
++\begin{bmatrix}1&0\\0&1\end{bmatrix}
+=\boxed{\begin{bmatrix}3&3\\4&10\end{bmatrix}}.
+\]}
+\newpage
+% \item Define $T:\R^3\to\R^2$ by
+% \[
+% T(x,y,z)=(x-y+2z,\ 2x+y-z).
+% \]
+% \begin{enumerate}[label=(\alph*)]
+%   \item Find the standard matrix of $T$. \hfill[2 pts]
+%   \item Compute $T(1,2,-1)$. \hfill[2 pts]
+%   \item Determine whether $\vect b=(3,1)$ belongs to the range of $T$. If it does, find one vector $\vect x$ such that $T(\vect x)=\vect b$. \hfill[3 pts]
+%   \item Determine whether $T$ is one-to-one and whether it is onto. \hfill[3 pts]
+% \end{enumerate}
+% \workarea{2.1in}
+% \solution{
+% \begin{enumerate}[label=(\alph*)]
+%   \item $\displaystyle [T]=\boxed{\begin{bmatrix}1&-1&2\\2&1&-1\end{bmatrix}}$.
+%   \item $\displaystyle T(1,2,-1)=\boxed{(-3,5)}$.
+%   \item Yes. For example, $\vect x=(1,0,1)$ gives $T(1,0,1)=(3,1)$, so $\boxed{\vect b\text{ belongs to the range of }T}$.
+%   \item The standard matrix has a pivot in each row, so $T$ is onto $\R^2$. It has only two pivots but three columns, so it is not one-to-one.
+% \end{enumerate}}
+
+% \newpage
+\item Find an $LU$ factorization $A=LU$, where $L$ is unit lower triangular. \pts{10}
+\[
+A=\begin{bmatrix}
+1&2&-1\\
+3&10&0\\
+-2&4&13
+\end{bmatrix}.
+\]
+\workarea{1.7in}
+\solution{Elimination uses $m_{21}=3$, $m_{31}=-2$, and then $m_{32}=2$. Hence
+\[
+\boxed{L=\begin{bmatrix}1&0&0\\3&1&0\\-2&2&1\end{bmatrix}},
+\qquad
+\boxed{U=\begin{bmatrix}1&2&-1\\0&4&3\\0&0&5\end{bmatrix}}.
+\]}
+
+\item Let
+\[
+A=\begin{bmatrix}
+1&1&0\\
+0&2&1\\
+0&0&3
+\end{bmatrix}.
+\]
+Define $B=3A$ and $C=B+I_3$. Compute the following determinants. \pts{10}
+\begin{enumerate}[label=(\alph*)]
+  \item $\det(-A)$ \hfill[4 pt]
+  \item $\det B$ \hfill[3 pts]
+  \item $\det C$ \hfill[3 pts]
+\end{enumerate}
+\workarea{1.6in}
+\solution{Since $A$ is upper triangular, $\det A=1(2)(3)=6$.
+\begin{enumerate}[label=(\alph*)]
+  \item Since $A$ is $3\times3$, $\det(-A)=(-1)^3\det A=\boxed{-6}$.
+  \item $\det B=\det(3A)=3^3\det A=27(6)=\boxed{162}$.
+  \item $C=3A+I_3=\begin{bmatrix}4&3&0\\0&7&3\\0&0&10\end{bmatrix}$, so $\det C=4(7)(10)=\boxed{280}$.
+\end{enumerate}}
+
+\item Calculate the determinant of the following sparse $4\times4$ matrix. \pts{10}
+\[
+D=\begin{bmatrix}
+1&0&2&0\\
+0&3&0&0\\
+4&0&-1&0\\
+0&2&0&5
+\end{bmatrix}.
+\]
+\workarea{2.7in}
+\solution{Expand along column 4, and then along the second row of the remaining $3\times3$ determinant:
+\[
+\det D
+=5\begin{vmatrix}1&0&2\\0&3&0\\4&0&-1\end{vmatrix}
+=5(3)\begin{vmatrix}1&2\\4&-1\end{vmatrix}
+=15(-1-8)=\boxed{-135}.
+\]}
+
+\newpage
+\item Consider the system with parameters $a,b\in\R$:
+\[
+\begin{cases}
+x+y+z=2,\\
+2x+3y+4z=5,\\
+3x+4y+(a+5)z=b.
+\end{cases}
+\]
+Answer all parts. \pts{10}
+\begin{enumerate}[label=(\alph*)]
+  \item Use elimination to reduce the augmented matrix to row echelon form. \hfill[4 pts]
+  \item Classify the system for all values of $a$ and $b$: state when it has one solution, no solution, or infinitely many solutions. \hfill[3 pts]
+  \item Solve the system when $a=2$ and $b=9$. \hfill[3 pts]
+\end{enumerate}
+\workarea{3.0in}
+\solution{
+\begin{enumerate}[label=(\alph*)]
+  \item Apply $R_2\leftarrow R_2-2R_1$, $R_3\leftarrow R_3-3R_1$, and then $R_3\leftarrow R_3-R_2$:
+  \[
+  \left[\begin{array}{ccc|c}
+  1&1&1&2\\
+  2&3&4&5\\
+  3&4&a+5&b
+  \end{array}\right]
+  \sim
+  \boxed{\left[\begin{array}{ccc|c}
+  1&1&1&2\\
+  0&1&2&1\\
+  0&0&a&b-7
+  \end{array}\right]}.
+  \]
+  \item If $a\ne0$, the system has a pivot in every variable column, so it has $\boxed{\text{one solution}}$. If $a=0$ and $b\ne7$, the last row represents $0=b-7$, so there is $\boxed{\text{no solution}}$. If $a=0$ and $b=7$, the last row is zero and $z$ is free, so there are $\boxed{\text{infinitely many solutions}}$.
+  \item When $a=2$ and $b=9$, the last equation gives $2z=2$, so $z=1$. Then $y+2z=1$ gives $y=-1$, and $x+y+z=2$ gives $x=2$. Thus $\boxed{(x,y,z)=(2,-1,1)}$.
+\end{enumerate}}
+\end{enumerate}
+
+\ifshowsolutions
+\newpage
+\section*{Compact answer key}
+\begin{description}[leftmargin=2.5em]
+  \item[MC:] B, B, B, A, B, A, D, A, B, D.
+  \item[Brief:] rank $3$, free columns $3,5$; $\begin{bmatrix}1&2\\3&-1\end{bmatrix}$; $X=I+A^{-1}B$; $-3/2$; $AB$ is $4\times2$.
+  \item[Exercises:]
+  \begin{enumerate}[label=\arabic*.,leftmargin=2em,itemsep=0.15em,topsep=0.25em]
+    \item $(x,y,z)=\boxed{(2,-1,3)}$.
+    \item $A^2+AB+I=\boxed{\begin{bmatrix}3&3\\4&10\end{bmatrix}}$.
+    \item $\displaystyle L=\boxed{\begin{bmatrix}1&0&0\\3&1&0\\-2&2&1\end{bmatrix}}$ and
+    $\displaystyle U=\boxed{\begin{bmatrix}1&2&-1\\0&4&3\\0&0&5\end{bmatrix}}$.
+    \item $\det(-A)=\boxed{-6}$, $\det B=\boxed{162}$, and $\det C=\boxed{280}$.
+    \item $\det D=\boxed{-135}$.
+    \item If $a\ne0$, there is one solution. If $a=0$ and $b\ne7$, there is no solution. If $a=0$ and $b=7$, there are infinitely many solutions. For $a=2$ and $b=9$, $(x,y,z)=\boxed{(2,-1,1)}$.
+  \end{enumerate}
+\end{description}
+\fi
+\newpage
+Use the space below for scratch work or additional space for any of the questions above. 
+\newpage
+Additional scratch paper. You can detach this page for your convenience. \textbf{Please write your name and student ID on the top right of the page.}
+
+\end{document}

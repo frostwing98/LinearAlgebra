@@ -1,6 +1,8 @@
 # PDF output
 *.pdf
 !template-iages/osuseclab169.pdf
+!Lecture10/lecture10-source.pdf
+!Lecture11/lecture11-source.pdf
 
 # PPT and PPTX output
 *.ppt
