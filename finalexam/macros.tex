@@ -1,0 +1,160 @@
+\usepackage[left=2cm, right=2cm, top=2cm, bottom=2cm]{geometry}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{tasks}
+% \usepackage[margin=1in]{geometry}
+\checkboxchar{$\Box$}
+\usepackage{setspace}
+%\usepackage{bbding}
+%\usepackage{pifont}
+\usepackage{wasysym}
+\usepackage[shortlabels]{enumitem}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+\usepackage{array} 
+\usepackage{multicol}
+\setlength{\columnsep}{1cm}
+\usepackage{afterpage}
+\usepackage{color} 
+\usepackage{graphicx} % in preamble
+\usepackage{listings}
+\usepackage{upquote}
+
+\lstset{
+    escapeinside={(*@}{@*)},           % Allow LaTeX commands between (*@ and @*)
+}
+
+% new macros
+\newcommand{\todo}[1]{\textcolor{red}{(To do): #1}}
+\newcommand{\tored}[1]{\textcolor{red}{\textbf{#1}}}
+\usepackage{xeCJK}
+\defaultfontfeatures{Ligatures=TeX}
+
+\setCJKmainfont[
+    BoldFont={Noto Sans TC}
+]{Noto Sans TC}
+
+% Required by listings/typewriter text
+\setCJKmonofont{Noto Sans TC}
+
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \shownoanswers{\newpage}}
+%% https://tex.stackexchange.com/a/203986
+% Create a True-False question format
+\newcommand*{\TrueFalse}[1]{%
+\ifprintanswers
+    \ifthenelse{\equal{#1}{T}}{%
+        \textbf{TRUE}\hspace*{14pt}False
+    }{
+        True\hspace*{14pt}\textbf{FALSE}
+    }
+\else
+    {True}\hspace*{20pt}False
+\fi
+} 
+%% The following code is based on an answer by Gonzalo Medina
+%% https://tex.stackexchange.com/a/13106/39194
+\newlength\TFlengthA
+\newlength\TFlengthB
+\settowidth\TFlengthA{\hspace*{1.16in}}
+\newcommand\TFQuestion[2]{%
+    \setlength\TFlengthB{\linewidth}
+    \addtolength\TFlengthB{-\TFlengthA}
+    \parbox[t]{\TFlengthA}{\TrueFalse{#1}}\parbox[t]{\TFlengthB}{#2}}
+%%
+
+%%
+\pagestyle{headandfoot}
+%\extraheadheight{.25in}
+\runningheader{{\CourseNumber} - {\CourseTitle}}
+{}
+{{\ExamName} - {\Term}} 
+\firstpagefooter{}{Page \thepage\ of \numpages}{Please go on to the next page\ldots} %
+\runningfooter{}{Page \thepage\ of \numpages}{\iflastpage{End of exam.}{Please go on to the next page\ldots}}
+
+\renewcommand{\fillinlinelength}{1cm}  % change default length
+
+\renewenvironment{solution}
+  {\par\noindent\textbf{Solution: }\color{red}} % begin code
+  {\par}    
+
+% --- show solution chunks only when 'answers' is active ---
+\usepackage{xcolor} % for \color
+
+% Inline macro: use as \showsol{<solution text>}
+\newcommand{\showsol}[1]{\ifprintanswers{\textbf{\color{red}\underline{Solution:} }\color{red}#1}\fi}
+
+\newenvironment{show_code_sol}
+  {\par\noindent\textbf{Solution:}\par
+   \lstset{basicstyle=\ttfamily\small\color{red}}}
+  {\par}
+
+
+\usepackage{listings}
+\usepackage{comment} % for \excludecomment (safe with verbatim)
+% \usepackage[T1]{fontenc}
+
+
+% Environment version that mimics 'solution' but guarded
+\newenvironment{solonly}
+  {\ifprintanswers\par\noindent\textbf{Solution: }\color{red}}
+  {\par\fi}
+
+% If you want to keep using the built-in 'solution' name,
+% make sure it stays conditional:
+\renewenvironment{solution}
+  {\ifprintanswers\par\noindent\textbf{Solution: }\color{red}}
+  {\par\fi}
+
+\newcommand{\shownoanswers}[1]{\ifprintanswers\else #1\fi}
+
+% Base style for C
+% One listings + comment load
+\usepackage{listings}
+\usepackage{comment} % safe with verbatim
+
+% --- styles (no frame, no line numbers) ---
+\lstdefinestyle{examc}{
+  language=C,
+  basicstyle=\ttfamily\small,
+  numbers=none,
+  frame=none,
+  columns=fullflexible,
+  keepspaces=true,
+  showstringspaces=false,
+  tabsize=4,
+  breaklines=true,
+  keywordstyle=\bfseries,
+  commentstyle=\itshape,
+  stringstyle=\ttfamily
+}
+\lstdefinestyle{examc-sol}{
+  style=examc,
+  basicstyle=\ttfamily\small\color{red}
+}
+
+% --- Environments ---
+\lstnewenvironment{Ccode}[1][]
+  {\lstset{style=examc,#1}}
+  {}
+
+% Define CcodeSol only when answers are printed; otherwise exclude it.
+\ifprintanswers
+  \lstnewenvironment{CcodeSol}[1][]
+    {\lstset{style=examc-sol,#1}}
+    {}
+\else
+  \excludecomment{CcodeSol} % body is ignored; no verbatim processing
+\fi
+
+% Inline C
+\newcommand{\Cinline}[1]{\lstinline[language=C]{#1}}
+
+% ---------------------------------------------------------------------
+  

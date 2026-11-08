@@ -1,0 +1,227 @@
+Linear Algebra - Draft Final Examination
+                                LINEAR ALGEBRA
+                        DRAFT FINAL EXAMINATION
+Name: ____________________________________                    Student ID: __________________________
+
+Time allowed: __________                                                           Total: 100 marks
+
+
+Instructions. Show sufficient work in Part III. Unless instructed otherwise, exact answers are
+required. Write clearly in the spaces provided.
+
+Part I. Fill in the blanks. (20 marks; 2 marks each)
+
+1. For the system 2x - y = 3 and 3x + 4y = -1, the coefficient matrix is
+________________________________.
+2. The reduced row echelon form of [[1, 2, 3], [0, 1, 4]] is ________________________________.
+3. For conformable matrices A and B, (AB)ᵀ = ________________________________.
+4. If A is invertible, then (A⁻¹)ᵀ = ________________________________.
+5. The determinant of an upper triangular matrix with diagonal entries -2, 3, and 5 is
+__________________.
+6. If T(x) = Ax is a linear transformation, then T(0) = __________________.
+7. The dimension of span{(1, 0, 1), (0, 1, 1)} is __________________.
+8. If A is an m × n matrix, then Null(A) is a subspace of __________________.
+9. The eigenvalues of the diagonal matrix [[4, 0], [0, -2]] are __________________.
+10. The Euclidean norm of (2, -1, 2) is __________________.
+
+
+
+
+                                             Page 1 of 9
+Linear Algebra - Draft Final Examination
+Part II. Select the only correct statement. (20 marks; 2 marks each)
+
+11. Let A be 3 × 2 and B be 2 × 4. Which statement is correct?
+     A.   BA is a 2 × 2 matrix.
+     B.   AB is a 2 × 3 matrix.
+     C.   AB is a 3 × 4 matrix.
+     D.   Neither product is defined.
+12. For a square matrix A, which condition is equivalent to A being invertible?
+     A.   det(A) = 0
+     B.   Ax = 0 has a nontrivial solution.
+     C.   The columns of A are linearly independent.
+     D.   A has a zero row in its reduced row echelon form.
+13. Suppose A = LU, where L is lower triangular and U is upper triangular. To solve Ax =
+b, one may solve
+     A.   Ux = b, then Ly = x.
+     B.   Ly = b, then Ux = y.
+     C.   Lx = b, then Uy = x.
+     D.   LUy = x, then x = b.
+14. For conformably partitioned matrices and vectors, [[A, B], [C, D]][x; y] equals
+     A.   [Ax + By; Cx + Dy]
+     B.   [Ax + Cy; Bx + Dy]
+     C.   [A + B; C + D][x; y]
+     D.   [xA + yB; xC + yD] for arbitrary matrix x and y
+15. Which pair of properties characterizes a linear transformation T?
+     A.   T(u + v) = T(u) + T(v), and T(cu) = cT(u)
+     B.   T(u + v) = T(u)T(v), and T(cu) = T(u) + c
+     C.   T(0) = 1, and T(-u) = T(u)
+     D.   T must map every vector to itself.
+
+
+
+
+                                           Page 2 of 9
+Linear Algebra - Draft Final Examination                                      Part II continued
+
+16. If the pivot columns of the reduced row echelon form of A are columns 1 and 3, then a
+basis for Col(A) is formed by
+     A.   columns 1 and 3 of the original matrix A.
+     B.   columns 1 and 3 of rref(A).
+     C.   rows 1 and 3 of the original matrix A.
+     D.   all nonzero columns of rref(A).
+17. For an inconsistent system Ax = b, every least-squares solution x̂ satisfies
+     A.   Ax̂ = 0
+     B.   AᵀAx̂ = Aᵀb
+     C.   AAᵀx̂ = b
+     D.   Aᵀx̂ = b
+18. If Q is an orthogonal matrix, then
+     A.   Q⁻¹ = -Q
+     B.   Q⁻¹ = Qᵀ
+     C.   QᵀQ = 0
+     D.   the columns of Q are linearly dependent.
+19. An n × n matrix A is diagonalizable if and only if
+     A.   A has exactly one eigenvalue.
+     B.   A has n linearly independent eigenvectors.
+     C.   A is triangular.
+     D.   det(A) = 1.
+20. If B is obtained from A by interchanging two rows, then
+     A.   det(B) = det(A)
+     B.   det(B) = 2det(A)
+     C.   det(B) = -det(A)
+     D.   det(B) = 0 for every A
+
+
+End of Part II. Continue to Part III and show all work.
+
+
+
+
+                                           Page 3 of 9
+Linear Algebra - Draft Final Examination
+Part III. Show all your work in the space provided. (60 marks)
+
+21. Let L be the lower triangular matrix shown below.
+
+
+                                           2        0         0
+
+                                           1        1         0
+
+                                           -1       2         1
+
+
+Find L⁻¹. Clearly show a valid method, such as Gauss-Jordan elimination or solving
+three triangular systems. (7 marks)
+
+Solution:
+
+
+
+
+                                                Page 4 of 9
+Linear Algebra - Draft Final Examination
+
+22. Let
+
+                                      1    0        1      2
+
+                                      0    1        1      -1
+
+                                      1    1        2      1
+
+
+   (a) Find a basis for the null space of A. (5 marks)
+
+   (b) Describe Null(A) as a parametric vector set. (4 marks)
+
+   (c) Find a basis for the column space of A. (4 marks)
+
+  (d) Describe Col(A) as a span or parametric vector set. (3 marks)
+Solution:
+
+
+
+
+                                           Page 5 of 9
+Linear Algebra - Draft Final Examination
+
+23. Let a and b be real numbers. Consider the system
+                                           x+y+z=a
+                                           2x - y + 3z = b
+                                           3x + 4z = a - b
+
+
+   (a) Determine all values of a and b for which the system is consistent. (5 marks)
+
+   (b) Are there any values of a and b for which the system has exactly one solution?
+   Justify your answer. (5 marks)
+
+Solution:
+
+
+
+
+                                              Page 6 of 9
+Linear Algebra - Draft Final Examination
+
+24. Compute the determinant of the following matrix. Use determinant properties
+or row/column expansion, and show the main steps. (10 marks)
+
+
+
+                                   2       0       0         0   0
+
+                                   1       3       1         1   1
+
+                                   1       0       4         0   0
+
+                                   1       0       2         5   0
+
+                                   1       0       2         1   6
+
+
+Solution:
+
+
+
+
+                                               Page 7 of 9
+Linear Algebra - Draft Final Examination
+
+25. Consider the symmetric matrix
+
+
+                                           2       1         0
+
+                                           1       2         0
+
+                                           0       0         4
+
+
+   (a) Find the eigenvalues of A and a basis for each eigenspace. (6 marks)
+
+   (b) Find an orthonormal basis of ℝ³ consisting of eigenvectors of A. (4 marks)
+
+   (c) Use orthogonal diagonalization to compute A⁴. Show P, D, and the resulting
+   matrix. (7 marks)
+Solution:
+
+
+
+
+                                               Page 8 of 9
+Linear Algebra - Draft Final Examination                          Question 25 continued
+
+25(c) continued: Use this page for the remaining diagonalization and matrix-power
+work.
+
+
+
+
+                                    END OF EXAMINATION
+
+
+
+                                           Page 9 of 9
+

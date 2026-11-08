@@ -1,0 +1,350 @@
+% !TeX program = xelatex
+% !TeX encoding = UTF-8
+% Official Linear Algebra final examination booklet.
+% Layout adapted from finalexam/main.tex.
+
+\documentclass[12pt,a4paper,addpoints]{exam}
+
+\def\CourseTitle{Linear Algebra}
+\def\ExamName{Final Examination}
+\def\CourseNumber{MATH100}
+\def\ExamDate{January, 11th, 2027}
+\def\Duration{2}
+\def\ExamTime{10:00-12:00}
+\def\Term{2609}
+\def\ExamDuration{2 Hours}
+
+\input{macros}
+
+\begin{document}
+
+\noindent
+\begin{minipage}[t]{0.48\textwidth}
+    \vspace{-10pt}
+    \fbox{\parbox[c][1.2cm][c]{4cm}{Seat\\No.}}
+\end{minipage}
+
+\vspace{-2cm}
+\begin{center}
+    \includegraphics[width=0.27\textwidth]{must-logo.pdf}
+\end{center}
+
+\begin{center}
+    \vspace*{0.5cm}
+    {\textbf{\Huge 澳\hspace{2em}門\hspace{2em}科\hspace{2em}技\hspace{2em}大\hspace{2em}學}}\\[0.3cm]
+    {\large \textbf{MACAU UNIVERSITY OF SCIENCE AND TECHNOLOGY}}\\[1cm]
+
+    {\Large \textbf{School of Computer Science and Engineering}}\\[0.2cm]
+    {\Large \textbf{Faculty of Innovation Engineering}}\\[0.2cm]
+    {\Large \textbf{Bachelor of Science}}\\[1cm]
+
+    {\large \textbf{2609}}\\[1cm]
+    {\Large \textbf{\CourseNumber \quad \CourseTitle}}\\[1cm]
+\end{center}
+
+\begin{center}
+\begin{tabular}{@{}p{4cm}p{8cm}@{}}
+    \textbf{No. of Pages:} & {\numpages} Pages (including this page)\\[0.5cm]
+    \textbf{Exam Date:} & \ExamDate\\[0.5cm]
+    \textbf{Exam Duration:} & \ExamDuration\ (\ExamTime)\\[0.5cm]
+    \textbf{Student Name:} & \underline{\hspace{7cm}}\\[0.5cm]
+    \textbf{Student Number:} & \underline{\hspace{7cm}}\\
+\end{tabular}
+\end{center}
+
+\vspace{0.5cm}
+
+\noindent
+\textbf{Please read the following instructions carefully.}
+\begin{itemize}[leftmargin=*]
+    \item This question booklet contains \textbf{\numquestions} questions and
+          \textbf{\numpages} pages (including the cover), for a total of
+          \textbf{\numpoints} marks. Check that all pages are present.
+    \item Return this question booklet, together with all extra unused answer sheets
+          and draft paper, at the end of the examination.
+    \item This is a \textbf{Closed Book Examination}. Dictionaries, calculators,
+          mobile phones, smart watches, and other electronic devices are
+          \textbf{NOT permitted}.
+    \item Show sufficient work in Part III. Unless instructed otherwise, give exact answers.
+    \item \textbf{Answers must be provided in English to receive marks.}
+\end{itemize}
+
+\vfill
+
+\begin{questions}
+\addpoints
+
+\newpage
+\fullwidth{\textbf{\Large Part I. Fill in the blanks.}
+\hfill\textbf{(20 marks; 2 marks each)}}
+\vspace{0.4cm}
+
+\question[2]
+Consider the basis
+$\left\{\begin{bmatrix}1\\2\end{bmatrix},
+\begin{bmatrix}2\\-1\end{bmatrix}\right\}$ for $\mathbb R^2$.
+The coordinate vector of $\begin{bmatrix}5\\0\end{bmatrix}$ with respect to this basis is
+$\underline{\hspace{28mm}}$.
+
+\question[2]
+If $A$ is invertible and $\det(A)=\alpha$, then $\det(A^{-1})=\underline{\hspace{35mm}}$.
+
+\question[2]
+If $A=\begin{bmatrix}2&-1\\4&3\end{bmatrix}$, then
+$A^T=\underline{\hspace{35mm}}$.
+
+\question[2]
+If $A$ has 7 columns and $\operatorname{rank}(A)=4$, then the dimension of the
+null space of $A$ is $\underline{\hspace{22mm}}$.
+
+\question[2]
+For an eigenvalue $\lambda$, the corresponding eigenspace is the null space of
+\par\hspace*{8mm}$\underline{\hspace{30mm}}$.
+
+\question[2]
+The eigenvalues of $\begin{bmatrix}3&1\\0&-2\end{bmatrix}$ are
+$\underline{\hspace{35mm}}$.
+
+\question[2]
+$\det\!\begin{bmatrix}4&-2\\1&3\end{bmatrix}=\underline{\hspace{24mm}}$.
+
+\question[2]
+$\left\lVert\begin{bmatrix}-2\\3\\6\end{bmatrix}\right\rVert
+=\underline{\hspace{24mm}}$.
+
+\question[2]
+The distance between $\begin{bmatrix}1\\-2\\3\end{bmatrix}$ and
+$\begin{bmatrix}-2\\2\\3\end{bmatrix}$ is $\underline{\hspace{24mm}}$.
+
+\question[2]
+If $A=\begin{bmatrix}2&0&0\\0&-3&0\\0&0&4\end{bmatrix}$, then
+$A^2=\underline{\hspace{42mm}}$.
+
+\newpage
+\fullwidth{\textbf{\large Part II. Select the only correct statement.}
+\hfill\textbf{(20 marks; 2 marks each)}}
+\vspace{0.3cm}
+
+\question[2]
+For a square matrix $A$, which condition is equivalent to $A$ being invertible?
+\begin{choices}
+    \choice $A\mathbf x=\mathbf 0$ has a nontrivial solution.
+    \choice $A\mathbf x=\mathbf b$ has a unique solution for every $\mathbf b$.
+    \choice The columns of $A$ are linearly dependent.
+    \choice $\det(A)=0$.
+\end{choices}
+
+\question[2]
+If $B$ is obtained from $A$ by interchanging two rows, then
+\begin{choices}
+    \choice $\det(B)=\det(A)$.
+    \choice $\det(B)=-\det(A)$.
+    \choice $\det(B)=2\det(A)$.
+    \choice $\det(B)=0$ for every $A$.
+\end{choices}
+
+\question[2]
+Which set is a subspace of $\mathbb R^3$?
+\begin{choices}
+    \choice $\{(x,y,z):x-2y+z=0\}$
+    \choice $\{(x,y,z):x-2y+z=1\}$
+    \choice $\{(x,y,z):x,y,z>0\}$
+    \choice $\{(x,y,z):x+y+z\geq 0\}$
+\end{choices}
+
+\question[2]
+Pivot columns 1 and 3 occur in the reduced echelon form of $A$. A basis for
+$\operatorname{Col}(A)$ is obtained from
+\begin{choices}
+    \choice columns 1 and 3 of the original matrix $A$.
+    \choice columns 1 and 3 of the reduced echelon form of $A$.
+    \choice rows 1 and 3 of $A$.
+    \choice all nonzero rows of the reduced echelon form of $A$.
+\end{choices}
+
+\question[2]
+If $A$ has 5 columns and $\operatorname{rank}(A)=3$, then the dimension of the
+null space of $A$ equals
+\begin{choices}
+    \choice 1
+    \choice 2
+    \choice 3
+    \choice 5
+\end{choices}
+
+\newpage
+
+\begingroup
+\small
+
+\question[2]
+Which statement about the fundamental subspaces of an $m\times n$ matrix $A$ is correct?
+\begin{choices}
+    \choice $\operatorname{Null}(A)$ is a subspace of $\mathbb R^m$.
+    \choice The pivot columns of the original matrix $A$ form a basis for
+            $\operatorname{Col}(A)$.
+    \choice Row-equivalent matrices always have the same column space.
+    \choice The system $A\mathbf x=\mathbf b$ is inconsistent exactly when
+            $\mathbf b\in\operatorname{Col}(A)$.
+\end{choices}
+
+\vspace{2mm}
+
+\question[2]
+If $A$ is a $4\times7$ matrix, then the rank of $A^T$ is at most
+\begin{choices}
+    \choice 7
+    \choice 3
+    \choice 4
+    \choice 8
+\end{choices}
+
+\vspace{2mm}
+
+\question[2]
+If $A$, $B$, and $C$ are square matrices of the same order, then $(ABC)^T$ equals
+\begin{choices}
+    \choice $C^TB^TA^T$
+    \choice $A^TB^TC^T$
+    \choice $C^TA^TB^T$
+    \choice $(CBA)^T$
+\end{choices}
+
+\vspace{2mm}
+
+\question[2]
+Let $A$ be a diagonalizable $5\times5$ matrix. Which statement must be true?
+\begin{choices}
+    \choice There is a basis of $\mathbb R^5$ consisting of eigenvectors of $A$.
+    \choice The matrix $A$ has five distinct eigenvalues.
+    \choice The matrix $A$ must be symmetric.
+    \choice Any five eigenvectors of $A$ are linearly dependent.
+\end{choices}
+
+\vspace{2mm}
+
+\question[2]
+Let $A$ be an $n\times n$ matrix. The equation $A\mathbf x=6\mathbf x$ has only
+the trivial solution if and only if which matrix is invertible?
+\begin{choices}
+    \choice $A$
+    \choice $A+6I$
+    \choice $A-6I$
+    \choice $6A$
+\end{choices}
+
+\endgroup
+
+\vspace{0.3cm}
+\fullwidth{\textbf{End of Part II. Continue to Part III and show all work.}}
+
+\newpage
+\fullwidth{\textbf{\large Part III. Show all your work in the space provided.}
+\hfill\textbf{(60 marks)}}
+\vspace{0.4cm}
+
+\question[12]
+Use Gaussian elimination to solve the system
+\[
+\begin{aligned}
+x+y+z&=2,\\
+2x-y+z&=-1,\\
+x+2y-z&=6.
+\end{aligned}
+\]
+State whether the solution is unique and justify your conclusion.
+
+\shownoanswers{\vspace{8cm}}
+
+% \newpage
+
+\thispagestyle{headandfoot}
+\question
+Let
+\[
+A=\begin{bmatrix}
+2&-1&3\\
+1&2&4\\
+3&1&7
+\end{bmatrix}.
+\]
+\begin{parts}
+    \part[4] Find a row echelon form of $A$ and identify the pivot columns.\par\vspace{2mm}
+    \part[4] Find a basis for $\operatorname{Null}(A)$.\par\vspace{2mm}
+    \part[4] Find a basis for $\operatorname{Col}(A)$.\par\vspace{2mm}
+    % \part[3] Verify the rank-nullity theorem for $A$.
+\end{parts}
+
+\shownoanswers{\vspace{9cm}}
+
+\newpage
+\thispagestyle{headandfoot}
+\question
+Consider
+\[
+B=\begin{bmatrix}
+2&1&-1\\
+-1&4&1\\
+-2&2&3
+\end{bmatrix}.
+\]
+\begin{parts}
+    \part[5] Find the eigenvalues of $B$ and a basis for each eigenspace.\par\vspace{2mm}
+    \part[4] Diagonalize $B$ by finding matrices $P$ and $D$ such that
+             $B=PDP^{-1}$.\par\vspace{2mm}
+    \part[3] Use the diagonalization to compute $B^3$.
+\end{parts}
+
+\shownoanswers{\vspace{7cm}}
+
+\newpage
+\thispagestyle{headandfoot}
+\question[12]
+Compute the determinant of the matrix
+\[
+M=\begin{bmatrix}
+0&1&1&1&1\\
+2&3&3&3&3\\
+2&3&5&5&5\\
+2&3&5&7&7\\
+2&3&5&7&11
+\end{bmatrix}.
+\]
+
+
+\shownoanswers{\vspace{9cm}}
+
+\newpage
+\thispagestyle{headandfoot}
+\question
+Let $a,b\in\mathbb R$. Consider the system
+\[
+\begin{aligned}
+x+2y+z&=a,\\
+2x+4y+3z&=b,\\
+3x+6y+4z&=2a-b.
+\end{aligned}
+\]
+\begin{parts}
+    \part[6] Determine all values of $a$ and $b$ for which the system is consistent.\par\vspace{2mm}
+    \part[6] Are there any values of $a$ and $b$ for which the system has exactly one
+             solution? Justify your answer.
+\end{parts}
+
+\shownoanswers{\vspace{5cm}}
+
+% \newpage
+% \thispagestyle{headandfoot}
+% \fullwidth{\textbf{Additional workspace for Question 25}}
+% \vfill
+
+% \begin{center}
+%     \Large\textbf{END OF EXAMINATION}
+% \end{center}
+
+\end{questions}
+
+\vfill
+\noindent\makebox[2.5in]{\textbf{\Large Score:} \hrulefill}
+
+\end{document}

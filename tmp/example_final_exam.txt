@@ -1,0 +1,264 @@
+Part I. Fill in the blanks. (20 marks)
+
+1. The eigenspace of 𝐴 corresponding to an eigenvalue 𝜆 is the null space of the matrix __
+    𝐴 − 𝜆𝐼____
+                       2 1 3
+2. The eigenvalues of [0 −1 2] are __ 2, -1, 6____
+                       0 0 6
+                        1     1                                      3
+3. Consider the basis {[ ] , [ ]} for ℝ2 . The coordinate vector of [ ] with respect to this
+                        1 −1                                         1
+                  2
+    basis is ____[ ]______
+                  1
+                3         4                  3        5
+4. Suppose 𝐴 = [            ], then 𝐴𝑇 =____[           ]______
+                5         7                  4        7
+5. det(𝐴−1 ) =_____1/det(𝐴)____
+6. The determinant of a triangular matrix is the ____ product____ of the entries on the main
+    diagonal.
+7. The dimension of the subspace {𝟎} of ℝ2 is ____0____
+          3 −1
+8. det ([      ]) = ____8____
+         −1 3
+      −3
+9. ‖ [ 2 ] ‖ = ____√29____
+       4
+                           0       −7
+10. The distance between [−1] and [−5] is ____9____
+                           3       7
+
+
+
+Part II. Select the only correct statement. (20 marks)
+
+11. A matrix that is both symmetric and upper triangular must be a .................................. ( A )
+     A.    diagonal matrix
+     B.    non-diagonal but symmetric
+     C.    both A and B
+     D.    none of the above
+12. Let           be an              matrix, and              is invertible. Then which of the following
+
+     statement is equivalent: ................................................................................................. ( B )
+
+      A.           cannot be expressed as a product of elementary matrices.
+
+      B.                   has only the trivial solution.
+
+      C.                    is inconsistent for every                       vector        .
+
+      D.                    has more than one solution for every                               vector         .
+
+13. If        is an              matrix, then the number of leading 1's in the reduced row echelon
+
+     form of           is at most ...................................................................................................( D )
+
+      A.     4
+      B.     2
+      C.     5
+      D.     3
+
+
+14. Which of the following does not span                           ................................................................... ( B )
+
+      A.     x = (2, 2, 2), y = (0, 0, 3), z = (0, 1, 1)
+      B.     x = (2, -1, 3), y = (4, 1, 2), z = (8, -1, 8)
+      C.     Neither A nor B
+      D.     Both A and B
+
+
+15. Choose the correct statement. ....................................................................................... ( C )
+
+      A.     The column space of a matrix                        is the set of solutions of                            .
+
+      B.     If        is the reduced row echelon form of                        , then those column vectors of
+
+             that contain the leading 1's form a basis for the column space of                                     .
+
+      C.     The system Ax=b is inconsistent if and only if                             is not in the column space of                      .
+
+      D.     If        and          are              matrices that have the same row space, then                                and
+
+             have the same column space.
+16. If A is a 3 × 5 matrix, then the rank of 𝐴𝑇 is at most................................................( D )
+      A.    4
+      B.    2
+      C.    5
+      D.    3
+
+
+17. If A and B are square matrices of the same order, then (𝐴𝐵)𝑇 = .............................. ( B )
+      A.    (𝐴)𝑇 (𝐵)𝑇
+      B.    (𝐵)𝑇 (𝐴)𝑇
+      C.    (𝐴)𝑇 + (𝐵)𝑇
+      D.    (𝐵𝐴)𝑇
+18. Let an 𝑛 × 𝑛 matrix A be diagonalizable. Then .......................................................... ( A )
+      A.    A has n linearly independent eigenvectors.
+      B.    A has n linearly dependent eigenvectors.
+      C.    A has n+1 linearly independent eigenvectors.
+      D.    A has n-1 linearly dependent eigenvectors.
+
+
+19. Which of the following is a subspace of ℝ3 ? .............................................................. ( A )
+      A.    All vectors of the form (a; 0; 0)
+      B.    All vectors of the form (a; 1; 1)
+      C.    All vectors of the form (a; b; c) where b = a + c + 1
+      D.    None of these
+
+
+20. Let A be an 𝑛 × 𝑛 matrix. The linear system                              has a unique solution if and
+
+     only if which of the following matrices is invertible. ................................................... ( C )
+      A.    A
+      B.    A+4I
+      C.    A-4I
+      D.    4A
+Part III. Show all your work in the space provided
+
+21. For an 3 × 3 upper triangular matrix U, with nonzero entries a,b,c,d,e,f.
+
+
+
+
+   find the inverse of U. (7 marks)
+
+    Solution:
+
+
+
+
+                                                                          ................ 7 marks
+22. Let
+
+
+
+
+   (a) Find a basis for the null space of          (5 marks)
+
+   (b) Find the null space of         (4 marks)
+
+   (c) Find a basis for the column space of               (4 marks)
+
+   (d) Find the column space of            (3 marks)
+
+
+
+   Solution:
+
+   (a) By solving              , we can get
+
+
+
+                                                 ................................................................. 3 marks
+
+
+
+          A basis or the null space of      is                   ............................................... 2 marks
+
+
+
+
+   (b) The null space of         is                                       ...................................... 4 marks
+
+
+
+
+   (c)                           ~
+
+
+          The 1st and 2nd columns of          is the pivot columns, .................................. 2 marks
+
+
+          so a basis for the column space of         is                  ....................................... 2 marks
+
+
+
+
+   (d) The column space of            is                                     .................................. 3 marks
+23. Let a, b be real numbers. Consider the following system of equations:
+
+
+
+
+    (a) Determine all possible values of a, b for which the above system has a solution. (5
+          marks)
+    (b) Are there any real numbers a, b for which the system of equations above has exactly
+          one solution? (5 marks)
+
+
+    Solution:
+
+    (a)
+
+
+
+
+                                                       ............................................... 5 marks
+
+
+    (b)
+
+
+
+
+                                                                                    ............... 5 marks
+24. Compute the determinant of the following matrix (10 marks)
+
+
+
+
+   Solution:
+   det(A) = 120 ............................................................. Steps for 8 marks, results for 2 marks
+25. Consider the following matrix
+
+
+
+
+   (a) Calculate eigenvalues and eigenvectors of A. (6 marks)
+   (b) Find an orthonormal basis of                consisting of eigenvectors of A. (4 marks)
+
+   (c) Use your answer to compute                 by diagonalizing A. (7 marks)
+
+
+   Solution:
+
+   (a) By solving                           , we can get eigenvalues are.
+
+                               ........................................................................................ 2 marks
+
+
+
+       By solving                        , we can find a basis for each eigenvalue:
+
+
+
+
+       Basis for       :                    .......................................................................... 1 marks
+
+
+
+
+       Basis for           :                                                                          ............ 3 marks
+
+
+   (b) Apply the Gram–Schmidt process to obtain the orthonormal basis
+
+
+                                                                ................... 4 marks, 1 marks for 1 vector
+
+
+
+
+   (c) Construct                                    and ......................................................... 1 marks
+
+
+
+
+                                  .................................................................................... 1 marks
+........................................................................... 3 marks
+
+
+
+
+            .............................................................. 2 marks
+
