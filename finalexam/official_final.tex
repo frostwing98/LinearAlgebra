@@ -1,0 +1,476 @@
+% Makeup final examination, question-only version.
+% Compile make_up_exam_answers.tex to produce the version with solutions.
+
+\ifdefined\MakeupAnswerVersion
+  \documentclass[12pt,a4paper,answers,addpoints]{exam}
+\else
+  \documentclass[12pt,a4paper,addpoints]{exam}
+\fi
+
+\def\CourseTitle{Computer Programming}
+\def\ExamName{Final Examination}
+\def\CourseNumber{BE104}
+\def\ExamDate{January, 5th, 2027}
+\def\Duration{2 Hours}
+\def\ExamTime{15:00--17:00}
+\def\Term{2609}
+\def\ExamDuration{2 Hours}
+
+\input{macros}
+
+\begin{document}
+
+% \noindent
+% \begin{minipage}[t]{0.48\textwidth}
+%     \vspace{-10pt}
+%     \fbox{\parbox[c][1.2cm][c]{4cm}{Seat\\No.}}
+% \end{minipage}
+
+% \vspace{-2cm}
+% \begin{center}
+%     \includegraphics[width=0.27\textwidth]{must-logo.pdf}
+% \end{center}
+
+% \begin{center}
+%     \vspace*{0.5cm}
+%     {\textbf{\Huge 澳\hspace{2em}門\hspace{2em}科\hspace{2em}技\hspace{2em}大\hspace{2em}學}}\\[0.3cm]
+%     {\large \textbf{MACAU UNIVERSITY OF SCIENCE AND TECHNOLOGY}}\\[1cm]
+
+%     {\Large \textbf{School of Computer Science and Engineering}}\\[0.2cm]
+%     {\Large \textbf{Faculty of Innovation Engineering}}\\[0.2cm]
+%     {\Large \textbf{Bachelor of Science}}\\[0.5cm]
+
+%     {\large \textbf{2609}}\\[0.6cm]
+%     {\Large \textbf{\CourseNumber \quad \CourseTitle}}\\[0.6cm]
+% \end{center}
+
+% \begin{center}
+% \begin{tabular}{@{}p{4cm}p{8cm}@{}}
+%     \textbf{No. of Pages:} & {\numpages} Pages (including this page)\\[0.35cm]
+%     \textbf{Exam Date:} & \ExamDate\\[0.35cm]
+%     \textbf{Exam Duration:} & \ExamDuration\ (\ExamTime)\\[0.35cm]
+%     \textbf{Student Name:} & \underline{\hspace{7cm}}\\[0.35cm]
+%     \textbf{Student Number:} & \underline{\hspace{7cm}}\\
+% \end{tabular}
+% \end{center}
+
+% \vspace{0.2cm}
+
+% \noindent
+% \textbf{Please read the following instructions carefully.}
+% \begin{itemize}[leftmargin=*,itemsep=2pt,topsep=3pt]
+%     \item This question booklet contains \textbf{\numquestions} questions and
+%     \textbf{\numpages} pages (including this page), for a total of
+%     \textbf{\numpoints} points/marks. Check that all pages are present.
+%     \item Answer all questions in the spaces provided. For each multiple-choice
+%     question, select only one answer.
+%     \item Return this Question Booklet, together with all extra unused answer
+%     sheets and draft paper, at the end of the examination.
+%     \item This is a \textbf{Closed Book Exam}. Dictionaries, calculators, and
+%     electronic devices are \textbf{NOT permitted}.
+%     \item \textbf{Answers must be provided in English to receive marks.}
+% \end{itemize}
+
+% \vfill
+
+% \hspace{0.5in}
+\begin{questions}
+\addpoints
+
+\newpage
+\fullwidth{\section*{Section I: Multiple-Choice Questions (20 points)}}
+% \fullwidth{Select the one best answer for each question. Each question is worth 2 points.}
+
+\question[2] Given \texttt{int value = 25;}, which statement correctly declares
+the pointer \texttt{p} and initializes it with the address of \texttt{value}?
+\begin{choices}
+    \choice \texttt{int p = \&value;}
+    \choice \texttt{int *p = value;}
+    \choice \texttt{int *p = \&value;}
+    \choice \texttt{int \&p = value;}
+\end{choices}
+\showcorrectanswer{C. \texttt{int *p = \&value;}}
+\showoutcome{1}{b (b2)}
+
+\question[2] The pointer \texttt{q} points to the first element of an integer array
+\texttt{data}. Which expression represents \texttt{data[3]}?
+\begin{oneparchoices}
+    \choice \texttt{*q + 3}
+    \choice \texttt{\&q + 3}
+    \choice \texttt{*(q + 3)}
+    \choice \texttt{*q[3]}
+\end{oneparchoices}
+\showcorrectanswer{C. \texttt{*(q + 3)}}
+\showoutcome{1}{b (b2)}
+
+\question[2] Given the declarations below, which expression accesses the score
+through the pointer \texttt{sp}?
+\begin{lstlisting}[style=examc]
+struct Student {
+    char name[20];
+    int score;
+};
+struct Student s;
+struct Student *sp = &s;
+\end{lstlisting}
+\begin{oneparchoices}
+    \choice \texttt{sp.score}
+    \choice \texttt{sp->score}
+    \choice \texttt{*sp.score}
+    \choice \texttt{score.sp}
+\end{oneparchoices}
+\showcorrectanswer{B. \texttt{sp->score}}
+\showoutcome{1}{b (b2)}
+
+\question[2] Which statement correctly reads a \texttt{double} from the file
+represented by \texttt{fp} and stores it in \texttt{value}?
+\begin{choices}
+    \choice \texttt{fscanf("\%lf", fp, value);}
+    \choice \texttt{fscanf(fp, "\%lf", value);}
+    \choice \texttt{fscanf(fp, "\%lf", \&value);}
+    \choice \texttt{fscanf(\&fp, "\%lf", \&value);}
+\end{choices}
+\showcorrectanswer{C. \texttt{fscanf(fp, "\%lf", \&value);}}
+\showoutcome{1}{b (b2)}
+
+\question[2] What is printed by the following program fragment?
+\begin{lstlisting}[style=examc]
+int total = 0;
+for (int i = 1; i <= 3; i++)
+    total += i * 2;
+printf("%d", total);
+\end{lstlisting}
+\begin{oneparchoices}
+    \choice \texttt{6}
+    \choice \texttt{9}
+    \choice \texttt{12}
+    \choice \texttt{18}
+\end{oneparchoices}
+\showcorrectanswer{C. \texttt{12}}
+\showoutcome{2}{b (b2)}
+
+\question[2] Which statement correctly reads an integer into \texttt{count} and a
+character into \texttt{grade}?
+\begin{choices}
+    \choice \texttt{scanf("\%d \%c", count, grade);}
+    \choice \texttt{scanf("\%d \%c", \&count, \&grade);}
+    \choice \texttt{scanf(\%d \%c, \&count, \&grade);}
+    \choice \texttt{scanf("\%d \%c", *count, *grade);}
+\end{choices}
+\showcorrectanswer{B. \texttt{scanf("\%d \%c", \&count, \&grade);}}
+\showoutcome{1}{b (b2)}
+
+\question[2] Which statement about \texttt{break} and \texttt{continue} inside a
+loop is correct?
+\begin{choices}
+    \choice \texttt{break} skips only the current iteration.
+    \choice \texttt{continue} immediately terminates the loop.
+    \choice \texttt{break} exits the loop, while \texttt{continue} proceeds
+    to the next iteration.
+    \choice Both statements always terminate the program.
+\end{choices}
+\showcorrectanswer{C. \texttt{break} exits the loop, while \texttt{continue}
+proceeds to the next iteration.}
+\showoutcome{1}{b (b2)}
+
+\question[2] What is printed by the following program fragment?
+\begin{lstlisting}[style=examc]
+int code = 1;
+switch (code) {
+    case 0: printf("A"); break;
+    case 1: printf("X");
+    case 2: printf("Y"); break;
+    default: printf("Z");
+}
+\end{lstlisting}
+\begin{oneparchoices}
+    \choice \texttt{X}
+    \choice \texttt{XY}
+    \choice \texttt{XYZ}
+    \choice \texttt{Z}
+\end{oneparchoices}
+\showcorrectanswer{B. \texttt{XY}}
+\showoutcome{2}{b (b2)}
+
+\question[2] Suppose \texttt{x = 4} and \texttt{y = 9}. Which condition is true?
+\begin{choices}
+    \choice \texttt{x > y \&\& y > 0}
+    \choice \texttt{x < y \&\& y - x == 5}
+    \choice \texttt{x == y || x > 5}
+    \choice \texttt{x + y < 10}
+\end{choices}
+\showcorrectanswer{B. \texttt{x < y \&\& y - x == 5}}
+\showoutcome{1}{b (b2)}
+
+\question[2] Which of the following is a valid C variable name?
+\begin{choices}
+    \choice \texttt{3level}
+    \choice \texttt{student-name}
+    \choice \texttt{\_level3}
+    \choice \texttt{while}
+\end{choices}
+\showcorrectanswer{C. \texttt{\_level3}}
+\showoutcome{1}{b (b2)}
+
+\newpage
+\fullwidth{\section*{Section II: Write Program Output (30 points)}}
+
+\question[10] Write the exact output of the following program, including spaces.
+Then briefly identify which array element each printed expression represents.
+\begin{lstlisting}[style=examc]
+#include <stdio.h>
+
+int main(void) {
+    int a[8] = {3, 6, 9, 12, 15, 18, 21, 24};
+    int *p = a;
+    int *ap[2] = {&a[6], &a[2]};
+
+    printf("%d %d %d %d\n", a[7], *(p + 4), *ap[0], *ap[1]);
+    return 0;
+}
+\end{lstlisting}
+\shownoanswers{\vspace{4cm}}
+\showsol{The exact output is \texttt{24 15 21 9}. The four expressions represent
+\texttt{a[7]}, \texttt{a[4]}, \texttt{a[6]}, and \texttt{a[2]}, respectively.
+
+\textbf{Marking:} 2 points for each correct value and 2 points for a correct
+identification or explanation of the expressions.}
+\showoutcome{2}{b (b2)}
+
+\newpage
+\question Consider the following two functions.
+\begin{lstlisting}[style=examc]
+char element_index(const char a[], int n) {
+    return a[n];
+}
+
+char element_pointer(const char *p, int n) {
+    return *(p + n);
+}
+\end{lstlisting}
+Let the character array be:
+\begin{lstlisting}[style=examc]
+char letters[] = {'C', 'O', 'D', 'I', 'N', 'G', '\0'};
+\end{lstlisting}
+\begin{parts}
+    \part[3] What is printed by the following statement?
+\begin{lstlisting}[style=examc]
+printf("%c", element_index(letters, 3));
+\end{lstlisting}
+    \shownoanswers{\vspace{4cm}}
+    \showsol{\texttt{I}}
+    \showoutcome{2}{b (b2)}
+
+    \part[3] What is printed by the following statement?
+\begin{lstlisting}[style=examc]
+printf("%c", element_pointer(letters, 5));
+\end{lstlisting}
+    \shownoanswers{\vspace{4cm}}
+    \showsol{\texttt{G}}
+    \showoutcome{2}{b (b2)}
+
+    \part[4] In your words, what do the two functions do?
+    \shownoanswers{\vspace{4cm}}
+    \showsol{Both functions return the element at index \texttt{n} of the supplied
+    character array. The first uses array indexing; the second uses pointer arithmetic.}
+    \showoutcome{1}{b (b2)}
+\end{parts}
+\par\medskip
+
+\newpage
+\question Study the following function. Positions are counted starting from 1.
+\par\vspace{0.5em}
+\begin{lstlisting}[style=examc]
+void print_odd_positions(const char s[]) {
+    int i = 0;
+    while (s[i] != '\0') {
+        putchar(s[i]);
+        i += 2;
+    }
+    putchar('\n');
+}
+\end{lstlisting}
+\begin{parts}
+    \part[3] What is printed by \texttt{print\_odd\_positions("ABCDEFG");}?
+    \shownoanswers{\vspace{1.5cm}}
+    \showsol{\texttt{ACEG}}
+    \showoutcome{2}{b (b2)}
+
+    \part[3] What is printed by \texttt{print\_odd\_positions("Computer");}?
+    \shownoanswers{\vspace{1.5cm}}
+    \showsol{\texttt{Cmue}}
+    \showoutcome{2}{b (b2)}
+
+    \part[4] Explain what \texttt{print\_odd\_positions()} does.
+    \shownoanswers{\vspace{3cm}}
+    \showsol{The function prints the characters in the 1st, 3rd, 5th, and subsequent
+    odd-numbered positions, followed by a newline.}
+    \showoutcome{2}{b (b2)}
+\end{parts}
+
+\newpage
+\fullwidth{\section*{Section III: Fill in the Blanks (30 points)}}
+
+\question[10] Complete the five blanks so that the program uses a \texttt{while}
+loop to count and print the number of lowercase English letters in a string. 
+\begin{lstlisting}[style=examc]
+#include <stdio.h>
+
+int count_lowercase((*@\fillin[\tored{const char *p}][3cm]@*)) {
+    int count = 0;
+    while ((*@\fillin[\tored{*p != '\textbackslash0'}][3cm]@*)) {
+        if ((*@\fillin[\tored{*p >= 'a' \&\& *p <= 'z'}][4.5cm]@*))
+            count++;
+        (*@\fillin[\tored{p++}][2cm]@*);
+    }
+    return count;
+}
+
+int main(void) {
+    char text[] = "C Programming 2027";
+    printf("Lowercase letters = %d\n",
+           (*@\fillin[\tored{count\_lowercase(text)}][4cm]@*));
+    return 0;
+}
+\end{lstlisting}
+\showsol{The completed program prints \texttt{Lowercase letters = 10}.}
+\showoutcome{2}{b (b2)}
+
+\question[10] Complete the three blanks so that the function sorts the array in
+descending order using bubble sort. 
+\begin{lstlisting}[style=examc]
+void bubble_sort_descending(int a[], int n) {
+    for (int i = 0; (*@\fillin[\tored{i < n - 1}][3.2cm]@*); i++) {
+        for (int j = 0; (*@\fillin[\tored{j < n - 1 - i}][3.2cm]@*); j++) {
+            if ((*@\fillin[\tored{a[j] < a[j + 1]}][3.8cm]@*)) {
+                int temp = a[j];
+                a[j] = a[j + 1];
+                a[j + 1] = temp;
+            }
+        }
+    }
+}
+\end{lstlisting}
+\showsol{The loops perform bubble-sort passes, and the comparison swaps adjacent
+elements when the left value is smaller, producing descending order.}
+\showoutcome{2}{b (b2)}
+
+\newpage
+\question[10] Complete the three blanks so that the function \textbf{uses pointer
+arithmetic} to print the integers in the 2nd, 4th, 6th, and subsequent even-numbered
+positions of the array. Positions are counted starting from 1. 
+{\color{red}Using array indexing instead of pointer arithmetic may not receive full score.}
+\begin{lstlisting}[style=examc]
+#include <stdio.h>
+
+void print_even_positions(const int *p, int n) {
+    for (int i = (*@\fillin[\tored{1}][2cm]@*); i < n;
+         (*@\fillin[\tored{i += 2}][2.5cm]@*)) {
+        printf("%d ", (*@\fillin[\tored{*(p + i)}][3cm]@*));
+    }
+    putchar('\n');
+}
+
+int main(void) {
+    int a[8] = {5, 10, 15, 20, 25, 30, 35, 40};
+    print_even_positions(a, 8);
+    return 0;
+}
+\end{lstlisting}
+\showsol{The program prints \texttt{10 20 30 40}.}
+\showoutcome{2}{b (b2)}
+
+\newpage
+\fullwidth{\section*{Section IV: Write C Code (20 points)}}
+
+\question[10] The following program stores cars of different brands and models in
+an array of structures. Complete the function \texttt{total\_price()} so that it
+returns the sum of all car prices. The program must print the total price.
+\begin{lstlisting}[style=examc]
+#include <stdio.h>
+
+struct Car {
+    char brand[30];
+    char model[30];
+    double price;
+};
+
+double total_price(const struct Car *p, int n) {
+    /* Write your code here. */
+}
+
+int main(void) {
+    struct Car cars[] = {
+        {"Toyota", "Corolla", 23000.0},
+        {"Honda", "Civic", 25000.0},
+        {"Tesla", "Model 3", 40000.0},
+        {"BMW", "X1", 42000.0}
+    };
+    int n = sizeof(cars) / sizeof(cars[0]);
+
+    printf("Total price: %.2f\n", total_price(cars, n));
+    return 0;
+}
+\end{lstlisting}
+\shownoanswers{\vspace{8cm}}
+\begin{CcodeSol}
+double total_price(const struct Car *p, int n) {
+    double total = 0.0;
+    for (int i = 0; i < n; i++)
+        total += p[i].price;
+    return total;
+}
+\end{CcodeSol}
+\showsol{The output is \texttt{Total price: 130000.00}.
+
+\textbf{Marking:} initialization of the total (2 points), correct loop (2 points),
+correct accumulation of each price (4 points), and correct return value (2 points).}
+\showoutcome{2}{b (b2)}
+
+\newpage
+\question[10] Complete both functions below so that each returns the sum of the
+integers from 1 to \texttt{n}. The function \texttt{sum\_loop()} must use a loop,
+and \texttt{sum\_recursive()} must use recursion. 
+\begin{lstlisting}[style=examc]
+#include <stdio.h>
+
+int sum_loop(int n) {
+    /* Write your code here. */
+}
+
+int sum_recursive(int n) {
+    /* Write your code here. */
+}
+
+int main(void) {
+    int n = 10;
+    printf("Loop sum = %d\n", sum_loop(n));
+    printf("Recursive sum = %d\n", sum_recursive(n));
+    return 0;
+}
+\end{lstlisting}
+\shownoanswers{\vspace{8cm}}
+\begin{CcodeSol}
+int sum_loop(int n) {
+    int total = 0;
+    for (int i = 1; i <= n; i++)
+        total += i;
+    return total;
+}
+
+int sum_recursive(int n) {
+    if (n <= 0)
+        return 0;
+    return n + sum_recursive(n - 1);
+}
+\end{CcodeSol}
+\showsol{The program prints \texttt{Loop sum = 55} and
+\texttt{Recursive sum = 55}. Equivalent loop and recursive solutions receive full credit.}
+\showoutcome{2}{b (b2)}
+
+\end{questions}
+
+\vfill
+\noindent\makebox[2.5in]{\textbf{\Large Score:} \hrulefill}
+
+\end{document}

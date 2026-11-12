@@ -30,15 +30,23 @@
 % new macros
 \newcommand{\todo}[1]{\textcolor{red}{(To do): #1}}
 \newcommand{\tored}[1]{\textcolor{red}{\textbf{#1}}}
-\usepackage{xeCJK}
-\defaultfontfeatures{Ligatures=TeX}
-
-\setCJKmainfont[
-    BoldFont={Noto Sans TC}
-]{Noto Sans TC}
-
-% Required by listings/typewriter text
-\setCJKmonofont{Noto Sans TC}
+% Chinese font support for both pdfLaTeX and XeLaTeX.
+% \usepackage{iftex}
+% \ifPDFTeX
+%     % pdfLaTeX cannot load OpenType CJK fonts directly. CJKutf8's `bsmi'
+%     % family provides the Traditional Chinese glyphs used on the cover.
+%     \usepackage{CJKutf8}
+%     \AtBeginDocument{\begin{CJK*}{UTF8}{bsmi}}
+%     \AtEndDocument{\end{CJK*}}
+% \else
+%     \usepackage{xeCJK}
+%     \defaultfontfeatures{Ligatures=TeX}
+%     \setCJKmainfont[
+%         BoldFont={Noto Sans TC},
+%     ]{Noto Sans TC}
+%     % listings uses the typewriter family even when its text is not Chinese.
+%     \setCJKmonofont{Noto Sans TC}
+% \fi
 
 \newcommand\blankpage{%
     \null
@@ -89,6 +97,16 @@
 
 % Inline macro: use as \showsol{<solution text>}
 \newcommand{\showsol}[1]{\ifprintanswers{\textbf{\color{red}\underline{Solution:} }\color{red}#1}\fi}
+
+% Answer-key annotations. These stay hidden in the question-only version.
+\newcommand{\showcorrectanswer}[1]{%
+  \ifprintanswers
+    \par\noindent\textbf{\color{red}Correct answer: #1}\par
+  \fi}
+\newcommand{\showoutcome}[2]{%
+  \ifprintanswers
+    \par\smallskip\noindent\textbf{\color{red}Reflects LO#1 and PO #2.}\par
+  \fi}
 
 \newenvironment{show_code_sol}
   {\par\noindent\textbf{Solution:}\par

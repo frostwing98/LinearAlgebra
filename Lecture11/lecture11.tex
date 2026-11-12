@@ -1,20 +1,69 @@
-% Exact reproduction of slides 51--112 from Linear algebra_ 06_4.pptx.
-% No slide content, layout, or styling is modified by this file.
+% Lecture 11: exact content reconstruction of source slides 51--112 from
+% Lecture9/Linear algebra_ 06_4.pptx. No source slide is embedded as an image.
 % Compile from the repository root with:
 %   pdflatex -interaction=nonstopmode -halt-on-error -output-directory=Lecture11 Lecture11/lecture11.tex
-% Or compile from inside Lecture11 with:
-%   pdflatex -interaction=nonstopmode -halt-on-error lecture11.tex
 \pdfminorversion=7
-\documentclass{article}
-\usepackage{pdfpages}
-\pagestyle{empty}
+\documentclass[aspectratio=169]{beamer}
 
-\IfFileExists{Lecture11/lecture11-source.pdf}{%
-  \def\lecturesource{Lecture11/lecture11-source.pdf}%
-}{%
-  \def\lecturesource{lecture11-source.pdf}%
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{array,booktabs,multirow}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[UTF8,heading=false]{ctex}
+\else
+  \usepackage{fontspec}
+  \usepackage{xeCJK}
+  \setCJKmainfont{Microsoft YaHei}
+\fi
+\usetikzlibrary{arrows.meta,calc,positioning}
+
+\makeatletter
+\def\input@path{{./}{../}{Lecture11/}}
+\makeatother
+
+\mode<presentation>{
+  \usetheme{OSUCSE169}
+  \setbeamercovered{invisible}
 }
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}[frame number]
+\setbeamercolor{headline}{fg=black,bg=black}
+\setbeamercolor{section in head/foot}{bg=gray}
+\setbeamertemplate{headline}{%
+  \begin{beamercolorbox}[ht=2.25ex,dp=3.75ex]{section in head/foot}
+    \insertnavigation{\paperwidth}
+  \end{beamercolorbox}}
+
+\definecolor{lecturegreen}{RGB}{48,105,21}
+\definecolor{sourcecyan}{RGB}{0,132,166}
+\definecolor{sourceblue}{RGB}{0,112,192}
+\definecolor{diagramblue}{RGB}{0,174,239}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\vect}[1]{\mathbf{#1}}
+\newcommand{\Span}{\operatorname{Span}}
+\newcommand{\Col}{\operatorname{Col}}
+\newcommand{\Nul}{\operatorname{Nul}}
+\newcommand{\Row}{\operatorname{Row}}
+\newcommand{\sourcehead}[1]{\textcolor{sourcecyan}{\textbf{#1}}}
+\newcommand{\coord}[2]{\left[#1\right]_{#2}}
+\newcommand{\chaptercard}[4]{%
+  \begin{frame}[plain]
+    \vfill
+    {\Huge\color{lecturegreen}\bfseries #1}\hspace{1.2em}%
+    {\Huge\color{sourcecyan} #2}
+    \vspace{2.4cm}
+
+    {\Huge\color{sourcecyan}\bfseries #3}\par\medskip
+    {\LARGE\color{sourcecyan}\bfseries #4}
+    \vfill
+  \end{frame}}
 
 \begin{document}
-\includepdf[pages=51-112,fitpaper=true]{\lecturesource}
+\input{Lecture11/4-4-coordinate-systems.tex}
+\input{Lecture11/4-5-dimension.tex}
+\input{Lecture11/4-6-rank.tex}
+\input{Lecture11/4-7-change-basis.tex}
 \end{document}

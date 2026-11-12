@@ -1,0 +1,179 @@
+% Source slide 68
+\section[4.5 Dimension]{4.5 The Dimension of a Vector Space}
+\chaptercard{4}{Vector Spaces}{4.5}{THE DIMENSION OF A\\VECTOR SPACE}
+
+% Source slide 69
+\begin{frame}[shrink=8]{DIMENSION OF A VECTOR SPACE}
+\begin{itemize}
+\item \sourcehead{Theorem 9:} If a vector space $V$ has a basis $B=\{\vect b_1,\ldots,\vect b_n\}$, then any set in $V$ containing more than $n$ vectors must be linearly dependent.
+\item \textbf{Proof:} Let $\{\vect u_1,\ldots,\vect u_p\}$ be a set in $V$ with more than $n$ vectors.
+\item The coordinate vectors $\coord{\vect u_1}{B},\ldots,\coord{\vect u_p}{B}$ form a linearly dependent set in $\R^n$, because there are more vectors ($p$) than entries ($n$) in each vector.
+\end{itemize}
+\end{frame}
+
+% Source slide 70
+\begin{frame}[shrink=8]{DIMENSION OF A VECTOR SPACE}
+\begin{itemize}
+\item So there exist scalars $c_1,\ldots,c_p$, not all zero, such that
+\[
+c_1\coord{\vect u_1}{B}+\cdots+c_p\coord{\vect u_p}{B}
+=\underbrace{\begin{bmatrix}0\\\vdots\\0\end{bmatrix}}_{\textcolor{sourceblue}{\text{The zero vector in }\R^n}}.
+\]
+\item Since the coordinate mapping is a linear transformation,
+\[
+\coord{c_1\vect u_1+\cdots+c_p\vect u_p}{B}
+=\begin{bmatrix}0\\\vdots\\0\end{bmatrix}.
+\]
+\end{itemize}
+\end{frame}
+
+% Source slide 71
+\begin{frame}[shrink=8]{DIMENSION OF A VECTOR SPACE}
+\begin{itemize}
+\item The zero vector on the right displays the $n$ weights needed to build the vector $c_1\vect u_1+\cdots+c_p\vect u_p$ from the basis vectors in $B$.
+\item That is,
+\[
+c_1\vect u_1+\cdots+c_p\vect u_p=0\cdot\vect b_1+\cdots+0\cdot\vect b_n=0.
+\]
+\item Since the $c_i$ are not all zero, $\{\vect u_1,\ldots,\vect u_p\}$ is linearly dependent.
+\item Theorem 9 implies that if a vector space $V$ has a basis $B=\{\vect b_1,\ldots,\vect b_n\}$, then each linearly independent set in $V$ has no more than $n$ vectors.
+\end{itemize}
+\end{frame}
+
+% Source slide 72
+\begin{frame}[shrink=7]{DIMENSION OF A VECTOR SPACE}
+\begin{itemize}
+\item \sourcehead{Theorem 10:} If a vector space $V$ has a basis of $n$ vectors, then every basis of $V$ must consist of exactly $n$ vectors.
+\item \textbf{Proof:} Let $B_1$ be a basis of $n$ vectors and $B_2$ be any other basis (of $V$).
+\item Since $B_1$ is a basis and $B_2$ is linearly independent, $B_2$ has no more than $n$ vectors, by Theorem 9.
+\item Also, since $B_2$ is a basis and $B_1$ is linearly independent, $B_2$ has at least $n$ vectors.
+\item Thus $B_2$ consists of exactly $n$ vectors.
+\end{itemize}
+\end{frame}
+
+% Source slide 73
+\begin{frame}[shrink=12]{DIMENSION OF A VECTOR SPACE}
+\begin{itemize}
+\item \textbf{Definition:} If $V$ is spanned by a finite set, then $V$ is said to be \textbf{finite-dimensional}, and the \textbf{dimension} of $V$, written as $\dim V$, is the number of vectors in a basis for $V$. The dimension of the zero vector space $\{0\}$ is defined to be zero. If $V$ is not spanned by a finite set, then $V$ is said to be \textbf{infinite-dimensional}.
+\item \textbf{Example 3:} Find the dimension of the subspace
+\[
+H=\left\{\begin{bmatrix}
+a-3b+6c\\
+5a+4d\\
+b-2c-d\\
+5d
+\end{bmatrix}:a,b,c,d\text{ in }\R\right\}.
+\]
+\end{itemize}
+\end{frame}
+
+% Source slide 74
+\begin{frame}[shrink=10]{DIMENSION OF A VECTOR SPACE}
+\begin{itemize}
+\item $H$ is the set of all linear combinations of the vectors
+\[
+\vect v_1=\begin{bmatrix}1\\5\\0\\0\end{bmatrix},\quad
+\vect v_2=\begin{bmatrix}-3\\0\\1\\0\end{bmatrix},\quad
+\vect v_3=\begin{bmatrix}6\\0\\-2\\0\end{bmatrix},\quad
+\vect v_4=\begin{bmatrix}0\\4\\-1\\5\end{bmatrix}.
+\]
+\item Clearly, $\vect v_1\neq0$, $\vect v_2$ is not a multiple of $\vect v_1$, but $\vect v_3$ is a multiple of $\vect v_2$.
+\item By the Spanning Set Theorem, we may discard $\vect v_3$ and still have a set that spans $H$.
+\end{itemize}
+\end{frame}
+
+% Source slide 75
+\begin{frame}[shrink=8]{SUBSPACES OF A FINITE-DIMENSIONAL SPACE}
+\begin{itemize}
+\item Finally, $\vect v_4$ is not a linear combination of $\vect v_1$ and $\vect v_2$.
+\item So $\{\vect v_1,\vect v_2,\vect v_4\}$ is linearly independent and hence is a basis for $H$.
+\item Thus $\dim H=3$.
+\item \sourcehead{Theorem 11:} Let $H$ be a subspace of a finite-dimensional vector space $V$. Any linearly independent set in $H$ can be expanded, if necessary, to a basis for $H$. Also, $H$ is finite-dimensional and
+\[
+\dim H\leq\dim V.
+\]
+\end{itemize}
+\end{frame}
+
+% Source slide 76
+\begin{frame}[shrink=7]{SUBSPACES OF A FINITE-DIMENSIONAL SPACE}
+\begin{itemize}
+\item \textbf{Proof:} If $H=\{0\}$, then certainly $\dim H=0\leq\dim V$.
+\item Otherwise, let $S=\{\vect u_1,\ldots,\vect u_k\}$ be any linearly independent set in $H$.
+\item If $S$ spans $H$, then $S$ is a basis for $H$.
+\item Otherwise, there is some $\vect u_{k+1}$ in $H$ that is not in $\Span S$.
+\end{itemize}
+\vfill
+{\tiny \copyright\ 2016 Pearson Education, Ltd.}
+\end{frame}
+
+% Source slide 77
+\begin{frame}[shrink=8]{SUBSPACES OF A FINITE-DIMENSIONAL SPACE}
+\begin{itemize}
+\item But then $\{\vect u_1,\ldots,\vect u_k,\vect u_{k+1}\}$ will be linearly independent, because no vector in the set can be a linear combination of vectors that precede it (by Theorem 4).
+\item So long as the new set does not span $H$, we can continue this process of expanding $S$ to a larger linearly independent set in $H$.
+\item But the number of vectors in a linearly independent expansion of $S$ can never exceed the dimension of $V$, by Theorem 9.
+\end{itemize}
+\end{frame}
+
+% Source slide 78
+\begin{frame}[shrink=9]{THE BASIS THEOREM}
+\begin{itemize}
+\item So eventually the expansion of $S$ will span $H$ and hence will be a basis for $H$, and $\dim H\leq\dim V$.
+\item \sourcehead{Theorem 12:} Let $V$ be a $p$-dimensional vector space, $p\geq1$. Any linearly independent set of exactly $p$ elements in $V$ is automatically a basis for $V$. Any set of exactly $p$ elements that spans $V$ is automatically a basis for $V$.
+\item \textbf{Proof:} By Theorem 11, a linearly independent set $S$ of $p$ elements can be extended to a basis for $V$.
+\end{itemize}
+\end{frame}
+
+% Source slide 79
+\begin{frame}{THE BASIS THEOREM}
+\begin{itemize}
+\item But that basis must contain exactly $p$ elements, since $\dim V=p$.
+\item So $S$ must already be a basis for $V$.
+\item Now suppose that $S$ has $p$ elements and spans $V$.
+\item Since $V$ is nonzero, the Spanning Set Theorem implies that a subset $S'$ of $S$ is a basis of $V$.
+\item Since $\dim V=p$, $S'$ must contain $p$ vectors.
+\item Hence $S=S'$.
+\end{itemize}
+\end{frame}
+
+% Source slide 80
+\begin{frame}[shrink=7]{THE DIMENSIONS OF NUL $A$ AND COL $A$}
+\begin{itemize}
+\item Let $A$ be an $m\times n$ matrix, and suppose the equation $A\vect x=0$ has $k$ free variables.
+\item A spanning set for $\Nul A$ will produce exactly $k$ linearly independent vectors---say, $\vect u_1,\ldots,\vect u_k$---one for each free variable.
+\item So $\{\vect u_1,\ldots,\vect u_k\}$ is a basis for $\Nul A$, and the number of free variables determines the size of the basis.
+\end{itemize}
+\end{frame}
+
+% Source slide 81
+\begin{frame}[shrink=8]{DIMENSIONS OF NUL $A$ AND COL $A$}
+\begin{itemize}
+\item Thus, the dimension of $\Nul A$ is the number of free variables in the equation $A\vect x=0$, and the dimension of $\Col A$ is the number of pivot columns in $A$.
+\item \textbf{Example 5:} Find the dimensions of the null space and the column space of
+\[
+A=\begin{bmatrix}
+-3&6&-1&1&-7\\
+1&-2&2&3&-1\\
+2&-4&5&8&-4
+\end{bmatrix}.
+\]
+\end{itemize}
+\end{frame}
+
+% Source slide 82
+\begin{frame}[shrink=8]{DIMENSIONS OF NUL $A$ AND COL $A$}
+\begin{itemize}
+\item \textbf{Solution:} Row reduce the augmented matrix $[A\ \ 0]$ to echelon form:
+\[
+\begin{bmatrix}
+1&-2&2&3&-1&0\\
+0&0&1&2&-2&0\\
+0&0&0&0&0&0
+\end{bmatrix}.
+\]
+\item There are three free variable---$x_2$, $x_4$ and $x_5$.
+\item Hence the dimension of $\Nul A$ is 3.
+\item Also $\dim\Col A=2$ because $A$ has two pivot columns.
+\end{itemize}
+\end{frame}

@@ -3,7 +3,11 @@
 % Official Linear Algebra final examination booklet.
 % Layout adapted from finalexam/main.tex.
 
-\documentclass[12pt,a4paper,addpoints]{exam}
+\ifdefined\MakeupAnswerVersion
+  \documentclass[12pt,a4paper,answers,addpoints]{exam}
+\else
+  \documentclass[12pt,a4paper,addpoints]{exam}
+\fi
 
 \def\CourseTitle{Linear Algebra}
 \def\ExamName{Final Examination}
@@ -18,58 +22,58 @@
 
 \begin{document}
 
-\noindent
-\begin{minipage}[t]{0.48\textwidth}
-    \vspace{-10pt}
-    \fbox{\parbox[c][1.2cm][c]{4cm}{Seat\\No.}}
-\end{minipage}
+% \noindent
+% \begin{minipage}[t]{0.48\textwidth}
+%     \vspace{-10pt}
+%     \fbox{\parbox[c][1.2cm][c]{4cm}{Seat\\No.}}
+% \end{minipage}
 
-\vspace{-2cm}
-\begin{center}
-    \includegraphics[width=0.27\textwidth]{must-logo.pdf}
-\end{center}
+% \vspace{-2cm}
+% \begin{center}
+%     \includegraphics[width=0.27\textwidth]{must-logo.pdf}
+% \end{center}
 
-\begin{center}
-    \vspace*{0.5cm}
-    {\textbf{\Huge 澳\hspace{2em}門\hspace{2em}科\hspace{2em}技\hspace{2em}大\hspace{2em}學}}\\[0.3cm]
-    {\large \textbf{MACAU UNIVERSITY OF SCIENCE AND TECHNOLOGY}}\\[1cm]
+% \begin{center}
+%     \vspace*{0.5cm}
+%     {\textbf{\Huge 澳\hspace{2em}門\hspace{2em}科\hspace{2em}技\hspace{2em}大\hspace{2em}學}}\\[0.3cm]
+%     {\large \textbf{MACAU UNIVERSITY OF SCIENCE AND TECHNOLOGY}}\\[1cm]
 
-    {\Large \textbf{School of Computer Science and Engineering}}\\[0.2cm]
-    {\Large \textbf{Faculty of Innovation Engineering}}\\[0.2cm]
-    {\Large \textbf{Bachelor of Science}}\\[1cm]
+%     {\Large \textbf{School of Computer Science and Engineering}}\\[0.2cm]
+%     {\Large \textbf{Faculty of Innovation Engineering}}\\[0.2cm]
+%     {\Large \textbf{Bachelor of Science}}\\[1cm]
 
-    {\large \textbf{2609}}\\[1cm]
-    {\Large \textbf{\CourseNumber \quad \CourseTitle}}\\[1cm]
-\end{center}
+%     {\large \textbf{2609}}\\[1cm]
+%     {\Large \textbf{\CourseNumber \quad \CourseTitle}}\\[1cm]
+% \end{center}
 
-\begin{center}
-\begin{tabular}{@{}p{4cm}p{8cm}@{}}
-    \textbf{No. of Pages:} & {\numpages} Pages (including this page)\\[0.5cm]
-    \textbf{Exam Date:} & \ExamDate\\[0.5cm]
-    \textbf{Exam Duration:} & \ExamDuration\ (\ExamTime)\\[0.5cm]
-    \textbf{Student Name:} & \underline{\hspace{7cm}}\\[0.5cm]
-    \textbf{Student Number:} & \underline{\hspace{7cm}}\\
-\end{tabular}
-\end{center}
+% \begin{center}
+% \begin{tabular}{@{}p{4cm}p{8cm}@{}}
+%     \textbf{No. of Pages:} & {\numpages} Pages (including this page)\\[0.5cm]
+%     \textbf{Exam Date:} & \ExamDate\\[0.5cm]
+%     \textbf{Exam Duration:} & \ExamDuration\ (\ExamTime)\\[0.5cm]
+%     \textbf{Student Name:} & \underline{\hspace{7cm}}\\[0.5cm]
+%     \textbf{Student Number:} & \underline{\hspace{7cm}}\\
+% \end{tabular}
+% \end{center}
 
-\vspace{0.5cm}
+% \vspace{0.5cm}
 
-\noindent
-\textbf{Please read the following instructions carefully.}
-\begin{itemize}[leftmargin=*]
-    \item This question booklet contains \textbf{\numquestions} questions and
-          \textbf{\numpages} pages (including the cover), for a total of
-          \textbf{\numpoints} marks. Check that all pages are present.
-    \item Return this question booklet, together with all extra unused answer sheets
-          and draft paper, at the end of the examination.
-    \item This is a \textbf{Closed Book Examination}. Dictionaries, calculators,
-          mobile phones, smart watches, and other electronic devices are
-          \textbf{NOT permitted}.
-    \item Show sufficient work in Part III. Unless instructed otherwise, give exact answers.
-    \item \textbf{Answers must be provided in English to receive marks.}
-\end{itemize}
+% \noindent
+% \textbf{Please read the following instructions carefully.}
+% \begin{itemize}[leftmargin=*]
+%     \item This question booklet contains \textbf{\numquestions} questions and
+%           \textbf{\numpages} pages (including the cover), for a total of
+%           \textbf{\numpoints} marks. Check that all pages are present.
+%     \item Return this question booklet, together with all extra unused answer sheets
+%           and draft paper, at the end of the examination.
+%     \item This is a \textbf{Closed Book Examination}. Dictionaries, calculators,
+%           mobile phones, smart watches, and other electronic devices are
+%           \textbf{NOT permitted}.
+%     \item Show sufficient work in Part III. Unless instructed otherwise, give exact answers.
+%     \item \textbf{Answers must be provided in English to receive marks.}
+% \end{itemize}
 
-\vfill
+% \vfill
 
 \begin{questions}
 \addpoints
@@ -85,40 +89,60 @@ $\left\{\begin{bmatrix}1\\2\end{bmatrix},
 \begin{bmatrix}2\\-1\end{bmatrix}\right\}$ for $\mathbb R^2$.
 The coordinate vector of $\begin{bmatrix}5\\0\end{bmatrix}$ with respect to this basis is
 $\underline{\hspace{28mm}}$.
+\showsol{$\begin{bmatrix}1\\2\end{bmatrix}$.}
+\showoutcome{3}{a (a1)}
 
 \question[2]
 If $A$ is invertible and $\det(A)=\alpha$, then $\det(A^{-1})=\underline{\hspace{35mm}}$.
+\showsol{$\dfrac{1}{\alpha}$.}
+\showoutcome{2}{a (a1)}
 
 \question[2]
 If $A=\begin{bmatrix}2&-1\\4&3\end{bmatrix}$, then
-$A^T=\underline{\hspace{35mm}}$.
+$A^{-1}=\underline{\hspace{35mm}}$.
+\showsol{$A^{-1}=\begin{bmatrix}0.3&0.1\\-0.4&0.2\end{bmatrix}$.}
+\showoutcome{2}{a (a1)}
 
 \question[2]
 If $A$ has 7 columns and $\operatorname{rank}(A)=4$, then the dimension of the
 null space of $A$ is $\underline{\hspace{22mm}}$.
+\showsol{$3$.}
+\showoutcome{3}{a (a1)}
 
 \question[2]
 For an eigenvalue $\lambda$, the corresponding eigenspace is the null space of
 \par\hspace*{8mm}$\underline{\hspace{30mm}}$.
+\showsol{$A-\lambda I$.}
+\showoutcome{6}{a (a2)}
 
 \question[2]
 The eigenvalues of $\begin{bmatrix}3&1\\0&-2\end{bmatrix}$ are
 $\underline{\hspace{35mm}}$.
+\showsol{$3$ and $-2$.}
+\showoutcome{6}{a (a2)}
 
 \question[2]
 $\det\!\begin{bmatrix}4&-2\\1&3\end{bmatrix}=\underline{\hspace{24mm}}$.
+\showsol{$14$.}
+\showoutcome{2}{a (a1)}
 
 \question[2]
-$\left\lVert\begin{bmatrix}-2\\3\\6\end{bmatrix}\right\rVert
+$\begin{bmatrix}-2&3&6\end{bmatrix}\times\begin{bmatrix}-4\\3\\6\end{bmatrix}
 =\underline{\hspace{24mm}}$.
+\showsol{$7$.}
+\showoutcome{53}{a (a1)}
 
 \question[2]
 The distance between $\begin{bmatrix}1\\-2\\3\end{bmatrix}$ and
 $\begin{bmatrix}-2\\2\\3\end{bmatrix}$ is $\underline{\hspace{24mm}}$.
+\showsol{$5$.}
+\showoutcome{7}{a (a1)}
 
 \question[2]
 If $A=\begin{bmatrix}2&0&0\\0&-3&0\\0&0&4\end{bmatrix}$, then
 $A^2=\underline{\hspace{42mm}}$.
+\showsol{$A^2=\operatorname{diag}(4,9,16)$.}
+\showoutcome{5}{a (a2)}
 
 \newpage
 \fullwidth{\textbf{\large Part II. Select the only correct statement.}
@@ -133,6 +157,8 @@ For a square matrix $A$, which condition is equivalent to $A$ being invertible?
     \choice The columns of $A$ are linearly dependent.
     \choice $\det(A)=0$.
 \end{choices}
+\showcorrectanswer{B. $A\mathbf x=\mathbf b$ has a unique solution for every $\mathbf b$.}
+\showoutcome{1}{a (a2)}
 
 \question[2]
 If $B$ is obtained from $A$ by interchanging two rows, then
@@ -142,6 +168,8 @@ If $B$ is obtained from $A$ by interchanging two rows, then
     \choice $\det(B)=2\det(A)$.
     \choice $\det(B)=0$ for every $A$.
 \end{choices}
+\showcorrectanswer{B. $\det(B)=-\det(A)$.}
+\showoutcome{2}{a (a1)}
 
 \question[2]
 Which set is a subspace of $\mathbb R^3$?
@@ -151,6 +179,8 @@ Which set is a subspace of $\mathbb R^3$?
     \choice $\{(x,y,z):x,y,z>0\}$
     \choice $\{(x,y,z):x+y+z\geq 0\}$
 \end{choices}
+\showcorrectanswer{A. $\{(x,y,z):x-2y+z=0\}$.}
+\showoutcome{4}{a (a1)}
 
 \question[2]
 Pivot columns 1 and 3 occur in the reduced echelon form of $A$. A basis for
@@ -161,6 +191,8 @@ $\operatorname{Col}(A)$ is obtained from
     \choice rows 1 and 3 of $A$.
     \choice all nonzero rows of the reduced echelon form of $A$.
 \end{choices}
+\showcorrectanswer{A. Columns 1 and 3 of the original matrix $A$.}
+\showoutcome{3}{a (a1)}
 
 \question[2]
 If $A$ has 5 columns and $\operatorname{rank}(A)=3$, then the dimension of the
@@ -171,6 +203,8 @@ null space of $A$ equals
     \choice 3
     \choice 5
 \end{choices}
+\showcorrectanswer{B. $2$.}
+\showoutcome{3}{a (a1)}
 
 \newpage
 
@@ -187,6 +221,9 @@ Which statement about the fundamental subspaces of an $m\times n$ matrix $A$ is 
     \choice The system $A\mathbf x=\mathbf b$ is inconsistent exactly when
             $\mathbf b\in\operatorname{Col}(A)$.
 \end{choices}
+\showcorrectanswer{B. The pivot columns of the original matrix $A$ form a basis for
+$\operatorname{Col}(A)$.}
+\showoutcome{3}{a (a1)}
 
 \vspace{2mm}
 
@@ -198,6 +235,8 @@ If $A$ is a $4\times7$ matrix, then the rank of $A^T$ is at most
     \choice 4
     \choice 8
 \end{choices}
+\showcorrectanswer{C. $4$.}
+\showoutcome{2}{a (a1)}
 
 \vspace{2mm}
 
@@ -209,6 +248,8 @@ If $A$, $B$, and $C$ are square matrices of the same order, then $(ABC)^T$ equal
     \choice $C^TA^TB^T$
     \choice $(CBA)^T$
 \end{choices}
+\showcorrectanswer{A. $C^TB^TA^T$.}
+\showoutcome{5}{a (a2)}
 
 \vspace{2mm}
 
@@ -220,6 +261,8 @@ Let $A$ be a diagonalizable $5\times5$ matrix. Which statement must be true?
     \choice The matrix $A$ must be symmetric.
     \choice Any five eigenvectors of $A$ are linearly dependent.
 \end{choices}
+\showcorrectanswer{A. There is a basis of $\mathbb R^5$ consisting of eigenvectors of $A$.}
+\showoutcome{6}{a (a2)}
 
 \vspace{2mm}
 
@@ -232,6 +275,8 @@ the trivial solution if and only if which matrix is invertible?
     \choice $A-6I$
     \choice $6A$
 \end{choices}
+\showcorrectanswer{C. $A-6I$.}
+\showoutcome{6}{a (a2)}
 
 \endgroup
 
@@ -255,6 +300,23 @@ x+2y-z&=6.
 State whether the solution is unique and justify your conclusion.
 
 \shownoanswers{\vspace{8cm}}
+\showsol{Using elementary row operations,
+\[
+\left[\begin{array}{ccc|c}
+1&1&1&2\\
+2&-1&1&-1\\
+1&2&-1&6
+\end{array}\right]
+\sim
+\left[\begin{array}{ccc|c}
+1&1&1&2\\
+0&1&-2&4\\
+0&0&-7&7
+\end{array}\right].
+\]
+Thus $z=-1$, $y=2$, and $x=1$. The solution is unique because there is a
+pivot in every variable column.}
+\showoutcome{1}{a (a2)}
 
 % \newpage
 
@@ -276,6 +338,22 @@ A=\begin{bmatrix}
 \end{parts}
 
 \shownoanswers{\vspace{9cm}}
+\showsol{\textbf{(a)} One row echelon form is
+$\begin{bmatrix}1&2&4\\0&-5&-5\\0&0&0\end{bmatrix}$, so the pivot columns are
+columns 1 and 2.}
+\showoutcome{2}{a (a1)}
+
+\showsol{\textbf{(b)} Solving $A\mathbf x=\mathbf0$ gives
+$\mathbf x=t\begin{bmatrix}-2\\-1\\1\end{bmatrix}$. Hence a basis for
+$\operatorname{Null}(A)$ is
+$\left\{\begin{bmatrix}-2\\-1\\1\end{bmatrix}\right\}$.}
+\showoutcome{3}{a (a1)}
+
+\showsol{\textbf{(c)} A basis for $\operatorname{Col}(A)$ is formed from the
+corresponding pivot columns of the original matrix:
+$\left\{\begin{bmatrix}2\\1\\3\end{bmatrix},
+\begin{bmatrix}-1\\2\\1\end{bmatrix}\right\}$.}
+\showoutcome{3}{a (a1)}
 
 \newpage
 \thispagestyle{headandfoot}
@@ -296,6 +374,34 @@ B=\begin{bmatrix}
 \end{parts}
 
 \shownoanswers{\vspace{7cm}}
+\showsol{\textbf{(a)} The characteristic polynomial is
+$\det(\lambda I-B)=(\lambda-1)(\lambda-3)(\lambda-5)$. Bases for the
+eigenspaces are
+\[
+E_1=\operatorname{span}\left\{\begin{bmatrix}1\\0\\1\end{bmatrix}\right\},\quad
+E_3=\operatorname{span}\left\{\begin{bmatrix}1\\1\\0\end{bmatrix}\right\},\quad
+E_5=\operatorname{span}\left\{\begin{bmatrix}0\\1\\1\end{bmatrix}\right\}.
+\]}
+\showoutcome{6}{a (a2)}
+
+\showsol{\textbf{(b)} Taking the eigenvectors as columns gives
+\[
+P=\begin{bmatrix}1&1&0\\0&1&1\\1&0&1\end{bmatrix},\qquad
+D=\begin{bmatrix}1&0&0\\0&3&0\\0&0&5\end{bmatrix},\qquad
+P^{-1}=\frac12\begin{bmatrix}1&-1&1\\1&1&-1\\-1&1&1\end{bmatrix}.
+\]
+Therefore $B=PDP^{-1}$.}
+\showoutcome{6}{a (a2)}
+
+\showsol{\textbf{(c)} Since $B^3=PD^3P^{-1}$,
+\[
+B^3=\begin{bmatrix}
+14&13&-13\\
+-49&76&49\\
+-62&62&63
+\end{bmatrix}.
+\]}
+\showoutcome{6}{a (a2)}
 
 \newpage
 \thispagestyle{headandfoot}
@@ -313,6 +419,22 @@ M=\begin{bmatrix}
 
 
 \shownoanswers{\vspace{9cm}}
+\showsol{Subtract each row from the row below it, working from the bottom upward,
+and then replace $R_2$ by $R_2-3R_1$. This gives
+\[
+\begin{bmatrix}
+0&1&1&1&1\\
+2&0&0&0&0\\
+0&0&2&2&2\\
+0&0&0&2&2\\
+0&0&0&0&4
+\end{bmatrix}.
+\]
+Interchanging the first two rows produces an upper triangular matrix. Therefore
+\[
+\det(M)=-(2)(1)(2)(2)(4)=-32.
+\]}
+\showoutcome{2}{a (a1)}
 
 \newpage
 \thispagestyle{headandfoot}
@@ -332,6 +454,18 @@ x+2y+z&=a,\\
 \end{parts}
 
 \shownoanswers{\vspace{5cm}}
+\showsol{\textbf{(a)} The third coefficient row is the sum of the first two.
+Consistency therefore requires the same relation on the right-hand side:
+$2a-b=a+b$, or $a=2b$. For these values, with $y=t$, the solutions are
+\[
+(x,y,z)=(5b-2t,\ t,\ -3b),\qquad t\in\mathbb R.
+\]}
+\showoutcome{1}{a (a2)}
+
+\showsol{\textbf{(b)} No. Whenever the system is consistent, the coefficient
+matrix has rank $2$ but there are $3$ unknowns. Hence one variable is free and
+the system has infinitely many solutions, never exactly one solution.}
+\showoutcome{1}{a (a2)}
 
 % \newpage
 % \thispagestyle{headandfoot}

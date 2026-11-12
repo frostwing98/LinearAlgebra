@@ -1,0 +1,298 @@
+% Source slide 51
+\section[4.4 Coordinate Systems]{4.4 Coordinate Systems}
+\chaptercard{4}{Vector Spaces}{4.4}{COORDINATE SYSTEMS}
+
+% Source slide 52
+\begin{frame}[shrink=7]{THE UNIQUE REPRESENTATION THEOREM}
+\begin{itemize}
+\item \sourcehead{Theorem 7:} Let $B=\{\vect b_1,\ldots,\vect b_n\}$ be a basis for vector space $V$. Then for each $\vect x$ in $V$, there exists a unique set of scalars $c_1,\ldots,c_n$ such that
+\begin{equation}
+\vect x=c_1\vect b_1+\cdots+c_n\vect b_n. \tag{1}
+\end{equation}
+\item \textbf{Proof:} Since $B$ spans $V$, there exist scalars such that (1) holds.
+\item Suppose $\vect x$ also has the representation
+\[
+\vect x=d_1\vect b_1+\cdots+d_n\vect b_n
+\]
+for scalars $d_1,\ldots,d_n$.
+\end{itemize}
+\end{frame}
+
+% Source slide 53
+\begin{frame}[shrink=9]{THE UNIQUE REPRESENTATION THEOREM}
+\begin{itemize}
+\item Then, subtracting, we have
+\begin{equation}
+0=\vect x-\vect x=(c_1-d_1)\vect b_1+\cdots+(c_n-d_n)\vect b_n. \tag{2}
+\end{equation}
+\item Since $B$ is linearly independent, the weights in (2) must all be zero. That is, $c_j=d_j$ for $1\leq j\leq n$.
+\item \textbf{Definition:} Suppose $B=\{\vect b_1,\ldots,\vect b_n\}$ is a basis for $V$ and $\vect x$ is in $V$. The \textbf{coordinates of $\vect x$ relative to the basis $B$} (or the \textbf{$B$-coordinate of $\vect x$}) are the weights $c_1,\ldots,c_n$ such that
+\[
+\vect x=c_1\vect b_1+\cdots+c_n\vect b_n.
+\]
+\end{itemize}
+\end{frame}
+
+% Source slide 54
+\begin{frame}[shrink=7]{THE UNIQUE REPRESENTATION THEOREM}
+\begin{itemize}
+\item If $c_1,\ldots,c_n$ are the $B$-coordinates of $\vect x$, then the vector in $\R^n$
+\[
+\coord{\vect x}{B}=\begin{bmatrix}c_1\\ \vdots\\ c_n\end{bmatrix}
+\]
+is the \textbf{coordinate vector of $\vect x$ (relative to $B$)}, or the \textbf{$B$-coordinatevector of$\vect x$}.
+\item The mapping $\vect x\mapsto\coord{\vect x}{B}$ is the \textbf{coordinate mapping (determined by $B$)}.
+\end{itemize}
+\end{frame}
+
+% Source slide 55
+\begin{frame}[shrink=12]{COORDINATES IN $\R^n$}
+\begin{itemize}
+\item When a basis $B$ for $\R^n$ is fixed, the $B$-coordinate vector of a specified $\vect x$ is easily found, as in the example below.
+\item \textbf{Example 1:} Let
+\[
+\vect b_1=\begin{bmatrix}2\\1\end{bmatrix},\qquad
+\vect b_2=\begin{bmatrix}-1\\1\end{bmatrix},\qquad
+\vect x=\begin{bmatrix}4\\5\end{bmatrix},
+\]
+and $B=\{\vect b_1,\vect b_2\}$. Find the coordinate vector $\coord{\vect x}{B}$ of $\vect x$ relative to $B$.
+\item \textbf{Solution:} The $B$-coordinate $c_1,c_2$ of $\vect x$ satisfy
+\[
+c_1\underbrace{\begin{bmatrix}2\\1\end{bmatrix}}_{\vect b_1}
++c_2\underbrace{\begin{bmatrix}-1\\1\end{bmatrix}}_{\vect b_2}
+=\underbrace{\begin{bmatrix}4\\5\end{bmatrix}}_{\vect x}.
+\]
+\end{itemize}
+\end{frame}
+
+% Source slide 56
+\begin{frame}[shrink=8]{COORDINATES IN $\R^n$}
+or
+\begin{equation}
+\underbrace{\begin{bmatrix}2&-1\\1&1\end{bmatrix}}_{\vect b_1\quad\vect b_2}
+\begin{bmatrix}c_1\\c_2\end{bmatrix}
+=\underbrace{\begin{bmatrix}4\\5\end{bmatrix}}_{\vect x}. \tag{3}
+\end{equation}
+\begin{itemize}
+\item This equation can be solved by row operations on an augmented matrix or by using the inverse of the matrix on the left.
+\item In any case, the solution is $c_1=3$, $c_2=2$.
+\item Thus $\vect x=3\vect b_1+2\vect b_2$ and
+\[
+\coord{\vect x}{B}=\begin{bmatrix}c_1\\c_2\end{bmatrix}
+=\begin{bmatrix}3\\2\end{bmatrix}.
+\]
+\end{itemize}
+\end{frame}
+
+% Source slide 57
+\begin{frame}[shrink=8]{COORDINATES IN $\R^n$}
+\begin{itemize}
+\item See the following figure.
+\end{itemize}
+\begin{columns}[T,onlytextwidth]
+\begin{column}{0.48\textwidth}
+\centering
+\begin{tikzpicture}[scale=.72,>=Stealth]
+  \coordinate (O) at (0,0);
+  \coordinate (b1) at (1.65,.48);
+  \coordinate (b2) at (-.95,.70);
+  \foreach \i in {-1,...,4}{
+    \draw[gray!65] ($(O)+\i*(b1)-1.2*(b2)$) -- ($(O)+\i*(b1)+3.0*(b2)$);
+  }
+  \foreach \j in {-1,...,3}{
+    \draw[gray!65] ($(O)-1.2*(b1)+\j*(b2)$) -- ($(O)+4.0*(b1)+\j*(b2)$);
+  }
+  \draw[->] (-3.2,0)--(5.4,0);
+  \draw[->] (0,-1.0)--(0,4.0);
+  \draw[diagramblue,very thick,->] (O)--(b1) node[below right,black]{$\vect b_1$};
+  \draw[diagramblue,very thick,->] (O)--(b2) node[below left,black]{$\vect b_2$};
+  \coordinate (x) at ($(O)+3*(b1)+2*(b2)$);
+  \fill[diagramblue] (x) circle (2.5pt) node[above right,black]{$\vect x$};
+  \fill[diagramblue] (O) circle (2pt);
+\end{tikzpicture}
+
+\small The $B$-coordinate vector of $\vect x$\\is $(3,2)$.
+\end{column}
+\begin{column}{0.50\textwidth}
+\begin{itemize}
+\item The matrix in (3) changes the $B$-coordinates of a vector $\vect x$ into the standard coordinates for $\vect x$.
+\item An analogous change of coordinates can be carried out in $\R^n$ for a basis $B=\{\vect b_1,\ldots,\vect b_n\}$.
+\item Let
+\[
+P_B=\begin{bmatrix}\vect b_1&\vect b_2&\cdots&\vect b_n\end{bmatrix}.
+\]
+\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+% Source slide 58
+\begin{frame}[shrink=8]{COORDINATES IN $\R^n$}
+\begin{itemize}
+\item Then the vector equation
+\[
+\vect x=c_1\vect b_1+c_2\vect b_2+\cdots+c_n\vect b_n
+\]
+is equivalent to
+\begin{equation}
+\vect x=P_B\coord{\vect x}{B}. \tag{4}
+\end{equation}
+\item $P_B$ is called the \textbf{change-of-coordinates matrix from $B$ to the standard basis in $\R^n$}.
+\item Left-multiplication by $P_B$ transforms the coordinate vector $\coord{\vect x}{B}$ into $\vect x$.
+\item Since the columns of $P_B$ form a basis for $\R^n$, $P_B$ is invertible (by the Invertible Matrix Theorem).
+\end{itemize}
+\end{frame}
+
+% Source slide 59
+\begin{frame}[shrink=7]{COORDINATES IN $\R^n$}
+\begin{itemize}
+\item Left-multiplication by $P_B^{-1}$ converts $\vect x$ into its $B$-coordinate vector:
+\[
+P_B^{-1}\vect x=\coord{\vect x}{B}.
+\]
+\item The correspondence $\vect x\mapsto\coord{\vect x}{B}$, produced by $P_B^{-1}$, is the coordinate mapping.
+\item Since $P_B^{-1}$ is an invertible matrix, the coordinate mapping is a one-to-one linear transformation from $\R^n$ onto $\R^n$, by the Invertible Matrix Theorem.
+\end{itemize}
+\end{frame}
+
+% Source slide 60
+\begin{frame}[shrink=8]{THE COORDINATE MAPPING}
+\begin{itemize}
+\item \sourcehead{Theorem 8:} Let $B=\{\vect b_1,\ldots,\vect b_n\}$ be a basis for a vector space $V$. Then the coordinate mapping $\vect x\mapsto\coord{\vect x}{B}$ is a one-to-one linear transformation from $V$ onto $\R^n$.
+\item \textbf{Proof:} Take two typical vectors in $V$, say,
+\[
+\vect u=c_1\vect b_1+\cdots+c_n\vect b_n,
+\qquad
+\vect w=d_1\vect b_1+\cdots+d_n\vect b_n.
+\]
+\item Then, using vector operations,
+\[
+\vect u+\vect v=(c_1+d_1)\vect b_1+\cdots+(c_n+d_n)\vect b_n.
+\]
+\end{itemize}
+\end{frame}
+
+% Source slide 61
+\begin{frame}[shrink=8]{THE COORDINATE MAPPING}
+\begin{itemize}
+\item It follows that
+\[
+\coord{\vect u+\vect w}{B}
+=\begin{bmatrix}c_1+d_1\\\vdots\\c_n+d_n\end{bmatrix}
+=\begin{bmatrix}c_1\\\vdots\\c_n\end{bmatrix}
++\begin{bmatrix}d_1\\\vdots\\d_n\end{bmatrix}
+=\coord{\vect u}{B}+\coord{\vect w}{B}.
+\]
+\item So the coordinate mapping preserves addition.
+\item If $r$ is any scalar, then
+\[
+r\vect u=r(c_1\vect b_1+\cdots+c_n\vect b_n)
+=(rc_1)\vect b_1+\cdots+(rc_n)\vect b_n.
+\]
+\end{itemize}
+\end{frame}
+
+% Source slide 62
+\begin{frame}[shrink=10]{THE COORDINATE MAPPING}
+\begin{itemize}
+\item So
+\[
+\coord{r\vect u}{B}=\begin{bmatrix}rc_1\\\vdots\\rc_n\end{bmatrix}
+=r\begin{bmatrix}c_1\\\vdots\\c_n\end{bmatrix}
+=r\coord{\vect u}{B}.
+\]
+\item Thus the coordinate mapping also preserves scalar multiplication and hence is a linear transformation.
+\item The linearity of the coordinate mapping extends to linear combinations.
+\item If $\vect u_1,\ldots,\vect u_p$ are in $V$ and if $c_1,\ldots,c_p$ are scalars, then
+\begin{equation}
+\coord{c_1\vect u_1+\cdots+c_p\vect u_p}{B}
+=c_1\coord{\vect u_1}{B}+\cdots+c_p\coord{\vect u_p}{B}. \tag{5}
+\end{equation}
+\end{itemize}
+\end{frame}
+
+% Source slide 63
+\begin{frame}[shrink=8]{THE COORDINATE MAPPING}
+\begin{itemize}
+\item In words, (5) says that the $B$-coordinate vector of a linear combination of $\vect u_1,\ldots,\vect u_p$ is the \emph{same} linear combination of their coordinate vectors.
+\item The coordinate mapping in Theorem 8 is an important example of an \emph{isomorphism} from $V$ onto $\R^n$.
+\item In general, a one-to-one linear transformation from a vector space $V$ onto a vector space $W$ is called an \textbf{isomorphism} from $V$ onto $W$.
+\item The notation and terminology for $V$ and $W$ may differ, but the two spaces are indistinguishable as vector spaces.
+\end{itemize}
+\end{frame}
+
+% Source slide 64
+\begin{frame}[shrink=11]{THE COORDINATE MAPPING}
+\begin{itemize}
+\item \emph{Every vector space calculation in $V$ is accurately reproduced in $W$, and vice versa.}
+\item In particular, any real vector space with a basis of $n$ vectors is indistinguishable from $\R^n$.
+\item \textbf{Example 7:} Let
+\[
+\vect v_1=\begin{bmatrix}3\\6\\2\end{bmatrix},\qquad
+\vect v_2=\begin{bmatrix}-1\\0\\1\end{bmatrix},\qquad
+\vect x=\begin{bmatrix}3\\12\\7\end{bmatrix},
+\]
+and $B=\{\vect v_1,\vect v_2\}$. Then $B$ is a basis for $H=\Span\{\vect v_1,\vect v_2\}$. Determine if $\vect x$ is in $H$, and if it is, find the coordinate vector of $\vect x$ relative to $B$.
+\end{itemize}
+\end{frame}
+
+% Source slide 65
+\begin{frame}{THE COORDINATE MAPPING}
+\begin{itemize}
+\item \textbf{Solution:} If $\vect x$ is in $H$, then the following vector equation is consistent:
+\[
+c_1\begin{bmatrix}3\\6\\2\end{bmatrix}
++c_2\begin{bmatrix}-1\\0\\1\end{bmatrix}
+=\begin{bmatrix}3\\12\\7\end{bmatrix}.
+\]
+\item The scalars $c_1$ and $c_2$, if they exist, are the $B$-coordinates of $\vect x$.
+\end{itemize}
+\end{frame}
+
+% Source slide 66
+\begin{frame}{THE COORDINATE MAPPING}
+\begin{itemize}
+\item Using row operations, we obtain
+\[
+\begin{bmatrix}3&-1&3\\6&0&12\\2&1&7\end{bmatrix}
+\sim
+\begin{bmatrix}1&0&2\\0&1&3\\0&0&0\end{bmatrix}.
+\]
+\item Thus $c_1=2$, $c_2=3$ and
+\[
+\coord{\vect x}{B}=\begin{bmatrix}2\\3\end{bmatrix}.
+\]
+\end{itemize}
+\end{frame}
+
+% Source slide 67
+\begin{frame}{THE COORDINATE MAPPING}
+\begin{itemize}
+\item The coordinate system on $H$ determined by $B$ is shown in the following figure.
+\end{itemize}
+\centering
+\begin{tikzpicture}[scale=.72,>=Stealth]
+  \coordinate (O) at (0,0);
+  \coordinate (v1) at (2.2,-.25);
+  \coordinate (v2) at (.72,1.42);
+  \fill[blue!18] ($(O)-.25*(v1)-.25*(v2)$) -- ($(O)+2.75*(v1)-.25*(v2)$) -- ($(O)+2.75*(v1)+3.1*(v2)$) -- ($(O)-.25*(v1)+3.1*(v2)$) -- cycle;
+  \foreach \i in {0,...,3}{\draw[black!75] ($(O)+\i*(v1)$)--($(O)+\i*(v1)+3*(v2)$);}
+  \foreach \j in {0,...,3}{\draw[black!75] ($(O)+\j*(v2)$)--($(O)+2.6*(v1)+\j*(v2)$);}
+  \draw[diagramblue,very thick,->] (O)--($(O)+2.75*(v1)$);
+  \draw[diagramblue,very thick,->] (O)--($(O)+3.15*(v2)$);
+  \draw[->] (-2.2,-1.9)--(6.8,2.9);
+  \draw[->] (0,-.8)--(0,4.9);
+  \fill[diagramblue] (v1) circle (2.5pt) node[below]{$\vect v_1$};
+  \fill[diagramblue] ($(O)+2*(v1)$) circle (2.5pt) node[below]{$2\vect v_1$};
+  \fill[diagramblue] (v2) circle (2.5pt) node[left]{$\vect v_2$};
+  \fill[diagramblue] ($(O)+2*(v2)$) circle (2.5pt) node[left]{$2\vect v_2$};
+  \fill[diagramblue] ($(O)+3*(v2)$) circle (2.5pt) node[left]{$3\vect v_2$};
+  \coordinate (x) at ($(O)+2*(v1)+3*(v2)$);
+  \fill[diagramblue] (x) circle (2.8pt) node[right,black]{$\vect x=2\vect v_1+3\vect v_2$};
+  \draw[dashed] (x)--($(O)+2*(v1)$);
+  \draw[dashed] (x)--($(O)+3*(v2)$);
+  \node[below left] at (O) {$0$};
+\end{tikzpicture}
+
+\small A coordinate system on a plane $H$ in $\R^3$.
+\end{frame}
